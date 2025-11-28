@@ -619,7 +619,12 @@ export function Stories() {
     }
 
     writePendingStories(remaining);
-    return remaining.length === 0;
+    const cleared = remaining.length === 0;
+    if (cleared) {
+      setCreationError(null);
+      toast.success('Queued stories posted.');
+    }
+    return cleared;
   }, [mergeStoryUpdate, postStoryWithRetry]);
 
   const buildUserSnapshot = useCallback((user: StoryUser | null) => {
@@ -1150,8 +1155,8 @@ export function Stories() {
       };
       const pending = [...readPendingStories(), fallbackPayload];
       writePendingStories(pending);
-      setCreationError('Network issue. Your story is queued and will auto-post when back online.');
-      toast.error('Offline? We queued your story and will send it when you reconnect.');
+      setCreationError(null);
+      toast.success('We saved your story locally and will post it once you are back online.');
     } finally {
       setIsSubmittingStory(false);
     }
