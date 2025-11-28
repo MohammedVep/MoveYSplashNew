@@ -16,7 +16,9 @@ import {
   Send,
   Bookmark,
   X,
-  Loader2
+  Loader2,
+  Trash2,
+  Pencil
 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { EmojiPicker } from './EmojiPicker';
@@ -116,7 +118,17 @@ const avatarForId = (id: string) =>
   `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id || 'user')}`;
 
 export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
-  const { currentUser, allUsers, addPost, fetchComments, addComment, sharePost, toggleSavePost } = useUser();
+  const {
+    currentUser,
+    allUsers,
+    addPost,
+    fetchComments,
+    addComment,
+    sharePost,
+    toggleSavePost,
+    deletePost,
+    updatePost,
+  } = useUser();
   const [newPost, setNewPost] = useState('');
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState<MediaPreview[]>([]);
@@ -129,6 +141,10 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
   const [shareTarget, setShareTarget] = useState<ShareablePost | null>(null);
   const [isProcessingShare, setIsProcessingShare] = useState(false);
   const [bookmarkingPostKey, setBookmarkingPostKey] = useState<string | null>(null);
+  const [deletingPostId, setDeletingPostId] = useState<string | null>(null);
+  const [editingPostId, setEditingPostId] = useState<string | null>(null);
+  const [editDraft, setEditDraft] = useState('');
+  const [savingEditId, setSavingEditId] = useState<string | null>(null);
 
   const loadPosts = useCallback(async () => {
     setLoadingPosts(true);
@@ -338,6 +354,67 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
       authorAvatar,
       text: post.text,
     });
+  };
+
+  const handleDeletePost = async (post: FeedPost) => {
+    if (!currentUser || currentUser.id !== post.userId) {
+      toast.info('You can only delete your own posts.');
+      return;
+    }
+    setDeletingPostId(post.id);
+    const previous = posts;
+    setPosts((prev) => prev.filter((p) => p.id !== post.id));
+    try {
+      await deletePost(post.id);
+      toast.success('Post deleted');
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      toast.error('Unable to delete post right now.');
+      setPosts(previous);
+    } finally {
+      setDeletingPostId(null);
+    }
+  };
+
+  const handleStartEdit = (post: FeedPost) => {
+    if (!currentUser || currentUser.id !== post.userId) {
+      toast.info('You can only edit your own posts.');
+      return;
+    }
+    setEditingPostId(post.id);
+    setEditDraft(post.text);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingPostId(null);
+    setEditDraft('');
+  };
+
+  const handleSaveEdit = async (post: FeedPost) => {
+    if (!currentUser || currentUser.id !== post.userId) {
+      toast.info('You can only edit your own posts.');
+      return;
+    }
+    const trimmed = editDraft.trim();
+    if (!trimmed) {
+      toast.info('Add some text to your post.');
+      return;
+    }
+    setSavingEditId(post.id);
+    const previous = posts;
+    setPosts((prev) => prev.map((p) => (p.id === post.id ? { ...p, text: trimmed } : p)));
+    try {
+      await updatePost(post.id, trimmed);
+      toast.success('Post updated');
+      setEditingPostId(null);
+      setEditDraft('');
+    } catch (error) {
+      console.error('Error updating post:', error);
+      toast.error('Unable to update post right now.');
+      setPosts(previous);
+    } finally {
+      setSavingEditId(null);
+    }
   };
 
   const handleShareOptionSelect = async (option: ShareOptionId) => {
@@ -913,18 +990,76 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
                     </div>
                   </div>
                 </div>
+              <div className="flex items-center gap-2">
+                {currentUser?.id === post.userId && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-white/70 hover:text-white hover:bg-white/10"
+                    onClick={() => handleStartEdit(post)}
+                    disabled={savingEditId === post.id}
+                    title="Edit post"
+                  >
+                    <Pencil className="w-4 h-4" />
+                  </Button>
+                )}
+                {currentUser?.id === post.userId && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-white/70 hover:text-red-400 hover:bg-white/10"
+                    onClick={() => void handleDeletePost(post)}
+                    disabled={deletingPostId === post.id}
+                    title="Delete post"
+                  >
+                    {deletingPostId === post.id ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Trash2 className="w-4 h-4" />
+                    )}
+                  </Button>
+                )}
                 <Button 
                   variant="ghost" 
                   size="sm"
                   className="text-white/70 hover:text-white hover:bg-white/10"
+                  onClick={() => toast.info('More post actions coming soon')}
                 >
                   <MoreHorizontal className="w-5 h-5" />
                 </Button>
               </div>
             </div>
+          </div>
 
             <div className="px-6 pb-4">
-              <p className="text-white/90 whitespace-pre-line">{post.text}</p>
+              {editingPostId === post.id ? (
+                <div className="space-y-2">
+                  <Textarea
+                    value={editDraft}
+                    onChange={(event) => setEditDraft(event.target.value)}
+                    className="bg-white/5 border-white/10 text-white min-h-[120px]"
+                  />
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={() => void handleSaveEdit(post)}
+                      disabled={savingEditId === post.id}
+                      className="bg-green-500 hover:bg-green-600 text-white"
+                    >
+                      {savingEditId === post.id ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Save'}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      onClick={handleCancelEdit}
+                      disabled={savingEditId === post.id}
+                      className="text-white/80 hover:text-white"
+                    >
+                      Cancel
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-white/90 whitespace-pre-line">{post.text}</p>
+              )}
             </div>
 
             {post.media.length > 0 && (

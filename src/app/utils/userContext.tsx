@@ -97,6 +97,7 @@ export interface UserContextType {
   profileUserId: string | null;
   allUsers: Map<string, UserData>;
   updateUser: (userData: Partial<UserData>) => Promise<boolean>;
+  updatePost: (postId: string, text: string) => Promise<void>;
   updateSettings: (settings: Partial<UserSettings>) => Promise<void>;
   changePassword: (oldPassword: string, newPassword: string) => Promise<{ success: boolean; error?: string }>;
   addPost: (post: Omit<UserPost, 'id' | 'userId' | 'timestamp' | 'likes' | 'comments' | 'shares' | 'likedBy'>) => Promise<void>;
@@ -783,6 +784,45 @@ export function UserProvider({ children }: { children: ReactNode }) {
       } catch (error) {
         console.error('Error deleting post:', error);
       }
+    }
+  };
+
+  const updatePost = async (postId: string, text: string) => {
+    if (!currentUser) {
+      return;
+    }
+    const trimmed = text.trim();
+    setAllUsers(prev => {
+      const next = new Map(prev);
+      next.forEach((user, id) => {
+        const postIndex = user.posts.findIndex(p => p.id === postId);
+        if (postIndex !== -1) {
+          const updatedPosts = [...user.posts];
+          updatedPosts[postIndex] = { ...updatedPosts[postIndex], text: trimmed };
+          const updatedUser = { ...user, posts: updatedPosts };
+          next.set(id, updatedUser);
+          if (currentUser && id === currentUser.id) {
+            setCurrentUser(updatedUser);
+          }
+          if (profileUserId && (id === profileUserId || user.ablyClientId === profileUserId)) {
+            setProfileUser(updatedUser);
+          }
+        }
+      });
+      return next;
+    });
+
+    try {
+      await fetch(`${API_BASE_URL}/posts/${currentUser.id}/${postId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${publicAnonKey}`
+        },
+        body: JSON.stringify({ text: trimmed })
+      });
+    } catch (error) {
+      console.error('Error updating post:', error);
     }
   };
 
@@ -1819,12 +1859,13 @@ export function UserProvider({ children }: { children: ReactNode }) {
         changePassword,
         addPost,
         deletePost,
-        likePost,
-        sharePost,
-        toggleSavePost,
-        fetchComments,
-        addComment,
-        addFriend,
+      likePost,
+      sharePost,
+      toggleSavePost,
+      fetchComments,
+      addComment,
+      updatePost,
+      addFriend,
         removeFriend,
         blockUser,
         unblockUser,

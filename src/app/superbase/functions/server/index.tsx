@@ -1898,6 +1898,53 @@ app.delete("/make-server-a14c7986/posts/:userId/:postId", async (c) => {
   }
 });
 
+// Edit a post (text/media)
+app.put("/make-server-a14c7986/posts/:userId/:postId", async (c) => {
+  try {
+    const userId = c.req.param("userId");
+    const postId = c.req.param("postId");
+    const rawBody = await c.req.json();
+    const body = isRecord(rawBody) ? rawBody : {};
+
+    const postKey = `posts:${userId}:${postId}`;
+    const existing = await kv.get<JsonRecord>(postKey);
+    if (!existing || !isRecord(existing)) {
+      return c.json({ error: "Post not found" }, 404);
+    }
+
+    const existingText = getStringProp(existing, "text") || "";
+    const nextText =
+      typeof body["text"] === "string" && body["text"].trim().length > 0
+        ? body["text"].trim()
+        : existingText;
+
+    const incomingMedia = Array.isArray(body["media"])
+      ? (body["media"] as JsonRecord[]).filter((item) => typeof item === "object" && item !== null)
+      : null;
+    const resolvedMedia =
+      incomingMedia?.map((item) => {
+        const url = getStringProp(item, "url");
+        if (!url) return null;
+        const type = getStringProp(item, "type") === "video" ? "video" : "image";
+        return { url, type };
+      }).filter((item): item is { url: string; type: "image" | "video" } => Boolean(item)) ?? existing["media"] ?? [];
+
+    const updated = {
+      ...existing,
+      text: nextText,
+      media: resolvedMedia,
+      updatedAt: new Date().toISOString(),
+    };
+
+    await kv.set(postKey, updated);
+    const normalized = normalizePostRecord(updated);
+    return c.json({ post: normalized ?? updated, success: true });
+  } catch (error) {
+    console.error("Error updating post:", error);
+    return c.json({ error: "Failed to update post", details: String(error) }, 500);
+  }
+});
+
 // Like/unlike a post
 app.put("/make-server-a14c7986/posts/:userId/:postId/like", async (c) => {
   try {
