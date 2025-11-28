@@ -16,6 +16,9 @@ const marketingSlugs = [
 ];
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: __dirname,
+  },
   async rewrites() {
     const marketingRewrites = marketingSlugs.map((slug) => ({
       source: `/${slug}`,

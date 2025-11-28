@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/mohammedvepari/Documents/Algoma%20University/Fall%202025/COSC%204086/move-y-splash-new/src/lib/supabaseClient.ts"],"sourcesContent":["import { createClient } from \"@supabase/supabase-js\";\nimport { projectId as fallbackProjectId, publicAnonKey as fallbackAnonKey } from \"@/app/utils/supabase/info\";\n\nconst projectId = process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID || fallbackProjectId;\nconst anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || fallbackAnonKey;\n\nif (!projectId || !anonKey) {\n  throw new Error(\n    \"Supabase environment variables are missing. Make sure NEXT_PUBLIC_SUPABASE_PROJECT_ID and NEXT_PUBLIC_SUPABASE_ANON_KEY are set.\"\n  );\n}\n\nconst supabaseUrl = `https://${projectId}.supabase.co`;\n\nexport const supabase = createClient(supabaseUrl, anonKey);\n"],"names":[],"mappings":";;;;AAAA;AACA;;;AAEA,MAAM,YAAY,4DAA+C,qJAAiB;AAClF,MAAM,UAAU,wPAA6C,yJAAe;AAE5E;;AAMA,MAAM,cAAc,CAAC,QAAQ,EAAE,UAAU,YAAY,CAAC;AAE/C,MAAM,WAAW,IAAA,uMAAY,EAAC,aAAa"}}]
+}

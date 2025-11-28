@@ -99,7 +99,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/mohammedvepari",
+    "outputFileTracingRoot": "/Users/mohammedvepari/Documents/Algoma University/Fall 2025/COSC 4086/move-y-splash-new",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -289,7 +289,7 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
-      "root": "/Users/mohammedvepari"
+      "root": "/Users/mohammedvepari/Documents/Algoma University/Fall 2025/COSC 4086/move-y-splash-new"
     },
     "distDirRoot": ".next",
     "_originalRewrites": {
@@ -364,7 +364,7 @@
     }
   },
   "appDir": "/Users/mohammedvepari/Documents/Algoma University/Fall 2025/COSC 4086/move-y-splash-new",
-  "relativeAppDir": "Documents/Algoma University/Fall 2025/COSC 4086/move-y-splash-new",
+  "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
     ".next/server/pages-manifest.json",
