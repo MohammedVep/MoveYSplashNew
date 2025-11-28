@@ -31,7 +31,7 @@ export function AboutUs({ onBack }: AboutUsProps) {
           <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 mb-6">
             <Zap className="w-12 h-12 text-white" />
           </div>
-          <h1 className="text-white text-6xl mb-4">About MoveSplash</h1>
+          <h1 className="text-white text-6xl mb-4">About MoveYSplash</h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto">
             The most vibrant social platform designed for Gen Z. Built with love, powered by innovation.
           </p>
@@ -46,7 +46,7 @@ export function AboutUs({ onBack }: AboutUsProps) {
             <div>
               <h2 className="text-white text-2xl mb-3">Our Mission</h2>
               <p className="text-white/70 leading-relaxed">
-                We started MoveSplash because our own group chats were split across four different apps. 
+                We started MoveYSplash because our own group chats were split across four different apps. 
                 Instead of bolting on more features, we rebuilt the basics—fast messaging, crisp video,
                 expressive design—and kept the experience opinionated but simple.
               </p>

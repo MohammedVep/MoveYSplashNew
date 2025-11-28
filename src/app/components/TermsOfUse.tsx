@@ -42,7 +42,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
         <Card className="backdrop-blur-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border-blue-400/30 p-6 mb-6">
           <h2 className="text-white text-2xl mb-4">📜 Agreement Overview</h2>
           <p className="text-white/80 leading-relaxed">
-            Thanks for hanging out on MoveSplash. These are the house rules: they explain what we
+            Thanks for hanging out on MoveYSplash. These are the house rules: they explain what we
             offer, what we expect in return, and what happens when things go sideways. If something
             here doesn&apos;t sit right with you, skip the app instead of rolling the dice.
           </p>
@@ -66,7 +66,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
               </p>
               <p>
                 We tweak these terms when laws change or we launch new stuff. When that happens we&apos;ll call
-                it out in-product or by email. Keep using MoveSplash after the update and you&apos;re agreeing
+                it out in-product or by email. Keep using MoveYSplash after the update and you&apos;re agreeing
                 to the new version.
               </p>
             </div>
@@ -128,7 +128,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
               <h2 className="text-white text-2xl">4. Acceptable Use Policy</h2>
             </div>
             <div className="text-white/70 space-y-3">
-              <p className="text-white">You agree NOT to use MoveSplash to:</p>
+              <p className="text-white">You agree NOT to use MoveYSplash to:</p>
               <div className="grid md:grid-cols-2 gap-3">
                 <div className="bg-red-500/10 border border-red-500/30 p-3 rounded-lg">
                   <h3 className="text-red-400 mb-1">✗ Harassment & Bullying</h3>
@@ -173,7 +173,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
               <div>
                 <h3 className="text-white mb-2">Your Content</h3>
                 <p>
-                  Everything you create is still yours. Sharing it on MoveSplash gives us a limited,
+                  Everything you create is still yours. Sharing it on MoveYSplash gives us a limited,
                   revocable license to host it, display it to the people you choose, and make backup copies
                   so the app works. Delete the post and the license ends once it clears our caches.
                 </p>
@@ -181,18 +181,11 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
               <div>
                 <h3 className="text-white mb-2">Our Content</h3>
                 <p>
-                  The brand, codebase, product copy, and design system belong to MoveSplash. Please don&apos;t
+                  The brand, codebase, product copy, and design system belong to MoveYSplash. Please don&apos;t
                   rip our UI, reuse our logo, or ship a look-alike experience without written permission.
                 </p>
               </div>
-              <div>
-                <h3 className="text-white mb-2">Reporting Violations</h3>
-                <p>
-                  Spot something that steals your work? Email{' '}
-                  <span className="text-white">copyright@movesplash.com</span>
-                  {' '}with the link, proof you own it, and how to reach you. We respond as fast as possible.
-                </p>
-              </div>
+
             </div>
           </Card>
 
@@ -200,7 +193,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
           <Card className="backdrop-blur-xl bg-white/10 border-white/20 p-6">
             <h2 className="text-white text-2xl mb-3">6. Privacy & Data</h2>
             <p className="text-white/70">
-              We only collect the info we need to keep MoveSplash running (think account basics, usage
+              We only collect the info we need to keep MoveYSplash running (think account basics, usage
               stats, and stuff you intentionally share). The full breakdown lives in our{' '}
               <span className="text-white underline cursor-pointer">Privacy Policy</span>. Using the app
               means you&apos;re cool with those practices.
@@ -219,7 +212,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
               <div>
                 <h3 className="text-white mb-2">By You</h3>
                 <p>
-                  Done with MoveSplash? Head to Settings and delete your account. We start wiping things
+                  Done with MoveYSplash? Head to Settings and delete your account. We start wiping things
                   within 30 days unless the law says we have to hold onto them a little longer (for example,
                   fraud investigations).
                 </p>
@@ -240,7 +233,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
             <h2 className="text-white text-2xl mb-3">8. Disclaimers & Limitations</h2>
             <div className="text-white/70 space-y-3">
               <p>
-                <span className="text-white">Service is &quot;as-is&quot;:</span> We work hard to keep MoveSplash fast
+                <span className="text-white">Service is &quot;as-is&quot;:</span> We work hard to keep MoveYSplash fast
                 and reliable, but bugs and outages happen. We can&apos;t promise uninterrupted service,
                 perfect security, or zero data loss.
               </p>
@@ -270,12 +263,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
             <div className="text-white/70 space-y-3">
               <p>
                 <span className="text-white">Governing law:</span> California law applies, even if you use
-                MoveSplash somewhere else.
-              </p>
-              <p>
-                <span className="text-white">Arbitration first:</span> Shoot us a note at
-                {' '}support@movesplash.com and we&apos;ll try to fix issues quickly. If that doesn&apos;t work,
-                we&apos;ll resolve things through binding arbitration (unless you qualify for small-claims court).
+                MoveYSplash somewhere else.
               </p>
             </div>
           </Card>
@@ -296,7 +284,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
             <div className="text-white/70 space-y-2">
               <p>
                 <span className="text-white">Entire agreement:</span> These terms and the Privacy Policy
-                replace any previous conversations you had with us about using MoveSplash.
+                replace any previous conversations you had with us about using MoveYSplash.
               </p>
               <p>
                 <span className="text-white">If one part fails:</span> The rest still counts even if a single

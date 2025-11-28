@@ -98,7 +98,7 @@ export function LandingPage({
           <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center">
             <Zap className="w-6 h-6 text-white" />
           </div>
-          <span className="text-white text-2xl">MoveSplash</span>
+          <span className="text-white text-2xl">MoveYSplash</span>
         </div>
         <Button 
           onClick={onLogin}
@@ -292,7 +292,7 @@ export function LandingPage({
           {/* Bottom Bar */}
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/50 text-sm">
-              © 2025 MoveSplash, Inc. All rights reserved.
+              © 2025 MoveYSplash, Inc. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-white/50 hover:text-white transition-colors">
