@@ -101,6 +101,12 @@ const STORY_VISIBILITY_OPTIONS: Array<{
   },
 ];
 
+const STORY_CACHE_STORAGE_KEY = 'movesplash:stories-cache-v1';
+const PENDING_STORIES_STORAGE_KEY = 'movesplash:pending-stories-v1';
+const MAX_CACHED_STORIES = 30;
+const FETCH_TIMEOUT_MS = 4500;
+const POST_TIMEOUT_MS = 6000;
+
 const formatRelativeTime = (isoTimestamp: string) => {
   const date = new Date(isoTimestamp);
   if (Number.isNaN(date.getTime())) {
@@ -199,6 +205,98 @@ interface StoryState {
 const STORY_PLACEHOLDER_URL =
   'https://api.dicebear.com/7.x/shapes/svg?seed=MoveSplashStory&backgroundColor=transparent';
 
+const OFFLINE_STORIES: StoryAPIResponse[] = [
+  {
+    id: 'offline-story-1',
+    userId: 'demo-user-1',
+    user: {
+      id: 'demo-user-1',
+      name: 'Offline Demo',
+      username: 'demo',
+      avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=256&q=80',
+      ablyClientId: 'demo-user-1',
+    },
+    items: [
+      {
+        id: 'offline-item-1',
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80',
+        duration: DEFAULT_IMAGE_DURATION,
+        timestamp: new Date().toISOString(),
+      },
+    ],
+    viewers: [],
+    visibility: 'public',
+    createdAt: new Date().toISOString(),
+    expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+    likes: [],
+    replies: [],
+  },
+];
+
+const safeParseStories = (raw: unknown): StoryAPIResponse[] => {
+  if (!Array.isArray(raw)) return [];
+  return raw.filter((entry) => entry && typeof entry === 'object') as StoryAPIResponse[];
+};
+
+const readCachedStories = (): StoryAPIResponse[] => {
+  if (typeof window === 'undefined') return [];
+  try {
+    const stored = window.localStorage.getItem(STORY_CACHE_STORAGE_KEY);
+    if (!stored) return [];
+    const parsed = JSON.parse(stored);
+    return safeParseStories(parsed?.stories);
+  } catch {
+    return [];
+  }
+};
+
+const writeCachedStories = (stories: StoryAPIResponse[]) => {
+  if (typeof window === 'undefined') return;
+  try {
+    const trimmed = stories.slice(0, MAX_CACHED_STORIES);
+    window.localStorage.setItem(
+      STORY_CACHE_STORAGE_KEY,
+      JSON.stringify({ stories: trimmed, cachedAt: Date.now() }),
+    );
+  } catch {
+    // Ignore storage failures
+  }
+};
+
+type PendingStoryPayload = {
+  userId: string;
+  visibility: 'friends' | 'public' | 'close_friends';
+  items: Array<{
+    id: string;
+    type: 'image' | 'video';
+    url: string;
+    duration: number;
+    timestamp: string;
+  }>;
+};
+
+const readPendingStories = (): PendingStoryPayload[] => {
+  if (typeof window === 'undefined') return [];
+  try {
+    const stored = window.localStorage.getItem(PENDING_STORIES_STORAGE_KEY);
+    if (!stored) return [];
+    const parsed = JSON.parse(stored);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+};
+
+const writePendingStories = (pending: PendingStoryPayload[]) => {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(PENDING_STORIES_STORAGE_KEY, JSON.stringify(pending));
+  } catch {
+    // Ignore storage failures
+  }
+};
+
 const storyStateToApiResponse = (story: StoryState): StoryAPIResponse => ({
   id: story.id,
   userId: story.userId,
@@ -264,9 +362,25 @@ export function Stories() {
   const storyCacheRef = useRef<StoryAPIResponse[]>([]);
   const lastFetchedAtRef = useRef(0);
   const preloadedMediaRef = useRef<Set<string>>(new Set());
+  const [hydratedCache, setHydratedCache] = useState(false);
+
+  useEffect(() => {
+    const cached = readCachedStories();
+    if (cached.length > 0) {
+      storyCacheRef.current = cached;
+      setStoriesData(cached);
+      setLoading(false);
+    }
+    setHydratedCache(true);
+  }, []);
 
   const fetchStories = useCallback(
     async (signal?: AbortSignal) => {
+      let abortController: AbortController | null = null;
+      let timeoutId: number | null = null;
+      const abortFromUpstream = () => {
+        abortController?.abort();
+      };
       try {
         if (storyCacheRef.current.length > 0) {
           setStoriesData(storyCacheRef.current);
@@ -282,9 +396,19 @@ export function Stories() {
           }
         }
 
+        abortController = new AbortController();
+        if (signal) {
+          if (signal.aborted) {
+            abortController.abort();
+            return;
+          }
+          signal.addEventListener('abort', abortFromUpstream);
+        }
+        timeoutId = window.setTimeout(abortFromUpstream, FETCH_TIMEOUT_MS);
+
         const response = await fetch(`${API_BASE_URL}/stories`, {
           headers: AUTH_HEADERS,
-          signal,
+          signal: abortController?.signal,
         });
 
         if (!response.ok) {
@@ -299,17 +423,31 @@ export function Stories() {
           const nextStories = Array.isArray(payload?.stories) ? payload.stories : [];
           storyCacheRef.current = nextStories;
           lastFetchedAtRef.current = Date.now();
+          writeCachedStories(nextStories);
           setStoriesData(nextStories);
         }
-      } catch (fetchError) {
-        if ((fetchError as Error).name === 'AbortError') {
-          return;
-        }
-        console.error('Error loading stories:', fetchError);
-        if (!signal?.aborted) {
-          setError('Unable to load stories right now.');
-        }
+  } catch (fetchError) {
+    if ((fetchError as Error).name === 'AbortError') {
+      return;
+    }
+    console.error('Error loading stories:', fetchError);
+    if (!signal?.aborted) {
+      if (storyCacheRef.current.length > 0) {
+        setError('Using your last stories until connection comes back.');
+        setStoriesData(storyCacheRef.current);
+      } else {
+        setStoriesData(OFFLINE_STORIES);
+        storyCacheRef.current = OFFLINE_STORIES;
+        setError('Offline mode: showing sample stories until we reconnect.');
+      }
+    }
       } finally {
+        if (signal) {
+          signal.removeEventListener('abort', abortFromUpstream);
+        }
+        if (timeoutId !== null) {
+          window.clearTimeout(timeoutId);
+        }
         if (!signal?.aborted) {
           setLoading(false);
         }
@@ -379,6 +517,38 @@ export function Stories() {
     [allUsers, currentUser, sendSupabaseNotification],
   );
 
+  const postStoryWithRetry = useCallback(
+    async (payload: PendingStoryPayload, maxAttempts = 3) => {
+      for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+        const controller = new AbortController();
+        const timeoutId = window.setTimeout(() => controller.abort(), POST_TIMEOUT_MS);
+        try {
+          const response = await fetch(`${API_BASE_URL}/stories`, {
+            method: 'POST',
+            headers: JSON_HEADERS,
+            body: JSON.stringify(payload),
+            signal: controller.signal,
+          });
+
+          const data = (await response.json().catch(() => ({}))) as { story?: StoryAPIResponse; error?: string };
+          if (!response.ok || !data?.story) {
+            throw new Error(data?.error || `Story publish failed (attempt ${attempt})`);
+          }
+          return data.story;
+        } catch (postError) {
+          if (attempt === maxAttempts) {
+            throw postError;
+          }
+          await new Promise((resolve) => setTimeout(resolve, 400 * attempt));
+        } finally {
+          window.clearTimeout(timeoutId);
+        }
+      }
+      return null;
+    },
+    [],
+  );
+
   const mergeStoryUpdate = useCallback(
     (storyUpdate: StoryAPIResponse, options?: { prepend?: boolean }) => {
       setStoriesData((prev) => {
@@ -427,6 +597,30 @@ export function Stories() {
     },
     [],
   );
+
+  const flushPendingStories = useCallback(async () => {
+    const pending = readPendingStories();
+    if (!pending.length) return;
+
+    const remaining: PendingStoryPayload[] = [];
+    for (const payload of pending) {
+      try {
+        const story = await postStoryWithRetry(payload, 2);
+        if (story) {
+          mergeStoryUpdate(story, { prepend: true });
+          storyCacheRef.current = [story, ...storyCacheRef.current].slice(0, MAX_CACHED_STORIES);
+          writeCachedStories(storyCacheRef.current);
+        } else {
+          remaining.push(payload);
+        }
+      } catch {
+        remaining.push(payload);
+      }
+    }
+
+    writePendingStories(remaining);
+    return remaining.length === 0;
+  }, [mergeStoryUpdate, postStoryWithRetry]);
 
   const buildUserSnapshot = useCallback((user: StoryUser | null) => {
     if (!user) {
@@ -912,31 +1106,21 @@ export function Stories() {
         timestamp: new Date().toISOString(),
       }));
 
-      const response = await fetch(`${API_BASE_URL}/stories`, {
-        method: 'POST',
-        headers: JSON_HEADERS,
-        body: JSON.stringify({
-          userId: currentUser.id,
-          visibility: storyVisibility,
-          items: payloadItems,
-        }),
-      });
-
-      const payload = (await response.json().catch(() => ({}))) as {
-        story?: StoryAPIResponse;
-        error?: string;
+      const payload: PendingStoryPayload = {
+        userId: currentUser.id,
+        visibility: storyVisibility,
+        items: payloadItems,
       };
 
-      if (!response.ok || !payload?.story) {
-        const errorMessage = payload?.error ?? 'Failed to publish story.';
-        throw new Error(errorMessage);
+      const createdStory = await postStoryWithRetry(payload, 3);
+      if (!createdStory) {
+        throw new Error('Failed to publish story.');
       }
-
-      const createdStory = payload.story;
 
       mergeStoryUpdate(createdStory, { prepend: true });
       storyCacheRef.current = [createdStory, ...storyCacheRef.current];
       lastFetchedAtRef.current = Date.now();
+      writeCachedStories(storyCacheRef.current);
 
       const newStoryId = createdStory.id;
 
@@ -953,12 +1137,21 @@ export function Stories() {
       setCurrentItemIndex(0);
     } catch (creationErrorCaught) {
       console.error('Error creating story:', creationErrorCaught);
-      const message =
-        creationErrorCaught instanceof Error
-          ? creationErrorCaught.message
-          : 'Unable to publish story right now.';
-      setCreationError(message);
-      toast.error('Unable to publish story right now.');
+      const fallbackPayload: PendingStoryPayload = {
+        userId: currentUser.id,
+        visibility: storyVisibility,
+        items: storyDraft.map((item) => ({
+          id: item.id,
+          type: item.type,
+          url: item.url,
+          duration: item.duration,
+          timestamp: new Date().toISOString(),
+        })),
+      };
+      const pending = [...readPendingStories(), fallbackPayload];
+      writePendingStories(pending);
+      setCreationError('Network issue. Your story is queued and will auto-post when back online.');
+      toast.error('Offline? We queued your story and will send it when you reconnect.');
     } finally {
       setIsSubmittingStory(false);
     }
@@ -971,13 +1164,29 @@ export function Stories() {
     mergeStoryUpdate,
     isSubmittingStory,
     notifyFriendsAboutStory,
+    postStoryWithRetry,
   ]);
 
   useEffect(() => {
+    if (!hydratedCache) {
+      return;
+    }
     const controller = new AbortController();
     fetchStories(controller.signal);
     return () => controller.abort();
-  }, [fetchStories]);
+  }, [fetchStories, hydratedCache]);
+
+  useEffect(() => {
+    if (!hydratedCache) {
+      return;
+    }
+    void flushPendingStories();
+    const handleOnline = () => {
+      void flushPendingStories();
+    };
+    window.addEventListener('online', handleOnline);
+    return () => window.removeEventListener('online', handleOnline);
+  }, [flushPendingStories, hydratedCache]);
 
   useEffect(() => {
     if (storiesData.length > 0) {
