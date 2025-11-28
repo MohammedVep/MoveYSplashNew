@@ -445,16 +445,18 @@ export function VideoChat({
     const hasDisplayMedia = typeof navigator.mediaDevices?.getDisplayMedia === 'function';
 
     setIsIOSDevice(isiOS);
-    setScreenShareSupported(hasDisplayMedia);
+    setScreenShareSupported(hasDisplayMedia || isiOS);
 
     if (!hasDisplayMedia) {
       setScreenShareSupportHint(
         isiOS
-          ? 'Screen sharing on iOS/iPadOS needs Safari 17.4+ with Screen Broadcast support.'
+          ? 'Screen sharing on iOS/iPadOS uses the Screen Broadcast prompt; use Safari and tap Start Broadcast.'
           : 'Update to a modern browser (Chrome/Edge/Safari 17+) to enable screen sharing.',
       );
     } else if (isiOS) {
-      setScreenShareSupportHint('Tap "Start Broadcast" in the iOS Screen Broadcast sheet to begin sharing.');
+      setScreenShareSupportHint(
+        'iOS/iPadOS: choose Safari/MoveSplash in the Screen Broadcast sheet, then tap Start Broadcast.',
+      );
     } else {
       setScreenShareSupportHint(null);
     }
@@ -1534,7 +1536,7 @@ export function VideoChat({
       return;
     }
 
-    if (!screenShareSupported) {
+    if (!screenShareSupported && !isIOSDevice) {
       toast.error(screenShareSupportHint ?? 'Screen sharing is not available on this device.');
       return;
     }
@@ -1964,6 +1966,30 @@ export function VideoChat({
               className="text-white hover:bg-white/20"
             >
               Disable Screen Demo
+            </Button>
+          </div>
+        </Card>
+      )}
+      {isIOSDevice && screenShareSupportHint && (
+        <Card className="backdrop-blur-xl bg-gradient-to-r from-sky-500/90 to-blue-600/90 border-blue-400 px-6 py-3">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                <span className="text-2xl">📱</span>
+              </div>
+              <div>
+                <h3 className="text-white font-medium">iPhone/iPad Screen Share</h3>
+                <p className="text-white/80 text-sm">
+                  {screenShareSupportHint}
+                </p>
+              </div>
+            </div>
+            <Button
+              variant="ghost"
+              className="text-white hover:bg-white/20"
+              onClick={() => toast.info('Open Control Center → Screen Broadcast → choose Safari/MoveSplash → Start Broadcast.')}
+            >
+              How to
             </Button>
           </div>
         </Card>
