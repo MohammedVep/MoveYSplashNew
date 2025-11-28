@@ -67,7 +67,7 @@ export function Navigation({ currentView, onNavigate, onLogout, onOpenSettings }
               <Zap className="w-6 h-6 text-white" />
             </div>
             <span className={cn('text-xl hidden md:block font-semibold transition-colors', nameTextClass)}>
-              MoveSplash
+              MoveYSplash
             </span>
           </div>
 

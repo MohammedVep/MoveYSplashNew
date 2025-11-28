@@ -316,7 +316,7 @@ function VideoCallsFeature({ onBack, onGetStarted }: { onBack: () => void; onGet
 
         {/* Comparison Table */}
         <Card className="backdrop-blur-xl bg-white/10 border-white/20 p-8 mb-12">
-          <h2 className="text-white text-3xl mb-6">How MoveSplash Compares</h2>
+          <h2 className="text-white text-3xl mb-6">How MoveYSplash Compares</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
@@ -330,7 +330,7 @@ function VideoCallsFeature({ onBack, onGetStarted }: { onBack: () => void; onGet
               </thead>
               <tbody className="text-white/70">
                 <tr className="border-b border-white/10 bg-gradient-to-r from-purple-500/20 to-pink-500/20">
-                  <td className="py-3 px-4 text-white">✨ MoveSplash</td>
+                  <td className="py-3 px-4 text-white">✨ MoveYSplash</td>
                   <td className="py-3 px-4 text-green-400">4K UHD</td>
                   <td className="py-3 px-4 text-green-400">8K UHD</td>
                   <td className="py-3 px-4 text-green-400">20</td>
@@ -375,7 +375,7 @@ function VideoCallsFeature({ onBack, onGetStarted }: { onBack: () => void; onGet
             </table>
           </div>
           <p className="text-white/60 text-sm mt-4 text-center">
-            MoveSplash offers the highest video and screen sharing quality of any social platform - completely free! 🚀
+            MoveYSplash offers the highest video and screen sharing quality of any social platform - completely free! 🚀
           </p>
         </Card>
 
@@ -500,7 +500,7 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
         <Card className="backdrop-blur-xl bg-white/10 border-white/20 p-8 mb-12">
           <h2 className="text-white text-3xl mb-6">Intelligent Quality Adaptation</h2>
           <p className="text-white/70 mb-6">
-            MoveSplash automatically detects your display resolution and internet connection 
+            MoveYSplash automatically detects your display resolution and internet connection 
             to deliver the best possible screen sharing quality:
           </p>
           <div className="grid md:grid-cols-3 gap-4">
@@ -753,7 +753,7 @@ function GenZVibesFeature({ onBack, onGetStarted }: { onBack: () => void; onGetS
         </div>
 
         <Card className="backdrop-blur-xl bg-white/10 border-white/20 p-8 mb-12">
-          <h2 className="text-white text-3xl mb-6">Why Gen Z Loves MoveSplash</h2>
+          <h2 className="text-white text-3xl mb-6">Why Gen Z Loves MoveYSplash</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="flex items-start gap-3">
               <Flame className="w-6 h-6 text-orange-400 flex-shrink-0 mt-1" />

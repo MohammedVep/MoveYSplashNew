@@ -87,7 +87,7 @@ const STORY_VISIBILITY_OPTIONS: Array<{
   {
     label: 'Public',
     value: 'public',
-    description: 'Everyone on MoveSplash can view your story',
+    description: 'Everyone on MoveYSplash can view your story',
   },
   {
     label: 'Friends',

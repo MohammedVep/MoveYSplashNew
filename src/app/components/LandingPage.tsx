@@ -121,7 +121,7 @@ export function LandingPage({
           </h1>
           
           <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-            MoveSplash combines group chats, zero-lag video calls, and disappearing stories so you do not have
+            MoveYSplash combines group chats, zero-lag video calls, and disappearing stories so you do not have
             to bounce between five different apps.
           </p>
 
@@ -231,7 +231,7 @@ export function LandingPage({
             Ready to stop hopping between apps?
           </h2>
           <p className="text-white/80 text-lg mb-8">
-            MoveSplash keeps chats, calls, stories, and plans in one place so you can just hang out.
+            MoveYSplash keeps chats, calls, stories, and plans in one place so you can just hang out.
           </p>
           <Button 
             onClick={onGetStarted}
@@ -250,7 +250,7 @@ export function LandingPage({
             <div className="md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <Zap className="w-8 h-8 text-purple-400" />
-                <span className="text-2xl text-white">MoveSplash</span>
+                <span className="text-2xl text-white">MoveYSplash</span>
               </div>
               <p className="text-white/60 text-sm">
                 A calmer social app for real-life friends, side projects, and late-night ideas.

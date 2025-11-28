@@ -1540,7 +1540,7 @@ export function VideoChat({
     }
 
     if (typeof window !== 'undefined' && !window.isSecureContext) {
-      toast.error('Screen sharing requires HTTPS (or localhost). Open MoveSplash over https to continue.');
+      toast.error('Screen sharing requires HTTPS (or localhost). Open MoveYSplash over https to continue.');
       return;
     }
 
@@ -1548,7 +1548,7 @@ export function VideoChat({
       try {
         const shareTarget = screenShareTarget;
         if (isIOSDevice) {
-          toast.info('iOS will open the Screen Broadcast picker. Choose Safari/MoveSplash then tap Start Broadcast.');
+          toast.info('iOS will open the Screen Broadcast picker. Choose Safari/MoveYSplash then tap Start Broadcast.');
         } else if (shareTarget === 'all-monitors') {
           toast.info('Select the "Entire screen" option to capture every monitor.');
         } else if (selectedScreen) {
@@ -1766,9 +1766,9 @@ export function VideoChat({
       const next = !prev;
       if (next) {
         enableDemoMode(true);
-        toast.success('Safe Start enabled - MoveSplash will stay in demo mode when you open it.');
+        toast.success('Safe Start enabled - MoveYSplash will stay in demo mode when you open it.');
       } else {
-        toast.success('Safe Start disabled - MoveSplash can auto-connect your camera again.');
+        toast.success('Safe Start disabled - MoveYSplash can auto-connect your camera again.');
       }
       return next;
     });
@@ -2356,7 +2356,7 @@ export function VideoChat({
                   ? 'text-amber-300 hover:text-amber-200 bg-amber-500/20 hover:bg-amber-500/30'
                   : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
-              title="Always start MoveSplash in presentation-safe demo mode so other meeting apps keep your webcam"
+              title="Always start MoveYSplash in presentation-safe demo mode so other meeting apps keep your webcam"
             >
               🛡️ {cameraSafeStart ? 'Safe Start ON' : 'Safe Start'}
             </Button>

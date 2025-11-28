@@ -258,7 +258,7 @@ function AppShell() {
   const handleSignup = async (name: string, email: string, password: string, birthdate: string) => {
     const success = await signup(name, email, password, birthdate);
     if (success) {
-      toast.success(`Welcome to MoveSplash, ${name}! 🚀`);
+      toast.success(`Welcome to MoveYSplash, ${name}! 🚀`);
       setSelectedProfileId(null);
       setAppState('app');
       setCurrentView('feed');
