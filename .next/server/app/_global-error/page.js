@@ -1,0 +1,11 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_global-error/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7f489ede._.js")
+R.c("server/chunks/ssr/Documents_Algoma University_Fall 2025_COSC 4086_move-y-splash-new_f77e441d._.js")
+R.c("server/chunks/ssr/3aae9_next_dist_b42ab634._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__3a97da4e._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__23ece2ab._.js")
+R.c("server/chunks/ssr/3aae9_next_dist_04b435c9._.js")
+R.c("server/chunks/ssr/80b94_Algoma University_Fall 2025_COSC 4086_move-y-splash-new_src_app_5b88ad51._.js")
+R.c("server/chunks/ssr/248c4_move-y-splash-new__next-internal_server_app__global-error_page_actions_b04f6290.js")
+R.m(75429)
+module.exports=R.m(75429).exports
