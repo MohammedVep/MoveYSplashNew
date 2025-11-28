@@ -359,6 +359,9 @@ export function VideoChat({
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [demoMode, setDemoMode] = useState(initialDemoState);
   const [screenShareDemoMode, setScreenShareDemoMode] = useState(initialDemoState);
+  const [isIOSDevice, setIsIOSDevice] = useState(false);
+  const [screenShareSupported, setScreenShareSupported] = useState(true);
+  const [screenShareSupportHint, setScreenShareSupportHint] = useState<string | null>(null);
   const [videoQuality, setVideoQuality] = useState<string | null>(null);
   const [screenShareQuality, setScreenShareQuality] = useState<string | null>(null);
   const [availableScreens, setAvailableScreens] = useState<ScreenInfo[]>([]);
@@ -428,6 +431,34 @@ export function VideoChat({
   useEffect(() => {
     screenShareStateRef.current = isScreenShareStreaming;
   }, [isScreenShareStreaming]);
+
+  useEffect(() => {
+    if (typeof navigator === 'undefined') {
+      setScreenShareSupported(false);
+      return;
+    }
+
+    const userAgent = navigator.userAgent || navigator.vendor || '';
+    const isiOS =
+      /iPad|iPhone|iPod/.test(userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const hasDisplayMedia = typeof navigator.mediaDevices?.getDisplayMedia === 'function';
+
+    setIsIOSDevice(isiOS);
+    setScreenShareSupported(hasDisplayMedia);
+
+    if (!hasDisplayMedia) {
+      setScreenShareSupportHint(
+        isiOS
+          ? 'Screen sharing on iOS/iPadOS needs Safari 17.4+ with Screen Broadcast support.'
+          : 'Update to a modern browser (Chrome/Edge/Safari 17+) to enable screen sharing.',
+      );
+    } else if (isiOS) {
+      setScreenShareSupportHint('Tap "Start Broadcast" in the iOS Screen Broadcast sheet to begin sharing.');
+    } else {
+      setScreenShareSupportHint(null);
+    }
+  }, []);
 
   const togglePanel = (panel: 'participants' | 'chat' | 'settings') => {
     setShowParticipantsPanel(panel === 'participants' ? (open) => !open : false);
@@ -1503,10 +1534,22 @@ export function VideoChat({
       return;
     }
 
+    if (!screenShareSupported) {
+      toast.error(screenShareSupportHint ?? 'Screen sharing is not available on this device.');
+      return;
+    }
+
+    if (typeof window !== 'undefined' && !window.isSecureContext) {
+      toast.error('Screen sharing requires HTTPS (or localhost). Open MoveSplash over https to continue.');
+      return;
+    }
+
     if (!isScreenSharing) {
       try {
         const shareTarget = screenShareTarget;
-        if (shareTarget === 'all-monitors') {
+        if (isIOSDevice) {
+          toast.info('iOS will open the Screen Broadcast picker. Choose Safari/MoveSplash then tap Start Broadcast.');
+        } else if (shareTarget === 'all-monitors') {
           toast.info('Select the "Entire screen" option to capture every monitor.');
         } else if (selectedScreen) {
           toast.info(`When prompted, choose "${selectedScreen.label}" to share that monitor.`);
@@ -1516,33 +1559,44 @@ export function VideoChat({
 
         console.log('Requesting screen share with multi-monitor support enabled...');
 
-        const videoConstraints: AdvancedDisplayConstraints = {
-          displaySurface: 'monitor',
-          width: { ideal: 7680 },
-          height: { ideal: 4320 },
-          frameRate: { ideal: 30 },
-          cursor: 'always',
-          preferCurrentTab: false,
-          surfaceSwitching: 'include',
-          selfBrowserSurface: 'exclude',
-        };
+        const videoConstraints: AdvancedDisplayConstraints = isIOSDevice
+          ? {
+              width: { ideal: 1920 },
+              height: { ideal: 1080 },
+              frameRate: { ideal: 30 },
+              preferCurrentTab: true,
+            }
+          : {
+              displaySurface: 'monitor',
+              width: { ideal: 7680 },
+              height: { ideal: 4320 },
+              frameRate: { ideal: 30 },
+              cursor: 'always',
+              preferCurrentTab: false,
+              surfaceSwitching: 'include',
+              selfBrowserSurface: 'exclude',
+            };
 
-        if (shareTarget === 'all-monitors') {
-          videoConstraints.logicalSurface = true;
-          videoConstraints.monitorTypeSurfaces = ['monitor'];
-        } else if (selectedScreen) {
-          videoConstraints.monitorTypeSurfaces = ['monitor'];
-        } else {
-          videoConstraints.monitorTypeSurfaces = ['monitor', 'window', 'browser'];
+        if (!isIOSDevice) {
+          if (shareTarget === 'all-monitors') {
+            videoConstraints.logicalSurface = true;
+            videoConstraints.monitorTypeSurfaces = ['monitor'];
+          } else if (selectedScreen) {
+            videoConstraints.monitorTypeSurfaces = ['monitor'];
+          } else {
+            videoConstraints.monitorTypeSurfaces = ['monitor', 'window', 'browser'];
+          }
         }
 
         const screenStream = await navigator.mediaDevices.getDisplayMedia({
           video: videoConstraints,
-          audio: {
-            echoCancellation: true,
-            noiseSuppression: true,
-            autoGainControl: true,
-          },
+          audio: isIOSDevice
+            ? false
+            : {
+                echoCancellation: true,
+                noiseSuppression: true,
+                autoGainControl: true,
+              },
         });
         
         // Detect actual screen share resolution
@@ -1578,7 +1632,10 @@ export function VideoChat({
           toast.success('Screen sharing started');
         }
         setScreenShareSourceLabel(
-          videoTrack.label || selectedScreen?.label || (shareTarget === 'all-monitors' ? 'All Monitors' : null),
+          videoTrack.label ||
+            selectedScreen?.label ||
+            (shareTarget === 'all-monitors' ? 'All Monitors' : null) ||
+            (isIOSDevice ? 'iPhone/iPad Screen' : null),
         );
         if (screenShareStreamRef.current) {
           screenShareStreamRef.current.getTracks().forEach(track => track.stop());
@@ -1622,11 +1679,20 @@ export function VideoChat({
         const { name, message } = extractErrorInfo(error);
         const errorMessage = message.toLowerCase();
         const errorName = name.toLowerCase();
+
+        if (errorMessage.includes('getdisplaymedia') && errorMessage.includes('not a function')) {
+          toast.error(screenShareSupportHint ?? 'Screen sharing is not supported on this browser.');
+          return;
+        }
         
         if (errorName === 'notallowederror' || 
             errorName === 'notreadableerror' ||
             errorMessage.includes('permission denied') ||
             errorMessage.includes('user cancelled')) {
+          if (isIOSDevice) {
+            toast.error('iOS blocked the Screen Broadcast. Tap "Start Broadcast" and allow Screen Recording for Safari.');
+            return;
+          }
           
           // Check if it&apos;s actually a conflict vs user cancellation
           if (errorMessage.includes('already in use') || errorName === 'notreadableerror') {
@@ -2242,6 +2308,7 @@ export function VideoChat({
                   ? 'bg-green-500 hover:bg-green-600'
                   : 'bg-white/10 hover:bg-white/20'
               } text-white border-0`}
+              title={screenShareSupportHint ?? 'Start or stop screen share'}
             >
               {effectiveScreenShareActive ? <MonitorOff className="w-5 h-5" /> : <Monitor className="w-5 h-5" />}
             </Button>

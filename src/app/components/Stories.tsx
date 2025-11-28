@@ -226,7 +226,7 @@ const storyStateToApiResponse = (story: StoryState): StoryAPIResponse => ({
 });
 
 export function Stories() {
-  const { currentUser } = useUser();
+  const { currentUser, allUsers } = useUser();
   const [storiesData, setStoriesData] = useState<StoryAPIResponse[]>([]);
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
@@ -261,13 +261,25 @@ export function Stories() {
   const [isStoryVideoMuted, setIsStoryVideoMuted] = useState(true);
   const [storyVideoProgress, setStoryVideoProgress] = useState(0);
   const encodeStoryId = useCallback((storyId: string) => encodeURIComponent(storyId), []);
+  const storyCacheRef = useRef<StoryAPIResponse[]>([]);
+  const lastFetchedAtRef = useRef(0);
+  const preloadedMediaRef = useRef<Set<string>>(new Set());
 
   const fetchStories = useCallback(
     async (signal?: AbortSignal) => {
       try {
+        if (storyCacheRef.current.length > 0) {
+          setStoriesData(storyCacheRef.current);
+          setLoading(false);
+        }
+
         if (!signal?.aborted) {
-          setLoading(true);
-          setError(null);
+          const stale =
+            Date.now() - lastFetchedAtRef.current > 45_000 || storyCacheRef.current.length === 0;
+          if (stale) {
+            setLoading(true);
+            setError(null);
+          }
         }
 
         const response = await fetch(`${API_BASE_URL}/stories`, {
@@ -284,7 +296,10 @@ export function Stories() {
         };
 
         if (!signal?.aborted) {
-          setStoriesData(Array.isArray(payload?.stories) ? payload.stories : []);
+          const nextStories = Array.isArray(payload?.stories) ? payload.stories : [];
+          storyCacheRef.current = nextStories;
+          lastFetchedAtRef.current = Date.now();
+          setStoriesData(nextStories);
         }
       } catch (fetchError) {
         if ((fetchError as Error).name === 'AbortError') {
@@ -301,6 +316,67 @@ export function Stories() {
       }
     },
     [],
+  );
+
+  const prefetchStoryMedia = useCallback((stories: StoryAPIResponse[]) => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const preloadTargets = stories
+      .flatMap((story) => story.items?.slice(0, 1) ?? [])
+      .filter((item) => typeof item?.url === 'string')
+      .slice(0, 12);
+
+    preloadTargets.forEach((item) => {
+      const url = item?.url;
+      if (!url || preloadedMediaRef.current.has(url)) {
+        return;
+      }
+      preloadedMediaRef.current.add(url);
+      const image = new Image();
+      image.src = url;
+    });
+  }, []);
+
+  const sendSupabaseNotification = useCallback(
+    async (userId: string, content: string) => {
+      try {
+        await fetch(`${API_BASE_URL}/notifications`, {
+          method: 'POST',
+          headers: JSON_HEADERS,
+          body: JSON.stringify({
+            userId,
+            type: 'story',
+            content,
+            actorName: currentUser?.name || 'MoveSplash friend',
+            actorAvatar: currentUser?.avatar,
+          }),
+        });
+      } catch (notifyError) {
+        console.warn('Failed to send Supabase notification:', notifyError);
+      }
+    },
+    [currentUser?.avatar, currentUser?.name],
+  );
+
+  const notifyFriendsAboutStory = useCallback(
+    async (message: string) => {
+      if (!currentUser || !currentUser.friendIds?.length) {
+        return;
+      }
+
+      const friendRecords = currentUser.friendIds
+        .map((id) => allUsers.get(id))
+        .filter((user): user is typeof currentUser => Boolean(user));
+
+      const optedIn = friendRecords.filter(
+        (friend) => friend.settings?.notifyStories ?? true,
+      );
+
+      await Promise.allSettled(optedIn.map((friend) => sendSupabaseNotification(friend.id, message)));
+    },
+    [allUsers, currentUser, sendSupabaseNotification],
   );
 
   const mergeStoryUpdate = useCallback(
@@ -814,8 +890,13 @@ export function Stories() {
       return;
     }
 
+    if (isSubmittingStory) {
+      return;
+    }
+
     if (storyDraft.length === 0) {
       setCreationError('Add at least one photo or video to your story.');
+      toast.info('Add a photo or video before publishing.');
       return;
     }
 
@@ -854,12 +935,15 @@ export function Stories() {
       const createdStory = payload.story;
 
       mergeStoryUpdate(createdStory, { prepend: true });
+      storyCacheRef.current = [createdStory, ...storyCacheRef.current];
+      lastFetchedAtRef.current = Date.now();
 
       const newStoryId = createdStory.id;
 
       handleCreatorOpenChange(false);
 
       toast.success('Your story is live!');
+      void notifyFriendsAboutStory(`${currentUser.name || 'A friend'} posted a new story.`);
 
       void fetchStories().catch((error) => {
         console.error('Error refreshing stories:', error);
@@ -878,13 +962,28 @@ export function Stories() {
     } finally {
       setIsSubmittingStory(false);
     }
-  }, [currentUser, storyDraft, storyVisibility, fetchStories, handleCreatorOpenChange, mergeStoryUpdate]);
+  }, [
+    currentUser,
+    storyDraft,
+    storyVisibility,
+    fetchStories,
+    handleCreatorOpenChange,
+    mergeStoryUpdate,
+    isSubmittingStory,
+    notifyFriendsAboutStory,
+  ]);
 
   useEffect(() => {
     const controller = new AbortController();
     fetchStories(controller.signal);
     return () => controller.abort();
   }, [fetchStories]);
+
+  useEffect(() => {
+    if (storiesData.length > 0) {
+      prefetchStoryMedia(storiesData);
+    }
+  }, [storiesData, prefetchStoryMedia]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -1447,6 +1546,13 @@ export function Stories() {
         setReplyText('');
         toast.success('Reply sent!');
 
+        if (currentStory.userId !== currentUser.id) {
+          void sendSupabaseNotification(
+            currentStory.userId,
+            `${currentUser.name || 'Someone'} replied to your story.`,
+          );
+        }
+
         void sendStoryReplyMessage(currentStory, trimmed);
         return true;
       };
@@ -1479,6 +1585,12 @@ export function Stories() {
         mergeStoryUpdate(storyStateToApiResponse(fallbackStory));
         setReplyText('');
         toast.success('Reply sent!');
+        if (currentStory.userId !== currentUser.id) {
+          void sendSupabaseNotification(
+            currentStory.userId,
+            `${currentUser.name || 'Someone'} replied to your story.`,
+          );
+        }
         void sendStoryReplyMessage(currentStory, trimmed);
       } else {
         toast.success('Reply captured!');
@@ -1495,6 +1607,7 @@ export function Stories() {
     replyText,
     sendStoryReplyMessage,
     buildStorySnapshot,
+    sendSupabaseNotification,
   ]);
 
   const showSkeleton = loading && storiesData.length === 0;
