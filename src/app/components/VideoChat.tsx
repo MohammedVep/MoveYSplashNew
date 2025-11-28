@@ -1541,8 +1541,20 @@ export function VideoChat({
       return;
     }
 
-    if (typeof window !== 'undefined' && !window.isSecureContext) {
+    if (typeof window !== 'undefined' && !window.isSecureContext && !isIOSDevice) {
       toast.error('Screen sharing requires HTTPS (or localhost). Open MoveYSplash over https to continue.');
+      return;
+    } else if (typeof window !== 'undefined' && !window.isSecureContext && isIOSDevice) {
+      toast.warning('Safari may block screen share on non-HTTPS pages. Please switch to https if this fails.');
+    }
+
+    const displayMedia =
+      navigator.mediaDevices?.getDisplayMedia ||
+      (navigator as unknown as { getDisplayMedia?: typeof navigator.mediaDevices.getDisplayMedia }).getDisplayMedia;
+    if (typeof displayMedia !== 'function') {
+      toast.error(
+        'Safari blocked Screen Broadcast. In Settings > Safari > Advanced, enable Screen Sharing and allow Screen Recording, then retry.',
+      );
       return;
     }
 
@@ -1590,16 +1602,19 @@ export function VideoChat({
           }
         }
 
-        const screenStream = await navigator.mediaDevices.getDisplayMedia({
-          video: videoConstraints,
-          audio: isIOSDevice
-            ? false
-            : {
-                echoCancellation: true,
-                noiseSuppression: true,
-                autoGainControl: true,
-              },
-        });
+        const screenStream = await displayMedia.call(
+          navigator.mediaDevices || navigator,
+          {
+            video: videoConstraints,
+            audio: isIOSDevice
+              ? false
+              : {
+                  echoCancellation: true,
+                  noiseSuppression: true,
+                  autoGainControl: true,
+                },
+          },
+        );
         
         // Detect actual screen share resolution
         const [videoTrack] = screenStream.getVideoTracks();
