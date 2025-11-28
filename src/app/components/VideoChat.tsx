@@ -74,6 +74,8 @@ const extractErrorInfo = (error: unknown): { name: string; message: string } => 
   return { name: '', message: '' };
 };
 
+type FacingMode = 'user' | 'environment';
+
 type CameraProfile = {
   label: string;
   constraints: boolean | MediaTrackConstraints;
@@ -176,7 +178,7 @@ const isCameraBusyError = (error: unknown) => {
   );
 };
 
-const requestCameraStream = async () => {
+const requestCameraStream = async (facingMode: FacingMode = 'user') => {
   if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
     throw new Error('Media devices are not supported in this environment');
   }
@@ -191,7 +193,7 @@ const requestCameraStream = async () => {
         profile.constraints === true
           ? profile.constraints
           : {
-              facingMode: { ideal: 'user' as const },
+              facingMode: { ideal: facingMode },
               ...profile.constraints,
             };
 
@@ -370,6 +372,7 @@ export function VideoChat({
   const [sharedCameraMode, setSharedCameraMode] = useState(false);
   const cameraRetryTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [cameraRetryToken, setCameraRetryToken] = useState(0);
+  const [cameraFacingMode, setCameraFacingMode] = useState<FacingMode>('user');
   const cameraManualStopRef = useRef(false);
   const screenShareStreamRef = useRef<MediaStream | null>(null);
   const manualScreenShareStopRef = useRef(false);
@@ -1147,7 +1150,7 @@ export function VideoChat({
 
       if (callStatus === 'connected' && !isVideoOff) {
         try {
-          const { stream, sharedCameraDetected } = await requestCameraStream();
+          const { stream, sharedCameraDetected } = await requestCameraStream(cameraFacingMode);
 
           if (!mounted) {
             stream.getTracks().forEach(track => track.stop());
@@ -1232,7 +1235,7 @@ export function VideoChat({
         setScreenShareSourceLabel(null);
       }
     };
-  }, [callStatus, isVideoOff, demoMode, activateCameraConflictFallback, cameraRetryToken]);
+  }, [callStatus, isVideoOff, demoMode, activateCameraConflictFallback, cameraRetryToken, cameraFacingMode]);
 
   useEffect(() => {
     mediaStreamRef.current = mediaStream;
@@ -1281,7 +1284,7 @@ export function VideoChat({
       canvas.height = videoHeight;
       ctx.drawImage(video, 0, 0, videoWidth, videoHeight);
       const frame = canvas.toDataURL('image/jpeg', 0.7);
-      setCameraFallbackFrame(frame);
+    setCameraFallbackFrame(frame);
     };
 
     const interval = setInterval(captureFrame, 2000);
@@ -1704,6 +1707,13 @@ export function VideoChat({
       return next;
     });
   };
+
+  const handleFlipCamera = useCallback(() => {
+    setCameraFacingMode((prev) => (prev === 'user' ? 'environment' : 'user'));
+    if (callStatus === 'connected' && !isVideoOff && !demoMode) {
+      setCameraRetryToken((token) => token + 1);
+    }
+  }, [callStatus, isVideoOff, demoMode]);
 
   const handleSendChatMessage = () => {
     const text = chatDraft.trim();
@@ -2596,6 +2606,21 @@ export function VideoChat({
                 }
               >
                 {cameraSafeStart ? 'On' : 'Off'}
+              </Button>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-semibold">Camera lens</p>
+                <p className="text-xs text-white/60">Front / rear for phones & tablets</p>
+              </div>
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={handleFlipCamera}
+                className="text-white/80 hover:text-white hover:bg-white/10"
+              >
+                {cameraFacingMode === 'user' ? 'Rear cam' : 'Front cam'}
               </Button>
             </div>
 

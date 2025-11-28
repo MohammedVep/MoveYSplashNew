@@ -22,6 +22,7 @@ import {
   Square,
   Volume2,
   VolumeX,
+  RefreshCcw,
 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useUser } from '../utils/userContext';
@@ -245,6 +246,7 @@ export function Stories() {
   const [isCameraActive, setIsCameraActive] = useState(false);
   const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
   const [cameraError, setCameraError] = useState<string | null>(null);
+  const [cameraFacingMode, setCameraFacingMode] = useState<'user' | 'environment'>('user');
   const [isCapturingPhoto, setIsCapturingPhoto] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -698,7 +700,7 @@ export function Stories() {
     setCameraError(null);
   }, [isRecordingVideo, stopVideoRecording]);
 
-  const startCamera = useCallback(async () => {
+  const startCamera = useCallback(async (facing: 'user' | 'environment' = cameraFacingMode) => {
     if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
       setCameraError('Camera is not supported on this device.');
       return;
@@ -709,12 +711,12 @@ export function Stories() {
       let stream: MediaStream | null = null;
       try {
         stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: 'user' },
+          video: { facingMode: facing },
           audio: true,
         });
       } catch (audioError) {
         console.warn('Falling back to video-only capture for stories:', audioError);
-        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: facing } });
       }
       setCameraStream(stream);
       setIsCameraActive(true);
@@ -724,7 +726,14 @@ export function Stories() {
       setCameraError('Unable to access camera. Check your permissions.');
       setIsCameraActive(false);
     }
-  }, [stopCamera]);
+  }, [stopCamera, cameraFacingMode]);
+
+  const handleFlipCamera = useCallback(() => {
+    setCameraFacingMode((prev) => (prev === 'user' ? 'environment' : 'user'));
+    if (isCameraActive) {
+      void startCamera(cameraFacingMode === 'user' ? 'environment' : 'user');
+    }
+  }, [cameraFacingMode, isCameraActive, startCamera]);
 
   const capturePhoto = useCallback(() => {
     if (!isCameraActive || !videoRef.current) {
@@ -1898,6 +1907,16 @@ export function Stories() {
                   >
                     {isRecordingVideo ? <Square className="h-4 w-4" /> : <Video className="h-4 w-4" />}
                     {isRecordingVideo ? 'Stop recording' : 'Record video'}
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={handleFlipCamera}
+                    disabled={isCapturingPhoto}
+                    className="rounded-full px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 disabled:opacity-60"
+                  >
+                    <RefreshCcw className="h-4 w-4" />
+                    {cameraFacingMode === 'user' ? 'Rear camera' : 'Front camera'}
                   </Button>
                   <Button
                     type="button"
