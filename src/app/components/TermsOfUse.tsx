@@ -313,22 +313,6 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
             </div>
           </Card>
 
-          {/* Contact */}
-          <Card className="backdrop-blur-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-purple-400/30 p-8">
-            <div className="text-center space-y-4">
-              <h3 className="text-white text-2xl">Need a real person?</h3>
-              <p className="text-white/70">
-                Email <span className="text-white">legal@movesplash.com</span> or drop a line through the
-                in-app help form. Real humans read both.
-              </p>
-              <p className="text-white/70 text-sm">
-                MoveSplash, Inc.<br />
-                123 Social Street<br />
-                San Francisco, CA 94103<br />
-                United States
-              </p>
-            </div>
-          </Card>
         </div>
       </div>
     </div>
