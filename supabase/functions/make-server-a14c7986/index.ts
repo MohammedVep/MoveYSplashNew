@@ -1,50 +1,71 @@
 import app from "../../../src/app/superbase/functions/server/index.tsx";
 
-const readJsonWithLimit = async (req: Request, limit: number) => {
-  const reader = req.body?.getReader();
-  const chunks: Uint8Array[] = [];
-  let total = 0;
+const MAX_BYTES = 64 * 1024; // 64KB cap
+const STORAGE_HOST = "opmvuhlheenygwbqwljk.supabase.co";
+const STORIES_PATH = "/make-server-a14c7986/stories";
 
-  if (!reader) {
-    return { ok: false, body: null, error: "No body" as const };
+function isSupabaseStorageUrl(u: string): boolean {
+  try {
+    const parsed = new URL(u);
+    if (parsed.hostname !== STORAGE_HOST) return false;
+    return parsed.pathname.startsWith("/storage/v1/object/");
+  } catch {
+    return false;
   }
+}
 
+function concatUint8(chunks: Uint8Array[], total: number) {
+  const merged = new Uint8Array(total);
+  let offset = 0;
+  for (const c of chunks) {
+    merged.set(c, offset);
+    offset += c.byteLength;
+  }
+  return merged;
+}
+
+async function readBodyBounded(req: Request, maxBytes = MAX_BYTES): Promise<string> {
+  const len = Number(req.headers.get("content-length") ?? 0);
+  if (len && len > maxBytes) throw new Response("Payload too large", { status: 413 });
+
+  const reader = req.body?.getReader();
+  if (!reader) return "";
+  let received = 0;
+  const chunks: Uint8Array[] = [];
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
     if (value) {
-      total += value.byteLength;
-      if (total > limit) {
-        reader.cancel();
-        return { ok: false, body: null, error: "too_large" as const };
-      }
+      received += value.byteLength;
+      if (received > maxBytes) throw new Response("Payload too large", { status: 413 });
       chunks.push(value);
     }
   }
+  return new TextDecoder().decode(concatUint8(chunks, received));
+}
 
+function safeJsonParse<T>(text: string): T {
   try {
-    const text = new TextDecoder().decode(concatUint8(chunks, total));
-    const parsed = JSON.parse(text);
-    return { ok: true, body: parsed };
+    return JSON.parse(text) as T;
   } catch {
-    return { ok: false, body: null, error: "invalid_json" as const };
+    throw new Response("Invalid JSON", { status: 400 });
   }
-};
+}
 
-const concatUint8 = (chunks: Uint8Array[], total: number) => {
-  const merged = new Uint8Array(total);
-  let offset = 0;
-  for (const chunk of chunks) {
-    merged.set(chunk, offset);
-    offset += chunk.byteLength;
-  }
-  return merged;
-};
+function rejectInvalidMediaUrls(payload: unknown) {
+  const bad = (value: unknown) =>
+    typeof value === "string" &&
+    (value.startsWith("data:") ||
+      (value.startsWith("http") && !isSupabaseStorageUrl(value)));
 
-const STORIES_PATH = "/make-server-a14c7986/stories";
-const STORAGE_HOST = "opmvuhlheenygwbqwljk.supabase.co";
-const STORAGE_PREFIX = `https://${STORAGE_HOST}/storage/v1/object`;
-const MAX_JSON_BYTES = 64_000; // tighter 64KB guard to avoid large bodies
+  const scan = (v: unknown) => {
+    if (Array.isArray(v)) v.forEach(scan);
+    else if (v && typeof v === "object") Object.values(v as Record<string, unknown>).forEach(scan);
+    else if (bad(v)) throw new Response("Media must be Supabase Storage URL", { status: 413 });
+  };
+
+  scan(payload);
+}
 
 const allowedOrigins = [
   "https://move-y-splash-new.vercel.app",
@@ -75,58 +96,37 @@ Deno.serve(async (req) => {
 
     // Lightweight guard for stories
     if (req.method === "POST" && path === STORIES_PATH) {
-      const parsed = await readJsonWithLimit(req, MAX_JSON_BYTES);
-      if (!parsed.ok) {
-        const status =
-          parsed.error === "too_large" ? 413 : parsed.error === "invalid_json" ? 400 : 400;
-        const message =
-          parsed.error === "too_large"
-            ? "Payload too large"
-            : parsed.error === "invalid_json"
-            ? "Invalid JSON"
-            : "Invalid request";
-        return new Response(JSON.stringify({ error: message }), {
-          status,
-          headers: { "content-type": "application/json", ...cors },
-        });
+      let bodyText: string;
+      try {
+        bodyText = await readBodyBounded(req, MAX_BYTES);
+      } catch (err) {
+        if (err instanceof Response) {
+          return new Response(JSON.stringify({ error: await err.text() }), {
+            status: err.status,
+            headers: { "content-type": "application/json", ...cors },
+          });
+        }
+        throw err;
       }
 
-      // Hard block any data URLs to avoid loading them in memory
-      const bodyString = JSON.stringify(parsed.body);
-      if (bodyString.includes("data:")) {
-        return new Response(
-          JSON.stringify({ error: "Data URLs are not allowed. Upload media to storage first." }),
-          {
-            status: 413,
-            headers: { "content-type": "application/json", ...cors },
-          },
-        );
-      }
-      // Require HTTP(S) media URLs only
       try {
-        const parsedBody = JSON.parse(bodyString) as { items?: Array<{ url?: string }> };
-        if (
-          Array.isArray(parsedBody?.items) &&
-          parsedBody.items.some((item) => {
-            if (typeof item?.url !== "string") return true;
-            if (!item.url.startsWith("http")) return true;
-            return !item.url.startsWith(STORAGE_PREFIX);
-          })
-        ) {
-          return new Response(
-            JSON.stringify({ error: "Only Supabase Storage media URLs are allowed. Upload to storage first." }),
-            { status: 413, headers: { "content-type": "application/json", ...cors } },
-          );
+        const parsed = safeJsonParse<unknown>(bodyText);
+        rejectInvalidMediaUrls(parsed);
+      } catch (err) {
+        if (err instanceof Response) {
+          return new Response(JSON.stringify({ error: await err.text() }), {
+            status: err.status,
+            headers: { "content-type": "application/json", ...cors },
+          });
         }
-      } catch {
-        // fallback to proceed; server will validate further
+        throw err;
       }
 
       // Forward to main app synchronously
       const forwardReq = new Request(req.url, {
         method: req.method,
         headers: req.headers,
-        body: JSON.stringify(parsed.body),
+        body: bodyText,
       });
 
       const upstream = await app.fetch(forwardReq);
