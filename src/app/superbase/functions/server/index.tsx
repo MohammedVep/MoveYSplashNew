@@ -2267,8 +2267,31 @@ app.get("/make-server-a14c7986/stories", async (c) => {
 });
 
 app.post("/make-server-a14c7986/stories", async (c) => {
+  const start = Date.now();
+  const executionId = crypto.randomUUID();
+
+  const logError = (label: string, error: unknown) => {
+    console.error(`[stories] ${label}`, {
+      executionId,
+      message: error instanceof Error ? error.message : String(error),
+    });
+  };
+
   try {
-    const rawBody = await c.req.json();
+    const contentLengthHeader = c.req.header("content-length");
+    const contentLength = contentLengthHeader ? Number(contentLengthHeader) : 0;
+    const MAX_BYTES = 2_000_000; // 2MB guard for JSON payload
+    if (Number.isFinite(contentLength) && contentLength > MAX_BYTES) {
+      return c.json({ error: "Payload too large" }, 413);
+    }
+
+    let rawBody: unknown;
+    try {
+      rawBody = await c.req.json();
+    } catch (parseError) {
+      logError("Invalid JSON", parseError);
+      return c.json({ error: "Invalid JSON body" }, 400);
+    }
     const body = isRecord(rawBody) ? rawBody : {};
     const userId = getStringProp(body, "userId");
     const storySnapshotRaw =
@@ -2327,6 +2350,19 @@ app.post("/make-server-a14c7986/stories", async (c) => {
         : [];
 
     let items = extractStoryItems(rawItems, fallbackId, existingItems);
+
+    const MAX_ITEMS = 12;
+    const MAX_URL_LENGTH = 4000;
+    if (items.length > MAX_ITEMS) {
+      items = items.slice(0, MAX_ITEMS);
+    }
+    items = items.map((item) => ({
+      ...item,
+      url:
+        typeof item.url === "string" && item.url.length > MAX_URL_LENGTH
+          ? item.url.slice(0, MAX_URL_LENGTH)
+          : item.url,
+    }));
 
     if (items.length === 0) {
       items = [
@@ -2396,10 +2432,11 @@ app.post("/make-server-a14c7986/stories", async (c) => {
       return c.json({ error: "Story data is invalid", success: false }, 500);
     }
 
-    return c.json({ story: normalizedStory, success: true });
+    const durationMs = Date.now() - start;
+    return c.json({ story: normalizedStory, success: true, executionId, durationMs });
   } catch (error) {
-    console.error("Error creating story:", error);
-    return c.json({ error: "Failed to create story", details: String(error) }, 500);
+    logError("Error creating story", error);
+    return c.json({ error: "Failed to create story", details: String(error), executionId }, 500);
   }
 });
 
