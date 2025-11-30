@@ -750,11 +750,15 @@ export function FriendsList({ onOpenProfile, onOpenMessage }: FriendsListProps =
                       ) : (
                         <Button
                           variant="outline"
-                          disabled
-                          className="flex-1 bg-white/5 border-white/20 text-white cursor-default"
+                          disabled={isPending(friend.id)}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            void handleRemoveFriend(friend.id);
+                          }}
+                          className="flex-1 bg-white/5 border-white/20 text-white hover:bg-white/10 disabled:opacity-50"
                         >
-                          <UserCheck className="w-4 h-4 mr-2" />
-                          Friends
+                          <UserMinus className="w-4 h-4 mr-2" />
+                          Remove
                         </Button>
                       )}
                     </div>
