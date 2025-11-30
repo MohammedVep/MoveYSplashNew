@@ -56,17 +56,17 @@ const createSafeChatClient = (realtime: Ably.Realtime): ChatClient => {
     if (process.env.NODE_ENV === 'test') {
       const noop = () => {};
       const off = () => {};
-      const fakeRoom: Partial<Room> = {
+      const fakeRoom = {
         attach: async () => {},
-        release: async () => {},
+        detach: async () => {},
         onStatusChange: () => ({ off }),
         messages: {
           history: async () => ({ items: [] }),
           subscribe: () => ({ unsubscribe: noop }),
           send: async () => {},
           delete: async () => {},
-        } as unknown as Room['messages'],
-      };
+        },
+      } as unknown as Room;
       return {
         connection: {
           onStatusChange: () => ({ off }),
