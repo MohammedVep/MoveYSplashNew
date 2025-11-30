@@ -367,25 +367,19 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
   }, [chats]);
 
   const registeredFriends = useMemo<FriendOption[]>(() => {
-    if (!currentUser) {
-      return [];
-    }
-
-    const unique = new Set<string>();
     const options: FriendOption[] = [];
+    const unique = new Set<string>();
 
-    currentUser.friendIds.forEach((friendId) => {
-      const user = allUsers.get(friendId);
-      if (!user) {
+    allUsers.forEach((user) => {
+      // Hide current user from picker
+      if (currentUser && user.id === currentUser.id) {
         return;
       }
-
       const canonicalId = user.id;
       if (unique.has(canonicalId)) {
         return;
       }
       unique.add(canonicalId);
-
       options.push({
         id: canonicalId,
         clientId: user.ablyClientId ?? canonicalId,
