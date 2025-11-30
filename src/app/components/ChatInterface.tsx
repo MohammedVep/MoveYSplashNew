@@ -22,6 +22,7 @@ import { Input } from './ui/input';
 import { Card } from './ui/card';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { 
+  ArrowLeft,
   Send, 
   Image as ImageIcon, 
   Smile, 
@@ -489,6 +490,7 @@ export function ChatInterface({
   const [chatReady, setChatReady] = useState(isTest ? true : false);
   const [connectionStatus, setConnectionStatus] = useState<string>(isTest ? 'connected' : 'connecting');
   const [roomStatus, setRoomStatus] = useState<string>(isTest ? 'attached' : 'idle');
+  const [mobileShowList, setMobileShowList] = useState<boolean>(true);
 
   const ensureDirectChat = useCallback(
     async (targetUserId: string): Promise<string | null> => {
@@ -1379,6 +1381,15 @@ export function ChatInterface({
   }, [messages, playingVoice]);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.innerWidth >= 1024) {
+      setMobileShowList(false);
+      return;
+    }
+    setMobileShowList(!selectedChat);
+  }, [selectedChat]);
+
+  useEffect(() => {
     Object.entries(audioPlayers.current).forEach(([id, entry]) => {
       const { audio } = entry;
       if (id !== playingVoice) {
@@ -1894,9 +1905,13 @@ export function ChatInterface({
   }
 
   return (
-    <div className="h-[calc(100vh-80px)] min-h-0 flex flex-col gap-4 lg:gap-6 max-w-7xl mx-auto px-4 py-4">
+    <div className="h-[calc(100vh-80px)] min-h-0 flex flex-col lg:flex-row gap-4 lg:gap-6 max-w-7xl mx-auto px-4 py-4">
       {/* Chat List Sidebar */}
-      <Card className="w-full lg:w-96 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden">
+      <Card
+        className={`w-full lg:w-96 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden ${
+          mobileShowList ? 'flex' : 'hidden'
+        } lg:flex`}
+      >
         {/* Search Header */}
         <div className="p-4 border-b border-white/10">
           <div className="flex items-center justify-between mb-4">
@@ -2096,7 +2111,12 @@ export function ChatInterface({
               {filteredChats.map((chat) => (
                 <button
                   key={chat.identity}
-                  onClick={() => setSelectedChat(chat.identity)}
+                  onClick={() => {
+                    setSelectedChat(chat.identity);
+                    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+                      setMobileShowList(false);
+                    }
+                  }}
                   className={`w-full p-3 rounded-xl mb-2 transition-all ${
                     selectedChat === chat.identity
                       ? 'bg-gradient-to-r from-pink-500/30 to-purple-500/30 backdrop-blur-xl'
@@ -2133,7 +2153,11 @@ export function ChatInterface({
       </Card>
 
       {/* Main Chat Area */}
-      <Card className="flex-1 w-full min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden">
+      <Card
+        className={`flex-1 w-full min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden ${
+          mobileShowList ? 'hidden' : 'flex'
+        } lg:flex`}
+      >
         {!selectedChat || !currentChat ? (
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
@@ -2146,6 +2170,15 @@ export function ChatInterface({
             {/* Chat Header */}
             <div className="p-4 border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-3">
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => setMobileShowList(true)}
+                  className="lg:hidden text-white/80 hover:text-white hover:bg-white/10"
+                  aria-label="Back to chats"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                </Button>
                 <Avatar className="w-10 h-10 border-2 border-white/20">
                   <AvatarImage src={currentChat.avatar} />
                   <AvatarFallback>{currentChat.chatName[0]}</AvatarFallback>

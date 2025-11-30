@@ -1164,10 +1164,10 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
                 </Button>
               </div>
               
-              <div className="flex items-center gap-2 pt-4 border-t border-white/10">
+              <div className="flex flex-col sm:flex-row items-stretch gap-2 pt-4 border-t border-white/10">
                 <Button 
                   variant="ghost" 
-                  className={`flex-1 ${isLiked ? 'text-pink-400' : 'text-white/70'} hover:text-pink-400 hover:bg-white/10`}
+                  className={`flex-1 min-h-[44px] ${isLiked ? 'text-pink-400' : 'text-white/70'} hover:text-pink-400 hover:bg-white/10`}
                   onClick={() => handleLike(post)}
                 >
                   <Heart className={`w-5 h-5 mr-2 ${isLiked ? 'fill-current' : ''}`} />
@@ -1175,7 +1175,7 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
                 </Button>
                 <Button 
                   variant="ghost" 
-                  className="flex-1 text-white/70 hover:text-blue-400 hover:bg-white/10"
+                  className="flex-1 min-h-[44px] text-white/70 hover:text-blue-400 hover:bg-white/10"
                   onClick={() => handleToggleComments(post)}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
@@ -1183,7 +1183,7 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
                 </Button>
                 <Button 
                   variant="ghost" 
-                  className="flex-1 text-white/70 hover:text-green-400 hover:bg-white/10 disabled:opacity-50"
+                  className="flex-1 min-h-[44px] text-white/70 hover:text-green-400 hover:bg-white/10 disabled:opacity-50"
                   disabled={isProcessingShare && shareTarget?.userpostId === post.id}
                   onClick={() => handleOpenShare(post, displayName, username, avatar)}
                 >

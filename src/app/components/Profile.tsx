@@ -1095,11 +1095,11 @@ export function Profile({
               </TabsList>
 
               {/* Posts Tab */}
-              <TabsContent value="posts" className="p-6 space-y-6">
+              <TabsContent value="posts" className="p-4 sm:p-6 space-y-6">
                 {isViewingSelf && (
-                  <Card className="backdrop-blur-xl bg-white/5 border-white/20 p-4">
-                    <div className="flex gap-3">
-                      <Avatar className="w-10 h-10 border-2 border-white/20">
+                  <Card className="backdrop-blur-xl bg-white/5 border-white/20 p-3 sm:p-4">
+                    <div className="flex gap-3 flex-col sm:flex-row">
+                      <Avatar className="w-10 h-10 border-2 border-white/20 flex-shrink-0">
                         <AvatarImage src={currentUser.avatar} />
                         <AvatarFallback>{currentUser.name[0]}</AvatarFallback>
                       </Avatar>
@@ -1113,7 +1113,7 @@ export function Profile({
 
                         {/* Selected Media Preview */}
                         {selectedMedia.length > 0 && (
-                          <div className="grid grid-cols-3 gap-2">
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                             {selectedMedia.map((media) => (
                               <div key={media.id} className="relative group">
                                 {media.type === 'image' ? (
@@ -1140,8 +1140,8 @@ export function Profile({
                         )}
 
                         {/* Post Actions */}
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-2 sticky bottom-0 bg-black/40 sm:bg-transparent backdrop-blur rounded-xl px-2 py-2">
+                          <div className="flex items-center gap-2 flex-wrap">
                             <input
                               ref={fileInputRef}
                               type="file"
@@ -1187,7 +1187,7 @@ export function Profile({
                               >
                                 <Smile className="w-5 h-5" />
                               </Button>
-                              {showEmojiPicker && (
+                          {showEmojiPicker && (
                                 <div className="absolute bottom-full left-0 mb-2 z-10">
                                   <EmojiPicker onSelect={handleEmojiSelect} />
                                 </div>
@@ -1198,7 +1198,7 @@ export function Profile({
                           <Button
                             onClick={handleCreatePost}
                             disabled={!postText.trim() && selectedMedia.length === 0}
-                            className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0"
+                            className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0 w-full sm:w-auto min-h-[44px]"
                           >
                             <Send className="w-4 h-4 mr-2" />
                             Post
