@@ -9,7 +9,7 @@ const safeJson = async (req: Request) => {
 };
 
 const STORIES_PATH = "/make-server-a14c7986/stories";
-const MAX_JSON_BYTES = 1_000_000; // 1MB guard
+const MAX_JSON_BYTES = 200_000; // tighter 200KB guard to avoid large bodies
 
 const allowedOrigins = [
   "https://move-y-splash-new.vercel.app",

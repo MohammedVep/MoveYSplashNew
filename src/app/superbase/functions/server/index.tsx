@@ -2353,7 +2353,7 @@ app.post("/make-server-a14c7986/stories", async (c) => {
 
     const MAX_ITEMS = 12;
     const MAX_URL_LENGTH = 4000;
-    const MAX_TOTAL_PAYLOAD = 1_200_000;
+    const MAX_TOTAL_PAYLOAD = 300_000; // stricter cap on combined media URLs
     if (items.length > MAX_ITEMS) {
       items = items.slice(0, MAX_ITEMS);
     }
@@ -2372,6 +2372,13 @@ app.post("/make-server-a14c7986/stories", async (c) => {
 
     if (totalUrlBytes > MAX_TOTAL_PAYLOAD) {
       return c.json({ error: "Story media too large" }, 413);
+    }
+
+    const hasDataUrls = items.some(
+      (item) => typeof item.url === "string" && item.url.startsWith("data:"),
+    );
+    if (hasDataUrls) {
+      return c.json({ error: "Data URLs are not allowed. Upload media first." }, 413);
     }
 
     if (items.length === 0) {
