@@ -672,6 +672,43 @@ export function Stories() {
     [uploadStoryMediaToSupabase],
   );
 
+  const buildStoryFromPayload = useCallback(
+    (payload: PendingStoryPayload): StoryAPIResponse => {
+      const createdAt = new Date().toISOString();
+      const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+      const userSnapshot = payload.userSnapshot;
+      const fallbackAvatar = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(
+        payload.userId || 'story',
+      )}`;
+
+      return {
+        id: payload.id,
+        userId: payload.userId,
+        user: userSnapshot ?? {
+          id: payload.userId,
+          name: payload.userId,
+          username: payload.userId,
+          avatar: fallbackAvatar,
+          ablyClientId: payload.userId,
+        },
+        items: payload.items.map((item) => ({
+          id: item.id,
+          type: item.type,
+          url: item.url,
+          duration: item.duration,
+          timestamp: item.timestamp,
+        })),
+        viewers: [],
+        visibility: payload.visibility,
+        createdAt,
+        expiresAt,
+        likes: [],
+        replies: [],
+      };
+    },
+    [],
+  );
+
   const sendSupabaseNotification = useCallback(
     async (userId: string, content: string) => {
       try {
@@ -795,11 +832,11 @@ export function Stories() {
           });
 
           const data = (await response.json().catch(() => ({}))) as { story?: StoryAPIResponse; error?: string };
-          if (!response.ok || !data?.story) {
-            lastPostErrorRef.current = data?.error || `Story publish failed (attempt ${attempt})`;
-            throw new Error(lastPostErrorRef.current);
+          if (response.ok) {
+            return data?.story ?? buildStoryFromPayload(payload);
           }
-          return data.story;
+          lastPostErrorRef.current = data?.error || `Story publish failed (attempt ${attempt})`;
+          throw new Error(lastPostErrorRef.current);
         } catch (postError) {
           const isAbort = postError instanceof DOMException && postError.name === 'AbortError';
           lastPostErrorRef.current =
