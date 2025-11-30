@@ -159,6 +159,15 @@ const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
   global: { headers: { Authorization: AUTH_HEADER } },
 });
 
+const textForMetadata = (metadata: Record<string, unknown>, fallback: string = ''): string => {
+  if (metadata.image) return '[image]';
+  if (metadata.file && typeof (metadata.file as { name?: string }).name === 'string') {
+    return (metadata.file as { name?: string }).name || '[file]';
+  }
+  if (metadata.voice) return '[voice]';
+  return fallback || '...';
+};
+
 const avatarForId = (id: string) =>
   `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id || 'user')}`;
 
@@ -1441,7 +1450,7 @@ export function ChatInterface({
       const metadata = buildMetadata();
 
       await room.messages.send({
-        text: textContent,
+        text: textContent || '...',
         metadata,
       });
 
@@ -1559,7 +1568,8 @@ export function ChatInterface({
       }
 
       const metadata = buildMetadata({ image: publicUrl });
-      await room.messages.send({ text: '', metadata });
+      const text = textForMetadata(metadata, '[image]');
+      await room.messages.send({ text, metadata });
       toast.success('Photo sent! 📸');
     } catch (error) {
       console.error('Error sending image via Ably:', error);
@@ -1732,7 +1742,7 @@ export function ChatInterface({
         });
 
         await room.messages.send({
-          text: '',
+          text: textForMetadata(metadata, file.name || '[file]'),
           metadata,
         });
 
@@ -1786,7 +1796,7 @@ export function ChatInterface({
       });
 
       await room.messages.send({
-        text: '',
+        text: textForMetadata(metadata, '[voice]'),
         metadata,
       });
 
