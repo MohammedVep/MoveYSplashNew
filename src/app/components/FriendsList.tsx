@@ -1,5 +1,8 @@
 'use client';
-
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */
 import { useCallback, useEffect, useMemo, useState, type KeyboardEvent } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
@@ -118,6 +121,7 @@ export function FriendsList({ onOpenProfile, onOpenMessage }: FriendsListProps =
 
   const blockedIds = useMemo(() => currentUser?.blockedIds ?? [], [currentUser?.blockedIds]);
   const blockedSet = useMemo(() => new Set(blockedIds), [blockedIds]);
+  const friendSet = useMemo(() => new Set(currentUser?.friendIds ?? []), [currentUser?.friendIds]);
 
   const friends = useMemo(() => {
     if (!currentUser) {
@@ -185,6 +189,27 @@ export function FriendsList({ onOpenProfile, onOpenMessage }: FriendsListProps =
       .slice(0, 8);
   }, [allPeople, blockedSet, currentUser, dismissedUserIds, friendRequests]);
 
+  const directory = useMemo(() => {
+    if (!currentUser) {
+      return [];
+    }
+
+    const seen = new Set<string>();
+    return allPeople
+      .filter((user) => user.id !== currentUser.id)
+      .filter((user) => !blockedSet.has(user.id))
+      .filter((user) => !(Array.isArray(user.blockedIds) && user.blockedIds.includes(currentUser.id)))
+      .map((user) => mapUserToFriend(user, currentUser))
+      .filter((friend) => {
+        if (seen.has(friend.id)) {
+          return false;
+        }
+        seen.add(friend.id);
+        return true;
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [allPeople, blockedSet, currentUser]);
+
   const normalizedQuery = searchQuery.trim().toLowerCase();
   const matchesSearch = useCallback(
     (friend: Friend) =>
@@ -197,6 +222,7 @@ export function FriendsList({ onOpenProfile, onOpenMessage }: FriendsListProps =
   const visibleFriends = friends.filter(matchesSearch);
   const visibleRequests = friendRequests.filter(matchesSearch);
   const visibleSuggestions = suggestions.filter(matchesSearch);
+  const visibleDirectory = directory.filter(matchesSearch);
   const blockedUsers = useMemo(() => {
     if (!currentUser) {
       return [];
@@ -396,7 +422,7 @@ export function FriendsList({ onOpenProfile, onOpenMessage }: FriendsListProps =
           </div>
         </div>
 
-        <TabsList className="grid grid-cols-4 bg-white/10">
+        <TabsList className="grid grid-cols-5 bg-white/10">
           <TabsTrigger value="all">
             All Friends ({friends.length})
           </TabsTrigger>
@@ -405,6 +431,9 @@ export function FriendsList({ onOpenProfile, onOpenMessage }: FriendsListProps =
           </TabsTrigger>
           <TabsTrigger value="suggestions">
             Discover ({suggestions.length})
+          </TabsTrigger>
+          <TabsTrigger value="directory">
+            Registered ({directory.length})
           </TabsTrigger>
           <TabsTrigger value="blocked">
             Blocked ({blockedUsers.length})
@@ -645,6 +674,93 @@ export function FriendsList({ onOpenProfile, onOpenMessage }: FriendsListProps =
                   </div>
                 </Card>
               ))}
+            </div>
+          )}
+        </TabsContent>
+
+        <TabsContent value="directory">
+          {visibleDirectory.length === 0 ? (
+            <Card className="p-8 backdrop-blur-xl bg-white/5 border-white/20 text-white/70 text-center">
+              {directory.length === 0
+                ? 'No one else has registered on MoveY Splash yet.'
+                : 'No registered users match your search.'}
+            </Card>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {visibleDirectory.map((friend) => {
+                const isFriend = friendSet.has(friend.id);
+                return (
+                  <Card
+                    key={friend.id}
+                    className="p-6 backdrop-blur-xl bg-white/10 border-white/20 hover:bg-white/15 transition-colors focus:outline-none focus:ring-2 focus:ring-white/40"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => handleOpenProfile(friend.id)}
+                    onKeyDown={(event) => handleCardKeyDown(event, friend.id)}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="relative">
+                          <Avatar className="w-14 h-14 border-2 border-white/20">
+                            <AvatarImage src={friend.avatar} />
+                            <AvatarFallback>{friend.name[0]}</AvatarFallback>
+                          </Avatar>
+                          <div
+                            className={`absolute bottom-0 right-0 w-4 h-4 ${getStatusColor(
+                              friend.status,
+                            )} rounded-full border-2 border-purple-900`}
+                          />
+                        </div>
+                        <div>
+                          <div className="text-white">{friend.name}</div>
+                          <div className="text-white/60 text-sm">{friend.username}</div>
+                          <div className="text-white/40 text-xs mt-1">
+                            {friend.mutualFriends} mutual friends
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-white/60 text-right">
+                        Registered • MoveY Splash
+                      </div>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-2 mt-4">
+                      <Button
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          handleOpenMessages(friend.id);
+                        }}
+                        className="flex-1 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0"
+                      >
+                        <MessageCircle className="w-4 h-4 mr-2" />
+                        Message
+                      </Button>
+                      {!isFriend ? (
+                        <Button
+                          variant="outline"
+                          disabled={isPending(friend.id)}
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            void handleAddFriend(friend.id);
+                          }}
+                          className="flex-1 bg-white/5 border-white/20 text-white hover:bg-white/10 disabled:opacity-50"
+                        >
+                          <UserPlus className="w-4 h-4 mr-2" />
+                          Add Friend
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          disabled
+                          className="flex-1 bg-white/5 border-white/20 text-white cursor-default"
+                        >
+                          <UserCheck className="w-4 h-4 mr-2" />
+                          Friends
+                        </Button>
+                      )}
+                    </div>
+                  </Card>
+                );
+              })}
             </div>
           )}
         </TabsContent>

@@ -1,5 +1,8 @@
 'use client';
-
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';

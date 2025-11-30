@@ -1,18 +1,1 @@
-[00:00:01.037] Server  LOG      ✓ Ready in 743ms
-[00:00:10.338] Browser LOG     [Login] Attempting login for: mi@ss.t
-[00:00:10.707] Browser LOG     [Login] Server response status: 200
-[00:00:10.707] Browser LOG     [Login] ✅ Server login successful for: Mist
-[00:00:13.488] Browser DEBUG   TSS: Counted history being replaced
-[00:00:13.488] Browser DEBUG   TSS: Caught history
-[00:00:32.390] Browser DEBUG   TSS: Counted history being replaced
-[00:00:32.390] Browser DEBUG   TSS: Caught history
-[00:00:35.568] Browser DEBUG   TSS: Counted history being replaced
-[00:00:35.569] Browser DEBUG   TSS: Caught history
-[00:00:38.532] Browser ERROR   Error accessing media devices: {}
-[00:00:54.611] Browser ERROR   Error accessing media devices: {}
-[00:00:58.369] Browser DEBUG   TSS: Counted history being replaced
-[00:00:58.369] Browser DEBUG   TSS: Caught history
-[00:01:00.051] Browser DEBUG   TSS: Counted history being replaced
-[00:01:00.051] Browser DEBUG   TSS: Caught history
-[00:01:01.955] Browser DEBUG   TSS: Counted history being replaced
-[00:01:01.955] Browser DEBUG   TSS: Caught history
+[00:00:01.081] Server  LOG      ✓ Ready in 822ms

@@ -1,3 +1,7 @@
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { X } from 'lucide-react';
 import { Button } from './ui/button';

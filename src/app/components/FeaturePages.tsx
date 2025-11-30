@@ -1,5 +1,8 @@
 'use client';
-
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { 
@@ -445,11 +448,11 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
           <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-6">
             <Monitor className="w-12 h-12 text-white" />
           </div>
-          <h1 className="text-white text-6xl mb-4">8K Screen Sharing</h1>
+          <h1 className="text-white text-6xl mb-4">8K Screen Sharing - Desktop only</h1>
           <p className="text-white/70 text-xl max-w-2xl mx-auto">
             Share your screen in stunning 8K UHD quality (7680x4320) during video calls. 
             Perfect for ultra-high-res presentations, design work, tutorials, or remote collaboration 
-            with uncompromising clarity.
+            with uncompromising clarity. - Not compatible with iPad or iPhone
           </p>
         </div>
 
@@ -463,11 +466,11 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <Card className="backdrop-blur-xl bg-white/10 border-white/20 p-8">
-            <h3 className="text-white text-2xl mb-4">🖥️ 8K UHD Full Screen Sharing</h3>
+            <h3 className="text-white text-2xl mb-4">🖥️ 8K UHD Full Screen Sharing - Desktop Only</h3>
             <p className="text-white/70 mb-4">
               Share your entire screen at up to 8K UHD resolution (7680x4320). Perfect for 
               ultra-high-resolution displays, professional presentations, design reviews, 
-              and content creation workflows where every pixel matters.
+              and content creation workflows where every pixel matters. Not compatible with iPhone or iPad due to limitations on web
             </p>
             <ul className="space-y-2 text-white/60">
               <li>✓ Up to 8K UHD (7680x4320) quality</li>
@@ -475,7 +478,7 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
               <li>✓ Falls back to 5K/4K/QHD/Full HD/HD as needed</li>
               <li>✓ Smooth 30fps frame rate</li>
               <li>✓ Audio sharing included</li>
-              <li>✓ Works on mobile & desktop</li>
+              <li>✓ Works on desktop</li>
             </ul>
           </Card>
 
@@ -532,7 +535,7 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
             <div className="bg-white/10 border border-white/20 p-4 rounded-lg">
               <h3 className="text-white mb-2">📱 HD</h3>
               <p className="text-white/60 text-sm mb-2">1280 x 720 pixels</p>
-              <p className="text-white/60 text-xs">Mobile devices and lower-res screens</p>
+              <p className="text-white/60 text-xs">lower-res screens</p>
             </div>
           </div>
         </Card>
@@ -555,13 +558,13 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
         <Card className="backdrop-blur-xl bg-gradient-to-br from-green-500/30 to-teal-500/30 border-green-400/30 p-12 text-center">
           <h2 className="text-white text-4xl mb-4">Experience 8K Screen Sharing</h2>
           <p className="text-white/80 text-lg mb-6">
-            The most advanced screen sharing technology available on any social platform.
+            The most advanced screen sharing technology available on any social platform. - Desktop only
           </p>
           <Button
             onClick={() => onGetStarted?.()}
             className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 text-lg px-8 py-6"
           >
-            Start Sharing in 8K
+            Start Sharing in 8K - Desktop only
           </Button>
         </Card>
       </div>

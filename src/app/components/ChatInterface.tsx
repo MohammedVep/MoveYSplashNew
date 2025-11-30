@@ -36,7 +36,9 @@ import {
   File,
   Download,
   Play,
-  Pause
+  Pause,
+  Check,
+  X,
 } from 'lucide-react';
 import { ScrollArea } from './ui/scroll-area';
 import { toast } from 'sonner';
@@ -87,6 +89,14 @@ type VoicePlayerEntry = {
   audio: HTMLAudioElement;
   source: string;
   objectUrl?: string;
+};
+
+type FriendOption = {
+  id: string;
+  clientId: string;
+  name: string;
+  username: string;
+  avatar: string;
 };
 
 interface ChatInterfaceProps {
@@ -337,6 +347,9 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
   const [showNewChatDialog, setShowNewChatDialog] = useState(false);
   const [newChatName, setNewChatName] = useState('');
   const [newChatMembers, setNewChatMembers] = useState('');
+  const [selectedFriendIds, setSelectedFriendIds] = useState<string[]>([]);
+  const [friendSearchQuery, setFriendSearchQuery] = useState('');
+  const [friendPickerOpen, setFriendPickerOpen] = useState(false);
   const [isGroupChat, setIsGroupChat] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const documentInputRef = useRef<HTMLInputElement>(null);
@@ -352,6 +365,72 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
   useEffect(() => {
     chatsRef.current = chats;
   }, [chats]);
+
+  const registeredFriends = useMemo<FriendOption[]>(() => {
+    if (!currentUser) {
+      return [];
+    }
+
+    const unique = new Set<string>();
+    const options: FriendOption[] = [];
+
+    currentUser.friendIds.forEach((friendId) => {
+      const user = allUsers.get(friendId);
+      if (!user) {
+        return;
+      }
+
+      const canonicalId = user.id;
+      if (unique.has(canonicalId)) {
+        return;
+      }
+      unique.add(canonicalId);
+
+      options.push({
+        id: canonicalId,
+        clientId: user.ablyClientId ?? canonicalId,
+        name: user.name,
+        username: user.username.startsWith('@') ? user.username : `@${user.username}`,
+        avatar: user.avatar ?? avatarForId(user.ablyClientId ?? canonicalId),
+      });
+    });
+
+    return options.sort((a, b) => a.name.localeCompare(b.name));
+  }, [allUsers, currentUser]);
+
+  useEffect(() => {
+    setSelectedFriendIds((prev) =>
+      prev.filter((id) => registeredFriends.some((friend) => friend.id === id)),
+    );
+  }, [registeredFriends]);
+
+  const filteredRegisteredFriends = useMemo(
+    () =>
+      registeredFriends.filter((friend) => {
+        const query = friendSearchQuery.trim().toLowerCase();
+        if (!query) {
+          return true;
+        }
+        return (
+          friend.name.toLowerCase().includes(query) || friend.username.toLowerCase().includes(query)
+        );
+      }),
+    [registeredFriends, friendSearchQuery],
+  );
+
+  const selectedFriendDetails = useMemo(
+    () =>
+      selectedFriendIds
+        .map((id) => registeredFriends.find((friend) => friend.id === id))
+        .filter((friend): friend is FriendOption => Boolean(friend)),
+    [registeredFriends, selectedFriendIds],
+  );
+
+  const toggleFriendSelection = useCallback((userId: string) => {
+    setSelectedFriendIds((prev) =>
+      prev.includes(userId) ? prev.filter((id) => id !== userId) : [...prev, userId],
+    );
+  }, []);
 
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
@@ -1353,21 +1432,31 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
   };
 
   const handleCreateChat = async () => {
-    const trimmedName = newChatName.trim();
-    if (!trimmedName) {
-      toast.error('Please enter a chat name');
+    const pickedMemberIds = selectedFriendDetails.map((friend) => friend.clientId);
+    const manualMembers = newChatMembers
+      .split(',')
+      .map((member) => member.trim())
+      .filter((member) => member.length > 0);
+
+    const allMembers = Array.from(
+      new Set([ablyClientId, ...pickedMemberIds, ...manualMembers].filter(Boolean)),
+    ) as string[];
+
+    if (allMembers.length <= 1) {
+      toast.error('Pick at least one registered friend or add another member ID.');
       return;
     }
 
-    try {
-      const memberIds = newChatMembers
-        .split(',')
-        .map((member) => member.trim())
-        .filter((member) => member.length > 0);
+    const trimmedName = newChatName.trim();
+    const fallbackName =
+      selectedFriendDetails.length === 1
+        ? selectedFriendDetails[0].name
+        : selectedFriendDetails.length > 1
+        ? `${selectedFriendDetails[0].name.split(' ')[0]} + ${selectedFriendDetails.length - 1} more`
+        : 'New Chat';
+    const chatNameToUse = trimmedName || fallbackName;
 
-      const allMembers = Array.from(
-        new Set([ablyClientId, ...memberIds].filter(Boolean)),
-      ) as string[];
+    try {
       const createdBy = appUserId ?? ablyClientId;
 
       let persistedChat: Chat | null = null;
@@ -1380,7 +1469,7 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
             method: 'POST',
             headers: { ...JSON_AUTH_HEADERS },
             body: JSON.stringify({
-              name: trimmedName,
+              name: chatNameToUse,
               members: allMembers,
               isGroup: isGroupChat || allMembers.length > 2,
               createdBy,
@@ -1404,7 +1493,7 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
       }
 
       if (!persistedChat) {
-        const slugBase = trimmedName
+        const slugBase = chatNameToUse
           .toLowerCase()
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/^-+|-+$/g, '');
@@ -1413,10 +1502,14 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
           ? `${fallbackId}-${Math.random().toString(36).slice(2, 8)}`
           : fallbackId;
 
+        const primaryAvatar =
+          selectedFriendDetails[0]?.avatar ??
+          (pickedMemberIds[0] ? avatarForId(pickedMemberIds[0]) : avatarForId(roomId));
+
         persistedChat = {
           identity: roomId,
-          chatName: trimmedName,
-          avatar: avatarForId(roomId),
+          chatName: chatNameToUse,
+          avatar: primaryAvatar,
           lastMessage: '',
           lastMessageTime: '',
           members: allMembers,
@@ -1438,6 +1531,9 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
       setShowNewChatDialog(false);
       setNewChatName('');
       setNewChatMembers('');
+      setSelectedFriendIds([]);
+      setFriendSearchQuery('');
+      setFriendPickerOpen(false);
       setIsGroupChat(false);
 
       if (isDuplicate) {
@@ -1665,19 +1761,140 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
 
           {/* New Chat Dialog */}
           {showNewChatDialog && (
-            <div className="mb-4 p-4 bg-white/10 rounded-lg space-y-3">
-              <Input
-                placeholder="Chat name..."
-                value={newChatName}
-                onChange={(e) => setNewChatName(e.target.value)}
-                className="bg-white/5 border-white/20 text-white placeholder:text-white/50"
-              />
-              <Input
-                placeholder="Member IDs (comma separated)..."
-                value={newChatMembers}
-                onChange={(e) => setNewChatMembers(e.target.value)}
-                className="bg-white/5 border-white/20 text-white placeholder:text-white/50"
-              />
+            <div className="mb-4 p-4 bg-white/10 rounded-lg space-y-4">
+              <div className="space-y-2">
+                <Input
+                  placeholder="Chat name (optional)..."
+                  value={newChatName}
+                  onChange={(e) => setNewChatName(e.target.value)}
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/50"
+                />
+                <p className="text-xs text-white/60">
+                  Leave blank and we will use your registered friend selections to name the chat.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-white/70">Pick friends registered on MoveY Splash</p>
+                  <span className="text-xs text-white/50">
+                    {registeredFriends.length} available
+                  </span>
+                </div>
+                <Popover open={friendPickerOpen} onOpenChange={setFriendPickerOpen}>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full bg-white/5 border-white/20 text-white justify-between"
+                    >
+                      <span className="text-sm">
+                        {selectedFriendIds.length > 0
+                          ? `Selected ${selectedFriendIds.length} friend${selectedFriendIds.length > 1 ? 's' : ''}`
+                          : 'Search registered friends'}
+                      </span>
+                      <Search className="w-4 h-4 opacity-70" />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-full max-w-sm p-0 backdrop-blur-xl bg-white/10 border-white/20">
+                    <div className="p-3 space-y-3">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
+                        <Input
+                          autoFocus
+                          value={friendSearchQuery}
+                          onChange={(e) => setFriendSearchQuery(e.target.value)}
+                          placeholder="Search registered friends..."
+                          className="pl-9 bg-white/5 border-white/20 text-white placeholder:text-white/50"
+                        />
+                      </div>
+                      <ScrollArea className="max-h-64">
+                        <div className="space-y-2 pr-1">
+                          {filteredRegisteredFriends.length === 0 ? (
+                            <div className="text-white/60 text-sm px-2 py-3">
+                              No registered friends found.
+                            </div>
+                          ) : (
+                            filteredRegisteredFriends.map((friend) => {
+                              const isSelected = selectedFriendIds.includes(friend.id);
+                              return (
+                                <button
+                                  key={friend.id}
+                                  onClick={() => toggleFriendSelection(friend.id)}
+                                  className={`w-full flex items-center justify-between p-2 rounded-lg transition-colors ${
+                                    isSelected ? 'bg-white/15' : 'hover:bg-white/10'
+                                  }`}
+                                >
+                                  <div className="flex items-center gap-3">
+                                    <Avatar className="w-10 h-10 border-2 border-white/10">
+                                      <AvatarImage src={friend.avatar} />
+                                      <AvatarFallback>{friend.name[0]}</AvatarFallback>
+                                    </Avatar>
+                                    <div className="text-left">
+                                      <div className="text-white">{friend.name}</div>
+                                      <div className="text-white/60 text-xs">{friend.username}</div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                                      isSelected
+                                        ? 'bg-green-400 text-black'
+                                        : 'border border-white/30 text-white/70'
+                                    }`}
+                                  >
+                                    {isSelected ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                                  </div>
+                                </button>
+                              );
+                            })
+                          )}
+                        </div>
+                      </ScrollArea>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+
+                {selectedFriendDetails.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {selectedFriendDetails.map((friend) => (
+                      <div
+                        key={friend.id}
+                        className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1"
+                      >
+                        <Avatar className="w-6 h-6">
+                          <AvatarImage src={friend.avatar} />
+                          <AvatarFallback>{friend.name[0]}</AvatarFallback>
+                        </Avatar>
+                        <span className="text-white text-sm">{friend.name}</span>
+                        <button
+                          onClick={() => toggleFriendSelection(friend.id)}
+                          className="text-white/60 hover:text-white"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {registeredFriends.length === 0 && (
+                  <p className="text-xs text-white/60">
+                    No friends have registered yet. Add friends from the Friends tab first.
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <Input
+                  placeholder="Add by user ID (optional)..."
+                  value={newChatMembers}
+                  onChange={(e) => setNewChatMembers(e.target.value)}
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/50"
+                />
+                <p className="text-xs text-white/60">
+                  Use this if you need to invite someone who is registered but not in your friends list yet.
+                </p>
+              </div>
+
               <div className="flex gap-2">
                 <Button
                   size="sm"
@@ -1689,7 +1906,13 @@ export function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, f
                 <Button
                   size="sm"
                   variant="ghost"
-                  onClick={() => setShowNewChatDialog(false)}
+                  onClick={() => {
+                    setShowNewChatDialog(false);
+                    setSelectedFriendIds([]);
+                    setFriendSearchQuery('');
+                    setNewChatName('');
+                    setNewChatMembers('');
+                  }}
                   className="text-white/70 hover:text-white hover:bg-white/10"
                 >
                   Cancel

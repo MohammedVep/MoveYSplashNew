@@ -4,7 +4,10 @@ import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
 import { cn } from "./utils";
-
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */
 function Avatar({
   className,
   ...props

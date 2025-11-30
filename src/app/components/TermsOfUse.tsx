@@ -1,3 +1,7 @@
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { ArrowLeft, FileText, AlertCircle, Scale, Ban, Shield } from 'lucide-react';
@@ -34,7 +38,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
           </div>
           <h1 className="text-white text-5xl mb-4">Terms of Use</h1>
           <p className="text-white/70">
-            Last Updated: October 17, 2025
+            Last Updated: November 30, 2025
           </p>
         </div>
 
