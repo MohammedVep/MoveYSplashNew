@@ -1,11 +1,44 @@
 import app from "../../../src/app/superbase/functions/server/index.tsx";
 
-const safeJson = async (req: Request) => {
-  try {
-    return { ok: true, body: await req.json() };
-  } catch {
-    return { ok: false, body: null };
+const readJsonWithLimit = async (req: Request, limit: number) => {
+  const reader = req.body?.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+
+  if (!reader) {
+    return { ok: false, body: null, error: "No body" as const };
   }
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    if (value) {
+      total += value.byteLength;
+      if (total > limit) {
+        reader.cancel();
+        return { ok: false, body: null, error: "too_large" as const };
+      }
+      chunks.push(value);
+    }
+  }
+
+  try {
+    const text = new TextDecoder().decode(concatUint8(chunks, total));
+    const parsed = JSON.parse(text);
+    return { ok: true, body: parsed };
+  } catch {
+    return { ok: false, body: null, error: "invalid_json" as const };
+  }
+};
+
+const concatUint8 = (chunks: Uint8Array[], total: number) => {
+  const merged = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    merged.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return merged;
 };
 
 const STORIES_PATH = "/make-server-a14c7986/stories";
@@ -42,18 +75,18 @@ Deno.serve(async (req) => {
 
     // Lightweight guard for stories
     if (req.method === "POST" && path === STORIES_PATH) {
-      const len = Number(req.headers.get("content-length") ?? "0");
-      if (Number.isFinite(len) && len > MAX_JSON_BYTES) {
-        return new Response(JSON.stringify({ error: "Payload too large" }), {
-          status: 413,
-          headers: { "content-type": "application/json", ...cors },
-        });
-      }
-
-      const parsed = await safeJson(req);
+      const parsed = await readJsonWithLimit(req, MAX_JSON_BYTES);
       if (!parsed.ok) {
-        return new Response(JSON.stringify({ error: "Invalid JSON" }), {
-          status: 400,
+        const status =
+          parsed.error === "too_large" ? 413 : parsed.error === "invalid_json" ? 400 : 400;
+        const message =
+          parsed.error === "too_large"
+            ? "Payload too large"
+            : parsed.error === "invalid_json"
+            ? "Invalid JSON"
+            : "Invalid request";
+        return new Response(JSON.stringify({ error: message }), {
+          status,
           headers: { "content-type": "application/json", ...cors },
         });
       }
