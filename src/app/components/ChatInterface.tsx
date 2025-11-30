@@ -107,6 +107,7 @@ interface Message {
   isSnapStyle?: boolean;
   expiresIn?: number;
   isStarred?: boolean;
+  localOnly?: boolean;
 }
 
 interface Chat {
@@ -947,6 +948,23 @@ export function ChatInterface({
 
       const mapped = mapAblyMessage(event.message, roomId);
 
+      setMessages((prev) => {
+        const withoutLocalDuplicates = prev.filter(
+          (msg) =>
+            !(
+              msg.localOnly &&
+              msg.senderId === mapped.senderId &&
+              msg.content === mapped.content
+            ),
+        );
+        const others = withoutLocalDuplicates.filter((message) => message.id !== mapped.id);
+        const next = [...others, mapped];
+        next.sort(
+          (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
+        );
+        return next;
+      });
+
       if (mapped.isSnapStyle && mapped.expiresIn) {
         const existingTimeout = snapTimeoutsRef.current.get(mapped.id);
         if (existingTimeout) {
@@ -968,15 +986,6 @@ export function ChatInterface({
         }, mapped.expiresIn * 1000);
         snapTimeoutsRef.current.set(mapped.id, timeout);
       }
-
-      setMessages((prev) => {
-        const others = prev.filter((message) => message.id !== mapped.id);
-        const next = [...others, mapped];
-        next.sort(
-          (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
-        );
-        return next;
-      });
 
       const summary = summarizeMessage(mapped);
       const lastMessageText = summary
@@ -1476,6 +1485,7 @@ export function ChatInterface({
         timestamp: new Date().toISOString(),
         isSnapStyle: isSnapMode,
         expiresIn: isSnapMode ? snapTimer : undefined,
+        localOnly: true,
       };
 
       setMessages((prev) => [...prev, optimisticMessage]);
@@ -1490,7 +1500,7 @@ export function ChatInterface({
             : chat,
         ),
       );
-      void persistMessage(optimisticMessage, { force: true });
+      // Avoid persisting the local-only optimistic message; it will be replaced by the real event.
 
       setNewMessage('');
 
