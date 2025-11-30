@@ -13,6 +13,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -43,6 +44,7 @@
     "node_modules",
     "vitest.config.ts",
     "vitest.setup.ts",
-    "src/app/components/__tests__"
+    "src/app/components/__tests__",
+    "supabase/functions"
   ]
 }

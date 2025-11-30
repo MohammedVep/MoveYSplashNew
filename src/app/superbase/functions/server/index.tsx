@@ -6,7 +6,7 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import type { ContentfulStatusCode } from "hono/utils/http-status";
-import * as kv from "./kv_store";
+import * as kv from "./kv_store.ts";
 const app = new Hono();
 
 type JsonRecord = Record<string, unknown>;
