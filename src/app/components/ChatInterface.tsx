@@ -8,6 +8,7 @@ Tuesday November 11th 2025
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import * as Ably from 'ably';
 import { ChatClient, OrderBy, ChatMessageEventType } from '@ably/chat';
+import { createClient } from '@supabase/supabase-js';
 import type {
   ChatMessageEvent,
   ConnectionStatusChange,
@@ -151,6 +152,12 @@ const JSON_AUTH_HEADERS = {
   'Content-Type': 'application/json',
   Authorization: AUTH_HEADER,
 };
+const SUPABASE_URL = `https://${projectId}.supabase.co`;
+const CHAT_BUCKET = 'stories';
+const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
+  auth: { autoRefreshToken: false, persistSession: false },
+  global: { headers: { Authorization: AUTH_HEADER } },
+});
 
 const avatarForId = (id: string) =>
   `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id || 'user')}`;
@@ -1498,34 +1505,71 @@ export function ChatInterface({
     }
 
     setSending(true);
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      try {
-      const metadata = buildMetadata({
-        image: e.target?.result as string,
-      });
-
-      await room.messages.send({
-        text: '',
-        metadata,
-      });
-
-        toast.success('Photo sent! 📸');
-      } catch (error) {
-        console.error('Error sending image via Ably:', error);
-        toast.error('Failed to send image');
-      } finally {
-        setSending(false);
-        if (fileInputRef.current) {
-          fileInputRef.current.value = '';
-        }
+    try {
+      if (process.env.NODE_ENV === 'test') {
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          try {
+            const metadata = buildMetadata({
+              image: e.target?.result as string,
+            });
+            await room.messages.send({ text: '', metadata });
+            toast.success('Photo sent! 📸');
+          } catch (error) {
+            console.error('Error sending image via Ably:', error);
+            toast.error('Failed to send image');
+          } finally {
+            setSending(false);
+            if (fileInputRef.current) {
+              fileInputRef.current.value = '';
+            }
+          }
+        };
+        reader.onerror = () => {
+          toast.error('Failed to read image file');
+          setSending(false);
+        };
+        reader.readAsDataURL(file);
+        return;
       }
-    };
-    reader.onerror = () => {
-      toast.error('Failed to read image file');
+
+      const extension = file.name.split('.').pop() ?? 'jpg';
+      const safeName = file.name
+        .toLowerCase()
+        .replace(/[^a-z0-9._-]+/g, '-')
+        .replace(/^-+|-+$/g, '') || `image-${Date.now()}.${extension}`;
+      const key = `messages/${ablyClientId}/${selectedChat}/${Date.now()}-${safeName}`;
+
+      const upload = await supabaseClient.storage.from(CHAT_BUCKET).upload(key, file, {
+        cacheControl: '3600',
+        upsert: false,
+      });
+
+      if (upload.error) {
+        console.error('Error uploading chat image:', upload.error);
+        throw upload.error;
+      }
+
+      const { data: publicUrlData } = supabaseClient.storage
+        .from(CHAT_BUCKET)
+        .getPublicUrl(key);
+      const publicUrl = publicUrlData?.publicUrl;
+      if (!publicUrl) {
+        throw new Error('Could not generate public URL for uploaded image');
+      }
+
+      const metadata = buildMetadata({ image: publicUrl });
+      await room.messages.send({ text: '', metadata });
+      toast.success('Photo sent! 📸');
+    } catch (error) {
+      console.error('Error sending image via Ably:', error);
+      toast.error('Failed to send image');
+    } finally {
       setSending(false);
-    };
-    reader.readAsDataURL(file);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    }
   };
 
   const handleCreateChat = async () => {

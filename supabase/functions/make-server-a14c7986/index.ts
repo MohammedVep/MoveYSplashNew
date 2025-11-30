@@ -64,7 +64,8 @@ const buildCorsHeaders = (origin: string | null) => {
   return {
     "Access-Control-Allow-Origin": allowOrigin,
     "Access-Control-Allow-Headers": "authorization, content-type, x-client-info, apikey",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+    "Access-Control-Max-Age": "86400",
   };
 };
 
@@ -77,7 +78,7 @@ Deno.serve(async (req) => {
     const path = url.pathname.replace(/^\/functions\/v1/, "");
 
     if (req.method === "OPTIONS") {
-      return new Response("ok", { status: 204, headers: cors });
+      return new Response(null, { status: 204, headers: cors });
     }
 
     // Lightweight guard for stories
