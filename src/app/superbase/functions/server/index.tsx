@@ -2353,6 +2353,7 @@ app.post("/make-server-a14c7986/stories", async (c) => {
 
     const MAX_ITEMS = 12;
     const MAX_URL_LENGTH = 4000;
+    const MAX_TOTAL_PAYLOAD = 1_200_000;
     if (items.length > MAX_ITEMS) {
       items = items.slice(0, MAX_ITEMS);
     }
@@ -2363,6 +2364,15 @@ app.post("/make-server-a14c7986/stories", async (c) => {
           ? item.url.slice(0, MAX_URL_LENGTH)
           : item.url,
     }));
+
+    const totalUrlBytes = items.reduce((sum, item) => {
+      const url = typeof item.url === "string" ? item.url : "";
+      return sum + url.length;
+    }, 0);
+
+    if (totalUrlBytes > MAX_TOTAL_PAYLOAD) {
+      return c.json({ error: "Story media too large" }, 413);
+    }
 
     if (items.length === 0) {
       items = [
