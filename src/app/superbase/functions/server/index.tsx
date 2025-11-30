@@ -2248,7 +2248,7 @@ app.post("/make-server-a14c7986/shares", async (c) => {
 // ========== STORY ENDPOINTS ==========
 
 const STORY_MAX_ITEMS = 12;
-const STORY_MAX_MEDIA_TOTAL_BYTES = 300 * 1024;
+const STORY_MAX_MEDIA_TOTAL_BYTES = 2 * 1024 * 1024; // 2MB total media cap per story
 const STORY_STORAGE_HOST = "opmvuhlheenygwbqwljk.supabase.co";
 
 const isSupabaseStorageUrl = (u: string): boolean => {
