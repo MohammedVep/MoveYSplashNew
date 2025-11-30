@@ -258,6 +258,72 @@ const normalizeServerUser = (user: ServerUser): UserData => {
   };
 };
 
+const coerceUserData = (user?: Partial<UserData> | null): UserData | null => {
+  if (!user) {
+    return null;
+  }
+  const joinedAt =
+    user.joinedAt instanceof Date
+      ? user.joinedAt
+      : user.joinedAt
+      ? new Date(user.joinedAt)
+      : new Date();
+
+  return {
+    id: user.id ?? user.ablyClientId ?? 'user',
+    ablyClientId: user.ablyClientId ?? user.id ?? 'user',
+    name: user.name ?? user.username ?? 'User',
+    username: user.username ?? user.id ?? 'user',
+    email: user.email ?? '',
+    avatar: user.avatar ?? '',
+    bio: user.bio ?? '',
+    location: user.location ?? '',
+    website: user.website ?? '',
+    joinedAt,
+    friendIds: Array.isArray(user.friendIds) ? user.friendIds : [],
+    blockedIds: Array.isArray(user.blockedIds) ? user.blockedIds : [],
+    savedPostIds: Array.isArray(user.savedPostIds) ? user.savedPostIds : [],
+    posts: Array.isArray(user.posts) ? user.posts : [],
+    achievements: Array.isArray(user.achievements) ? user.achievements : [],
+    settings: mergeWithDefaultSettings(user.settings),
+  };
+};
+
+const normalizeUserMap = (input?: Map<string, UserData> | UserData[] | null): Map<string, UserData> => {
+  const map = new Map<string, UserData>();
+  if (!input) {
+    return map;
+  }
+
+  if (input instanceof Map) {
+    input.forEach((user, key) => {
+      const normalized = coerceUserData(user);
+      if (normalized) {
+        map.set(key ?? normalized.id, normalized);
+        map.set(normalized.id, normalized);
+        if (normalized.ablyClientId && normalized.ablyClientId !== normalized.id) {
+          map.set(normalized.ablyClientId, normalized);
+        }
+      }
+    });
+    return map;
+  }
+
+  if (Array.isArray(input)) {
+    input.forEach((user) => {
+      const normalized = coerceUserData(user);
+      if (normalized) {
+        map.set(normalized.id, normalized);
+        if (normalized.ablyClientId && normalized.ablyClientId !== normalized.id) {
+          map.set(normalized.ablyClientId, normalized);
+        }
+      }
+    });
+  }
+
+  return map;
+};
+
 const mergeServerUser = (server: ServerUser, fallback?: UserData | null): UserData => {
   const normalized = normalizeServerUser(server);
   return {
@@ -314,15 +380,37 @@ const normalizeComment = (value: unknown, fallbackPostOwnerId: string): PostComm
   };
 };
 
-export function UserProvider({ children }: { children: ReactNode }) {
-  const [currentUser, setCurrentUser] = useState<UserData | null>(null);
-  const [allUsers, setAllUsers] = useState<Map<string, UserData>>(new Map());
+type UserProviderProps = {
+  children: ReactNode;
+  initialUser?: UserData | Partial<UserData> | null;
+  initialAllUsers?: Map<string, UserData> | UserData[];
+};
+
+export function UserProvider({ children, initialUser = null, initialAllUsers }: UserProviderProps) {
+  const normalizedInitialUser = coerceUserData(initialUser);
+  const initialUsersMap = normalizeUserMap(initialAllUsers);
+  if (normalizedInitialUser) {
+    initialUsersMap.set(normalizedInitialUser.id, normalizedInitialUser);
+    if (
+      normalizedInitialUser.ablyClientId &&
+      normalizedInitialUser.ablyClientId !== normalizedInitialUser.id
+    ) {
+      initialUsersMap.set(normalizedInitialUser.ablyClientId, normalizedInitialUser);
+    }
+  }
+
+  const [currentUser, setCurrentUser] = useState<UserData | null>(normalizedInitialUser);
+  const [allUsers, setAllUsers] = useState<Map<string, UserData>>(initialUsersMap);
   const [profileUserId, setProfileUserId] = useState<string | null>(null);
   const [profileUser, setProfileUser] = useState<UserData | null>(null);
   const { setTheme } = useTheme();
 
   // Load user directory from Supabase so all profile data reflects persisted state
   useEffect(() => {
+    if (process.env.NODE_ENV === 'test' && (initialAllUsers || initialUser)) {
+      return;
+    }
+
     const fetchUsers = async () => {
       try {
         const response = await fetch(`${API_BASE_URL}/users`, {
@@ -336,7 +424,11 @@ export function UserProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        const { users: serverUsers } = await response.json() as { users: ServerUser[] };
+        const payload = (await response.json().catch(() => ({}))) as { users?: ServerUser[] };
+        const serverUsers = Array.isArray(payload?.users) ? payload.users : [];
+        if (serverUsers.length === 0) {
+          return;
+        }
 
         setAllUsers(prev => {
           const updated = new Map(prev);
@@ -366,8 +458,8 @@ export function UserProvider({ children }: { children: ReactNode }) {
       }
     };
 
-    fetchUsers();
-  }, []);
+    void fetchUsers();
+  }, [initialAllUsers, initialUser]);
 
   useEffect(() => {
     const preference = normalizeThemePreference(currentUser?.settings?.theme ?? defaultSettings.theme);
@@ -409,40 +501,44 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
   // Calculate achievements based on merit
   const calculateAchievements = useCallback((user: UserData): Achievement[] => {
+    const safeJoinedAt =
+      user.joinedAt instanceof Date ? user.joinedAt : new Date(user.joinedAt ?? new Date());
+    const safePosts = Array.isArray(user.posts) ? user.posts : [];
     const achievements: Achievement[] = [];
     const now = new Date();
-    const accountAge = now.getTime() - user.joinedAt.getTime();
+    const accountAge = now.getTime() - safeJoinedAt.getTime();
     const daysOld = accountAge / (1000 * 60 * 60 * 24);
 
     // Early Adopter - joined within first 3 months
-    const firstUsers = Array.from(allUsers.values()).sort((a, b) => 
-      a.joinedAt.getTime() - b.joinedAt.getTime()
+    const firstUsers = Array.from(allUsers.values()).sort((a, b) =>
+      (a.joinedAt instanceof Date ? a.joinedAt : new Date(a.joinedAt ?? new Date())).getTime() -
+      (b.joinedAt instanceof Date ? b.joinedAt : new Date(b.joinedAt ?? new Date())).getTime()
     ).slice(0, 100);
     if (firstUsers.some(u => u.id === user.id)) {
       achievements.push({
         id: 'early-adopter',
         name: 'Early Adopter',
         description: 'One of the first 100 users on MoveSplash',
-        earnedAt: user.joinedAt,
+        earnedAt: safeJoinedAt,
         icon: 'Award',
         color: 'from-purple-500 to-pink-500'
       });
     }
 
     // Top Contributor - 50+ posts
-    if (user.posts.length >= 50) {
+    if (safePosts.length >= 50) {
       achievements.push({
         id: 'top-contributor',
         name: 'Top Contributor',
         description: 'Created over 50 posts',
-        earnedAt: user.posts[49]?.timestamp || now,
+        earnedAt: safePosts[49]?.timestamp || now,
         icon: 'TrendingUp',
         color: 'from-orange-500 to-yellow-500'
       });
     }
 
     // Story Master - 30+ posts with media
-    const postsWithMedia = user.posts.filter(p => p.media && p.media.length > 0);
+    const postsWithMedia = safePosts.filter(p => p.media && p.media.length > 0);
     if (postsWithMedia.length >= 30) {
       achievements.push({
         id: 'story-master',
@@ -467,7 +563,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
     }
 
     // Rising Star - 1000+ total likes
-    const totalLikes = user.posts.reduce((sum, post) => sum + post.likes, 0);
+    const totalLikes = safePosts.reduce((sum, post) => sum + post.likes, 0);
     if (totalLikes >= 1000) {
       achievements.push({
         id: 'rising-star',
@@ -480,7 +576,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
     }
 
     // Conversation Starter - 500+ total comments
-    const totalComments = user.posts.reduce((sum, post) => sum + post.comments, 0);
+    const totalComments = safePosts.reduce((sum, post) => sum + post.comments, 0);
     if (totalComments >= 500) {
       achievements.push({
         id: 'conversation-starter',
@@ -493,12 +589,12 @@ export function UserProvider({ children }: { children: ReactNode }) {
     }
 
     // Viral Creator - any post with 500+ likes
-    if (user.posts.some(p => p.likes >= 500)) {
+    if (safePosts.some(p => p.likes >= 500)) {
       achievements.push({
         id: 'viral-creator',
         name: 'Viral Creator',
         description: 'Created a post with 500+ likes',
-        earnedAt: user.posts.find(p => p.likes >= 500)?.timestamp || now,
+        earnedAt: safePosts.find(p => p.likes >= 500)?.timestamp || now,
         icon: 'Zap',
         color: 'from-pink-500 to-purple-500'
       });

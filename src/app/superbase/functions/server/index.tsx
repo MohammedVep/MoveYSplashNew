@@ -1171,25 +1171,43 @@ app.post("/make-server-a14c7986/messages", async (c) => {
       return content || "";
     };
 
-    // Update chat's last message
-    const chatKey = `chat:${chatId}`;
-    const chat = await kv.get(chatKey);
-    const chatRecord = isRecord(chat) ? chat : {};
-    if (isRecord(chatRecord)) {
+    // Update chat's last message for all members
+    const senderChatKey = `chats:${senderId}:${chatId}`;
+    let chat = await kv.get<JsonRecord>(senderChatKey);
+
+    if (!isRecord(chat)) {
+      console.warn(`[POST /messages] Could not find sender's chat record, trying generic key for chatId: ${chatId}`);
+      const genericChatKey = `chat:${chatId}`;
+      chat = await kv.get<JsonRecord>(genericChatKey);
+    }
+
+    const chatRecord = isRecord(chat) ? chat : null;
+
+    if (chatRecord) {
       const updatedChat = {
         ...chatRecord,
         lastMessage: resolveLastMessageText(),
         lastMessageTime: timestamp,
       };
 
-      await kv.set(chatKey, updatedChat);
+      const members = uniqueStringArray(chatRecord.members);
+      if (members.length > 0) {
+        const updatePromises: Promise<void>[] = [];
+        
+        // Update the generic chat object for consistency
+        updatePromises.push(kv.set(`chat:${chatId}`, updatedChat));
 
-      const members = toStringArray(chatRecord.members);
-      await Promise.all(
-        members
-          .filter((memberId: unknown): memberId is string => typeof memberId === "string" && memberId.length > 0)
-          .map((memberId) => kv.set(`chats:${memberId}:${chatId}`, updatedChat)),
-      );
+        // Update the chat object for each member
+        for (const memberId of members) {
+          updatePromises.push(kv.set(`chats:${memberId}:${chatId}`, updatedChat));
+        }
+        
+        await Promise.all(updatePromises);
+      } else {
+        console.warn(`[POST /messages] No members found for chat ${chatId}, cannot update last message.`);
+      }
+    } else {
+      console.warn(`[POST /messages] Could not find chat record for chat ${chatId}, cannot update last message.`);
     }
 
     return c.json({ message, success: true });
