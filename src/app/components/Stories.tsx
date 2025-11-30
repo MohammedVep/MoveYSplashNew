@@ -41,7 +41,7 @@ const SUPABASE_URL = `https://${projectId}.supabase.co`;
 const STORY_BUCKET = 'stories';
 const STORAGE_HOST = `${projectId}.supabase.co`;
 const STORAGE_PREFIX = `https://${STORAGE_HOST}/storage/v1/object/`;
-const MAX_MEDIA_BYTES = 2 * 1024 * 1024; // 2MB per media item cap
+const MAX_MEDIA_BYTES = 10 * 1024 * 1024; // 10MB per media item cap
 const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
   auth: { autoRefreshToken: false, persistSession: false },
   global: { headers: AUTH_HEADERS },
