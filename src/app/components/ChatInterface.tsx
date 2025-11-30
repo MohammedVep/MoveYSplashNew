@@ -168,7 +168,35 @@ const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
       return (metadata.file as { name?: string }).name || '[file]';
     }
     if (metadata.voice) return '[voice]';
-    return fallback || '...';
+  return fallback || '...';
+};
+
+  const messageSignature = (message: Message) => {
+    if (message.clientMessageId && message.clientMessageId.trim().length > 0) {
+      return `cid:${message.clientMessageId}`;
+    }
+    const ts = Math.floor(new Date(message.timestamp).getTime() / 1000);
+    return [
+      'sig',
+      message.senderId ?? '',
+      message.content ?? '',
+      message.image ?? '',
+      message.file?.url ?? '',
+      message.voice?.url ?? '',
+      ts,
+    ].join('|');
+  };
+
+  const dedupeMessages = (messagesToDedupe: Message[]): Message[] => {
+    const seen = new Set<string>();
+    const result: Message[] = [];
+    for (const msg of messagesToDedupe) {
+      const sig = messageSignature(msg);
+      if (seen.has(sig)) continue;
+      seen.add(sig);
+      result.push(msg);
+    }
+    return result;
   };
 
   const createClientMessageId = () =>
@@ -958,27 +986,11 @@ export function ChatInterface({
       const mapped = mapAblyMessage(event.message, roomId);
 
       setMessages((prev) => {
-        const nowTs = new Date(mapped.timestamp).getTime();
-        const withoutLocalDuplicates = prev.filter((msg) => {
-          const sameClient =
-            mapped.clientMessageId &&
-            msg.clientMessageId &&
-            msg.clientMessageId === mapped.clientMessageId;
-          const sameContentAndSender =
-            msg.senderId === mapped.senderId &&
-            msg.content === mapped.content &&
-            Math.abs(new Date(msg.timestamp).getTime() - nowTs) < 3000;
-          if (sameClient || sameContentAndSender) {
-            return false;
-          }
-          return true;
-        });
-        const others = withoutLocalDuplicates.filter((message) => message.id !== mapped.id);
-        const next = [...others, mapped];
+        const next = [...prev, mapped];
         next.sort(
           (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
         );
-        return next;
+        return dedupeMessages(next);
       });
 
       if (mapped.isSnapStyle && mapped.expiresIn) {
@@ -1188,8 +1200,10 @@ export function ChatInterface({
             }
           });
 
-        const combinedMessages = Array.from(storedById.values()).sort(
-          (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
+        const combinedMessages = dedupeMessages(
+          Array.from(storedById.values()).sort(
+            (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
+          ),
         );
 
         persistedMessageIdsRef.current = new Set(storedById.keys());
@@ -1506,7 +1520,7 @@ export function ChatInterface({
         clientMessageId,
       };
 
-      setMessages((prev) => [...prev, optimisticMessage]);
+      setMessages((prev) => dedupeMessages([...prev, optimisticMessage]));
       setChats((prevChats) =>
         prevChats.map((chat) =>
           chat.identity === selectedChat
