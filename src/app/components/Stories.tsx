@@ -39,6 +39,9 @@ const AUTH_HEADERS = { Authorization: `Bearer ${publicAnonKey}` };
 const JSON_HEADERS = { ...AUTH_HEADERS, 'Content-Type': 'application/json' };
 const SUPABASE_URL = `https://${projectId}.supabase.co`;
 const STORY_BUCKET = 'stories';
+const STORAGE_HOST = `${projectId}.supabase.co`;
+const STORAGE_PREFIX = `https://${STORAGE_HOST}/storage/v1/object/`;
+const MAX_MEDIA_BYTES = 300 * 1024;
 const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
   auth: { autoRefreshToken: false, persistSession: false },
   global: { headers: AUTH_HEADERS },
@@ -540,13 +543,42 @@ export function Stories() {
       .slice(0, 80) || safeId();
 
   const uploadStoryMediaToSupabase = useCallback(
-    async (item: { id: string; type: 'image' | 'video'; url: string }, userId: string, storyId?: string) => {
-      if (!item.url.startsWith('data:')) {
+    async (
+      item: { id: string; type: 'image' | 'video'; url: string },
+      userId: string,
+      storyId?: string,
+    ) => {
+      if (item.url.startsWith('http') && item.url.startsWith(STORAGE_PREFIX)) {
         return item;
       }
 
       const attemptUpload = async (attempt: number) => {
-        const { blob, mimeType } = dataUrlToBlob(item.url);
+        let blob: Blob;
+        let mimeType = 'application/octet-stream';
+
+        if (item.url.startsWith('data:')) {
+          const parsed = dataUrlToBlob(item.url);
+          blob = parsed.blob;
+          mimeType = parsed.mimeType;
+        } else if (item.url.startsWith('http')) {
+          const response = await fetch(item.url);
+          if (!response.ok) {
+            throw new Error(`Unable to fetch media (status ${response.status})`);
+          }
+          const len = Number(response.headers.get('content-length') ?? 0);
+          if (Number.isFinite(len) && len > MAX_MEDIA_BYTES) {
+            throw new Error('Media too large for upload');
+          }
+          blob = await response.blob();
+          const size = blob.size;
+          if (size > MAX_MEDIA_BYTES) {
+            throw new Error('Media too large for upload');
+          }
+          mimeType = blob.type || mimeType;
+        } else {
+          throw new Error('Invalid media URL; upload to storage first.');
+        }
+
         const extension = pickExtension(mimeType);
         const baseName = sanitizeKey(item.id || `media-${safeId()}`);
         const objectPath = `${sanitizeKey(userId || 'user')}/${sanitizeKey(storyId || 'story')}/${baseName}.${extension}`;
@@ -562,6 +594,9 @@ export function Stories() {
 
         const { data } = supabaseClient.storage.from(STORY_BUCKET).getPublicUrl(objectPath);
         const publicUrl = data?.publicUrl || item.url;
+        if (!publicUrl.startsWith(STORAGE_PREFIX)) {
+          throw new Error('Storage URL not returned; check bucket permissions.');
+        }
         return { ...item, url: publicUrl };
       };
 
