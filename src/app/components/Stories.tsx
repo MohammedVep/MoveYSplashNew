@@ -5,6 +5,7 @@
   */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { ChangeEvent, DragEvent } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Dialog, DialogContent } from './ui/dialog';
@@ -36,6 +37,12 @@ import { toast } from 'sonner';
 const API_BASE_URL = `https://${projectId}.supabase.co/functions/v1/make-server-a14c7986`;
 const AUTH_HEADERS = { Authorization: `Bearer ${publicAnonKey}` };
 const JSON_HEADERS = { ...AUTH_HEADERS, 'Content-Type': 'application/json' };
+const SUPABASE_URL = `https://${projectId}.supabase.co`;
+const STORY_BUCKET = 'stories';
+const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
+  auth: { autoRefreshToken: false, persistSession: false },
+  global: { headers: AUTH_HEADERS },
+});
 const STORY_SKELETON_COUNT = 5;
 const MAX_STORY_ITEMS = 5;
 const DEFAULT_IMAGE_DURATION = 6;
@@ -55,6 +62,46 @@ const blobToDataUrl = (blob: Blob): Promise<string> =>
     reader.onerror = reject;
     reader.readAsDataURL(blob);
   });
+
+const dataUrlToBlob = (dataUrl: string): { blob: Blob; mimeType: string } => {
+  const [header, payload] = dataUrl.split(',');
+  if (!payload) {
+    throw new Error('Invalid data URL');
+  }
+  const match = header.match(/^data:(.*?)(;base64)?$/);
+  const mimeType = match?.[1] ?? 'application/octet-stream';
+  const binary = atob(payload);
+  const len = binary.length;
+  const array = new Uint8Array(len);
+  for (let i = 0; i < len; i += 1) {
+    array[i] = binary.charCodeAt(i);
+  }
+  return { blob: new Blob([array], { type: mimeType }), mimeType };
+};
+
+const pickExtension = (mimeType: string): string => {
+  if (!mimeType) {
+    return 'bin';
+  }
+  const map: Record<string, string> = {
+    'image/webp': 'webp',
+    'image/png': 'png',
+    'image/jpeg': 'jpg',
+    'video/webm': 'webm',
+    'video/mp4': 'mp4',
+    'video/quicktime': 'mov',
+  };
+  if (map[mimeType]) {
+    return map[mimeType];
+  }
+  const [, ext] = mimeType.split('/');
+  return ext && ext.length <= 5 ? ext : 'bin';
+};
+
+const safeId = () =>
+  typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+    ? crypto.randomUUID()
+    : Math.random().toString(36).slice(2);
 
 const getSupportedRecordingMimeType = () => {
   if (typeof window === 'undefined' || typeof window.MediaRecorder === 'undefined') {
@@ -108,7 +155,7 @@ const STORY_CACHE_STORAGE_KEY = 'movesplash:stories-cache-v1';
 const PENDING_STORIES_STORAGE_KEY = 'movesplash:pending-stories-v1';
 const MAX_CACHED_STORIES = 30;
 const FETCH_TIMEOUT_MS = 4500;
-const POST_TIMEOUT_MS = 6000;
+const POST_TIMEOUT_MS = 15000;
 
 const formatRelativeTime = (isoTimestamp: string) => {
   const date = new Date(isoTimestamp);
@@ -480,6 +527,75 @@ export function Stories() {
     });
   }, []);
 
+  const uploadStoryMediaToSupabase = useCallback(
+    async (item: { id: string; type: 'image' | 'video'; url: string }, userId: string) => {
+      if (!item.url.startsWith('data:')) {
+        return item;
+      }
+
+      try {
+        const { blob, mimeType } = dataUrlToBlob(item.url);
+        const extension = pickExtension(mimeType);
+        const objectPath = `${userId || 'user'}/${Date.now()}-${safeId()}.${extension}`;
+        const { error } = await supabaseClient.storage.from(STORY_BUCKET).upload(objectPath, blob, {
+          cacheControl: '31536000',
+          contentType: mimeType,
+          upsert: false,
+        });
+
+        if (error) {
+          throw error;
+        }
+
+        const { data } = supabaseClient.storage.from(STORY_BUCKET).getPublicUrl(objectPath);
+        const publicUrl = data?.publicUrl || item.url;
+        return { ...item, url: publicUrl };
+      } catch (uploadError) {
+        console.warn('Story media upload failed, using inline URL instead:', uploadError);
+        return item;
+      }
+    },
+    [],
+  );
+
+  const mapDraftToItems = useCallback((draft: StoryDraftItem[]): StoryItemData[] => {
+    const baseTime = Date.now();
+    return draft.map((item, index) => ({
+      id: item.id,
+      type: item.type,
+      url: item.url,
+      duration: item.duration,
+      timestamp: new Date(baseTime + index).toISOString(),
+    }));
+  }, []);
+
+  const buildPayloadItems = useCallback(
+    async (draft: StoryDraftItem[], userId: string): Promise<StoryItemData[]> => {
+      const mapped = mapDraftToItems(draft);
+      return Promise.all(
+        mapped.map(async (item) => {
+          const uploaded = await uploadStoryMediaToSupabase(item, userId);
+          return { ...item, url: uploaded.url };
+        }),
+      );
+    },
+    [mapDraftToItems, uploadStoryMediaToSupabase],
+  );
+
+  const ensurePendingItemsUploaded = useCallback(
+    async (items: StoryItemData[], userId: string): Promise<StoryItemData[]> =>
+      Promise.all(
+        items.map(async (item) => {
+          if (!item.url.startsWith('data:')) {
+            return item;
+          }
+          const uploaded = await uploadStoryMediaToSupabase(item, userId);
+          return { ...item, url: uploaded.url };
+        }),
+      ),
+    [uploadStoryMediaToSupabase],
+  );
+
   const sendSupabaseNotification = useCallback(
     async (userId: string, content: string) => {
       try {
@@ -539,10 +655,12 @@ export function Stories() {
           }
           return data.story;
         } catch (postError) {
+          const isAbort = postError instanceof DOMException && postError.name === 'AbortError';
           if (attempt === maxAttempts) {
             throw postError;
           }
-          await new Promise((resolve) => setTimeout(resolve, 400 * attempt));
+          // short backoff before retrying; slightly longer on aborts/timeouts
+          await new Promise((resolve) => setTimeout(resolve, isAbort ? 800 * attempt : 400 * attempt));
         } finally {
           window.clearTimeout(timeoutId);
         }
@@ -608,7 +726,8 @@ export function Stories() {
     const remaining: PendingStoryPayload[] = [];
     for (const payload of pending) {
       try {
-        const story = await postStoryWithRetry(payload, 2);
+        const items = await ensurePendingItemsUploaded(payload.items, payload.userId);
+        const story = await postStoryWithRetry({ ...payload, items }, 2);
         if (story) {
           mergeStoryUpdate(story, { prepend: true });
           storyCacheRef.current = [story, ...storyCacheRef.current].slice(0, MAX_CACHED_STORIES);
@@ -628,7 +747,7 @@ export function Stories() {
       toast.success('Queued stories posted.');
     }
     return cleared;
-  }, [mergeStoryUpdate, postStoryWithRetry]);
+  }, [ensurePendingItemsUploaded, mergeStoryUpdate, postStoryWithRetry]);
 
   const buildUserSnapshot = useCallback((user: StoryUser | null) => {
     if (!user) {
@@ -1086,6 +1205,15 @@ export function Stories() {
     [resetCreatorState],
   );
 
+  const queueStoryForLater = useCallback(
+    (payload: PendingStoryPayload) => {
+      const pending = [...readPendingStories(), payload];
+      writePendingStories(pending);
+      toast.success('We saved your story locally and will post it once you are back online.');
+    },
+    [],
+  );
+
   const handleCreateStory = useCallback(async () => {
     if (!currentUser) {
       toast.info("Sign in to share a story.");
@@ -1106,18 +1234,25 @@ export function Stories() {
     setCreationError(null);
 
     try {
-      const payloadItems = storyDraft.map((item) => ({
-        id: item.id,
-        type: item.type,
-        url: item.url,
-        duration: item.duration,
-        timestamp: new Date().toISOString(),
-      }));
+      const isOffline = typeof navigator !== 'undefined' && navigator.onLine === false;
+      const baseItems = mapDraftToItems(storyDraft);
+
+      if (isOffline) {
+        queueStoryForLater({
+          userId: currentUser.id,
+          visibility: storyVisibility,
+          items: baseItems,
+        });
+        handleCreatorOpenChange(false);
+        return;
+      }
+
+      const uploadedItems = await buildPayloadItems(storyDraft, currentUser.id);
 
       const payload: PendingStoryPayload = {
         userId: currentUser.id,
         visibility: storyVisibility,
-        items: payloadItems,
+        items: uploadedItems,
       };
 
       const createdStory = await postStoryWithRetry(payload, 3);
@@ -1145,7 +1280,7 @@ export function Stories() {
       setCurrentItemIndex(0);
     } catch (creationErrorCaught) {
       console.error('Error creating story:', creationErrorCaught);
-      const fallbackPayload: PendingStoryPayload = {
+      queueStoryForLater({
         userId: currentUser.id,
         visibility: storyVisibility,
         items: storyDraft.map((item) => ({
@@ -1155,11 +1290,8 @@ export function Stories() {
           duration: item.duration,
           timestamp: new Date().toISOString(),
         })),
-      };
-      const pending = [...readPendingStories(), fallbackPayload];
-      writePendingStories(pending);
+      });
       setCreationError(null);
-      toast.success('We saved your story locally and will post it once you are back online.');
     } finally {
       setIsSubmittingStory(false);
     }
@@ -1173,6 +1305,9 @@ export function Stories() {
     isSubmittingStory,
     notifyFriendsAboutStory,
     postStoryWithRetry,
+    queueStoryForLater,
+    mapDraftToItems,
+    buildPayloadItems,
   ]);
 
   useEffect(() => {

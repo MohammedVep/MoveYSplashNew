@@ -10,7 +10,7 @@ import { join } from 'node:path';
 
 export const dynamic = 'force-dynamic';
 
-const CLIP_DIRECTORY = join(process.cwd(), 'public', 'voices');
+const CLIP_DIRECTORY = join(process.env.TMPDIR ?? '/tmp', 'voices');
 const DEFAULT_EXTENSION = 'webm';
 
 type UploadPayload = {
@@ -74,13 +74,26 @@ export async function POST(request: Request) {
     const { buffer, mimeType: detectedMime } = decodeDataUrl(dataUrl);
     const resolvedMime = stripMime(mimeType) ?? detectedMime;
     const extension = pickExtension(resolvedMime);
-    const filename = await persistClip(buffer, extension);
+
+    let storedUrl: string | null = null;
+
+    try {
+      const filename = await persistClip(buffer, extension);
+      // File system writes may not be publicly served in serverless; keep for debugging.
+      storedUrl = `/voices/${filename}`;
+    } catch (persistError) {
+      console.warn('Voice clip persisted to temp failed, falling back to data URL:', persistError);
+    }
+
+    // Always return a playable URL; fall back to the incoming data URL so chats still work.
+    const playableUrl = storedUrl ?? `data:${resolvedMime ?? 'audio/webm'};base64,${buffer.toString('base64')}`;
 
     return Response.json({
-      id: filename.replace(`.${extension}`, ''),
-      url: `/voices/${filename}`,
+      id: storedUrl ? storedUrl.split('/').pop()?.replace(`.${extension}`, '') ?? randomUUID() : randomUUID(),
+      url: playableUrl,
       mimeType: resolvedMime,
-      duration: typeof duration === 'number' ? duration : null
+      duration: typeof duration === 'number' ? duration : null,
+      stored: Boolean(storedUrl)
     });
   } catch (error) {
     console.error('Voice upload failed:', error);
