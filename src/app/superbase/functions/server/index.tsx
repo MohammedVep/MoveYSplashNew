@@ -2285,11 +2285,6 @@ const validateStoryMedia = async (body: JsonRecord) => {
   }
 
   const urls = collectMediaUrls(body);
-  for (const u of urls) {
-    if (!isSupabaseStorageUrl(u)) {
-      return { status: 413 as ContentfulStatusCode, error: "media must be Supabase Storage URL" };
-    }
-  }
 
   let total = 0;
   for (const u of urls) {

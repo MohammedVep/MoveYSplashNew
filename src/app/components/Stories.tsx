@@ -548,7 +548,7 @@ export function Stories() {
       userId: string,
       storyId?: string,
     ) => {
-      if (item.url.startsWith('http') && item.url.startsWith(STORAGE_PREFIX)) {
+      if (item.url.startsWith('http')) {
         return item;
       }
 

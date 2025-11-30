@@ -1,18 +1,7 @@
 import app from "../../../src/app/superbase/functions/server/index.tsx";
 
 const MAX_BYTES = 64 * 1024; // 64KB cap
-const STORAGE_HOST = "opmvuhlheenygwbqwljk.supabase.co";
 const STORIES_PATH = "/make-server-a14c7986/stories";
-
-function isSupabaseStorageUrl(u: string): boolean {
-  try {
-    const parsed = new URL(u);
-    if (parsed.hostname !== STORAGE_HOST) return false;
-    return parsed.pathname.startsWith("/storage/v1/object/");
-  } catch {
-    return false;
-  }
-}
 
 function concatUint8(chunks: Uint8Array[], total: number) {
   const merged = new Uint8Array(total);
@@ -53,15 +42,12 @@ function safeJsonParse<T>(text: string): T {
 }
 
 function rejectInvalidMediaUrls(payload: unknown) {
-  const bad = (value: unknown) =>
-    typeof value === "string" &&
-    (value.startsWith("data:") ||
-      (value.startsWith("http") && !isSupabaseStorageUrl(value)));
+  const bad = (value: unknown) => typeof value === "string" && value.startsWith("data:");
 
   const scan = (v: unknown) => {
     if (Array.isArray(v)) v.forEach(scan);
     else if (v && typeof v === "object") Object.values(v as Record<string, unknown>).forEach(scan);
-    else if (bad(v)) throw new Response("Media must be Supabase Storage URL", { status: 413 });
+    else if (bad(v)) throw new Response("Data URLs are not allowed. Upload media first.", { status: 413 });
   };
 
   scan(payload);
