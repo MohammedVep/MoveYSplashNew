@@ -56,19 +56,17 @@ Deno.serve(async (req) => {
         });
       }
 
-      // Forward to main app in the background; adjust to direct return if you need sync processing
+      // Forward to main app synchronously
       const forwardReq = new Request(req.url, {
         method: req.method,
         headers: req.headers,
         body: JSON.stringify(parsed.body),
       });
 
-      EdgeRuntime.waitUntil(app.fetch(forwardReq));
-
-      return new Response(JSON.stringify({ status: "accepted" }), {
-        status: 202,
-        headers: { "content-type": "application/json", ...cors },
-      });
+      const upstream = await app.fetch(forwardReq);
+      const merged = new Headers(upstream.headers);
+      Object.entries(cors).forEach(([k, v]) => merged.set(k, v));
+      return new Response(upstream.body, { status: upstream.status, headers: merged });
     }
 
     // Everything else goes to the main app
