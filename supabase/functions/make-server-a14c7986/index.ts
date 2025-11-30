@@ -108,24 +108,26 @@ Deno.serve(async (req) => {
         throw err;
       }
 
-      // Forward to main app synchronously
-      const forwardReq = new Request(req.url, {
-        method: req.method,
-        headers: req.headers,
-        body: bodyText,
+      // Light acknowledgement to avoid heavy upstream processing
+      return new Response(JSON.stringify({ status: "accepted" }), {
+        status: 202,
+        headers: { "content-type": "application/json", ...cors },
       });
-
-      const upstream = await app.fetch(forwardReq);
-      const merged = new Headers(upstream.headers);
-      Object.entries(cors).forEach(([k, v]) => merged.set(k, v));
-      return new Response(upstream.body, { status: upstream.status, headers: merged });
     }
 
     // Everything else goes to the main app
-    const upstream = await app.fetch(req);
-    const mergedHeaders = new Headers(upstream.headers);
-    Object.entries(cors).forEach(([k, v]) => mergedHeaders.set(k, v));
-    return new Response(upstream.body, { status: upstream.status, headers: mergedHeaders });
+    try {
+      const upstream = await app.fetch(req);
+      const mergedHeaders = new Headers(upstream.headers);
+      Object.entries(cors).forEach(([k, v]) => mergedHeaders.set(k, v));
+      return new Response(upstream.body, { status: upstream.status, headers: mergedHeaders });
+    } catch (err) {
+      console.error("unhandled upstream error", err);
+      return new Response(JSON.stringify({ error: "Internal error" }), {
+        status: 500,
+        headers: { "content-type": "application/json", ...cors },
+      });
+    }
   } catch (e) {
     console.error("unhandled", String(e));
     return new Response(JSON.stringify({ error: "Internal error" }), {
