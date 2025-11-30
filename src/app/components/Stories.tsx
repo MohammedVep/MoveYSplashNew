@@ -532,6 +532,13 @@ export function Stories() {
     });
   }, []);
 
+  const sanitizeKey = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9._-]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 80) || safeId();
+
   const uploadStoryMediaToSupabase = useCallback(
     async (item: { id: string; type: 'image' | 'video'; url: string }, userId: string, storyId?: string) => {
       if (!item.url.startsWith('data:')) {
@@ -541,7 +548,8 @@ export function Stories() {
       const attemptUpload = async (attempt: number) => {
         const { blob, mimeType } = dataUrlToBlob(item.url);
         const extension = pickExtension(mimeType);
-        const objectPath = `${userId || 'user'}/${storyId || 'story'}/${item.id}.${extension}`;
+        const baseName = sanitizeKey(item.id || `media-${safeId()}`);
+        const objectPath = `${sanitizeKey(userId || 'user')}/${sanitizeKey(storyId || 'story')}/${baseName}.${extension}`;
         const { error } = await supabaseClient.storage.from(STORY_BUCKET).upload(objectPath, blob, {
           cacheControl: '31536000',
           contentType: mimeType,
