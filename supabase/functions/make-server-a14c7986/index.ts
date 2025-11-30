@@ -9,7 +9,7 @@ const safeJson = async (req: Request) => {
 };
 
 const STORIES_PATH = "/make-server-a14c7986/stories";
-const MAX_JSON_BYTES = 200_000; // tighter 200KB guard to avoid large bodies
+const MAX_JSON_BYTES = 128_000; // tighter 128KB guard to avoid large bodies
 
 const allowedOrigins = [
   "https://move-y-splash-new.vercel.app",
@@ -54,6 +54,18 @@ Deno.serve(async (req) => {
           status: 400,
           headers: { "content-type": "application/json", ...cors },
         });
+      }
+
+      // Hard block any data URLs to avoid loading them in memory
+      const bodyString = JSON.stringify(parsed.body);
+      if (bodyString.includes("data:")) {
+        return new Response(
+          JSON.stringify({ error: "Data URLs are not allowed. Upload media to storage first." }),
+          {
+            status: 413,
+            headers: { "content-type": "application/json", ...cors },
+          },
+        );
       }
 
       // Forward to main app synchronously
