@@ -96,7 +96,7 @@ export function LandingPage({
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between p-6 backdrop-blur-md bg-white/5 border-b border-white/10">
+      <nav className="relative z-10 flex items-center justify-between p-4 sm:p-6 backdrop-blur-md bg-white/5 border-b border-white/10">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center">
             <Zap className="w-6 h-6 text-white" />
@@ -112,18 +112,18 @@ export function LandingPage({
       </nav>
 
       {/* Hero Section */}
-      <div className="relative z-10 container mx-auto px-6 pt-20 pb-32">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-24 sm:pb-32">
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8">
             <Sparkles className="w-4 h-4 text-yellow-300" />
             <span className="text-white/90 text-sm">Built for real friends, not bots.</span>
           </div>
           
-          <h1 className="text-6xl md:text-7xl text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-200 to-purple-200">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-200 to-purple-200">
             One place for the people you actually talk to.
           </h1>
           
-          <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/80 mb-10 sm:mb-12 max-w-2xl mx-auto">
             MoveYSplash combines group chats, zero-lag video calls, and disappearing stories so you do not have
             to bounce between five different apps.
           </p>
@@ -146,7 +146,7 @@ export function LandingPage({
         </div>
 
         {/* Glass morphism showcase cards */}
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-2 sm:px-0">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -171,9 +171,9 @@ export function LandingPage({
       </div>
 
       {/* Social Proof Section */}
-      <div className="relative z-10 bg-white/5 backdrop-blur-lg border-y border-white/10 py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="relative z-10 bg-white/5 backdrop-blur-lg border-y border-white/10 py-14 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl text-white mb-2">10M+</div>
               <div className="text-white/60">Active Users</div>
@@ -195,8 +195,8 @@ export function LandingPage({
       </div>
 
       {/* Feature Highlight Section */}
-      <div className="relative z-10 container mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-24">
+        <div className="grid md:grid-cols-2 gap-10 sm:gap-12 items-center">
           <div>
             <h2 className="text-4xl text-white mb-6">
               Group chat energy without the chaos.
@@ -228,7 +228,7 @@ export function LandingPage({
       </div>
 
       {/* CTA Section */}
-      <div className="relative z-10 container mx-auto px-6 pb-24">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 pb-16 sm:pb-24">
         <div className="max-w-4xl mx-auto text-center p-12 backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 rounded-3xl border border-white/20">
           <h2 className="text-4xl text-white mb-6">
             Ready to stop hopping between apps?
@@ -247,7 +247,7 @@ export function LandingPage({
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-lg">
-        <div className="container mx-auto px-6 py-12">
+        <div className="container mx-auto px-4 sm:px-6 py-12">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Brand */}
             <div className="md:col-span-1">

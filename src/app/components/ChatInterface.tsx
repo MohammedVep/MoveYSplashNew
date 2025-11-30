@@ -1894,9 +1894,9 @@ export function ChatInterface({
   }
 
   return (
-    <div className="h-[calc(100vh-80px)] min-h-0 flex gap-6 max-w-7xl mx-auto">
+    <div className="h-[calc(100vh-80px)] min-h-0 flex flex-col gap-4 lg:gap-6 max-w-7xl mx-auto px-4 py-4">
       {/* Chat List Sidebar */}
-      <Card className="w-96 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden">
+      <Card className="w-full lg:w-96 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden">
         {/* Search Header */}
         <div className="p-4 border-b border-white/10">
           <div className="flex items-center justify-between mb-4">
@@ -2133,7 +2133,7 @@ export function ChatInterface({
       </Card>
 
       {/* Main Chat Area */}
-      <Card className="flex-1 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden">
+      <Card className="flex-1 w-full min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden">
         {!selectedChat || !currentChat ? (
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
@@ -2193,7 +2193,7 @@ export function ChatInterface({
             </div>
 
             {/* Messages Area */}
-            <ScrollArea className="flex-1 h-full overflow-y-auto p-6">
+            <ScrollArea className="flex-1 h-full overflow-y-auto p-4 sm:p-6">
               <div className="space-y-4">
                 {messages.length === 0 ? (
                   <div className="text-center text-white/50 py-8">
@@ -2362,7 +2362,7 @@ export function ChatInterface({
             </ScrollArea>
 
             {/* Snap Mode Toggle */}
-            <div className="px-6 py-2 border-t border-white/10">
+            <div className="px-4 sm:px-6 py-2 border-t border-white/10">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <button
@@ -2432,7 +2432,7 @@ export function ChatInterface({
                 />
                 
                 {/* Main input row */}
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 flex-col sm:flex-row">
                   <Input
                     ref={messageInputRef}
                     placeholder={isSnapMode ? "Send a disappearing message..." : "Type a message..."}
@@ -2440,7 +2440,7 @@ export function ChatInterface({
                     onChange={(e) => setNewMessage(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                     disabled={sending}
-                    className={`flex-1 bg-white/5 border-white/20 text-white placeholder:text-white/50 h-12 text-base ${
+                    className={`w-full sm:flex-1 bg-white/5 border-white/20 text-white placeholder:text-white/50 h-12 text-base ${
                       isSnapMode ? 'border-yellow-400 border-2' : ''
                     }`}
                   />
@@ -2460,8 +2460,8 @@ export function ChatInterface({
                 </div>
                 
                 {/* Action buttons row */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <Button 
                       size="sm"
                       variant="ghost"

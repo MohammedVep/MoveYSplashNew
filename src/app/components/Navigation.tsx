@@ -3,6 +3,7 @@
    ID: 5145543
    Sunday November 30th 2025
   */
+import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Notifications } from './Notifications';
@@ -16,7 +17,9 @@ import {
   Camera,
   Settings,
   LogOut,
-  Zap
+  Zap,
+  Menu,
+  X,
 } from 'lucide-react';
 import type { AppView } from '../types/app';
 import { cn } from './ui/utils';
@@ -31,6 +34,7 @@ interface NavigationProps {
 export function Navigation({ currentView, onNavigate, onLogout, onOpenSettings }: NavigationProps) {
   const { resolvedTheme } = useTheme();
   const isLightTheme = resolvedTheme === 'light';
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems: Array<{ id: AppView; icon: LucideIcon; label: string; badge?: number }> = [
     { id: 'feed', icon: Home, label: 'Feed' },
@@ -62,28 +66,47 @@ export function Navigation({ currentView, onNavigate, onLogout, onOpenSettings }
         isLightTheme ? 'bg-white/80 border-slate-200' : 'bg-white/10 border-white/20'
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row sm:items-center sm:justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 justify-between">
             <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center">
               <Zap className="w-6 h-6 text-white" />
             </div>
             <span className={cn('text-xl hidden md:block font-semibold transition-colors', nameTextClass)}>
               MoveYSplash
             </span>
+            <button
+              className={cn(
+                'sm:hidden p-2 rounded-lg transition-colors',
+                isLightTheme ? 'hover:bg-white/70 text-slate-800' : 'hover:bg-white/10 text-white'
+              )}
+              aria-label="Toggle navigation"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
 
           {/* Navigation Items */}
-          <div className="flex items-center gap-2">
+          <div
+            className={cn(
+              'flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 sm:flex-nowrap flex-wrap transition-all',
+              menuOpen ? 'flex' : 'hidden sm:flex'
+            )}
+          >
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
+                onClick={() => {
+                  onNavigate(item.id);
+                  setMenuOpen(false);
+                }}
                 className={cn(
                   navItemBaseClass,
                   currentView === item.id ? navItemActiveClass : navItemInactiveClass
                 )}
+                style={{ minWidth: '64px' }}
               >
                 <item.icon className="w-5 h-5" />
                 <span className="hidden md:inline">{item.label}</span>
@@ -97,7 +120,12 @@ export function Navigation({ currentView, onNavigate, onLogout, onOpenSettings }
           </div>
 
           {/* Right Section */}
-          <div className="flex items-center gap-2">
+          <div
+            className={cn(
+              'flex items-center gap-2 transition-all',
+              menuOpen ? 'flex' : 'hidden sm:flex'
+            )}
+          >
             <Notifications onNavigate={onNavigate} />
             
             <Button

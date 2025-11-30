@@ -480,7 +480,7 @@ function AppShell() {
       />
 
       {/* Main Content */}
-      <main className="relative z-10 p-6">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
         {currentView === 'feed' && (
           <div className="space-y-6">
             <Stories />
