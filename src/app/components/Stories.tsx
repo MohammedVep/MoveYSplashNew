@@ -157,7 +157,7 @@ const STORY_CACHE_STORAGE_KEY = 'movesplash:stories-cache-v1';
 const PENDING_STORIES_STORAGE_KEY = 'movesplash:pending-stories-v1';
 const MAX_CACHED_STORIES = 30;
 const FETCH_TIMEOUT_MS = 4500;
-const POST_TIMEOUT_MS = 15000;
+const POST_TIMEOUT_MS = 30000;
 
 const formatRelativeTime = (isoTimestamp: string) => {
   const date = new Date(isoTimestamp);
@@ -653,7 +653,7 @@ export function Stories() {
   );
 
   const postStoryWithRetry = useCallback(
-    async (payload: PendingStoryPayload, maxAttempts = 3) => {
+    async (payload: PendingStoryPayload, maxAttempts = 5) => {
       for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
         const controller = new AbortController();
         const timeoutId = window.setTimeout(() => controller.abort(), POST_TIMEOUT_MS);
@@ -678,8 +678,8 @@ export function Stories() {
           if (attempt === maxAttempts) {
             throw postError;
           }
-          // short backoff before retrying; slightly longer on aborts/timeouts
-          await new Promise((resolve) => setTimeout(resolve, isAbort ? 800 * attempt : 400 * attempt));
+          // backoff before retrying; longer on aborts/timeouts
+          await new Promise((resolve) => setTimeout(resolve, isAbort ? 1200 * attempt : 600 * attempt));
         } finally {
           window.clearTimeout(timeoutId);
         }
@@ -747,7 +747,7 @@ export function Stories() {
       try {
         const storyId = payload.id || generateStoryId();
         const items = await ensurePendingItemsUploaded(payload.items, payload.userId, storyId);
-        const story = await postStoryWithRetry({ ...payload, id: storyId, items }, 2);
+        const story = await postStoryWithRetry({ ...payload, id: storyId, items }, 5);
         if (story) {
           mergeStoryUpdate(story, { prepend: true });
           storyCacheRef.current = [story, ...storyCacheRef.current].slice(0, MAX_CACHED_STORIES);
