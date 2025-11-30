@@ -9,6 +9,14 @@ import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Textarea } from './ui/textarea';
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
+import {
   Heart,
   MessageCircle,
   Share2,
@@ -21,7 +29,8 @@ import {
   X,
   Loader2,
   Trash2,
-  Pencil
+  Pencil,
+  Link as LinkIcon
 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { EmojiPicker } from './EmojiPicker';
@@ -677,6 +686,18 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
     [currentUser, toggleSavePost]
   );
 
+  const handleCopyLink = useCallback((postId: string, authorId: string) => {
+    const url = buildPostShareUrl(postId, authorId);
+    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      navigator.clipboard
+        .writeText(url)
+        .then(() => toast.success('Link copied!'))
+        .catch(() => toast.error('Unable to copy link.'));
+    } else {
+      toast.info(url, { description: 'Copy this link' });
+    }
+  }, []);
+
   const handleCommentInputChange = (postId: string, value: string) => {
     setCommentsState(prev => {
       const panel = prev[postId];
@@ -994,42 +1015,72 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
                   </div>
                 </div>
               <div className="flex items-center gap-2">
-                {currentUser?.id === post.userId && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-white/70 hover:text-white hover:bg-white/10"
-                    onClick={() => handleStartEdit(post)}
-                    disabled={savingEditId === post.id}
-                    title="Edit post"
-                  >
-                    <Pencil className="w-4 h-4" />
-                  </Button>
-                )}
-                {currentUser?.id === post.userId && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-white/70 hover:text-red-400 hover:bg-white/10"
-                    onClick={() => void handleDeletePost(post)}
-                    disabled={deletingPostId === post.id}
-                    title="Delete post"
-                  >
-                    {deletingPostId === post.id ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      <Trash2 className="w-4 h-4" />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button 
+                      variant="ghost" 
+                      size="sm"
+                      className="text-white/70 hover:text-white hover:bg-white/10"
+                    >
+                      <MoreHorizontal className="w-5 h-5" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="backdrop-blur-xl bg-white/10 border-white/20">
+                    <DropdownMenuLabel className="text-white/70">Post actions</DropdownMenuLabel>
+                    <DropdownMenuItem
+                      className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white"
+                      onClick={() => handleOpenShare(post, displayName, username, avatar)}
+                    >
+                      <Share2 className="w-4 h-4 mr-2" />
+                      Share
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white"
+                      onClick={() => handleCopyLink(post.id, post.userId)}
+                    >
+                      <LinkIcon className="w-4 h-4 mr-2" />
+                      Copy link
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white"
+                      disabled={isBookmarking}
+                      onClick={() => handleToggleBookmark(post, displayName)}
+                    >
+                      {isBookmarked ? (
+                        <Bookmark className="w-4 h-4 mr-2 fill-current" />
+                      ) : (
+                        <Bookmark className="w-4 h-4 mr-2" />
+                      )}
+                      {isBookmarked ? 'Unsave' : 'Save'}
+                      {isBookmarking && <Loader2 className="w-4 h-4 ml-auto animate-spin" />}
+                    </DropdownMenuItem>
+                    {(currentUser?.id === post.userId) && (
+                      <>
+                        <DropdownMenuSeparator className="bg-white/10" />
+                        <DropdownMenuItem
+                          className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white"
+                          onClick={() => handleStartEdit(post)}
+                          disabled={savingEditId === post.id}
+                        >
+                          <Pencil className="w-4 h-4 mr-2" />
+                          Edit
+                        </DropdownMenuItem>
+                        <DropdownMenuItem
+                          className="text-red-300 hover:bg-white/10 focus:bg-white/10 focus:text-red-200"
+                          onClick={() => void handleDeletePost(post)}
+                          disabled={deletingPostId === post.id}
+                        >
+                          {deletingPostId === post.id ? (
+                            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          ) : (
+                            <Trash2 className="w-4 h-4 mr-2" />
+                          )}
+                          Delete
+                        </DropdownMenuItem>
+                      </>
                     )}
-                  </Button>
-                )}
-                <Button 
-                  variant="ghost" 
-                  size="sm"
-                  className="text-white/70 hover:text-white hover:bg-white/10"
-                  onClick={() => toast.info('More post actions coming soon')}
-                >
-                  <MoreHorizontal className="w-5 h-5" />
-                </Button>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </div>

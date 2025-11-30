@@ -319,9 +319,19 @@ export function Profile({
     return num.toString();
   };
 
-  const statsDisplay = [
+  const statsDisplay: Array<{
+    label: string;
+    value: string | number;
+    icon: LucideIcon;
+    onClick?: () => void;
+  }> = [
     { label: 'Posts', value: stats.totalPosts, icon: MessageCircle },
-    { label: 'Friends', value: stats.totalFriends, icon: Users },
+    {
+      label: 'Friends',
+      value: stats.totalFriends,
+      icon: Users,
+      onClick: onBackToFriends,
+    },
     { label: 'Likes', value: formatNumber(totalLikesDisplay), icon: Heart },
     { label: 'Rank', value: `#${stats.rank}`, icon: TrendingUp }
   ];
@@ -1018,16 +1028,29 @@ export function Profile({
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {statsDisplay.map((stat) => (
-              <Card key={stat.label} className="backdrop-blur-xl bg-white/10 border-white/20 p-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-white" />
+              <Card
+                key={stat.label}
+                className={`backdrop-blur-xl bg-white/10 border-white/20 p-0 ${
+                  stat.onClick ? 'hover:bg-white/15 transition-colors cursor-pointer' : ''
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={stat.onClick}
+                  disabled={!stat.onClick}
+                  className="w-full text-left p-6 disabled:cursor-default"
+                  aria-label={stat.label}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
+                      <stat.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-white text-2xl">{stat.value}</p>
+                      <p className="text-white/60 text-sm">{stat.label}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-white text-2xl">{stat.value}</p>
-                    <p className="text-white/60 text-sm">{stat.label}</p>
-                  </div>
-                </div>
+                </button>
               </Card>
             ))}
           </div>
