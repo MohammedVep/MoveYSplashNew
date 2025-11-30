@@ -103,6 +103,8 @@ const safeId = () =>
     ? crypto.randomUUID()
     : Math.random().toString(36).slice(2);
 
+const generateStoryId = () => `story-${safeId()}`;
+
 const getSupportedRecordingMimeType = () => {
   if (typeof window === 'undefined' || typeof window.MediaRecorder === 'undefined') {
     return '';
@@ -315,8 +317,10 @@ const writeCachedStories = (stories: StoryAPIResponse[]) => {
 };
 
 type PendingStoryPayload = {
+  id: string;
   userId: string;
   visibility: 'friends' | 'public' | 'close_friends';
+  userSnapshot?: StoryUser | null;
   items: Array<{
     id: string;
     type: 'image' | 'video';
@@ -528,15 +532,15 @@ export function Stories() {
   }, []);
 
   const uploadStoryMediaToSupabase = useCallback(
-    async (item: { id: string; type: 'image' | 'video'; url: string }, userId: string) => {
+    async (item: { id: string; type: 'image' | 'video'; url: string }, userId: string, storyId?: string) => {
       if (!item.url.startsWith('data:')) {
         return item;
       }
 
-      try {
+      const attemptUpload = async (attempt: number) => {
         const { blob, mimeType } = dataUrlToBlob(item.url);
         const extension = pickExtension(mimeType);
-        const objectPath = `${userId || 'user'}/${Date.now()}-${safeId()}.${extension}`;
+        const objectPath = `${userId || 'user'}/${storyId || 'story'}/${item.id}.${extension}`;
         const { error } = await supabaseClient.storage.from(STORY_BUCKET).upload(objectPath, blob, {
           cacheControl: '31536000',
           contentType: mimeType,
@@ -550,10 +554,22 @@ export function Stories() {
         const { data } = supabaseClient.storage.from(STORY_BUCKET).getPublicUrl(objectPath);
         const publicUrl = data?.publicUrl || item.url;
         return { ...item, url: publicUrl };
-      } catch (uploadError) {
-        console.warn('Story media upload failed, using inline URL instead:', uploadError);
-        return item;
+      };
+
+      for (let attempt = 1; attempt <= 3; attempt += 1) {
+        try {
+          return await attemptUpload(attempt);
+        } catch (uploadError) {
+          const isLast = attempt === 3;
+          if (isLast) {
+            console.warn('Story media upload failed, using inline URL instead:', uploadError);
+            return item;
+          }
+          await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+        }
       }
+
+      return item;
     },
     [],
   );
@@ -570,11 +586,11 @@ export function Stories() {
   }, []);
 
   const buildPayloadItems = useCallback(
-    async (draft: StoryDraftItem[], userId: string): Promise<StoryItemData[]> => {
+    async (draft: StoryDraftItem[], userId: string, storyId: string): Promise<StoryItemData[]> => {
       const mapped = mapDraftToItems(draft);
       return Promise.all(
         mapped.map(async (item) => {
-          const uploaded = await uploadStoryMediaToSupabase(item, userId);
+          const uploaded = await uploadStoryMediaToSupabase(item, userId, storyId);
           return { ...item, url: uploaded.url };
         }),
       );
@@ -583,13 +599,13 @@ export function Stories() {
   );
 
   const ensurePendingItemsUploaded = useCallback(
-    async (items: StoryItemData[], userId: string): Promise<StoryItemData[]> =>
+    async (items: StoryItemData[], userId: string, storyId: string): Promise<StoryItemData[]> =>
       Promise.all(
         items.map(async (item) => {
           if (!item.url.startsWith('data:')) {
             return item;
           }
-          const uploaded = await uploadStoryMediaToSupabase(item, userId);
+          const uploaded = await uploadStoryMediaToSupabase(item, userId, storyId);
           return { ...item, url: uploaded.url };
         }),
       ),
@@ -645,7 +661,10 @@ export function Stories() {
           const response = await fetch(`${API_BASE_URL}/stories`, {
             method: 'POST',
             headers: JSON_HEADERS,
-            body: JSON.stringify(payload),
+            body: JSON.stringify({
+              ...payload,
+              userSnapshot: payload.userSnapshot ?? buildUserSnapshot(currentUser),
+            }),
             signal: controller.signal,
           });
 
@@ -726,8 +745,9 @@ export function Stories() {
     const remaining: PendingStoryPayload[] = [];
     for (const payload of pending) {
       try {
-        const items = await ensurePendingItemsUploaded(payload.items, payload.userId);
-        const story = await postStoryWithRetry({ ...payload, items }, 2);
+        const storyId = payload.id || generateStoryId();
+        const items = await ensurePendingItemsUploaded(payload.items, payload.userId, storyId);
+        const story = await postStoryWithRetry({ ...payload, id: storyId, items }, 2);
         if (story) {
           mergeStoryUpdate(story, { prepend: true });
           storyCacheRef.current = [story, ...storyCacheRef.current].slice(0, MAX_CACHED_STORIES);
@@ -1234,24 +1254,31 @@ export function Stories() {
     setCreationError(null);
 
     try {
+      const storyId = generateStoryId();
       const isOffline = typeof navigator !== 'undefined' && navigator.onLine === false;
       const baseItems = mapDraftToItems(storyDraft);
 
+      const userSnapshot = buildUserSnapshot(currentUser);
+
       if (isOffline) {
         queueStoryForLater({
+          id: storyId,
           userId: currentUser.id,
           visibility: storyVisibility,
+          userSnapshot,
           items: baseItems,
         });
         handleCreatorOpenChange(false);
         return;
       }
 
-      const uploadedItems = await buildPayloadItems(storyDraft, currentUser.id);
+      const uploadedItems = await buildPayloadItems(storyDraft, currentUser.id, storyId);
 
       const payload: PendingStoryPayload = {
+        id: storyId,
         userId: currentUser.id,
         visibility: storyVisibility,
+        userSnapshot,
         items: uploadedItems,
       };
 
@@ -1281,8 +1308,10 @@ export function Stories() {
     } catch (creationErrorCaught) {
       console.error('Error creating story:', creationErrorCaught);
       queueStoryForLater({
+        id: generateStoryId(),
         userId: currentUser.id,
         visibility: storyVisibility,
+        userSnapshot: buildUserSnapshot(currentUser),
         items: storyDraft.map((item) => ({
           id: item.id,
           type: item.type,
