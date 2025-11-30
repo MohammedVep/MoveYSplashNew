@@ -108,6 +108,7 @@ interface Message {
   expiresIn?: number;
   isStarred?: boolean;
   localOnly?: boolean;
+  clientMessageId?: string;
 }
 
 interface Chat {
@@ -161,14 +162,17 @@ const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
   global: { headers: { Authorization: AUTH_HEADER } },
 });
 
-const textForMetadata = (metadata: Record<string, unknown>, fallback: string = ''): string => {
-  if (metadata.image) return '[image]';
-  if (metadata.file && typeof (metadata.file as { name?: string }).name === 'string') {
-    return (metadata.file as { name?: string }).name || '[file]';
-  }
-  if (metadata.voice) return '[voice]';
-  return fallback || '...';
-};
+  const textForMetadata = (metadata: Record<string, unknown>, fallback: string = ''): string => {
+    if (metadata.image) return '[image]';
+    if (metadata.file && typeof (metadata.file as { name?: string }).name === 'string') {
+      return (metadata.file as { name?: string }).name || '[file]';
+    }
+    if (metadata.voice) return '[voice]';
+    return fallback || '...';
+  };
+
+  const createClientMessageId = () =>
+    `msg-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 
 const avatarForId = (id: string) =>
   `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id || 'user')}`;
@@ -779,6 +783,7 @@ export function ChatInterface({
   const mapAblyMessage = useCallback(
     (source: AblyChatMessage, roomId: string): Message => {
       const metadata = (source.metadata ?? {}) as Record<string, unknown>;
+      const clientMessageIdValue = metadata['_clientMessageId'];
 
       const imageValue = metadata['image'];
       const image = typeof imageValue === 'string' ? imageValue : undefined;
@@ -855,6 +860,10 @@ export function ChatInterface({
         isSnapStyle: Boolean(metadata['isSnapStyle']),
         expiresIn: expiresIn && Number.isFinite(expiresIn) ? expiresIn : undefined,
         isStarred: Boolean(metadata['isStarred']),
+        clientMessageId:
+          typeof clientMessageIdValue === 'string' && clientMessageIdValue.trim().length > 0
+            ? clientMessageIdValue
+            : undefined,
         senderName:
           (typeof senderNameMeta === 'string' && senderNameMeta.trim().length > 0
             ? senderNameMeta
@@ -949,14 +958,21 @@ export function ChatInterface({
       const mapped = mapAblyMessage(event.message, roomId);
 
       setMessages((prev) => {
-        const withoutLocalDuplicates = prev.filter(
-          (msg) =>
-            !(
-              msg.localOnly &&
-              msg.senderId === mapped.senderId &&
-              msg.content === mapped.content
-            ),
-        );
+        const nowTs = new Date(mapped.timestamp).getTime();
+        const withoutLocalDuplicates = prev.filter((msg) => {
+          const sameClient =
+            mapped.clientMessageId &&
+            msg.clientMessageId &&
+            msg.clientMessageId === mapped.clientMessageId;
+          const sameContentAndSender =
+            msg.senderId === mapped.senderId &&
+            msg.content === mapped.content &&
+            Math.abs(new Date(msg.timestamp).getTime() - nowTs) < 3000;
+          if (sameClient || sameContentAndSender) {
+            return false;
+          }
+          return true;
+        });
         const others = withoutLocalDuplicates.filter((message) => message.id !== mapped.id);
         const next = [...others, mapped];
         next.sort(
@@ -1467,7 +1483,8 @@ export function ChatInterface({
     setSending(true);
     try {
       const textContent = newMessage.trim();
-      const metadata = buildMetadata();
+      const clientMessageId = createClientMessageId();
+      const metadata = buildMetadata({ _clientMessageId: clientMessageId });
 
       await room.messages.send({
         text: textContent || '...',
@@ -1476,7 +1493,7 @@ export function ChatInterface({
 
       const senderProfile = getSenderProfile();
       const optimisticMessage: Message = {
-        id: `${selectedChat}-${Date.now()}`,
+        id: clientMessageId,
         chatId: selectedChat,
         senderId: senderProfile.id,
         senderName: senderProfile.name,
@@ -1486,6 +1503,7 @@ export function ChatInterface({
         isSnapStyle: isSnapMode,
         expiresIn: isSnapMode ? snapTimer : undefined,
         localOnly: true,
+        clientMessageId,
       };
 
       setMessages((prev) => [...prev, optimisticMessage]);
