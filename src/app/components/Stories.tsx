@@ -256,6 +256,7 @@ interface StoryState {
 
 const STORY_PLACEHOLDER_URL =
   'https://api.dicebear.com/7.x/shapes/svg?seed=MoveSplashStory&backgroundColor=transparent';
+const UNKNOWN_STORY_ERROR = 'Unable to publish story. We will retry in the background.';
 
 const OFFLINE_STORIES: StoryAPIResponse[] = [
   {
@@ -585,7 +586,7 @@ export function Stories() {
     }));
   }, []);
 
-  const buildPayloadItems = useCallback(
+const buildPayloadItems = useCallback(
     async (draft: StoryDraftItem[], userId: string, storyId: string): Promise<StoryItemData[]> => {
       const mapped = mapDraftToItems(draft);
       return Promise.all(
@@ -652,43 +653,6 @@ export function Stories() {
     [allUsers, currentUser, sendSupabaseNotification],
   );
 
-  const postStoryWithRetry = useCallback(
-    async (payload: PendingStoryPayload, maxAttempts = 5) => {
-      for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-        const controller = new AbortController();
-        const timeoutId = window.setTimeout(() => controller.abort(), POST_TIMEOUT_MS);
-        try {
-          const response = await fetch(`${API_BASE_URL}/stories`, {
-            method: 'POST',
-            headers: JSON_HEADERS,
-            body: JSON.stringify({
-              ...payload,
-              userSnapshot: payload.userSnapshot ?? buildUserSnapshot(currentUser),
-            }),
-            signal: controller.signal,
-          });
-
-          const data = (await response.json().catch(() => ({}))) as { story?: StoryAPIResponse; error?: string };
-          if (!response.ok || !data?.story) {
-            throw new Error(data?.error || `Story publish failed (attempt ${attempt})`);
-          }
-          return data.story;
-        } catch (postError) {
-          const isAbort = postError instanceof DOMException && postError.name === 'AbortError';
-          if (attempt === maxAttempts) {
-            throw postError;
-          }
-          // backoff before retrying; longer on aborts/timeouts
-          await new Promise((resolve) => setTimeout(resolve, isAbort ? 1200 * attempt : 600 * attempt));
-        } finally {
-          window.clearTimeout(timeoutId);
-        }
-      }
-      return null;
-    },
-    [],
-  );
-
   const mergeStoryUpdate = useCallback(
     (storyUpdate: StoryAPIResponse, options?: { prepend?: boolean }) => {
       setStoriesData((prev) => {
@@ -738,6 +702,64 @@ export function Stories() {
     [],
   );
 
+  const buildUserSnapshot = useCallback((user: StoryUser | null) => {
+    if (!user) {
+      return null;
+    }
+
+    return {
+      id: user.id,
+      name: user.name,
+      username: user.username,
+      avatar: user.avatar,
+      ablyClientId: user.ablyClientId ?? user.id,
+    };
+  }, []);
+
+  const lastPostErrorRef = useRef<string | null>(null);
+
+  const postStoryWithRetry = useCallback(
+    async (payload: PendingStoryPayload, maxAttempts = 5) => {
+      lastPostErrorRef.current = null;
+      for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+        const controller = new AbortController();
+        const timeoutId = window.setTimeout(() => controller.abort(), POST_TIMEOUT_MS);
+        try {
+          const response = await fetch(`${API_BASE_URL}/stories`, {
+            method: 'POST',
+            headers: JSON_HEADERS,
+            body: JSON.stringify({
+              ...payload,
+              userSnapshot: payload.userSnapshot ?? buildUserSnapshot(currentUser),
+            }),
+            signal: controller.signal,
+          });
+
+          const data = (await response.json().catch(() => ({}))) as { story?: StoryAPIResponse; error?: string };
+          if (!response.ok || !data?.story) {
+            lastPostErrorRef.current = data?.error || `Story publish failed (attempt ${attempt})`;
+            throw new Error(lastPostErrorRef.current);
+          }
+          return data.story;
+        } catch (postError) {
+          const isAbort = postError instanceof DOMException && postError.name === 'AbortError';
+          lastPostErrorRef.current =
+            postError instanceof Error && postError.message
+              ? postError.message
+              : UNKNOWN_STORY_ERROR;
+          if (attempt === maxAttempts) {
+            return null;
+          }
+          await new Promise((resolve) => setTimeout(resolve, isAbort ? 1200 * attempt : 600 * attempt));
+        } finally {
+          window.clearTimeout(timeoutId);
+        }
+      }
+      return null;
+    },
+    [buildUserSnapshot, currentUser],
+  );
+
   const flushPendingStories = useCallback(async () => {
     const pending = readPendingStories();
     if (!pending.length) return;
@@ -768,20 +790,6 @@ export function Stories() {
     }
     return cleared;
   }, [ensurePendingItemsUploaded, mergeStoryUpdate, postStoryWithRetry]);
-
-  const buildUserSnapshot = useCallback((user: StoryUser | null) => {
-    if (!user) {
-      return null;
-    }
-
-    return {
-      id: user.id,
-      name: user.name,
-      username: user.username,
-      avatar: user.avatar,
-      ablyClientId: user.ablyClientId ?? user.id,
-    };
-  }, []);
 
   const buildStorySnapshot = useCallback((story: StoryState) => {
     return {
@@ -1282,7 +1290,7 @@ export function Stories() {
         items: uploadedItems,
       };
 
-      const createdStory = await postStoryWithRetry(payload, 3);
+      const createdStory = await postStoryWithRetry(payload, 5);
       if (!createdStory) {
         throw new Error('Failed to publish story.');
       }
@@ -1307,6 +1315,11 @@ export function Stories() {
       setCurrentItemIndex(0);
     } catch (creationErrorCaught) {
       console.error('Error creating story:', creationErrorCaught);
+      const message =
+        lastPostErrorRef.current && typeof lastPostErrorRef.current === 'string'
+          ? lastPostErrorRef.current
+          : UNKNOWN_STORY_ERROR;
+      toast.error(message);
       queueStoryForLater({
         id: generateStoryId(),
         userId: currentUser.id,
@@ -1337,6 +1350,7 @@ export function Stories() {
     queueStoryForLater,
     mapDraftToItems,
     buildPayloadItems,
+    lastPostErrorRef,
   ]);
 
   useEffect(() => {
