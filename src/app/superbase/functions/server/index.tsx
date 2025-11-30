@@ -2381,6 +2381,22 @@ app.post("/make-server-a14c7986/stories", async (c) => {
       return c.json({ error: "Data URLs are not allowed. Upload media first." }, 413);
     }
 
+    const STORAGE_HOST = "opmvuhlheenygwbqwljk.supabase.co";
+    const STORAGE_PREFIX = `https://${STORAGE_HOST}/storage/v1/object`;
+
+    const hasNonHttpUrls = items.some(
+      (item) => typeof item.url === "string" && !item.url.startsWith("http"),
+    );
+    const hasNonStorageUrls = items.some(
+      (item) => typeof item.url === "string" && !item.url.startsWith(STORAGE_PREFIX),
+    );
+    if (hasNonHttpUrls || hasNonStorageUrls) {
+      return c.json(
+        { error: "Only Supabase Storage media URLs are allowed. Upload to storage first." },
+        413,
+      );
+    }
+
     if (items.length === 0) {
       items = [
         {

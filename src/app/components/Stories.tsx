@@ -563,14 +563,13 @@ export function Stories() {
         } catch (uploadError) {
           const isLast = attempt === 3;
           if (isLast) {
-            console.warn('Story media upload failed, using inline URL instead:', uploadError);
-            return item;
+            throw uploadError instanceof Error ? uploadError : new Error(String(uploadError));
           }
           await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
         }
       }
 
-      return item;
+      throw new Error('Media upload failed after retries');
     },
     [],
   );
@@ -586,30 +585,47 @@ export function Stories() {
     }));
   }, []);
 
-const buildPayloadItems = useCallback(
+  const buildPayloadItems = useCallback(
     async (draft: StoryDraftItem[], userId: string, storyId: string): Promise<StoryItemData[]> => {
       const mapped = mapDraftToItems(draft);
-      return Promise.all(
+      const uploaded = await Promise.all(
         mapped.map(async (item) => {
           const uploaded = await uploadStoryMediaToSupabase(item, userId, storyId);
           return { ...item, url: uploaded.url };
         }),
       );
+      const hasInline = uploaded.some(
+        (item) => typeof item.url === 'string' && (item.url.startsWith('data:') || !item.url.startsWith('http')),
+      );
+      if (hasInline) {
+        throw new Error('Media must be uploaded before posting the story.');
+      }
+      return uploaded;
     },
     [mapDraftToItems, uploadStoryMediaToSupabase],
   );
 
   const ensurePendingItemsUploaded = useCallback(
-    async (items: StoryItemData[], userId: string, storyId: string): Promise<StoryItemData[]> =>
-      Promise.all(
+    async (items: StoryItemData[], userId: string, storyId: string): Promise<StoryItemData[]> => {
+      const mapped = await Promise.all(
         items.map(async (item) => {
-          if (!item.url.startsWith('data:')) {
+          if (item.url.startsWith('http')) {
             return item;
           }
           const uploaded = await uploadStoryMediaToSupabase(item, userId, storyId);
           return { ...item, url: uploaded.url };
         }),
-      ),
+      );
+
+      const invalid = mapped.some(
+        (item) => typeof item.url !== 'string' || !item.url.startsWith('http'),
+      );
+      if (invalid) {
+        throw new Error('Media must be uploaded to storage before posting the story.');
+      }
+
+      return mapped;
+    },
     [uploadStoryMediaToSupabase],
   );
 
@@ -769,6 +785,12 @@ const buildPayloadItems = useCallback(
       try {
         const storyId = payload.id || generateStoryId();
         const items = await ensurePendingItemsUploaded(payload.items, payload.userId, storyId);
+        const invalidInline = items.some(
+          (item) => typeof item.url === 'string' && (item.url.startsWith('data:') || !item.url.startsWith('http')),
+        );
+        if (invalidInline) {
+          throw new Error('Inline media detected; upload required');
+        }
         const story = await postStoryWithRetry({ ...payload, id: storyId, items }, 5);
         if (story) {
           mergeStoryUpdate(story, { prepend: true });

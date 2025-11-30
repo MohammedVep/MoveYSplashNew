@@ -9,7 +9,9 @@ const safeJson = async (req: Request) => {
 };
 
 const STORIES_PATH = "/make-server-a14c7986/stories";
-const MAX_JSON_BYTES = 128_000; // tighter 128KB guard to avoid large bodies
+const STORAGE_HOST = "opmvuhlheenygwbqwljk.supabase.co";
+const STORAGE_PREFIX = `https://${STORAGE_HOST}/storage/v1/object`;
+const MAX_JSON_BYTES = 64_000; // tighter 64KB guard to avoid large bodies
 
 const allowedOrigins = [
   "https://move-y-splash-new.vercel.app",
@@ -66,6 +68,25 @@ Deno.serve(async (req) => {
             headers: { "content-type": "application/json", ...cors },
           },
         );
+      }
+      // Require HTTP(S) media URLs only
+      try {
+        const parsedBody = JSON.parse(bodyString) as { items?: Array<{ url?: string }> };
+        if (
+          Array.isArray(parsedBody?.items) &&
+          parsedBody.items.some((item) => {
+            if (typeof item?.url !== "string") return true;
+            if (!item.url.startsWith("http")) return true;
+            return !item.url.startsWith(STORAGE_PREFIX);
+          })
+        ) {
+          return new Response(
+            JSON.stringify({ error: "Only Supabase Storage media URLs are allowed. Upload to storage first." }),
+            { status: 413, headers: { "content-type": "application/json", ...cors } },
+          );
+        }
+      } catch {
+        // fallback to proceed; server will validate further
       }
 
       // Forward to main app synchronously
