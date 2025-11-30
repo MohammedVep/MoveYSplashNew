@@ -2248,33 +2248,6 @@ app.post("/make-server-a14c7986/shares", async (c) => {
 // ========== STORY ENDPOINTS ==========
 
 const STORY_MAX_ITEMS = 12;
-const STORY_MAX_MEDIA_TOTAL_BYTES = 10 * 1024 * 1024; // 10MB total media cap per story
-const STORY_STORAGE_HOST = "opmvuhlheenygwbqwljk.supabase.co";
-
-const isSupabaseStorageUrl = (u: string): boolean => {
-  try {
-    const parsed = new URL(u);
-    if (parsed.hostname !== STORY_STORAGE_HOST) return false;
-    return parsed.pathname.startsWith("/storage/v1/object/");
-  } catch {
-    return false;
-  }
-};
-
-const collectMediaUrls = (payload: unknown): string[] => {
-  const urls: string[] = [];
-  const scan = (v: unknown) => {
-    if (Array.isArray(v)) {
-      v.forEach(scan);
-    } else if (v && typeof v === "object") {
-      Object.values(v as Record<string, unknown>).forEach(scan);
-    } else if (typeof v === "string" && v.startsWith("http")) {
-      urls.push(v);
-    }
-  };
-  scan(payload);
-  return urls;
-};
 
 const validateStoryMedia = async (body: JsonRecord) => {
   if (!Array.isArray(body.items)) {
@@ -2282,23 +2255,6 @@ const validateStoryMedia = async (body: JsonRecord) => {
   }
   if (body.items.length > STORY_MAX_ITEMS) {
     return { status: 413 as ContentfulStatusCode, error: "too many items" };
-  }
-
-  const urls = collectMediaUrls(body);
-
-  let total = 0;
-  for (const u of urls) {
-    const head = await fetch(u, { method: "HEAD" });
-    if (!head.ok) {
-      return { status: 400 as ContentfulStatusCode, error: "media url not accessible" };
-    }
-    const len = Number(head.headers.get("content-length") ?? 0);
-    if (Number.isFinite(len) && len > 0) {
-      total += len;
-    }
-    if (total > STORY_MAX_MEDIA_TOTAL_BYTES) {
-      return { status: 413 as ContentfulStatusCode, error: "total media too large" };
-    }
   }
 
   return { status: 202 as ContentfulStatusCode };
