@@ -715,19 +715,6 @@ export function VideoChat({
           addRemoteScreenStream(peerId, event.track);
         }
 
-        event.track.onended = () => {
-          const existing = remoteScreenStreamsRef.current.get(peerId);
-          if (existing) {
-            const filtered = existing.getTracks().filter((t) => t.id !== event.track.id);
-            const next = new MediaStream(filtered);
-            if (filtered.length > 0) {
-              remoteScreenStreamsRef.current.set(peerId, next);
-            } else {
-              remoteScreenStreamsRef.current.delete(peerId);
-            }
-            setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
-          }
-        };
       };
 
       const cleanupIfBroken = () => {
