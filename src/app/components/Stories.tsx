@@ -1511,6 +1511,7 @@ export function Stories() {
   }, [isCreatorOpen, stopCamera]);
 
   const storyFeed = useMemo<StoryState[]>(() => {
+    const nowMs = Date.now();
     return storiesData
       .filter(
         (story): story is StoryAPIResponse & { user: StoryUser; items: StoryItemData[] } =>
@@ -1532,9 +1533,11 @@ export function Stories() {
         const createdAt = story.createdAt && !Number.isNaN(Date.parse(story.createdAt))
           ? new Date(story.createdAt).toISOString()
           : new Date().toISOString();
+        const calculatedExpires = new Date(createdAt);
+        calculatedExpires.setHours(calculatedExpires.getHours() + 24);
         const expiresAt = story.expiresAt && !Number.isNaN(Date.parse(story.expiresAt))
           ? new Date(story.expiresAt).toISOString()
-          : createdAt;
+          : calculatedExpires.toISOString();
         const likes = Array.from(
           new Set(
             Array.isArray(story.likes)
@@ -1604,6 +1607,7 @@ export function Stories() {
           replies,
         };
       })
+      .filter((story) => Date.parse(story.expiresAt) > nowMs)
       .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
   }, [storiesData, currentUser]);
 
