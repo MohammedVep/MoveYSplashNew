@@ -524,21 +524,39 @@ export function VideoChat({
     });
   }, []);
 
-  const addRemoteScreenStream = useCallback((peerId: string, track: MediaStreamTrack) => {
+  const removeRemoteScreenStream = useCallback((peerId: string, trackId?: string) => {
     const existing = remoteScreenStreamsRef.current.get(peerId);
-    if (existing) {
-      const already = existing.getTracks().some((t) => t.id === track.id);
-      if (!already) {
-        existing.addTrack(track);
-      }
-      remoteScreenStreamsRef.current.set(peerId, existing);
-      setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
-      return;
+    if (!existing) return;
+    const filtered = existing.getTracks().filter((t) => (trackId ? t.id !== trackId : false));
+    if (filtered.length === 0) {
+      remoteScreenStreamsRef.current.delete(peerId);
+    } else {
+      remoteScreenStreamsRef.current.set(peerId, new MediaStream(filtered));
     }
-    const stream = new MediaStream([track]);
-    remoteScreenStreamsRef.current.set(peerId, stream);
     setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
   }, []);
+
+  const addRemoteScreenStream = useCallback(
+    (peerId: string, track: MediaStreamTrack) => {
+      const handleEnded = () => removeRemoteScreenStream(peerId, track.id);
+      track.addEventListener('ended', handleEnded);
+
+      const existing = remoteScreenStreamsRef.current.get(peerId);
+      if (existing) {
+        const already = existing.getTracks().some((t) => t.id === track.id);
+        if (!already) {
+          existing.addTrack(track);
+        }
+        remoteScreenStreamsRef.current.set(peerId, existing);
+        setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+        return;
+      }
+      const stream = new MediaStream([track]);
+      remoteScreenStreamsRef.current.set(peerId, stream);
+      setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+    },
+    [removeRemoteScreenStream],
+  );
 
   const removeRemoteStream = useCallback((peerId: string) => {
     remoteStreamsRef.current.delete(peerId);
@@ -578,8 +596,9 @@ export function VideoChat({
       peerConnectionsRef.current.delete(peerId);
       pendingIceRef.current.delete(peerId);
       removeRemoteStream(peerId);
+      removeRemoteScreenStream(peerId);
     },
-    [removeRemoteStream],
+    [removeRemoteScreenStream, removeRemoteStream],
   );
 
   const teardownAllPeers = useCallback(() => {
@@ -588,6 +607,8 @@ export function VideoChat({
     pendingIceRef.current.clear();
     remoteStreamsRef.current.clear();
     setRemoteStreams(new Map());
+    remoteScreenStreamsRef.current.clear();
+    setRemoteScreenStreams(new Map());
   }, [teardownPeer]);
 
   const addLocalTracks = useCallback(
@@ -1426,9 +1447,9 @@ export function VideoChat({
     if (effectiveScreenShareActive && currentUserId) {
       return currentUserId;
     }
-    const remoteSharer = remoteParticipants.find((presence) => presence.isScreenSharing);
-    return remoteSharer?.userId ?? null;
-  }, [currentUserId, effectiveScreenShareActive, remoteParticipants]);
+    const remoteSharerId = Array.from(remoteScreenStreams.keys())[0];
+    return remoteSharerId ?? null;
+  }, [currentUserId, effectiveScreenShareActive, remoteScreenStreams]);
 
   useEffect(() => {
     if (activeScreenSharerId) {
