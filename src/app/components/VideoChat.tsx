@@ -9,6 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
+import * as Ably from 'ably';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -267,6 +268,20 @@ const VIDEO_AUTH_HEADERS = {
 const VIDEO_GET_HEADERS = {
   Authorization: `Bearer ${publicAnonKey}`,
 };
+const ABLY_KEY =
+  process.env.NEXT_PUBLIC_ABLY_KEY ??
+  'TWe31g.j0F01A:-j8adkUcs-AeusvKPMgSFCJKlMb8zCh1pGbt5Zo3CxI';
+const ICE_SERVERS: RTCIceServer[] = [
+  { urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302'] },
+];
+
+type SignalPayload = {
+  type: 'offer' | 'answer' | 'ice';
+  from: string;
+  to?: string;
+  sdp?: RTCSessionDescriptionInit;
+  candidate?: RTCIceCandidateInit;
+};
 
 type ScreenSelection = 'auto' | 'all-monitors' | string;
 
@@ -422,6 +437,19 @@ export function VideoChat({
     ];
   });
   const chatListRef = useRef<HTMLDivElement | null>(null);
+  const [signalingError, setSignalingError] = useState<string | null>(null);
+  const peerConnectionsRef = useRef<Map<string, RTCPeerConnection>>(new Map());
+  const remoteStreamsRef = useRef<Map<string, MediaStream>>(new Map());
+  const [remoteStreams, setRemoteStreams] = useState<Map<string, MediaStream>>(new Map());
+  const signalingClientRef = useRef<Ably.Realtime | null>(null);
+  const signalingChannelRef = useRef<Ably.RealtimeChannel | null>(null);
+  const pendingIceRef = useRef<Map<string, RTCIceCandidateInit[]>>(new Map());
+  const selfClientId = useMemo(
+    () => currentUser?.ablyClientId ?? currentUser?.id ?? currentUserId ?? 'guest',
+    [currentUser?.ablyClientId, currentUser?.id, currentUserId],
+  );
+  const readyForWebRTC =
+    callStatus === 'connected' && callType === 'video' && !demoMode && Boolean(mediaStream);
 
   useEffect(() => {
     muteStateRef.current = isMuted;
@@ -479,6 +507,329 @@ export function VideoChat({
       chatListRef.current.scrollTop = chatListRef.current.scrollHeight;
     }
   }, [chatMessages, showChatPanel]);
+
+  const addRemoteStream = useCallback((peerId: string, stream: MediaStream) => {
+    remoteStreamsRef.current.set(peerId, stream);
+    setRemoteStreams((prev) => {
+      const next = new Map(prev);
+      next.set(peerId, stream);
+      return next;
+    });
+  }, []);
+
+  const removeRemoteStream = useCallback((peerId: string) => {
+    remoteStreamsRef.current.delete(peerId);
+    setRemoteStreams((prev) => {
+      if (!prev.has(peerId)) {
+        return prev;
+      }
+      const next = new Map(prev);
+      next.delete(peerId);
+      return next;
+    });
+  }, []);
+
+  const teardownPeer = useCallback(
+    (peerId: string) => {
+      const existing = peerConnectionsRef.current.get(peerId);
+      if (existing) {
+        try {
+          existing.ontrack = null;
+          existing.onicecandidate = null;
+          existing.onconnectionstatechange = null;
+          existing.oniceconnectionstatechange = null;
+          existing.close();
+        } catch {
+          // ignore close errors
+        }
+      }
+      peerConnectionsRef.current.delete(peerId);
+      pendingIceRef.current.delete(peerId);
+      removeRemoteStream(peerId);
+    },
+    [removeRemoteStream],
+  );
+
+  const teardownAllPeers = useCallback(() => {
+    peerConnectionsRef.current.forEach((_, id) => teardownPeer(id));
+    peerConnectionsRef.current.clear();
+    pendingIceRef.current.clear();
+    remoteStreamsRef.current.clear();
+    setRemoteStreams(new Map());
+  }, [teardownPeer]);
+
+  const addLocalTracks = useCallback(
+    (peer: RTCPeerConnection) => {
+      if (!mediaStream) {
+        return;
+      }
+      peer.getSenders().forEach((sender) => {
+        if (sender.track && sender.track.readyState === 'ended') {
+          try {
+            peer.removeTrack(sender);
+          } catch {
+            // ignore remove errors
+          }
+        }
+      });
+      const senders = peer.getSenders();
+      mediaStream.getTracks().forEach((track) => {
+        const alreadySending = senders.some((sender) => sender.track?.id === track.id);
+        if (!alreadySending) {
+          peer.addTrack(track, mediaStream);
+        }
+      });
+    },
+    [mediaStream],
+  );
+
+  const flushPendingCandidates = useCallback((peerId: string, peer: RTCPeerConnection) => {
+    const pending = pendingIceRef.current.get(peerId);
+    if (!pending?.length) {
+      return;
+    }
+    pending.forEach(async (candidate) => {
+      try {
+        await peer.addIceCandidate(candidate);
+      } catch (error) {
+        console.warn('Failed to apply queued ICE candidate', error);
+      }
+    });
+    pendingIceRef.current.delete(peerId);
+  }, []);
+
+  const ensurePeerConnection = useCallback(
+    (peerId: string): RTCPeerConnection | null => {
+      if (!peerId || peerId === selfClientId || !mediaStream) {
+        return null;
+      }
+      const existing = peerConnectionsRef.current.get(peerId);
+      if (existing) {
+        return existing;
+      }
+
+      const peer = new RTCPeerConnection({ iceServers: ICE_SERVERS });
+      peerConnectionsRef.current.set(peerId, peer);
+      addLocalTracks(peer);
+
+      peer.onicecandidate = (event) => {
+        if (event.candidate && signalingChannelRef.current) {
+          const candidatePayload = event.candidate.toJSON ? event.candidate.toJSON() : event.candidate;
+          signalingChannelRef.current
+            .publish('signal', {
+              type: 'ice',
+              from: selfClientId,
+              to: peerId,
+              candidate: candidatePayload,
+            } satisfies SignalPayload)
+            .catch((error) => console.warn('Failed to publish ICE candidate', error));
+        }
+      };
+
+      peer.ontrack = (event) => {
+        const [stream] = event.streams;
+        const inboundStream = stream ?? new MediaStream([event.track]);
+        addRemoteStream(peerId, inboundStream);
+      };
+
+      const cleanupIfBroken = () => {
+        const state = peer.connectionState || peer.iceConnectionState;
+        if (state === 'failed' || state === 'closed' || state === 'disconnected') {
+          teardownPeer(peerId);
+        }
+      };
+      peer.onconnectionstatechange = cleanupIfBroken;
+      peer.oniceconnectionstatechange = cleanupIfBroken;
+
+      return peer;
+    },
+    [addLocalTracks, addRemoteStream, mediaStream, selfClientId, teardownPeer],
+  );
+
+  const startOffer = useCallback(
+    async (peerId: string) => {
+      const peer = ensurePeerConnection(peerId);
+      if (!peer) {
+        return;
+      }
+      try {
+        const offer = await peer.createOffer();
+        await peer.setLocalDescription(offer);
+        await signalingChannelRef.current?.publish('signal', {
+          type: 'offer',
+          from: selfClientId,
+          to: peerId,
+          sdp: offer,
+        } satisfies SignalPayload);
+      } catch (error) {
+        console.warn('Failed to start offer', error);
+      }
+    },
+    [ensurePeerConnection, selfClientId],
+  );
+
+  const handleSignalMessage = useCallback(
+    async (message: Ably.Message) => {
+      const payload = message.data as SignalPayload | undefined;
+      if (!payload || payload.from === selfClientId) {
+        return;
+      }
+      if (payload.to && payload.to !== selfClientId) {
+        return;
+      }
+
+      const peerId = payload.from;
+      const peer = ensurePeerConnection(peerId);
+      if (!peer) {
+        return;
+      }
+
+      try {
+        if (payload.type === 'offer' && payload.sdp) {
+          await peer.setRemoteDescription(new RTCSessionDescription(payload.sdp));
+          const answer = await peer.createAnswer();
+          await peer.setLocalDescription(answer);
+          await signalingChannelRef.current?.publish('signal', {
+            type: 'answer',
+            from: selfClientId,
+            to: peerId,
+            sdp: answer,
+          } satisfies SignalPayload);
+          flushPendingCandidates(peerId, peer);
+        } else if (payload.type === 'answer' && payload.sdp) {
+          if (!peer.currentRemoteDescription) {
+            await peer.setRemoteDescription(new RTCSessionDescription(payload.sdp));
+          }
+          flushPendingCandidates(peerId, peer);
+        } else if (payload.type === 'ice' && payload.candidate) {
+          if (peer.remoteDescription) {
+            await peer.addIceCandidate(payload.candidate);
+          } else {
+            const existing = pendingIceRef.current.get(peerId) ?? [];
+            existing.push(payload.candidate);
+            pendingIceRef.current.set(peerId, existing);
+          }
+        }
+      } catch (error) {
+        console.warn('Error handling signaling payload', error);
+      }
+    },
+    [ensurePeerConnection, flushPendingCandidates, selfClientId],
+  );
+
+  const cleanupSignaling = useCallback(() => {
+    const channel = signalingChannelRef.current;
+    if (channel) {
+      try {
+        channel.presence.leave();
+      } catch {
+        // ignore
+      }
+      try {
+        channel.unsubscribe('signal', handleSignalMessage);
+        channel.presence.unsubscribe();
+        channel.detach();
+      } catch {
+        // ignore detach errors
+      }
+      signalingChannelRef.current = null;
+    }
+    if (signalingClientRef.current) {
+      try {
+        signalingClientRef.current.close();
+      } catch {
+        // ignore
+      }
+      signalingClientRef.current = null;
+    }
+    teardownAllPeers();
+  }, [handleSignalMessage, teardownAllPeers]);
+
+  useEffect(() => {
+    peerConnectionsRef.current.forEach((peer) => addLocalTracks(peer));
+  }, [addLocalTracks, mediaStream]);
+
+  useEffect(() => {
+    if (signalingError) {
+      toast.error(signalingError);
+    }
+  }, [signalingError]);
+
+  useEffect(() => {
+    const activeIds = new Set(remoteParticipants.map((participant) => participant.userId));
+    remoteStreamsRef.current.forEach((_, peerId) => {
+      if (!activeIds.has(peerId)) {
+        teardownPeer(peerId);
+      }
+    });
+  }, [remoteParticipants, teardownPeer]);
+
+  useEffect(() => {
+    if (!readyForWebRTC || !selfClientId) {
+      cleanupSignaling();
+      return;
+    }
+    if (!ABLY_KEY) {
+      setSignalingError('Missing Ably configuration for video signaling.');
+      return;
+    }
+
+    setSignalingError(null);
+    const realtime = new Ably.Realtime({ key: ABLY_KEY, clientId: selfClientId });
+    signalingClientRef.current = realtime;
+
+    const channelName = `video-webrtc-${roomId}`;
+    const channel = realtime.channels.get(channelName);
+    signalingChannelRef.current = channel;
+
+    const presenceHandler = async (presence: Ably.PresenceMessage) => {
+      const peerId = presence.clientId || (presence.data as { userId?: string } | undefined)?.userId;
+      if (!peerId || peerId === selfClientId) {
+        return;
+      }
+      ensurePeerConnection(peerId);
+      if (selfClientId < peerId) {
+        await startOffer(peerId);
+      }
+    };
+
+    const init = async () => {
+      try {
+        await channel.attach();
+        await channel.presence.enter({ userId: selfClientId });
+        const members = await channel.presence.get();
+        for (const member of members) {
+          await presenceHandler(member);
+        }
+      } catch (error) {
+        console.warn('Failed to start signaling', error);
+        setSignalingError('Unable to connect to signaling. Check your connection.');
+      }
+    };
+
+    channel.subscribe('signal', handleSignalMessage);
+    channel.presence.subscribe('enter', presenceHandler);
+    channel.presence.subscribe('leave', (presence) => {
+      const peerId = presence.clientId || (presence.data as { userId?: string } | undefined)?.userId;
+      if (peerId) {
+        teardownPeer(peerId);
+      }
+    });
+
+    void init();
+
+    return () => {
+      cleanupSignaling();
+    };
+  }, [
+    cleanupSignaling,
+    handleSignalMessage,
+    readyForWebRTC,
+    roomId,
+    selfClientId,
+    startOffer,
+    teardownPeer,
+  ]);
 
   useEffect(() => {
     let mounted = true;
@@ -1398,6 +1749,7 @@ export function VideoChat({
       screenShareStreamRef.current.getTracks().forEach(track => track.stop());
       screenShareStreamRef.current = null;
     }
+    cleanupSignaling();
     setIsScreenShareStreaming(false);
     setIsScreenSharing(false);
     setScreenShareQuality(null);
@@ -2134,154 +2486,169 @@ export function VideoChat({
           gridParticipants.length >= 4 ? 'grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
         }`}
       >
-        {gridParticipants.map((participant) => (
-          <Card
-            key={participant.userId}
-            className={`relative overflow-hidden backdrop-blur-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 transition-all min-h-[200px] ${
-              participant.isSpeaking 
-                ? 'border-green-400 shadow-lg shadow-green-400/50' 
-                : 'border-white/20'
-            }`}
-          >
-            {/* Video Placeholder */}
-            {participant.isSelf ? (
-              participant.isVideoOff ? (
-                <div className="w-full h-full flex items-center justify-center">
-                  <Avatar className="w-24 h-24 border-4 border-white/20">
-                    <AvatarImage src={participant.avatar} />
-                    <AvatarFallback>{participant.name[0] ?? 'Y'}</AvatarFallback>
-                  </Avatar>
-                </div>
-              ) : cameraConflictActive && cameraFallbackFrame ? (
-                <div className="relative w-full h-full">
-                  <Image
-                    src={cameraFallbackFrame}
-                    alt="Camera preview"
-                    fill
-                    unoptimized
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center text-center px-6">
-                    <div className="text-white font-semibold mb-2">Camera temporarily in use by another app</div>
-                    <p className="text-white/80 text-sm">
-                      Keeping your last frame visible while Zoom/Meet/Teams is running. We&apos;ll switch back automatically.
+        {gridParticipants.map((participant) => {
+          const remoteStream = remoteStreams.get(participant.userId);
+          return (
+            <Card
+              key={participant.userId}
+              className={`relative overflow-hidden backdrop-blur-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 transition-all min-h-[200px] ${
+                participant.isSpeaking 
+                  ? 'border-green-400 shadow-lg shadow-green-400/50' 
+                  : 'border-white/20'
+              }`}
+            >
+              {/* Video Placeholder */}
+              {participant.isSelf ? (
+                participant.isVideoOff ? (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Avatar className="w-24 h-24 border-4 border-white/20">
+                      <AvatarImage src={participant.avatar} />
+                      <AvatarFallback>{participant.name[0] ?? 'Y'}</AvatarFallback>
+                    </Avatar>
+                  </div>
+                ) : cameraConflictActive && cameraFallbackFrame ? (
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={cameraFallbackFrame}
+                      alt="Camera preview"
+                      fill
+                      unoptimized
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center text-center px-6">
+                      <div className="text-white font-semibold mb-2">Camera temporarily in use by another app</div>
+                      <p className="text-white/80 text-sm">
+                        Keeping your last frame visible while Zoom/Meet/Teams is running. We&apos;ll switch back automatically.
+                      </p>
+                    </div>
+                  </div>
+                ) : cameraConflictActive ? (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-purple-600/40 to-pink-600/40 text-white">
+                    <div className="text-3xl mb-2">📸</div>
+                    <p className="font-semibold">Camera temporarily unavailable</p>
+                    <p className="text-white/80 text-sm mt-1">
+                      We&apos;re retrying while another app is using your webcam.
                     </p>
                   </div>
-                </div>
-              ) : cameraConflictActive ? (
-                <div className="w-full h-full flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-purple-600/40 to-pink-600/40 text-white">
-                  <div className="text-3xl mb-2">📸</div>
-                  <p className="font-semibold">Camera temporarily unavailable</p>
-                  <p className="text-white/80 text-sm mt-1">
-                    We&apos;re retrying while another app is using your webcam.
+                ) : demoMode ? (
+                  <>
+                    <canvas
+                      ref={demoCanvasRef}
+                      width={640}
+                      height={480}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs px-2 py-1 rounded">
+                      🎬 DEMO
+                    </div>
+                  </>
+                ) : mediaStream ? (
+                  <>
+                    <video
+                      ref={localVideoRef}
+                      autoPlay
+                      playsInline
+                      muted
+                      className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
+                    />
+                    <div className="absolute top-2 left-2 flex gap-2">
+                      <div className="bg-black/50 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                        <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                        LIVE
+                      </div>
+                      {videoQuality && (
+                        <div className={`text-white text-xs px-2 py-1 rounded ${
+                          videoQuality === '4K UHD' 
+                            ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
+                            : videoQuality === 'Full HD'
+                            ? 'bg-blue-500/80'
+                            : 'bg-green-500/80'
+                        }`}>
+                          {videoQuality}
+                        </div>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/30 to-purple-900/30 flex items-center justify-center">
+                    <div className="text-white/70 text-center space-y-2">
+                      <div className="w-12 h-12 bg-white/10 rounded-full animate-pulse mx-auto" />
+                      <p className="text-sm">Starting camera...</p>
+                      {cameraError && (
+                        <p className="text-xs text-red-400">{cameraError}</p>
+                      )}
+                    </div>
+                  </div>
+                )
+              ) : remoteStream && !participant.isVideoOff ? (
+                <video
+                  autoPlay
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  ref={(node) => {
+                    if (node && node.srcObject !== remoteStream) {
+                      node.srcObject = remoteStream;
+                      node.play().catch((error) => console.error('Error playing remote video:', error));
+                    }
+                  }}
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900/40 to-purple-900/40 text-center px-4">
+                  <Avatar className="w-20 h-20 border-4 border-white/20 mb-3">
+                    <AvatarImage src={participant.avatar} />
+                    <AvatarFallback>{participant.name[0] ?? '?'}</AvatarFallback>
+                  </Avatar>
+                  <p className="text-white text-sm font-semibold">{participant.name}</p>
+                  <p className="text-white/60 text-xs mt-1">
+                    {participant.isVideoOff ? 'Camera off' : 'Streaming'}
                   </p>
                 </div>
-              ) : demoMode ? (
-                <>
-                  <canvas
-                    ref={demoCanvasRef}
-                    width={640}
-                    height={480}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute top-2 left-2 bg-purple-500/80 text-white text-xs px-2 py-1 rounded">
-                    🎬 DEMO
-                  </div>
-                </>
-              ) : mediaStream ? (
-                <>
-                  <video
-                    ref={localVideoRef}
-                    autoPlay
-                    playsInline
-                    muted
-                    className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
-                  />
-                  <div className="absolute top-2 left-2 flex gap-2">
-                    <div className="bg-black/50 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                      LIVE
-                    </div>
-                    {videoQuality && (
-                      <div className={`text-white text-xs px-2 py-1 rounded ${
-                        videoQuality === '4K UHD' 
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
-                          : videoQuality === 'Full HD'
-                          ? 'bg-blue-500/80'
-                          : 'bg-green-500/80'
-                      }`}>
-                        {videoQuality}
+              )}
+              {participant.isSelf && isSoloParticipant && (
+                <div className="absolute bottom-3 left-3 bg-black/60 text-white/80 text-xs px-3 py-1 rounded-full">
+                  You&apos;re the first in the room
+                </div>
+              )}
+
+              {/* Participant Info Overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white text-sm">{participant.name}</span>
+                    {participant.isSpeaking && (
+                      <div className="flex gap-0.5">
+                        <div className="w-1 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <div className="w-1 h-4 bg-green-400 rounded-full animate-pulse animation-delay-150"></div>
+                        <div className="w-1 h-3 bg-green-400 rounded-full animate-pulse animation-delay-300"></div>
                       </div>
                     )}
                   </div>
-                </>
-              ) : (
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-900/30 to-purple-900/30 flex items-center justify-center">
-                  <div className="text-white/70 text-center space-y-2">
-                    <div className="w-12 h-12 bg-white/10 rounded-full animate-pulse mx-auto" />
-                    <p className="text-sm">Starting camera...</p>
-                    {cameraError && (
-                      <p className="text-xs text-red-400">{cameraError}</p>
+                  <div className="flex items-center gap-1">
+                    {participant.isMuted && (
+                      <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                        <MicOff className="w-3 h-3 text-white" />
+                      </div>
+                    )}
+                    {participant.isVideoOff && (
+                      <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                        <VideoOff className="w-3 h-3 text-white" />
+                      </div>
                     )}
                   </div>
                 </div>
-              )
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900/40 to-purple-900/40 text-center px-4">
-                <Avatar className="w-20 h-20 border-4 border-white/20 mb-3">
-                  <AvatarImage src={participant.avatar} />
-                  <AvatarFallback>{participant.name[0] ?? '?'}</AvatarFallback>
-                </Avatar>
-                <p className="text-white text-sm font-semibold">{participant.name}</p>
-                <p className="text-white/60 text-xs mt-1">
-                  {participant.isVideoOff ? 'Camera off' : 'Streaming'}
-                </p>
               </div>
-            )}
-            {participant.isSelf && isSoloParticipant && (
-              <div className="absolute bottom-3 left-3 bg-black/60 text-white/80 text-xs px-3 py-1 rounded-full">
-                You&apos;re the first in the room
-              </div>
-            )}
 
-            {/* Participant Info Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-white text-sm">{participant.name}</span>
-                  {participant.isSpeaking && (
-                    <div className="flex gap-0.5">
-                      <div className="w-1 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                      <div className="w-1 h-4 bg-green-400 rounded-full animate-pulse animation-delay-150"></div>
-                      <div className="w-1 h-3 bg-green-400 rounded-full animate-pulse animation-delay-300"></div>
-                    </div>
-                  )}
-                </div>
-                <div className="flex items-center gap-1">
-                  {participant.isMuted && (
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                      <MicOff className="w-3 h-3 text-white" />
-                    </div>
-                  )}
-                  {participant.isVideoOff && (
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                      <VideoOff className="w-3 h-3 text-white" />
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* More Options */}
-            <Button
-              size="sm"
-              variant="ghost"
-              className="absolute top-2 right-2 text-white/70 hover:text-white hover:bg-black/30 backdrop-blur-md"
-            >
-              <MoreVertical className="w-4 h-4" />
-            </Button>
-          </Card>
-        ))}
+              {/* More Options */}
+              <Button
+                size="sm"
+                variant="ghost"
+                className="absolute top-2 right-2 text-white/70 hover:text-white hover:bg-black/30 backdrop-blur-md"
+              >
+                <MoreVertical className="w-4 h-4" />
+              </Button>
+            </Card>
+          );
+        })}
       </div>
 
       {/* Screen Share Overlay */}
