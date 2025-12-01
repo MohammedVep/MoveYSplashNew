@@ -560,9 +560,18 @@ export function VideoChat({
 
   const addLocalTracks = useCallback(
     (peer: RTCPeerConnection) => {
-      if (!mediaStream) {
+      const streams: MediaStream[] = [];
+      if (mediaStream) {
+        streams.push(mediaStream);
+      }
+      if (screenShareStreamRef.current && isScreenShareStreaming) {
+        streams.push(screenShareStreamRef.current);
+      }
+
+      if (streams.length === 0) {
         return;
       }
+
       peer.getSenders().forEach((sender) => {
         if (sender.track && sender.track.readyState === 'ended') {
           try {
@@ -572,16 +581,23 @@ export function VideoChat({
           }
         }
       });
+
       const senders = peer.getSenders();
-      mediaStream.getTracks().forEach((track) => {
-        const alreadySending = senders.some((sender) => sender.track?.id === track.id);
-        if (!alreadySending) {
-          peer.addTrack(track, mediaStream);
-        }
+      streams.forEach((stream) => {
+        stream.getTracks().forEach((track) => {
+          const alreadySending = senders.some((sender) => sender.track?.id === track.id);
+          if (!alreadySending) {
+            peer.addTrack(track, stream);
+          }
+        });
       });
     },
-    [mediaStream],
+    [isScreenShareStreaming, mediaStream],
   );
+
+  const syncLocalTracksToPeers = useCallback(() => {
+    peerConnectionsRef.current.forEach((peer) => addLocalTracks(peer));
+  }, [addLocalTracks]);
 
   const flushPendingCandidates = useCallback((peerId: string, peer: RTCPeerConnection) => {
     const pending = pendingIceRef.current.get(peerId);
@@ -627,9 +643,17 @@ export function VideoChat({
       };
 
       peer.ontrack = (event) => {
-        const [stream] = event.streams;
-        const inboundStream = stream ?? new MediaStream([event.track]);
-        addRemoteStream(peerId, inboundStream);
+        const [streamFromEvent] = event.streams;
+        let targetStream =
+          streamFromEvent ??
+          remoteStreamsRef.current.get(peerId) ??
+          new MediaStream();
+
+        if (event.track && !targetStream.getTracks().some((t) => t.id === event.track.id)) {
+          targetStream.addTrack(event.track);
+        }
+
+        addRemoteStream(peerId, targetStream);
       };
 
       const cleanupIfBroken = () => {
@@ -746,8 +770,12 @@ export function VideoChat({
   }, [handleSignalMessage, teardownAllPeers]);
 
   useEffect(() => {
-    peerConnectionsRef.current.forEach((peer) => addLocalTracks(peer));
-  }, [addLocalTracks, mediaStream]);
+    syncLocalTracksToPeers();
+  }, [mediaStream, syncLocalTracksToPeers]);
+
+  useEffect(() => {
+    syncLocalTracksToPeers();
+  }, [isScreenShareStreaming, syncLocalTracksToPeers]);
 
   useEffect(() => {
     if (signalingError) {
@@ -2014,6 +2042,7 @@ export function VideoChat({
         }
         manualScreenShareStopRef.current = false;
         screenShareStreamRef.current = screenStream;
+        syncLocalTracksToPeers();
         setIsScreenShareStreaming(true);
         setIsScreenSharing(true);
         if (screenShareVideoRef.current) {
@@ -2024,6 +2053,7 @@ export function VideoChat({
         // Stop screen sharing when user stops it from browser UI
         videoTrack.onended = () => {
           screenShareStreamRef.current = null;
+          syncLocalTracksToPeers();
           if (manualScreenShareStopRef.current) {
             manualScreenShareStopRef.current = false;
             setIsScreenShareStreaming(false);
