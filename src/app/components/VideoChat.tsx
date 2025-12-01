@@ -398,6 +398,7 @@ export function VideoChat({
   const screenShareStreamRef = useRef<MediaStream | null>(null);
   const manualScreenShareStopRef = useRef(false);
   const screenShareVideoRef = useRef<HTMLVideoElement>(null);
+  const selfScreenSharePreviewRef = useRef<HTMLVideoElement>(null);
   const { currentUser, allUsers } = useUser();
   const currentUserId = currentUser?.id ?? null;
   const [remoteParticipants, setRemoteParticipants] = useState<VideoPresenceRecord[]>([]);
@@ -1509,13 +1510,26 @@ export function VideoChat({
     remoteParticipants,
   ]);
 
+  const remoteScreenSharerId = useMemo(() => {
+    const [streamSharerId] = Array.from(remoteScreenStreams.keys());
+    if (streamSharerId) {
+      return streamSharerId;
+    }
+    const announcedSharer = participants.find(
+      (participant) => !participant.isSelf && participant.isScreenSharing,
+    );
+    return announcedSharer?.userId ?? null;
+  }, [participants, remoteScreenStreams]);
+
   const activeScreenSharerId = useMemo(() => {
+    if (remoteScreenSharerId) {
+      return remoteScreenSharerId;
+    }
     if (effectiveScreenShareActive && currentUserId) {
       return currentUserId;
     }
-    const remoteSharerId = Array.from(remoteScreenStreams.keys())[0];
-    return remoteSharerId ?? null;
-  }, [currentUserId, effectiveScreenShareActive, remoteScreenStreams]);
+    return null;
+  }, [currentUserId, effectiveScreenShareActive, remoteScreenSharerId]);
 
   useEffect(() => {
     if (activeScreenSharerId) {
@@ -1582,6 +1596,27 @@ export function VideoChat({
     }
     return new MediaStream(audioTracks);
   }, [remoteStreams, screenShareParticipant]);
+
+  useEffect(() => {
+    const node = selfScreenSharePreviewRef.current;
+    const stream = screenShareStreamRef.current;
+    const showingRemoteStage = Boolean(screenShareParticipant && !screenShareParticipant.isSelf);
+    if (!node) {
+      return;
+    }
+    if (showingRemoteStage && effectiveScreenShareActive && stream && isScreenShareStreaming) {
+      if (node.srcObject !== stream) {
+        node.srcObject = stream;
+      }
+      node
+        .play()
+        .catch((error) =>
+          console.error('Error playing local screen share preview while watching remote stage:', error),
+        );
+    } else if (node.srcObject) {
+      node.srcObject = null;
+    }
+  }, [effectiveScreenShareActive, isScreenShareStreaming, screenShareParticipant]);
 
   const gridParticipants = useMemo(() => {
     if (!screenShareParticipant) {
@@ -2747,6 +2782,28 @@ export function VideoChat({
               </div>
             )}
           </div>
+          {effectiveScreenShareActive &&
+            !screenShareParticipant.isSelf &&
+            screenShareStreamRef.current && (
+              <div className="absolute top-3 right-3 w-52 md:w-64 bg-black/70 border border-white/20 rounded-lg overflow-hidden shadow-lg shadow-black/50">
+                <div className="px-3 py-2 text-[11px] text-white/80 flex items-center justify-between bg-white/10">
+                  <span>Your share preview</span>
+                  <span className="text-white/60 text-[10px]">Live to everyone</span>
+                </div>
+                <div className="w-full aspect-video bg-black">
+                  <video
+                    ref={selfScreenSharePreviewRef}
+                    autoPlay
+                    playsInline
+                    muted
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="px-3 py-2 text-[11px] text-white/70 bg-black/40">
+                  Keeping {screenShareParticipant.name}&apos;s screen on stage while you present.
+                </div>
+              </div>
+            )}
         </Card>
       )}
 
@@ -2922,7 +2979,7 @@ export function VideoChat({
       </div>
 
       {/* Screen Share Overlay */}
-      {screenShareDemoMode && isScreenSharing && (
+      {screenShareDemoMode && isScreenSharing && (!screenShareParticipant || screenShareParticipant.isSelf) && (
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4">
           <div className="relative w-full max-w-6xl aspect-video">
             <canvas
