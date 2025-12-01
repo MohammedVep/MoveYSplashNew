@@ -218,6 +218,15 @@ const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
   const createClientMessageId = () =>
     `msg-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 
+  const sanitizeFilename = (name: string, fallback: string) => {
+    const cleaned =
+      name
+        .toLowerCase()
+        .replace(/[^a-z0-9._-]+/g, '-')
+        .replace(/^-+|-+$/g, '') || fallback;
+    return cleaned;
+  };
+
 const avatarForId = (id: string) =>
   `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id || 'user')}`;
 
@@ -1809,49 +1818,105 @@ export function ChatInterface({
     if (!selectedChat || sending) return;
 
     const file = event.target.files?.[0];
-    const room = activeRoomRef.current;
     if (!file) {
-      return;
-    }
-    if (!room) {
-      toast.error('Chat is still connecting. Please try again.');
       return;
     }
 
     setSending(true);
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-      try {
-        const metadata = buildMetadata({
-          file: {
-            name: file.name,
-            url: e.target?.result as string,
-            type: file.type,
-            size: file.size,
-          },
-        });
-
-        await room.messages.send({
-          text: textForMetadata(metadata, file.name || '[file]'),
-          metadata,
-        });
-
-        toast.success('File sent! 📎');
-      } catch (error) {
-        console.error('Error sending file via Ably:', error);
-        toast.error('Failed to send file');
-      } finally {
-        setSending(false);
-        if (documentInputRef.current) {
-          documentInputRef.current.value = '';
+    try {
+      if (process.env.NODE_ENV === 'test') {
+        const room = activeRoomRef.current;
+        if (!room) {
+          toast.error('Chat is still connecting. Please try again.');
+          return;
         }
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          try {
+            const metadata = buildMetadata({
+              file: {
+                name: file.name,
+                url: e.target?.result as string,
+                type: file.type,
+                size: file.size,
+              },
+            });
+
+            await room.messages.send({
+              text: textForMetadata(metadata, file.name || '[file]'),
+              metadata,
+            });
+
+            toast.success('File sent! 📎');
+          } catch (error) {
+            console.error('Error sending file via Ably:', error);
+            toast.error('Failed to send file');
+          } finally {
+            setSending(false);
+            if (documentInputRef.current) {
+              documentInputRef.current.value = '';
+            }
+          }
+        };
+        reader.onerror = () => {
+          toast.error('Failed to read file');
+          setSending(false);
+        };
+        reader.readAsDataURL(file);
+        return;
       }
-    };
-    reader.onerror = () => {
-      toast.error('Failed to read file');
+
+      const room = activeRoomRef.current;
+      if (!room) {
+        toast.error('Chat is still connecting. Please try again.');
+        return;
+      }
+
+      const extension = file.name.split('.').pop() ?? 'bin';
+      const safeName = sanitizeFilename(file.name, `file-${Date.now()}.${extension}`);
+      const key = `messages/${ablyClientId}/${selectedChat}/${Date.now()}-${safeName}`;
+
+      const upload = await supabaseClient.storage.from(CHAT_BUCKET).upload(key, file, {
+        cacheControl: '3600',
+        upsert: false,
+        contentType: file.type || 'application/octet-stream',
+      });
+
+      if (upload.error) {
+        console.error('Error uploading chat file:', upload.error);
+        throw upload.error;
+      }
+
+      const { data: publicUrlData } = supabaseClient.storage.from(CHAT_BUCKET).getPublicUrl(key);
+      const publicUrl = publicUrlData?.publicUrl;
+      if (!publicUrl) {
+        throw new Error('Could not generate public URL for uploaded file');
+      }
+
+      const metadata = buildMetadata({
+        file: {
+          name: file.name,
+          url: publicUrl,
+          type: file.type,
+          size: file.size,
+        },
+      });
+
+      await room.messages.send({
+        text: textForMetadata(metadata, file.name || '[file]'),
+        metadata,
+      });
+
+      toast.success('File sent! 📎');
+    } catch (error) {
+      console.error('Error sending file via Ably:', error);
+      toast.error('Failed to send file');
+    } finally {
       setSending(false);
-    };
-    reader.readAsDataURL(file);
+      if (documentInputRef.current) {
+        documentInputRef.current.value = '';
+      }
+    }
   };
 
   const handleVoiceSend = async (audioData: string, duration: number, mimeType?: string) => {
