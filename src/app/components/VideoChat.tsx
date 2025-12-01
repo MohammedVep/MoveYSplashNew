@@ -401,6 +401,7 @@ export function VideoChat({
   const { currentUser, allUsers } = useUser();
   const currentUserId = currentUser?.id ?? null;
   const [remoteParticipants, setRemoteParticipants] = useState<VideoPresenceRecord[]>([]);
+  const remoteParticipantsRef = useRef<VideoPresenceRecord[]>([]);
   const roomId = VIDEO_ROOM_ID;
   const presencePollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const presenceHeartbeatRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -464,6 +465,10 @@ export function VideoChat({
   useEffect(() => {
     screenShareStateRef.current = isScreenShareStreaming;
   }, [isScreenShareStreaming]);
+
+  useEffect(() => {
+    remoteParticipantsRef.current = remoteParticipants;
+  }, [remoteParticipants]);
 
   useEffect(() => {
     if (typeof navigator === 'undefined') {
@@ -688,9 +693,25 @@ export function VideoChat({
         const settings = event.track.getSettings?.() ?? {};
         const looksLikeScreen =
           settings.displaySurface ||
-          (event.track.label && event.track.label.toLowerCase().includes('screen')) ||
+          (event.track.label &&
+            (() => {
+              const label = event.track.label.toLowerCase();
+              return (
+                label.includes('screen') ||
+                label.includes('window') ||
+                label.includes('display') ||
+                label.includes('monitor') ||
+                label.includes('share')
+              );
+            })()) ||
           event.track.contentHint === 'detail';
+
+        const presence = remoteParticipantsRef.current.find((p) => p.userId === peerId);
+        const flaggedAsSharing = presence?.isScreenSharing;
+
         if (looksLikeScreen) {
+          addRemoteScreenStream(peerId, event.track);
+        } else if (flaggedAsSharing && event.track.kind === 'video') {
           addRemoteScreenStream(peerId, event.track);
         }
 
@@ -2537,6 +2558,7 @@ export function VideoChat({
             <video
               autoPlay
               playsInline
+              muted
               className="absolute inset-0 w-full h-full object-contain bg-black"
               ref={(node) => {
                 if (node && node.srcObject !== remoteScreenShareStream) {
