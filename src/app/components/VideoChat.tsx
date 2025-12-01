@@ -1497,6 +1497,19 @@ export function VideoChat({
     return new MediaStream(videoTracks);
   }, [looksLikeScreenTrack, remoteStreams, screenShareParticipant]);
 
+  const remoteSharerAudioStream = useMemo(() => {
+    if (!screenShareParticipant || screenShareParticipant.isSelf) {
+      return null;
+    }
+    const combined = remoteStreams.get(screenShareParticipant.userId);
+    if (!combined) return null;
+    const audioTracks = combined.getAudioTracks();
+    if (audioTracks.length === 0) {
+      return null;
+    }
+    return new MediaStream(audioTracks);
+  }, [remoteStreams, screenShareParticipant]);
+
   const gridParticipants = useMemo(() => {
     if (!screenShareParticipant) {
       return participants;
@@ -2599,6 +2612,19 @@ export function VideoChat({
                 }}
                 className="hidden"
               />
+              {remoteSharerAudioStream && (
+                <audio
+                  autoPlay
+                  controls={false}
+                  ref={(node) => {
+                    if (node && node.srcObject !== remoteSharerAudioStream) {
+                      node.srcObject = remoteSharerAudioStream;
+                      node.play().catch((error) => console.error('Error playing remote mic audio:', error));
+                    }
+                  }}
+                  className="hidden"
+                />
+              )}
               {remoteSharerCameraStream && (
                 <div className="absolute bottom-4 right-4 w-40 md:w-56 aspect-video rounded-lg overflow-hidden border border-white/30 shadow-lg shadow-black/40">
                   <video
