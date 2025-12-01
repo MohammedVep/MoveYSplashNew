@@ -1,6 +1,6 @@
 import app from "../../../src/app/superbase/functions/server/index.tsx";
 
-const MAX_BYTES = 64 * 1024; // 64KB cap
+const MAX_BYTES = 512 * 1024; // 512KB cap to allow larger story payloads
 const STORIES_PATH = "/make-server-a14c7986/stories";
 
 function concatUint8(chunks: Uint8Array[], total: number) {

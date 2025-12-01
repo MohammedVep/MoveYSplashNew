@@ -62,6 +62,7 @@ const DEFAULT_STORY_PLACEHOLDER_URL =
   "https://api.dicebear.com/7.x/shapes/svg?seed=MoveSplashStory&backgroundColor=transparent";
 
 const canonicalStoryKey = (storyId: string) => `story:${storyId}`;
+const backupStoryKey = (storyId: string) => `${STORY_BACKUP_PREFIX}${storyId}`;
 
 const extractStoryId = (record: JsonRecord): string => {
   return getStringProp(record, "id") || getStringProp(record, "storyId");
@@ -352,6 +353,47 @@ const collectStoryRecords = async (): Promise<JsonRecord[]> => {
   }
 
   return Array.from(seen.values());
+};
+
+const isStoryExpired = (record: JsonRecord, nowMs: number): boolean => {
+  const createdRaw = getStringProp(record, "createdAt");
+  const expiresRaw = getStringProp(record, "expiresAt");
+  const createdMs = createdRaw ? Date.parse(createdRaw) : 0;
+  const safeCreatedMs = Number.isNaN(createdMs) ? 0 : createdMs;
+  const expiresMsCandidate = expiresRaw ? Date.parse(expiresRaw) : safeCreatedMs + STORY_EXPIRATION_MS;
+  const safeExpiresMs = Number.isNaN(expiresMsCandidate)
+    ? safeCreatedMs + STORY_EXPIRATION_MS
+    : expiresMsCandidate;
+  return safeExpiresMs > 0 && safeExpiresMs <= nowMs;
+};
+
+const pruneExpiredStories = async (records: JsonRecord[]): Promise<JsonRecord[]> => {
+  const nowMs = Date.now();
+  const expiredIds: string[] = [];
+
+  const fresh = records.filter((record) => {
+    const storyId = extractStoryId(record);
+    if (!storyId) {
+      return false;
+    }
+    const expired = isStoryExpired(record, nowMs);
+    if (expired) {
+      expiredIds.push(storyId);
+      return false;
+    }
+    return true;
+  });
+
+  if (expiredIds.length > 0) {
+    await Promise.all(
+      expiredIds.flatMap((id) => [
+        kv.del(canonicalStoryKey(id)).catch(() => undefined),
+        kv.del(backupStoryKey(id)).catch(() => undefined),
+      ]),
+    );
+  }
+
+  return fresh;
 };
 
 type StoryUserSummary = {
@@ -2281,9 +2323,10 @@ const validateStoryMedia = async (body: JsonRecord) => {
 app.get("/make-server-a14c7986/stories", async (c) => {
   try {
     const storedStories = await collectStoryRecords();
+    const freshStories = await pruneExpiredStories(storedStories);
     const userCache = new Map<string, StoryUserSummary | null>();
     const normalizedStories = (
-      await Promise.all(storedStories.map((record) => normalizeStoryRecord(record, userCache)))
+      await Promise.all(freshStories.map((record) => normalizeStoryRecord(record, userCache)))
     ).filter((story): story is StoryResponse => Boolean(story));
 
     const sortedStories = normalizedStories.sort(
@@ -2485,7 +2528,9 @@ app.post("/make-server-a14c7986/stories", async (c) => {
       replies,
     };
 
-    await kv.set(`story:${storyId}`, storyRecord);
+    const canonicalKey = canonicalStoryKey(storyId);
+    await kv.set(canonicalKey, storyRecord);
+    await kv.set(backupStoryKey(storyId), storyRecord).catch(() => undefined);
 
     const userCache = new Map<string, StoryUserSummary | null>();
     userCache.set(userId, {
