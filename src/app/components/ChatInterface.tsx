@@ -188,9 +188,27 @@ const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
   const dedupeMessages = (messagesToDedupe: Message[]): Message[] => {
     const seen = new Set<string>();
     const result: Message[] = [];
+
     for (const msg of messagesToDedupe) {
       const sig = messageSignature(msg);
       if (seen.has(sig)) continue;
+
+      const currentTs = new Date(msg.timestamp).getTime();
+
+      // Check for near-duplicates by content/media within 30s regardless of differing IDs
+      const isNearDupe = result.some((existing) => {
+        const sameContent =
+          (existing.content ?? '') === (msg.content ?? '') &&
+          (existing.image ?? '') === (msg.image ?? '') &&
+          (existing.file?.url ?? '') === (msg.file?.url ?? '') &&
+          (existing.voice?.url ?? '') === (msg.voice?.url ?? '');
+        if (!sameContent) return false;
+        const timeDiff = Math.abs(new Date(existing.timestamp).getTime() - currentTs);
+        return timeDiff < 30000; // 30s window for potential duplicates
+      });
+
+      if (isNearDupe) continue;
+
       seen.add(sig);
       result.push(msg);
     }
