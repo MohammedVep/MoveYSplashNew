@@ -289,12 +289,13 @@ function VideoCallsFeature({ onBack, onGetStarted }: { onBack: () => void; onGet
             <h3 className="text-white text-2xl mb-3">Screen Sharing</h3>
             <p className="text-white/70 mb-4">
               Share your entire screen, specific window, or browser tab. Perfect for presentations, 
-              watching videos together, or helping friends troubleshoot.
+              watching videos together, or helping friends troubleshoot. Starting a share requires desktop Chrome/Edge; other browsers can view.
             </p>
             <ul className="space-y-2 text-white/60 text-sm">
               <li>✓ Share full screen or specific windows</li>
               <li>✓ Audio sharing included</li>
               <li>✓ HD quality screen streaming</li>
+              <li>✓ Screen share start available on desktop Chrome/Edge (view-only elsewhere)</li>
               <li>✓ Easy one-click sharing</li>
             </ul>
           </Card>
@@ -448,11 +449,19 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
           <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-6">
             <Monitor className="w-12 h-12 text-white" />
           </div>
-          <h1 className="text-white text-6xl mb-4">8K Screen Sharing - Desktop only</h1>
+          <h1 className="text-white text-6xl mb-4">8K Screen Sharing - Desktop (Chrome)</h1>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+            <span className="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-semibold tracking-wide">
+              Desktop + Chrome / Edge
+            </span>
+            <span className="text-white/60 text-sm">
+              Requires screen recording access in Chrome or Edge on desktop. Safari and iOS/iPadOS are view-only.
+            </span>
+          </div>
           <p className="text-white/70 text-xl max-w-2xl mx-auto">
             Share your screen in stunning 8K UHD quality (7680x4320) during video calls. 
             Perfect for ultra-high-res presentations, design work, tutorials, or remote collaboration 
-            with uncompromising clarity. - Not compatible with iPad or iPhone
+            with uncompromising clarity. Works on desktop browsers with full capture support (Chrome/Edge); not compatible with iPad or iPhone.
           </p>
         </div>
 
@@ -478,7 +487,7 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
               <li>✓ Falls back to 5K/4K/QHD/Full HD/HD as needed</li>
               <li>✓ Smooth 30fps frame rate</li>
               <li>✓ Audio sharing included</li>
-              <li>✓ Works on desktop</li>
+              <li>✓ Optimized for desktop Chrome/Edge with screen recording enabled</li>
             </ul>
           </Card>
 
@@ -495,6 +504,7 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
               <li>✓ Easy app switching during share</li>
               <li>✓ Full quality for selected window</li>
               <li>✓ Share audio from specific tabs</li>
+              <li>✓ Desktop Chrome/Edge only for capture prompts</li>
             </ul>
           </Card>
         </div>
@@ -558,13 +568,13 @@ function ScreenShareFeature({ onBack, onGetStarted }: { onBack: () => void; onGe
         <Card className="backdrop-blur-xl bg-gradient-to-br from-green-500/30 to-teal-500/30 border-green-400/30 p-12 text-center">
           <h2 className="text-white text-4xl mb-4">Experience 8K Screen Sharing</h2>
           <p className="text-white/80 text-lg mb-6">
-            The most advanced screen sharing technology available on any social platform. - Desktop only
+            The most advanced screen sharing technology available on any social platform. Desktop Chrome/Edge recommended.
           </p>
           <Button
             onClick={() => onGetStarted?.()}
             className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 text-lg px-8 py-6"
           >
-            Start Sharing in 8K - Desktop only
+            Start Sharing in 8K - Desktop + Chrome
           </Button>
         </Card>
       </div>

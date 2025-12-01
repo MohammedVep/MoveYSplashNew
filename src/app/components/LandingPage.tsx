@@ -29,6 +29,15 @@ interface LandingPageProps {
   onViewCookies?: () => void;
 }
 
+type FeatureCard = {
+  icon: typeof MessageCircle;
+  title: string;
+  description: string;
+  color: string;
+  id: 'group-chats' | 'video-calls' | 'screen-share' | 'stories' | 'friends' | 'gen-z';
+  badge?: string;
+};
+
 export function LandingPage({ 
   onGetStarted, 
   onLogin, 
@@ -41,7 +50,7 @@ export function LandingPage({
 }: LandingPageProps) {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
-  const features = [
+  const features: FeatureCard[] = [
     {
       icon: MessageCircle,
       title: "Group Chats",
@@ -61,7 +70,8 @@ export function LandingPage({
       title: "8K Screen Share",
       description: "Crisp screen shares for homework help, beats, or builds.",
       color: "from-green-500 to-emerald-500",
-      id: "screen-share" as const
+      id: "screen-share" as const,
+      badge: "Desktop + Chrome"
     },
     {
       icon: Camera,
@@ -160,6 +170,11 @@ export function LandingPage({
               <div className={`w-14 h-14 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-4`}>
                 <feature.icon className="w-7 h-7 text-white" />
               </div>
+              {feature.badge && (
+                <span className="inline-flex items-center px-3 py-1 text-xs font-semibold tracking-wide rounded-full bg-white/10 border border-white/20 text-white/80 mb-3">
+                  {feature.badge}
+                </span>
+              )}
               <h3 className="text-white text-xl mb-2">{feature.title}</h3>
               <p className="text-white/70">{feature.description}</p>
               <div className="text-white/50 text-sm mt-2 flex items-center gap-1">
