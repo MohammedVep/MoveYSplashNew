@@ -1482,6 +1482,21 @@ export function VideoChat({
 
   const resolvedRemoteScreenShareStream = remoteScreenShareStream ?? fallbackScreenShareStream;
 
+  const remoteSharerCameraStream = useMemo(() => {
+    if (!screenShareParticipant || screenShareParticipant.isSelf) {
+      return null;
+    }
+    const combined = remoteStreams.get(screenShareParticipant.userId);
+    if (!combined) return null;
+    const videoTracks = combined
+      .getTracks()
+      .filter((track) => track.kind === 'video' && !looksLikeScreenTrack(track));
+    if (videoTracks.length === 0) {
+      return null;
+    }
+    return new MediaStream(videoTracks);
+  }, [looksLikeScreenTrack, remoteStreams, screenShareParticipant]);
+
   const gridParticipants = useMemo(() => {
     if (!screenShareParticipant) {
       return participants;
@@ -2584,6 +2599,22 @@ export function VideoChat({
                 }}
                 className="hidden"
               />
+              {remoteSharerCameraStream && (
+                <div className="absolute bottom-4 right-4 w-40 md:w-56 aspect-video rounded-lg overflow-hidden border border-white/30 shadow-lg shadow-black/40">
+                  <video
+                    autoPlay
+                    playsInline
+                    muted
+                    className="w-full h-full object-cover bg-black"
+                    ref={(node) => {
+                      if (node && node.srcObject !== remoteSharerCameraStream) {
+                        node.srcObject = remoteSharerCameraStream;
+                        node.play().catch((error) => console.error('Error playing remote camera PiP:', error));
+                      }
+                    }}
+                  />
+                </div>
+              )}
             </>
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900/80 to-purple-900/60">
