@@ -441,6 +441,8 @@ export function VideoChat({
   const peerConnectionsRef = useRef<Map<string, RTCPeerConnection>>(new Map());
   const remoteStreamsRef = useRef<Map<string, MediaStream>>(new Map());
   const [remoteStreams, setRemoteStreams] = useState<Map<string, MediaStream>>(new Map());
+  const remoteScreenStreamsRef = useRef<Map<string, MediaStream>>(new Map());
+  const [remoteScreenStreams, setRemoteScreenStreams] = useState<Map<string, MediaStream>>(new Map());
   const signalingClientRef = useRef<Ably.Realtime | null>(null);
   const signalingChannelRef = useRef<Ably.RealtimeChannel | null>(null);
   const pendingIceRef = useRef<Map<string, RTCIceCandidateInit[]>>(new Map());
@@ -517,9 +519,37 @@ export function VideoChat({
     });
   }, []);
 
+  const addRemoteScreenStream = useCallback((peerId: string, track: MediaStreamTrack) => {
+    if (track.kind !== 'video') {
+      return;
+    }
+    const existing = remoteScreenStreamsRef.current.get(peerId);
+    if (existing) {
+      const already = existing.getTracks().some((t) => t.id === track.id);
+      if (!already) {
+        existing.addTrack(track);
+      }
+      remoteScreenStreamsRef.current.set(peerId, existing);
+      setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+      return;
+    }
+    const stream = new MediaStream([track]);
+    remoteScreenStreamsRef.current.set(peerId, stream);
+    setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+  }, []);
+
   const removeRemoteStream = useCallback((peerId: string) => {
     remoteStreamsRef.current.delete(peerId);
     setRemoteStreams((prev) => {
+      if (!prev.has(peerId)) {
+        return prev;
+      }
+      const next = new Map(prev);
+      next.delete(peerId);
+      return next;
+    });
+    remoteScreenStreamsRef.current.delete(peerId);
+    setRemoteScreenStreams((prev) => {
       if (!prev.has(peerId)) {
         return prev;
       }
@@ -654,6 +684,29 @@ export function VideoChat({
         }
 
         addRemoteStream(peerId, targetStream);
+
+        const settings = event.track.getSettings?.() ?? {};
+        const looksLikeScreen =
+          settings.displaySurface ||
+          (event.track.label && event.track.label.toLowerCase().includes('screen')) ||
+          event.track.contentHint === 'detail';
+        if (looksLikeScreen) {
+          addRemoteScreenStream(peerId, event.track);
+        }
+
+        event.track.onended = () => {
+          const existing = remoteScreenStreamsRef.current.get(peerId);
+          if (existing) {
+            const filtered = existing.getTracks().filter((t) => t.id !== event.track.id);
+            const next = new MediaStream(filtered);
+            if (filtered.length > 0) {
+              remoteScreenStreamsRef.current.set(peerId, next);
+            } else {
+              remoteScreenStreamsRef.current.delete(peerId);
+            }
+            setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+          }
+        };
       };
 
       const cleanupIfBroken = () => {
@@ -1397,6 +1450,11 @@ export function VideoChat({
         : null,
     [participants, activeScreenSharerId],
   );
+  const remoteScreenShareStream = screenShareParticipant?.isSelf
+    ? null
+    : screenShareParticipant
+      ? remoteScreenStreams.get(screenShareParticipant.userId) ?? null
+      : null;
 
   const gridParticipants = useMemo(() => {
     if (!screenShareParticipant) {
@@ -2475,6 +2533,18 @@ export function VideoChat({
                 className="absolute inset-0 w-full h-full object-contain bg-black"
               />
             )
+          ) : remoteScreenShareStream ? (
+            <video
+              autoPlay
+              playsInline
+              className="absolute inset-0 w-full h-full object-contain bg-black"
+              ref={(node) => {
+                if (node && node.srcObject !== remoteScreenShareStream) {
+                  node.srcObject = remoteScreenShareStream;
+                  node.play().catch((error) => console.error('Error playing remote screen share:', error));
+                }
+              }}
+            />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900/80 to-purple-900/60">
               <div className="text-center space-y-3 text-white px-6">
