@@ -706,9 +706,7 @@ export function VideoChat({
         const presence = remoteParticipantsRef.current.find((p) => p.userId === peerId);
         const flaggedAsSharing = presence?.isScreenSharing;
 
-        if (looksLikeScreen) {
-          addRemoteScreenStream(peerId, event.track);
-        } else if (flaggedAsSharing && event.track.kind === 'video') {
+        if (looksLikeScreen || flaggedAsSharing) {
           addRemoteScreenStream(peerId, event.track);
         }
 
@@ -1479,16 +1477,8 @@ export function VideoChat({
     if (!screenShareParticipant || screenShareParticipant.isSelf) {
       return null;
     }
-    const combined = remoteStreams.get(screenShareParticipant.userId);
-    if (!combined) {
-      return null;
-    }
-    const hasScreenLike = combined.getTracks().some((track) => looksLikeScreenTrack(track));
-    if (hasScreenLike) {
-      return combined;
-    }
-    return null;
-  }, [looksLikeScreenTrack, remoteStreams, screenShareParticipant]);
+    return remoteStreams.get(screenShareParticipant.userId) ?? null;
+  }, [remoteStreams, screenShareParticipant]);
 
   const resolvedRemoteScreenShareStream = remoteScreenShareStream ?? fallbackScreenShareStream;
 
