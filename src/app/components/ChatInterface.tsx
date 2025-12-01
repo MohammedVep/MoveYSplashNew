@@ -175,7 +175,6 @@ const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
     if (message.clientMessageId && message.clientMessageId.trim().length > 0) {
       return `cid:${message.clientMessageId}`;
     }
-    const ts = Math.floor(new Date(message.timestamp).getTime() / 1000);
     return [
       'sig',
       message.senderId ?? '',
@@ -183,7 +182,6 @@ const supabaseClient = createClient(SUPABASE_URL, publicAnonKey, {
       message.image ?? '',
       message.file?.url ?? '',
       message.voice?.url ?? '',
-      ts,
     ].join('|');
   };
 
@@ -990,7 +988,28 @@ export function ChatInterface({
         next.sort(
           (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime(),
         );
-        return dedupeMessages(next);
+        // remove obvious local duplicates on arrival
+        const nowTs = new Date(mapped.timestamp).getTime();
+        const filtered = next.filter((msg) => {
+          if (msg === mapped) return true;
+          const sameClient =
+            mapped.clientMessageId &&
+            msg.clientMessageId &&
+            msg.clientMessageId === mapped.clientMessageId;
+          const sameContentAndMedia =
+            msg.senderId === mapped.senderId &&
+            msg.content === mapped.content &&
+            (msg.image ?? '') === (mapped.image ?? '') &&
+            (msg.file?.url ?? '') === (mapped.file?.url ?? '') &&
+            (msg.voice?.url ?? '') === (mapped.voice?.url ?? '');
+          const closeInTime = Math.abs(new Date(msg.timestamp).getTime() - nowTs) < 15000;
+          if (sameClient) return false;
+          if (sameContentAndMedia && closeInTime && (msg.localOnly || mapped.localOnly)) {
+            return false;
+          }
+          return true;
+        });
+        return dedupeMessages(filtered);
       });
 
       if (mapped.isSnapStyle && mapped.expiresIn) {
