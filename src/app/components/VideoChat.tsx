@@ -1460,6 +1460,37 @@ export function VideoChat({
     : screenShareParticipant
       ? remoteScreenStreams.get(screenShareParticipant.userId) ?? null
       : null;
+  const looksLikeScreenTrack = useCallback((track: MediaStreamTrack | null | undefined) => {
+    if (!track) return false;
+    const settings = track.getSettings?.() ?? {};
+    const label = (track.label || '').toLowerCase();
+    return (
+      settings.displaySurface !== undefined ||
+      label.includes('screen') ||
+      label.includes('window') ||
+      label.includes('display') ||
+      label.includes('monitor') ||
+      label.includes('share') ||
+      track.contentHint === 'detail'
+    );
+  }, []);
+
+  const fallbackScreenShareStream = useMemo(() => {
+    if (!screenShareParticipant || screenShareParticipant.isSelf) {
+      return null;
+    }
+    const combined = remoteStreams.get(screenShareParticipant.userId);
+    if (!combined) {
+      return null;
+    }
+    const hasScreenLike = combined.getTracks().some((track) => looksLikeScreenTrack(track));
+    if (hasScreenLike) {
+      return combined;
+    }
+    return null;
+  }, [looksLikeScreenTrack, remoteStreams, screenShareParticipant]);
+
+  const resolvedRemoteScreenShareStream = remoteScreenShareStream ?? fallbackScreenShareStream;
 
   const gridParticipants = useMemo(() => {
     if (!screenShareParticipant) {
@@ -2538,7 +2569,7 @@ export function VideoChat({
                 className="absolute inset-0 w-full h-full object-contain bg-black"
               />
             )
-          ) : remoteScreenShareStream ? (
+          ) : resolvedRemoteScreenShareStream ? (
             <>
               <video
                 autoPlay
@@ -2546,8 +2577,8 @@ export function VideoChat({
                 muted
                 className="absolute inset-0 w-full h-full object-contain bg-black"
                 ref={(node) => {
-                  if (node && node.srcObject !== remoteScreenShareStream) {
-                    node.srcObject = remoteScreenShareStream;
+                  if (node && node.srcObject !== resolvedRemoteScreenShareStream) {
+                    node.srcObject = resolvedRemoteScreenShareStream;
                     node.play().catch((error) => console.error('Error playing remote screen share:', error));
                   }
                 }}
@@ -2556,8 +2587,8 @@ export function VideoChat({
                 autoPlay
                 controls={false}
                 ref={(node) => {
-                  if (node && node.srcObject !== remoteScreenShareStream) {
-                    node.srcObject = remoteScreenShareStream;
+                  if (node && node.srcObject !== resolvedRemoteScreenShareStream) {
+                    node.srcObject = resolvedRemoteScreenShareStream;
                     node.play().catch((error) => console.error('Error playing remote screen audio:', error));
                   }
                 }}
