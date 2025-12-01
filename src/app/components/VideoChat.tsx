@@ -527,7 +527,7 @@ export function VideoChat({
   const removeRemoteScreenStream = useCallback((peerId: string, trackId?: string) => {
     const existing = remoteScreenStreamsRef.current.get(peerId);
     if (!existing) return;
-    const filtered = existing.getTracks().filter((t) => (trackId ? t.id !== trackId : false));
+    const filtered = existing.getTracks().filter((t) => (trackId ? t.id !== trackId : true));
     if (filtered.length === 0) {
       remoteScreenStreamsRef.current.delete(peerId);
     } else {
@@ -558,6 +558,67 @@ export function VideoChat({
     [removeRemoteScreenStream],
   );
 
+  const looksLikeScreenTrack = useCallback((track: MediaStreamTrack | null | undefined) => {
+    if (!track) return false;
+    const settings = track.getSettings?.() ?? {};
+    const label = (track.label || '').toLowerCase();
+    return (
+      settings.displaySurface !== undefined ||
+      label.includes('screen') ||
+      label.includes('window') ||
+      label.includes('display') ||
+      label.includes('monitor') ||
+      label.includes('share') ||
+      track.contentHint === 'detail'
+    );
+  }, []);
+
+  const updateRemoteVideoFlag = useCallback(
+    (peerId: string) => {
+      setRemoteParticipants((prev) => {
+        let changed = false;
+        const next = prev.map((participant) => {
+          if (participant.userId !== peerId) {
+            return participant;
+          }
+          const stream = remoteStreamsRef.current.get(peerId);
+          const hasCamera =
+            stream?.getTracks().some(
+              (track) =>
+                track.kind === 'video' &&
+                track.readyState !== 'ended' &&
+                !looksLikeScreenTrack(track),
+            ) ?? false;
+
+          const nextVideoOff = !hasCamera;
+          if (participant.isVideoOff !== nextVideoOff) {
+            changed = true;
+            return { ...participant, isVideoOff: nextVideoOff };
+          }
+          return participant;
+        });
+        return changed ? next : prev;
+      });
+    },
+    [looksLikeScreenTrack],
+  );
+
+  const removeTrackFromRemoteStream = useCallback(
+    (peerId: string, trackId: string) => {
+      const existing = remoteStreamsRef.current.get(peerId);
+      if (!existing) return;
+      const remaining = existing.getTracks().filter((t) => t.id !== trackId);
+      if (remaining.length === 0) {
+        remoteStreamsRef.current.delete(peerId);
+      } else {
+        remoteStreamsRef.current.set(peerId, new MediaStream(remaining));
+      }
+      setRemoteStreams(new Map(remoteStreamsRef.current));
+      updateRemoteVideoFlag(peerId);
+    },
+    [updateRemoteVideoFlag],
+  );
+
   const removeRemoteStream = useCallback((peerId: string) => {
     remoteStreamsRef.current.delete(peerId);
     setRemoteStreams((prev) => {
@@ -577,7 +638,8 @@ export function VideoChat({
       next.delete(peerId);
       return next;
     });
-  }, []);
+    updateRemoteVideoFlag(peerId);
+  }, [updateRemoteVideoFlag]);
 
   const teardownPeer = useCallback(
     (peerId: string) => {
@@ -708,29 +770,23 @@ export function VideoChat({
 
         addRemoteStream(peerId, targetStream);
 
-        const settings = event.track.getSettings?.() ?? {};
-        const looksLikeScreen =
-          settings.displaySurface ||
-          (event.track.label &&
-            (() => {
-              const label = event.track.label.toLowerCase();
-              return (
-                label.includes('screen') ||
-                label.includes('window') ||
-                label.includes('display') ||
-                label.includes('monitor') ||
-                label.includes('share')
-              );
-            })()) ||
-          event.track.contentHint === 'detail';
+        const looksLikeScreen = looksLikeScreenTrack(event.track);
 
         const presence = remoteParticipantsRef.current.find((p) => p.userId === peerId);
         const flaggedAsSharing = presence?.isScreenSharing;
 
-        if (looksLikeScreen || flaggedAsSharing) {
+        if ((looksLikeScreen || flaggedAsSharing) && event.track.kind === 'video') {
           addRemoteScreenStream(peerId, event.track);
         }
 
+        if (event.track) {
+          const handleEnded = () => removeTrackFromRemoteStream(peerId, event.track.id);
+          event.track.addEventListener('ended', handleEnded);
+        }
+
+        if (event.track.kind === 'video' && !looksLikeScreen) {
+          updateRemoteVideoFlag(peerId);
+        }
       };
 
       const cleanupIfBroken = () => {
@@ -744,7 +800,17 @@ export function VideoChat({
 
       return peer;
     },
-    [addLocalTracks, addRemoteStream, mediaStream, selfClientId, teardownPeer],
+    [
+      addLocalTracks,
+      addRemoteScreenStream,
+      addRemoteStream,
+      looksLikeScreenTrack,
+      mediaStream,
+      removeTrackFromRemoteStream,
+      selfClientId,
+      teardownPeer,
+      updateRemoteVideoFlag,
+    ],
   );
 
   const startOffer = useCallback(
@@ -1479,20 +1545,6 @@ export function VideoChat({
     : screenShareParticipant
       ? remoteScreenStreams.get(screenShareParticipant.userId) ?? null
       : null;
-  const looksLikeScreenTrack = useCallback((track: MediaStreamTrack | null | undefined) => {
-    if (!track) return false;
-    const settings = track.getSettings?.() ?? {};
-    const label = (track.label || '').toLowerCase();
-    return (
-      settings.displaySurface !== undefined ||
-      label.includes('screen') ||
-      label.includes('window') ||
-      label.includes('display') ||
-      label.includes('monitor') ||
-      label.includes('share') ||
-      track.contentHint === 'detail'
-    );
-  }, []);
 
   const fallbackScreenShareStream = useMemo(() => {
     if (!screenShareParticipant || screenShareParticipant.isSelf) {
