@@ -1530,14 +1530,15 @@ export function Stories() {
           avatar: baseUser.avatar,
           ablyClientId: baseUser.ablyClientId ?? baseUser.id,
         };
-        const createdAt = story.createdAt && !Number.isNaN(Date.parse(story.createdAt))
-          ? new Date(story.createdAt).toISOString()
-          : new Date().toISOString();
-        const calculatedExpires = new Date(createdAt);
-        calculatedExpires.setHours(calculatedExpires.getHours() + 24);
-        const expiresAt = story.expiresAt && !Number.isNaN(Date.parse(story.expiresAt))
-          ? new Date(story.expiresAt).toISOString()
-          : calculatedExpires.toISOString();
+        const createdMs =
+          story.createdAt && !Number.isNaN(Date.parse(story.createdAt))
+            ? Date.parse(story.createdAt)
+            : Date.now();
+        const createdAt = new Date(createdMs).toISOString();
+        const expirationMs = !Number.isNaN(Date.parse(story.expiresAt ?? ''))
+          ? Date.parse(story.expiresAt!)
+          : createdMs + 24 * 60 * 60 * 1000;
+        const expiresAt = new Date(expirationMs).toISOString();
         const likes = Array.from(
           new Set(
             Array.isArray(story.likes)
