@@ -185,29 +185,6 @@ export function LandingPage({
         </div>
       </div>
 
-      {/* Social Proof Section */}
-      <div className="relative z-10 bg-white/5 backdrop-blur-lg border-y border-white/10 py-14 sm:py-16">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl text-white mb-2">10M+</div>
-              <div className="text-white/60">Active Users</div>
-            </div>
-            <div>
-              <div className="text-4xl text-white mb-2">500M+</div>
-              <div className="text-white/60">Messages Sent</div>
-            </div>
-            <div>
-              <div className="text-4xl text-white mb-2">50M+</div>
-              <div className="text-white/60">Video Calls</div>
-            </div>
-            <div>
-              <div className="text-4xl text-white mb-2">100M+</div>
-              <div className="text-white/60">Stories Shared</div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Feature Highlight Section */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-24">
