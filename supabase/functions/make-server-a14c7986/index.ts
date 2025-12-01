@@ -109,11 +109,29 @@ Deno.serve(async (req) => {
         throw err;
       }
 
-      // Light acknowledgement to avoid heavy upstream processing
-      return new Response(JSON.stringify({ status: "accepted" }), {
-        status: 202,
-        headers: { "content-type": "application/json", ...cors },
-      });
+      // Forward the validated payload to the main app so stories persist in Supabase
+      const forwardHeaders = new Headers(req.headers);
+      forwardHeaders.set("content-type", "application/json");
+      forwardHeaders.set("content-length", String(new TextEncoder().encode(bodyText).length));
+
+      try {
+        const upstream = await app.fetch(
+          new Request(req.url, {
+            method: "POST",
+            headers: forwardHeaders,
+            body: bodyText,
+          }),
+        );
+        const mergedHeaders = new Headers(upstream.headers);
+        Object.entries(cors).forEach(([k, v]) => mergedHeaders.set(k, v));
+        return new Response(upstream.body, { status: upstream.status, headers: mergedHeaders });
+      } catch (forwardError) {
+        console.error("story forward error", forwardError);
+        return new Response(JSON.stringify({ error: "Internal error" }), {
+          status: 500,
+          headers: { "content-type": "application/json", ...cors },
+        });
+      }
     }
 
     // Everything else goes to the main app
