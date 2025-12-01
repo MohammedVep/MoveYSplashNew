@@ -96,6 +96,7 @@ export function Settings({
   const [settingsState, setSettingsState] = useState<UserSettings>(() => ({
     ...defaultSettings
   }));
+  const [isSavingSettings, setIsSavingSettings] = useState(false);
   const [themePreference, setThemePreference] = useState<ThemePreference>(
     normalizeThemePreference(defaultSettings.theme)
   );
@@ -204,7 +205,6 @@ export function Settings({
         ...previous,
         [key]: nextValue
       }));
-
       return updateSettings({ [key]: nextValue });
     },
     [updateSettings]
@@ -242,6 +242,21 @@ export function Settings({
     },
     [updateSettings]
   );
+
+  const handleSavePreferences = useCallback(async () => {
+    setIsSavingSettings(true);
+    try {
+      const normalizedTheme = normalizeThemePreference(settingsState.theme);
+      await updateSettings({ ...settingsState, theme: normalizedTheme });
+      setTheme(resolveThemePreference(normalizedTheme));
+      toast.success('Settings saved!');
+    } catch (error) {
+      console.error('Error saving settings', error);
+      toast.error('Unable to save settings');
+    } finally {
+      setIsSavingSettings(false);
+    }
+  }, [settingsState, updateSettings, setTheme]);
 
   const handlePasswordInputChange = useCallback(
     (field: keyof typeof passwordForm) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -1042,6 +1057,15 @@ export function Settings({
               </div>
             </TabsContent>
           </ScrollArea>
+          <div className="sticky bottom-0 left-0 right-0 bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-xl border-t border-white/10 p-3 flex justify-end">
+            <Button
+              onClick={() => void handleSavePreferences()}
+              disabled={isSavingSettings}
+              className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0"
+            >
+              {isSavingSettings ? 'Saving...' : 'Save settings'}
+            </Button>
+          </div>
         </Tabs>
       </Card>
     </div>

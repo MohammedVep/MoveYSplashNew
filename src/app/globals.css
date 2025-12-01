@@ -189,3 +189,16 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Force legible text in light theme */
+html:not(.dark) body {
+  color: #0a0a0a;
+}
+
+html:not(.dark) [class*="text-white"] {
+  color: #0a0a0a !important;
+}
+
+html:not(.dark) [class*="text-white/"] {
+  color: #0a0a0a !important;
+}
