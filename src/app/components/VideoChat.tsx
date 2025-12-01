@@ -525,9 +525,6 @@ export function VideoChat({
   }, []);
 
   const addRemoteScreenStream = useCallback((peerId: string, track: MediaStreamTrack) => {
-    if (track.kind !== 'video') {
-      return;
-    }
     const existing = remoteScreenStreamsRef.current.get(peerId);
     if (existing) {
       const already = existing.getTracks().some((t) => t.id === track.id);
@@ -2542,18 +2539,31 @@ export function VideoChat({
               />
             )
           ) : remoteScreenShareStream ? (
-            <video
-              autoPlay
-              playsInline
-              muted
-              className="absolute inset-0 w-full h-full object-contain bg-black"
-              ref={(node) => {
-                if (node && node.srcObject !== remoteScreenShareStream) {
-                  node.srcObject = remoteScreenShareStream;
-                  node.play().catch((error) => console.error('Error playing remote screen share:', error));
-                }
-              }}
-            />
+            <>
+              <video
+                autoPlay
+                playsInline
+                muted
+                className="absolute inset-0 w-full h-full object-contain bg-black"
+                ref={(node) => {
+                  if (node && node.srcObject !== remoteScreenShareStream) {
+                    node.srcObject = remoteScreenShareStream;
+                    node.play().catch((error) => console.error('Error playing remote screen share:', error));
+                  }
+                }}
+              />
+              <audio
+                autoPlay
+                controls={false}
+                ref={(node) => {
+                  if (node && node.srcObject !== remoteScreenShareStream) {
+                    node.srcObject = remoteScreenShareStream;
+                    node.play().catch((error) => console.error('Error playing remote screen audio:', error));
+                  }
+                }}
+                className="hidden"
+              />
+            </>
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900/80 to-purple-900/60">
               <div className="text-center space-y-3 text-white px-6">
