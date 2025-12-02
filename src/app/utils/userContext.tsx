@@ -815,47 +815,147 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
   };
 
   const addPost = async (post: Omit<UserPost, 'id' | 'userId' | 'timestamp' | 'likes' | 'comments' | 'shares' | 'likedBy'>) => {
-    if (currentUser) {
-      const newPost: UserPost = {
-        ...post,
-        id: `${currentUser.id}-post-${Date.now()}`,
-        userId: currentUser.id,
-        timestamp: new Date(),
-        likes: 0,
-        comments: 0,
-        shares: 0,
-        likedBy: []
-      };
+    if (!currentUser) {
+      return;
+    }
 
-      const updatedUser = {
-        ...currentUser,
-        posts: [newPost, ...currentUser.posts]
-      };
+    const ownerId = currentUser.id;
+    const placeholderId = `${ownerId}-post-${Date.now()}`;
+    const placeholderPost: UserPost = {
+      ...post,
+      id: placeholderId,
+      userId: ownerId,
+      timestamp: new Date(),
+      likes: 0,
+      comments: 0,
+      shares: 0,
+      likedBy: []
+    };
 
-      setCurrentUser(updatedUser);
-      setAllUsers(prev => {
-        const newMap = new Map(prev);
-        newMap.set(updatedUser.id, updatedUser);
-        return newMap;
+    const normalizeCreatedPost = (value: unknown): UserPost | null => {
+      if (typeof value !== 'object' || value === null) {
+        return null;
+      }
+      const record = value as Record<string, unknown>;
+      const idValue = record['id'];
+      const userIdValue = record['userId'] ?? record['ownerId'] ?? ownerId;
+      if (typeof idValue !== 'string' || typeof userIdValue !== 'string') {
+        return null;
+      }
+
+      const textValue = record['text'];
+      const contentValue = record['content'];
+      const text =
+        typeof textValue === 'string'
+          ? textValue
+          : typeof contentValue === 'string'
+            ? contentValue
+            : post.text ?? '';
+
+      const mediaRaw = Array.isArray(record['media']) ? record['media'] : [];
+      const media =
+        mediaRaw
+          .map((item) => {
+            if (typeof item !== 'object' || item === null) {
+              return null;
+            }
+            const mediaRecord = item as Record<string, unknown>;
+            const url = typeof mediaRecord['url'] === 'string' ? mediaRecord['url'] : '';
+            if (!url) {
+              return null;
+            }
+            const type: 'image' | 'video' = mediaRecord['type'] === 'video' ? 'video' : 'image';
+            return { type, url };
+          })
+          .filter((entry): entry is { type: 'image' | 'video'; url: string } => Boolean(entry)) ||
+        [];
+
+      const timestampRaw = record['timestamp'];
+      const timestamp =
+        typeof timestampRaw === 'string' && timestampRaw
+          ? new Date(timestampRaw)
+          : new Date();
+
+      const likesValue = record['likes'];
+      const commentsValue = record['comments'];
+      const sharesValue = record['shares'];
+      const likedByRaw = record['likedBy'];
+
+      return {
+        id: idValue,
+        userId: userIdValue,
+        text,
+        media,
+        likes: typeof likesValue === 'number' && Number.isFinite(likesValue) ? likesValue : 0,
+        comments:
+          typeof commentsValue === 'number' && Number.isFinite(commentsValue) ? commentsValue : 0,
+        shares: typeof sharesValue === 'number' && Number.isFinite(sharesValue) ? sharesValue : 0,
+        timestamp,
+        likedBy: Array.isArray(likedByRaw)
+          ? likedByRaw.filter((value): value is string => typeof value === 'string')
+          : []
+      };
+    };
+
+    const upsertPost = (idToReplace: string, nextPost: UserPost | null) => {
+      setCurrentUser(prev => {
+        if (!prev || prev.id !== ownerId) {
+          return prev;
+        }
+        const remaining = prev.posts.filter(p => p.id !== idToReplace);
+        const posts = nextPost ? [nextPost, ...remaining] : remaining;
+        return { ...prev, posts };
       });
 
-      // Sync to Supabase
-      try {
-        await fetch(`${API_BASE_URL}/posts`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`
-          },
-          body: JSON.stringify({
-            userId: currentUser.id,
-            text: post.text,
-            media: post.media
-          })
-        });
-      } catch (error) {
-        console.error('Error syncing post:', error);
+      setAllUsers(prev => {
+        const next = new Map(prev);
+        const user = next.get(ownerId);
+        if (!user) {
+          return prev;
+        }
+        const remaining = user.posts.filter(p => p.id !== idToReplace);
+        const posts = nextPost ? [nextPost, ...remaining] : remaining;
+        const updatedUser = { ...user, posts };
+        next.set(updatedUser.id, updatedUser);
+        if (updatedUser.ablyClientId && updatedUser.ablyClientId !== updatedUser.id) {
+          next.set(updatedUser.ablyClientId, updatedUser);
+        }
+        return next;
+      });
+    };
+
+    upsertPost(placeholderId, placeholderPost);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/posts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${publicAnonKey}`
+        },
+        body: JSON.stringify({
+          userId: ownerId,
+          text: post.text,
+          media: post.media
+        })
+      });
+
+      const payload = await response.json().catch(() => null);
+      const rawPost = payload?.post;
+
+      if (!response.ok || !rawPost) {
+        throw new Error(payload?.error ?? `status ${response.status}`);
       }
+
+      const createdPost = normalizeCreatedPost(rawPost);
+      if (!createdPost) {
+        throw new Error('Invalid post payload');
+      }
+
+      upsertPost(placeholderId, createdPost);
+    } catch (error) {
+      console.error('Error syncing post:', error);
+      upsertPost(placeholderId, null);
     }
   };
 
