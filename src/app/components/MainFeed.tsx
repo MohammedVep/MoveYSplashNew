@@ -265,6 +265,28 @@ export function MainFeed({ onShareToMessages }: MainFeedProps = {}) {
     void loadPosts();
   }, [loadPosts]);
 
+  // Keep feed in sync when the viewer deletes posts from their profile
+  useEffect(() => {
+    if (!currentUser || posts.length === 0) {
+      return;
+    }
+
+    const ownPostIds = new Set(currentUser.posts.map((post) => post.id));
+    const shouldPrune = posts.some(
+      (post) => post.userId === currentUser.id && !ownPostIds.has(post.id)
+    );
+
+    if (!shouldPrune) {
+      return;
+    }
+
+    setPosts((prev) =>
+      prev.filter(
+        (post) => post.userId !== currentUser.id || ownPostIds.has(post.id)
+      )
+    );
+  }, [currentUser, posts]);
+
   const handleEmojiSelect = (emoji: string) => {
     setNewPost(prev => prev + emoji);
     setShowEmojiPicker(false);
