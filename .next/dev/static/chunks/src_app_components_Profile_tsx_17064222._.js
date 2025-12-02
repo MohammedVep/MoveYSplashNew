@@ -7,7 +7,10 @@ __turbopack_context__.s([
     ()=>Profile
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/avatar.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/card.tsx [app-client] (ecmascript)");
@@ -278,25 +281,25 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                         className: "w-5 h-5 animate-spin"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Profile.tsx",
-                        lineNumber: 268,
+                        lineNumber: 271,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         children: "Loading profile..."
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Profile.tsx",
-                        lineNumber: 269,
+                        lineNumber: 272,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Profile.tsx",
-                lineNumber: 267,
+                lineNumber: 270,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/Profile.tsx",
-            lineNumber: 266,
+            lineNumber: 269,
             columnNumber: 7
         }, this);
     }
@@ -309,12 +312,12 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                     children: "Please log in to view your profile"
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/Profile.tsx",
-                    lineNumber: 279,
+                    lineNumber: 282,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Profile.tsx",
-                lineNumber: 278,
+                lineNumber: 281,
                 columnNumber: 9
             }, this);
         }
@@ -327,7 +330,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                         children: "We couldn’t find that profile."
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Profile.tsx",
-                        lineNumber: 287,
+                        lineNumber: 290,
                         columnNumber: 11
                     }, this),
                     onBackToFriends && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -336,18 +339,18 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                         children: "Back to Friends"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Profile.tsx",
-                        lineNumber: 289,
+                        lineNumber: 292,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Profile.tsx",
-                lineNumber: 286,
+                lineNumber: 289,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/Profile.tsx",
-            lineNumber: 285,
+            lineNumber: 288,
             columnNumber: 7
         }, this);
     }
@@ -378,7 +381,8 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
         {
             label: 'Friends',
             value: stats.totalFriends,
-            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"]
+            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"],
+            onClick: onBackToFriends
         },
         {
             label: 'Likes',
@@ -893,12 +897,12 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                 children: "Back to Friends"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                lineNumber: 852,
+                                lineNumber: 865,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Profile.tsx",
-                            lineNumber: 851,
+                            lineNumber: 864,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -910,12 +914,12 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                         className: "absolute inset-0 bg-black/20"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                        lineNumber: 865,
+                                        lineNumber: 878,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                    lineNumber: 864,
+                                    lineNumber: 877,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -933,20 +937,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                 src: currentUser.avatar
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 874,
+                                                                lineNumber: 887,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                 children: currentUser.name[0]
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 875,
+                                                                lineNumber: 888,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 873,
+                                                        lineNumber: 886,
                                                         columnNumber: 19
                                                     }, this),
                                                     isViewingSelf && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -956,23 +960,23 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "w-5 h-5 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 882,
+                                                            lineNumber: 895,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 878,
+                                                        lineNumber: 891,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 872,
+                                                lineNumber: 885,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                            lineNumber: 871,
+                                            lineNumber: 884,
                                             columnNumber: 15
                                         }, this),
                                         !isEditing && isViewingSelf && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -991,19 +995,19 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                         className: "w-4 h-4 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 901,
+                                                        lineNumber: 914,
                                                         columnNumber: 21
                                                     }, this),
                                                     "Edit Profile"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 891,
+                                                lineNumber: 904,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                            lineNumber: 890,
+                                            lineNumber: 903,
                                             columnNumber: 17
                                         }, this),
                                         isEditing && isViewingSelf && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1018,14 +1022,14 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 915,
+                                                            lineNumber: 928,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Cancel"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 910,
+                                                    lineNumber: 923,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1036,20 +1040,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 922,
+                                                            lineNumber: 935,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Save"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 918,
+                                                    lineNumber: 931,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                            lineNumber: 909,
+                                            lineNumber: 922,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1063,7 +1067,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             children: "Name"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 932,
+                                                            lineNumber: 945,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1072,13 +1076,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "bg-white/5 border-white/20 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 933,
+                                                            lineNumber: 946,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 931,
+                                                    lineNumber: 944,
                                                     columnNumber: 19
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                     children: [
@@ -1087,7 +1091,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             children: currentUser.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 941,
+                                                            lineNumber: 954,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1095,7 +1099,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             children: currentUser.username
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 942,
+                                                            lineNumber: 955,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
@@ -1108,7 +1112,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             children: "Bio"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 949,
+                                                            lineNumber: 962,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -1118,20 +1122,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             placeholder: "Tell us about yourself..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 950,
+                                                            lineNumber: 963,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 948,
+                                                    lineNumber: 961,
                                                     columnNumber: 19
                                                 }, this) : currentUser.bio && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-white/80",
                                                     children: currentUser.bio
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 958,
+                                                    lineNumber: 971,
                                                     columnNumber: 38
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1146,7 +1150,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         children: "Location"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 966,
+                                                                        lineNumber: 979,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1156,13 +1160,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         placeholder: "City, Country"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 967,
+                                                                        lineNumber: 980,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 965,
+                                                                lineNumber: 978,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1173,7 +1177,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         children: "Website"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 975,
+                                                                        lineNumber: 988,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1183,13 +1187,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         placeholder: "yourwebsite.com"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 976,
+                                                                        lineNumber: 989,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 974,
+                                                                lineNumber: 987,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
@@ -1202,20 +1206,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 987,
+                                                                        lineNumber: 1000,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: currentUser.email
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 988,
+                                                                        lineNumber: 1001,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 986,
+                                                                lineNumber: 999,
                                                                 columnNumber: 23
                                                             }, this),
                                                             currentUser.location && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1225,20 +1229,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 992,
+                                                                        lineNumber: 1005,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: currentUser.location
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 993,
+                                                                        lineNumber: 1006,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 991,
+                                                                lineNumber: 1004,
                                                                 columnNumber: 25
                                                             }, this),
                                                             currentUser.website && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1248,7 +1252,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 998,
+                                                                        lineNumber: 1011,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -1259,13 +1263,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         children: currentUser.website
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 999,
+                                                                        lineNumber: 1012,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 997,
+                                                                lineNumber: 1010,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1275,7 +1279,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 1005,
+                                                                        lineNumber: 1018,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1285,99 +1289,110 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                        lineNumber: 1006,
+                                                                        lineNumber: 1019,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                lineNumber: 1004,
+                                                                lineNumber: 1017,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 962,
+                                                    lineNumber: 975,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                            lineNumber: 929,
+                                            lineNumber: 942,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                    lineNumber: 869,
+                                    lineNumber: 882,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/Profile.tsx",
-                            lineNumber: 862,
+                            lineNumber: 875,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-2 md:grid-cols-4 gap-4",
                             children: statsDisplay.map((stat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                                    className: "backdrop-blur-xl bg-white/10 border-white/20 p-6",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-3",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(stat.icon, {
-                                                    className: "w-6 h-6 text-white"
+                                    className: `backdrop-blur-xl bg-white/10 border-white/20 p-0 ${stat.onClick ? 'hover:bg-white/15 transition-colors cursor-pointer' : ''}`,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        type: "button",
+                                        onClick: stat.onClick,
+                                        disabled: !stat.onClick,
+                                        className: "w-full text-left p-6 disabled:cursor-default",
+                                        "aria-label": stat.label,
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(stat.icon, {
+                                                        className: "w-6 h-6 text-white"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/components/Profile.tsx",
+                                                        lineNumber: 1046,
+                                                        columnNumber: 23
+                                                    }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 1021,
+                                                    lineNumber: 1045,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-white text-2xl",
+                                                            children: stat.value
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/components/Profile.tsx",
+                                                            lineNumber: 1049,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-white/60 text-sm",
+                                                            children: stat.label
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/components/Profile.tsx",
+                                                            lineNumber: 1050,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/components/Profile.tsx",
+                                                    lineNumber: 1048,
                                                     columnNumber: 21
                                                 }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1020,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-white text-2xl",
-                                                        children: stat.value
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1024,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-white/60 text-sm",
-                                                        children: stat.label
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1025,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1023,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/app/components/Profile.tsx",
+                                            lineNumber: 1044,
+                                            columnNumber: 19
+                                        }, this)
+                                    }, void 0, false, {
                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                        lineNumber: 1019,
+                                        lineNumber: 1037,
                                         columnNumber: 17
                                     }, this)
                                 }, stat.label, false, {
                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                    lineNumber: 1018,
+                                    lineNumber: 1031,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Profile.tsx",
-                            lineNumber: 1016,
+                            lineNumber: 1029,
                             columnNumber: 11
                         }, this),
                         achievements.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1390,7 +1405,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                            lineNumber: 1036,
+                                            lineNumber: 1062,
                                             columnNumber: 17
                                         }, this),
                                         "Achievements (",
@@ -1399,7 +1414,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                    lineNumber: 1035,
+                                    lineNumber: 1061,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1416,7 +1431,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "w-8 h-8 text-white mx-auto mb-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1048,
+                                                            lineNumber: 1074,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1424,13 +1439,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             children: achievement.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1049,
+                                                            lineNumber: 1075,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 1047,
+                                                    lineNumber: 1073,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1441,31 +1456,31 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/90"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1053,
+                                                            lineNumber: 1079,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 1051,
+                                                    lineNumber: 1077,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, achievement.id, true, {
                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                            lineNumber: 1043,
+                                            lineNumber: 1069,
                                             columnNumber: 21
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                    lineNumber: 1039,
+                                    lineNumber: 1065,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/Profile.tsx",
-                            lineNumber: 1034,
+                            lineNumber: 1060,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1487,7 +1502,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1066,
+                                                lineNumber: 1092,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -1496,7 +1511,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                 children: "Media"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1067,
+                                                lineNumber: 1093,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -1505,45 +1520,45 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                 children: "Likes"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1068,
+                                                lineNumber: 1094,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                        lineNumber: 1065,
+                                        lineNumber: 1091,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
                                         value: "posts",
-                                        className: "p-6 space-y-6",
+                                        className: "p-4 sm:p-6 space-y-6",
                                         children: [
                                             isViewingSelf && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                                                className: "backdrop-blur-xl bg-white/5 border-white/20 p-4",
+                                                className: "backdrop-blur-xl bg-white/5 border-white/20 p-3 sm:p-4",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex gap-3",
+                                                    className: "flex gap-3 flex-col sm:flex-row",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Avatar"], {
-                                                            className: "w-10 h-10 border-2 border-white/20",
+                                                            className: "w-10 h-10 border-2 border-white/20 flex-shrink-0",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarImage"], {
                                                                     src: currentUser.avatar
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                    lineNumber: 1077,
+                                                                    lineNumber: 1103,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                     children: currentUser.name[0]
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                    lineNumber: 1078,
+                                                                    lineNumber: 1104,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1076,
+                                                            lineNumber: 1102,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1556,11 +1571,11 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                     className: "bg-white/5 border-white/20 text-white placeholder:text-white/40 min-h-[100px]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                    lineNumber: 1081,
+                                                                    lineNumber: 1107,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 selectedMedia.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "grid grid-cols-3 gap-2",
+                                                                    className: "grid grid-cols-2 sm:grid-cols-3 gap-2",
                                                                     children: selectedMedia.map((media)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                             className: "relative group",
                                                                             children: [
@@ -1570,14 +1585,14 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                     className: "w-full h-32 object-cover rounded-lg"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1094,
+                                                                                    lineNumber: 1120,
                                                                                     columnNumber: 35
                                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                                                                                     src: media.url,
                                                                                     className: "w-full h-32 object-cover rounded-lg"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1100,
+                                                                                    lineNumber: 1126,
                                                                                     columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1587,30 +1602,30 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                         className: "w-4 h-4 text-white"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                        lineNumber: 1109,
+                                                                                        lineNumber: 1135,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1105,
+                                                                                    lineNumber: 1131,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, media.id, true, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1092,
+                                                                            lineNumber: 1118,
                                                                             columnNumber: 31
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                    lineNumber: 1090,
+                                                                    lineNumber: 1116,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "flex items-center justify-between",
+                                                                    className: "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-2 sticky bottom-0 bg-black/40 sm:bg-transparent backdrop-blur rounded-xl px-2 py-2",
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "flex items-center gap-2",
+                                                                            className: "flex items-center gap-2 flex-wrap",
                                                                             children: [
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                                     ref: fileInputRef,
@@ -1621,7 +1636,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                     className: "hidden"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1119,
+                                                                                    lineNumber: 1145,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1632,7 +1647,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                     className: "hidden"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1127,
+                                                                                    lineNumber: 1153,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1645,14 +1660,14 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             className: "w-5 h-5 mr-2"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1141,
+                                                                                            lineNumber: 1167,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         "Photo"
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1135,
+                                                                                    lineNumber: 1161,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1665,14 +1680,14 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             className: "w-5 h-5 mr-2"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1151,
+                                                                                            lineNumber: 1177,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         "Video"
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1145,
+                                                                                    lineNumber: 1171,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1687,12 +1702,12 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                                 className: "w-5 h-5"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                lineNumber: 1162,
+                                                                                                lineNumber: 1188,
                                                                                                 columnNumber: 33
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1156,
+                                                                                            lineNumber: 1182,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         showEmojiPicker && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1701,66 +1716,66 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                                 onSelect: handleEmojiSelect
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                lineNumber: 1166,
+                                                                                                lineNumber: 1192,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1165,
+                                                                                            lineNumber: 1191,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1155,
+                                                                                    lineNumber: 1181,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1118,
+                                                                            lineNumber: 1144,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                                                             onClick: handleCreatePost,
                                                                             disabled: !postText.trim() && selectedMedia.length === 0,
-                                                                            className: "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0",
+                                                                            className: "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0 w-full sm:w-auto min-h-[44px]",
                                                                             children: [
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                                                     className: "w-4 h-4 mr-2"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1177,
+                                                                                    lineNumber: 1203,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 "Post"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1172,
+                                                                            lineNumber: 1198,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                    lineNumber: 1117,
+                                                                    lineNumber: 1143,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1080,
+                                                            lineNumber: 1106,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 1075,
+                                                    lineNumber: 1101,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1074,
+                                                lineNumber: 1100,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1772,7 +1787,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "w-16 h-16 text-white/30 mx-auto mb-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1189,
+                                                            lineNumber: 1215,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1780,13 +1795,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             children: "No posts yet. Share your first post!"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1190,
+                                                            lineNumber: 1216,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                    lineNumber: 1188,
+                                                    lineNumber: 1214,
                                                     columnNumber: 21
                                                 }, this) : currentUser.posts.map((post)=>{
                                                     const reaction = postReactions[post.id];
@@ -1806,20 +1821,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                             src: currentUser.avatar
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1203,
+                                                                            lineNumber: 1229,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                             children: currentUser.name[0]
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1204,
+                                                                            lineNumber: 1230,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                    lineNumber: 1202,
+                                                                    lineNumber: 1228,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1835,7 +1850,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             children: currentUser.name
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1210,
+                                                                                            lineNumber: 1236,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1843,13 +1858,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             children: formatTimestamp(post.timestamp)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1211,
+                                                                                            lineNumber: 1237,
                                                                                             columnNumber: 35
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1209,
+                                                                                    lineNumber: 1235,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1861,18 +1876,18 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                         className: "w-4 h-4"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                        lineNumber: 1219,
+                                                                                        lineNumber: 1245,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1213,
+                                                                                    lineNumber: 1239,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1208,
+                                                                            lineNumber: 1234,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         post.text && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1880,7 +1895,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                             children: post.text
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1224,
+                                                                            lineNumber: 1250,
                                                                             columnNumber: 33
                                                                         }, this),
                                                                         post.media && post.media.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1893,7 +1908,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                         className: "w-full h-64 object-cover"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                        lineNumber: 1232,
+                                                                                        lineNumber: 1258,
                                                                                         columnNumber: 41
                                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                                                                                         src: media.url,
@@ -1901,17 +1916,17 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                         className: "w-full h-64 object-cover"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                        lineNumber: 1238,
+                                                                                        lineNumber: 1264,
                                                                                         columnNumber: 41
                                                                                     }, this)
                                                                                 }, idx, false, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1230,
+                                                                                    lineNumber: 1256,
                                                                                     columnNumber: 37
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1228,
+                                                                            lineNumber: 1254,
                                                                             columnNumber: 33
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1927,20 +1942,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             className: `w-5 h-5 ${isLiked ? 'fill-current' : ''}`
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1257,
+                                                                                            lineNumber: 1283,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                             children: likeCount
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1258,
+                                                                                            lineNumber: 1284,
                                                                                             columnNumber: 35
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1251,
+                                                                                    lineNumber: 1277,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1952,20 +1967,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             className: "w-5 h-5"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1265,
+                                                                                            lineNumber: 1291,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                             children: post.comments
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1266,
+                                                                                            lineNumber: 1292,
                                                                                             columnNumber: 35
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1260,
+                                                                                    lineNumber: 1286,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1980,26 +1995,26 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             className: "w-5 h-5 mr-1"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1279,
+                                                                                            lineNumber: 1305,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                             children: post.shares
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1280,
+                                                                                            lineNumber: 1306,
                                                                                             columnNumber: 35
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1268,
+                                                                                    lineNumber: 1294,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1250,
+                                                                            lineNumber: 1276,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         commentPanel?.isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2012,20 +2027,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             className: "w-4 h-4 animate-spin"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1288,
+                                                                                            lineNumber: 1314,
                                                                                             columnNumber: 39
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                             children: "Loading comments..."
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1289,
+                                                                                            lineNumber: 1315,
                                                                                             columnNumber: 39
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1287,
+                                                                                    lineNumber: 1313,
                                                                                     columnNumber: 37
                                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                                                     children: [
@@ -2034,7 +2049,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             children: "Be the first to comment."
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1294,
+                                                                                            lineNumber: 1320,
                                                                                             columnNumber: 41
                                                                                         }, this),
                                                                                         commentPanel.comments.map((comment)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2047,20 +2062,20 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                                                 src: comment.authorAvatar || avatarForId(comment.authorId)
                                                                                                             }, void 0, false, {
                                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                                lineNumber: 1300,
+                                                                                                                lineNumber: 1326,
                                                                                                                 columnNumber: 45
                                                                                                             }, this),
                                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                                                                 children: comment.authorName[0] ?? 'U'
                                                                                                             }, void 0, false, {
                                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                                lineNumber: 1301,
+                                                                                                                lineNumber: 1327,
                                                                                                                 columnNumber: 45
                                                                                                             }, this)
                                                                                                         ]
                                                                                                     }, void 0, true, {
                                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                        lineNumber: 1299,
+                                                                                                        lineNumber: 1325,
                                                                                                         columnNumber: 43
                                                                                                     }, this),
                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2074,7 +2089,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                                                         children: comment.authorName
                                                                                                                     }, void 0, false, {
                                                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                                        lineNumber: 1305,
+                                                                                                                        lineNumber: 1331,
                                                                                                                         columnNumber: 47
                                                                                                                     }, this),
                                                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2082,13 +2097,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                                                         children: formatCommentTimestamp(comment.createdAt)
                                                                                                                     }, void 0, false, {
                                                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                                        lineNumber: 1306,
+                                                                                                                        lineNumber: 1332,
                                                                                                                         columnNumber: 47
                                                                                                                     }, this)
                                                                                                                 ]
                                                                                                             }, void 0, true, {
                                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                                lineNumber: 1304,
+                                                                                                                lineNumber: 1330,
                                                                                                                 columnNumber: 45
                                                                                                             }, this),
                                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2096,19 +2111,19 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                                                 children: comment.content
                                                                                                             }, void 0, false, {
                                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                                lineNumber: 1310,
+                                                                                                                lineNumber: 1336,
                                                                                                                 columnNumber: 45
                                                                                                             }, this)
                                                                                                         ]
                                                                                                     }, void 0, true, {
                                                                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                        lineNumber: 1303,
+                                                                                                        lineNumber: 1329,
                                                                                                         columnNumber: 43
                                                                                                     }, this)
                                                                                                 ]
                                                                                             }, comment.id, true, {
                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                lineNumber: 1298,
+                                                                                                lineNumber: 1324,
                                                                                                 columnNumber: 41
                                                                                             }, this)),
                                                                                         commentPanel.error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2116,7 +2131,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             children: commentPanel.error
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1316,
+                                                                                            lineNumber: 1342,
                                                                                             columnNumber: 41
                                                                                         }, this)
                                                                                     ]
@@ -2132,7 +2147,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                             className: "flex-1 bg-white/5 border-white/20 text-white placeholder:text-white/50"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1322,
+                                                                                            lineNumber: 1348,
                                                                                             columnNumber: 37
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2144,59 +2159,59 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                                                                 className: "w-4 h-4 animate-spin"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                lineNumber: 1336,
+                                                                                                lineNumber: 1362,
                                                                                                 columnNumber: 41
                                                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                                                                 className: "w-4 h-4"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                                lineNumber: 1338,
+                                                                                                lineNumber: 1364,
                                                                                                 columnNumber: 41
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                            lineNumber: 1329,
+                                                                                            lineNumber: 1355,
                                                                                             columnNumber: 37
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                                    lineNumber: 1321,
+                                                                                    lineNumber: 1347,
                                                                                     columnNumber: 35
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                                            lineNumber: 1285,
+                                                                            lineNumber: 1311,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Profile.tsx",
-                                                                    lineNumber: 1207,
+                                                                    lineNumber: 1233,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1201,
+                                                            lineNumber: 1227,
                                                             columnNumber: 27
                                                         }, this)
                                                     }, post.id, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1200,
+                                                        lineNumber: 1226,
                                                         columnNumber: 25
                                                     }, this);
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1186,
+                                                lineNumber: 1212,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                        lineNumber: 1072,
+                                        lineNumber: 1098,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2213,24 +2228,24 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                             className: "w-full h-full object-cover group-hover:scale-110 transition-transform"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1362,
+                                                            lineNumber: 1388,
                                                             columnNumber: 27
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                                                             src: media.url,
                                                             className: "w-full h-full object-cover group-hover:scale-110 transition-transform"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                                            lineNumber: 1368,
+                                                            lineNumber: 1394,
                                                             columnNumber: 27
                                                         }, this)
                                                     }, idx, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1360,
+                                                        lineNumber: 1386,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1355,
+                                                lineNumber: 1381,
                                                 columnNumber: 17
                                             }, this),
                                             currentUser.posts.filter((post)=>post.media && post.media.length > 0).length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2240,7 +2255,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                         className: "w-16 h-16 text-white/30 mx-auto mb-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1378,
+                                                        lineNumber: 1404,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2248,19 +2263,19 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                         children: "No media posts yet"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1379,
+                                                        lineNumber: 1405,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1377,
+                                                lineNumber: 1403,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                        lineNumber: 1354,
+                                        lineNumber: 1380,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2275,7 +2290,7 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                         className: "w-16 h-16 text-white/30 mx-auto mb-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1389,
+                                                        lineNumber: 1415,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2283,45 +2298,45 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                                                         children: "Posts you like will appear here"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                                        lineNumber: 1390,
+                                                        lineNumber: 1416,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                                lineNumber: 1388,
+                                                lineNumber: 1414,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Profile.tsx",
-                                            lineNumber: 1386,
+                                            lineNumber: 1412,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Profile.tsx",
-                                        lineNumber: 1385,
+                                        lineNumber: 1411,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Profile.tsx",
-                                lineNumber: 1064,
+                                lineNumber: 1090,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Profile.tsx",
-                            lineNumber: 1063,
+                            lineNumber: 1089,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/Profile.tsx",
-                    lineNumber: 849,
+                    lineNumber: 862,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Profile.tsx",
-                lineNumber: 848,
+                lineNumber: 861,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ShareDialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ShareDialog"], {
@@ -2337,13 +2352,13 @@ function Profile({ onShareToMessages, profileUserId: profileUserIdProp = null, i
                 }
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Profile.tsx",
-                lineNumber: 1398,
+                lineNumber: 1424,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/Profile.tsx",
-        lineNumber: 847,
+        lineNumber: 860,
         columnNumber: 5
     }, this);
 }

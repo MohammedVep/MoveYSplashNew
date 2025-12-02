@@ -7,7 +7,11 @@ __turbopack_context__.s([
     ()=>Stories
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/module/index.js [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/avatar.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/dialog.tsx [app-client] (ecmascript)");
@@ -27,6 +31,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Square$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/square.js [app-client] (ecmascript) <export default as Square>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/volume-2.js [app-client] (ecmascript) <export default as Volume2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__VolumeX$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/volume-x.js [app-client] (ecmascript) <export default as VolumeX>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$ccw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCcw$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/refresh-ccw.js [app-client] (ecmascript) <export default as RefreshCcw>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$figma$2f$ImageWithFallback$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/figma/ImageWithFallback.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/utils/userContext.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/utils/supabase/info.tsx [app-client] (ecmascript)");
@@ -47,6 +52,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 const API_BASE_URL = `https://${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["projectId"]}.supabase.co/functions/v1/make-server-a14c7986`;
 const AUTH_HEADERS = {
     Authorization: `Bearer ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["publicAnonKey"]}`
@@ -55,6 +61,20 @@ const JSON_HEADERS = {
     ...AUTH_HEADERS,
     'Content-Type': 'application/json'
 };
+const SUPABASE_URL = `https://${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["projectId"]}.supabase.co`;
+const STORY_BUCKET = 'stories';
+const STORAGE_HOST = `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["projectId"]}.supabase.co`;
+const STORAGE_PREFIX = `https://${STORAGE_HOST}/storage/v1/object/`;
+const MAX_MEDIA_BYTES = 10 * 1024 * 1024; // 10MB per media item cap
+const supabaseClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(SUPABASE_URL, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["publicAnonKey"], {
+    auth: {
+        autoRefreshToken: false,
+        persistSession: false
+    },
+    global: {
+        headers: AUTH_HEADERS
+    }
+});
 const STORY_SKELETON_COUNT = 5;
 const MAX_STORY_ITEMS = 5;
 const DEFAULT_IMAGE_DURATION = 6;
@@ -72,6 +92,48 @@ const blobToDataUrl = (blob)=>new Promise((resolve, reject)=>{
         reader.onerror = reject;
         reader.readAsDataURL(blob);
     });
+const dataUrlToBlob = (dataUrl)=>{
+    const [header, payload] = dataUrl.split(',');
+    if (!payload) {
+        throw new Error('Invalid data URL');
+    }
+    const match = header.match(/^data:(.*?)(;base64)?$/);
+    const mimeType = match?.[1] ?? 'application/octet-stream';
+    const binary = atob(payload);
+    const len = binary.length;
+    const array = new Uint8Array(len);
+    for(let i = 0; i < len; i += 1){
+        array[i] = binary.charCodeAt(i);
+    }
+    return {
+        blob: new Blob([
+            array
+        ], {
+            type: mimeType
+        }),
+        mimeType
+    };
+};
+const pickExtension = (mimeType)=>{
+    if (!mimeType) {
+        return 'bin';
+    }
+    const map = {
+        'image/webp': 'webp',
+        'image/png': 'png',
+        'image/jpeg': 'jpg',
+        'video/webm': 'webm',
+        'video/mp4': 'mp4',
+        'video/quicktime': 'mov'
+    };
+    if (map[mimeType]) {
+        return map[mimeType];
+    }
+    const [, ext] = mimeType.split('/');
+    return ext && ext.length <= 5 ? ext : 'bin';
+};
+const safeId = ()=>typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function' ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+const generateStoryId = ()=>`story-${safeId()}`;
 const getSupportedRecordingMimeType = ()=>{
     if (("TURBOPACK compile-time value", "object") === 'undefined' || typeof window.MediaRecorder === 'undefined') {
         return '';
@@ -98,7 +160,7 @@ const STORY_VISIBILITY_OPTIONS = [
     {
         label: 'Public',
         value: 'public',
-        description: 'Everyone on MoveSplash can view your story'
+        description: 'Everyone on MoveYSplash can view your story'
     },
     {
         label: 'Friends',
@@ -111,6 +173,11 @@ const STORY_VISIBILITY_OPTIONS = [
         description: 'Share with your inner circle only'
     }
 ];
+const STORY_CACHE_STORAGE_KEY = 'movesplash:stories-cache-v1';
+const PENDING_STORIES_STORAGE_KEY = 'movesplash:pending-stories-v1';
+const MAX_CACHED_STORIES = 30;
+const FETCH_TIMEOUT_MS = 4500;
+const POST_TIMEOUT_MS = 30000;
 const formatRelativeTime = (isoTimestamp)=>{
     const date = new Date(isoTimestamp);
     if (Number.isNaN(date.getTime())) {
@@ -135,6 +202,85 @@ const formatRelativeTime = (isoTimestamp)=>{
     return date.toLocaleDateString();
 };
 const STORY_PLACEHOLDER_URL = 'https://api.dicebear.com/7.x/shapes/svg?seed=MoveSplashStory&backgroundColor=transparent';
+const UNKNOWN_STORY_ERROR = 'Unable to publish story. We will retry in the background.';
+const OFFLINE_STORIES = [
+    {
+        id: 'offline-story-1',
+        userId: 'demo-user-1',
+        user: {
+            id: 'demo-user-1',
+            name: 'Offline Demo',
+            username: 'demo',
+            avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=256&q=80',
+            ablyClientId: 'demo-user-1'
+        },
+        items: [
+            {
+                id: 'offline-item-1',
+                type: 'image',
+                url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80',
+                duration: DEFAULT_IMAGE_DURATION,
+                timestamp: new Date().toISOString()
+            }
+        ],
+        viewers: [],
+        visibility: 'public',
+        createdAt: new Date().toISOString(),
+        expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+        likes: [],
+        replies: []
+    }
+];
+const safeParseStories = (raw)=>{
+    if (!Array.isArray(raw)) return [];
+    return raw.filter((entry)=>entry && typeof entry === 'object');
+};
+const readCachedStories = ()=>{
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    try {
+        const stored = window.localStorage.getItem(STORY_CACHE_STORAGE_KEY);
+        if (!stored) return [];
+        const parsed = JSON.parse(stored);
+        return safeParseStories(parsed?.stories);
+    } catch  {
+        return [];
+    }
+};
+const writeCachedStories = (stories)=>{
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    try {
+        const trimmed = stories.slice(0, MAX_CACHED_STORIES);
+        window.localStorage.setItem(STORY_CACHE_STORAGE_KEY, JSON.stringify({
+            stories: trimmed,
+            cachedAt: Date.now()
+        }));
+    } catch  {
+    // Ignore storage failures
+    }
+};
+const readPendingStories = ()=>{
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    try {
+        const stored = window.localStorage.getItem(PENDING_STORIES_STORAGE_KEY);
+        if (!stored) return [];
+        const parsed = JSON.parse(stored);
+        return Array.isArray(parsed) ? parsed : [];
+    } catch  {
+        return [];
+    }
+};
+const writePendingStories = (pending)=>{
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    try {
+        window.localStorage.setItem(PENDING_STORIES_STORAGE_KEY, JSON.stringify(pending));
+    } catch  {
+    // Ignore storage failures
+    }
+};
 const storyStateToApiResponse = (story)=>({
         id: story.id,
         userId: story.userId,
@@ -159,7 +305,7 @@ const storyStateToApiResponse = (story)=>({
     });
 function Stories() {
     _s();
-    const { currentUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"])();
+    const { currentUser, allUsers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"])();
     const [storiesData, setStoriesData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [selectedStory, setSelectedStory] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [currentItemIndex, setCurrentItemIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
@@ -179,6 +325,7 @@ function Stories() {
     const [isCameraActive, setIsCameraActive] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [cameraStream, setCameraStream] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [cameraError, setCameraError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [cameraFacingMode, setCameraFacingMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('user');
     const [isCapturingPhoto, setIsCapturingPhoto] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const videoRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const mediaRecorderRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -195,16 +342,54 @@ function Stories() {
     const encodeStoryId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Stories.useCallback[encodeStoryId]": (storyId)=>encodeURIComponent(storyId)
     }["Stories.useCallback[encodeStoryId]"], []);
+    const storyCacheRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
+    const lastFetchedAtRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(0);
+    const preloadedMediaRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Set());
+    const [hydratedCache, setHydratedCache] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Stories.useEffect": ()=>{
+            const cached = readCachedStories();
+            if (cached.length > 0) {
+                storyCacheRef.current = cached;
+                setStoriesData(cached);
+                setLoading(false);
+            }
+            setHydratedCache(true);
+        }
+    }["Stories.useEffect"], []);
     const fetchStories = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Stories.useCallback[fetchStories]": async (signal)=>{
-            try {
-                if (!signal?.aborted) {
-                    setLoading(true);
-                    setError(null);
+            let abortController = null;
+            let timeoutId = null;
+            const abortFromUpstream = {
+                "Stories.useCallback[fetchStories].abortFromUpstream": ()=>{
+                    abortController?.abort();
                 }
+            }["Stories.useCallback[fetchStories].abortFromUpstream"];
+            try {
+                if (storyCacheRef.current.length > 0) {
+                    setStoriesData(storyCacheRef.current);
+                    setLoading(false);
+                }
+                if (!signal?.aborted) {
+                    const stale = Date.now() - lastFetchedAtRef.current > 45_000 || storyCacheRef.current.length === 0;
+                    if (stale) {
+                        setLoading(true);
+                        setError(null);
+                    }
+                }
+                abortController = new AbortController();
+                if (signal) {
+                    if (signal.aborted) {
+                        abortController.abort();
+                        return;
+                    }
+                    signal.addEventListener('abort', abortFromUpstream);
+                }
+                timeoutId = window.setTimeout(abortFromUpstream, FETCH_TIMEOUT_MS);
                 const response = await fetch(`${API_BASE_URL}/stories`, {
                     headers: AUTH_HEADERS,
-                    signal
+                    signal: abortController?.signal
                 });
                 if (!response.ok) {
                     throw new Error('Failed to fetch stories');
@@ -213,7 +398,11 @@ function Stories() {
                     "Stories.useCallback[fetchStories]": ()=>({})
                 }["Stories.useCallback[fetchStories]"]);
                 if (!signal?.aborted) {
-                    setStoriesData(Array.isArray(payload?.stories) ? payload.stories : []);
+                    const nextStories = Array.isArray(payload?.stories) ? payload.stories : [];
+                    storyCacheRef.current = nextStories;
+                    lastFetchedAtRef.current = Date.now();
+                    writeCachedStories(nextStories);
+                    setStoriesData(nextStories);
                 }
             } catch (fetchError) {
                 if (fetchError.name === 'AbortError') {
@@ -221,15 +410,261 @@ function Stories() {
                 }
                 console.error('Error loading stories:', fetchError);
                 if (!signal?.aborted) {
-                    setError('Unable to load stories right now.');
+                    if (storyCacheRef.current.length > 0) {
+                        setError('Using your last stories until connection comes back.');
+                        setStoriesData(storyCacheRef.current);
+                    } else {
+                        setStoriesData(OFFLINE_STORIES);
+                        storyCacheRef.current = OFFLINE_STORIES;
+                        setError('Offline mode: showing sample stories until we reconnect.');
+                    }
                 }
             } finally{
+                if (signal) {
+                    signal.removeEventListener('abort', abortFromUpstream);
+                }
+                if (timeoutId !== null) {
+                    window.clearTimeout(timeoutId);
+                }
                 if (!signal?.aborted) {
                     setLoading(false);
                 }
             }
         }
     }["Stories.useCallback[fetchStories]"], []);
+    const prefetchStoryMedia = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[prefetchStoryMedia]": (stories)=>{
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
+            const preloadTargets = stories.flatMap({
+                "Stories.useCallback[prefetchStoryMedia].preloadTargets": (story)=>story.items?.slice(0, 1) ?? []
+            }["Stories.useCallback[prefetchStoryMedia].preloadTargets"]).filter({
+                "Stories.useCallback[prefetchStoryMedia].preloadTargets": (item)=>typeof item?.url === 'string'
+            }["Stories.useCallback[prefetchStoryMedia].preloadTargets"]).slice(0, 12);
+            preloadTargets.forEach({
+                "Stories.useCallback[prefetchStoryMedia]": (item)=>{
+                    const url = item?.url;
+                    if (!url || preloadedMediaRef.current.has(url)) {
+                        return;
+                    }
+                    preloadedMediaRef.current.add(url);
+                    const image = new Image();
+                    image.src = url;
+                }
+            }["Stories.useCallback[prefetchStoryMedia]"]);
+        }
+    }["Stories.useCallback[prefetchStoryMedia]"], []);
+    const sanitizeKey = (value)=>value.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || safeId();
+    const uploadStoryMediaToSupabase = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[uploadStoryMediaToSupabase]": async (item, userId, storyId)=>{
+            if (item.url.startsWith('http')) {
+                return item;
+            }
+            const attemptUpload = {
+                "Stories.useCallback[uploadStoryMediaToSupabase].attemptUpload": async (attempt)=>{
+                    let blob;
+                    let mimeType = 'application/octet-stream';
+                    if (item.url.startsWith('data:')) {
+                        const parsed = dataUrlToBlob(item.url);
+                        blob = parsed.blob;
+                        mimeType = parsed.mimeType;
+                    } else if (item.url.startsWith('http')) {
+                        const response = await fetch(item.url);
+                        if (!response.ok) {
+                            throw new Error(`Unable to fetch media (status ${response.status})`);
+                        }
+                        const len = Number(response.headers.get('content-length') ?? 0);
+                        if (Number.isFinite(len) && len > MAX_MEDIA_BYTES) {
+                            throw new Error('Media too large for upload');
+                        }
+                        blob = await response.blob();
+                        const size = blob.size;
+                        if (size > MAX_MEDIA_BYTES) {
+                            throw new Error('Media too large for upload');
+                        }
+                        mimeType = blob.type || mimeType;
+                    } else {
+                        throw new Error('Invalid media URL; upload to storage first.');
+                    }
+                    const extension = pickExtension(mimeType);
+                    const baseName = sanitizeKey(item.id || `media-${safeId()}`);
+                    const objectPath = `${sanitizeKey(userId || 'user')}/${sanitizeKey(storyId || 'story')}/${baseName}.${extension}`;
+                    const { error } = await supabaseClient.storage.from(STORY_BUCKET).upload(objectPath, blob, {
+                        cacheControl: '31536000',
+                        contentType: mimeType,
+                        upsert: false
+                    });
+                    if (error) {
+                        throw error;
+                    }
+                    const { data } = supabaseClient.storage.from(STORY_BUCKET).getPublicUrl(objectPath);
+                    const publicUrl = data?.publicUrl || item.url;
+                    if (!publicUrl.startsWith(STORAGE_PREFIX)) {
+                        throw new Error('Storage URL not returned; check bucket permissions.');
+                    }
+                    return {
+                        ...item,
+                        url: publicUrl
+                    };
+                }
+            }["Stories.useCallback[uploadStoryMediaToSupabase].attemptUpload"];
+            for(let attempt = 1; attempt <= 3; attempt += 1){
+                try {
+                    return await attemptUpload(attempt);
+                } catch (uploadError) {
+                    const isLast = attempt === 3;
+                    if (isLast) {
+                        throw uploadError instanceof Error ? uploadError : new Error(String(uploadError));
+                    }
+                    await new Promise({
+                        "Stories.useCallback[uploadStoryMediaToSupabase]": (resolve)=>setTimeout(resolve, 500 * attempt)
+                    }["Stories.useCallback[uploadStoryMediaToSupabase]"]);
+                }
+            }
+            throw new Error('Media upload failed after retries');
+        }
+    }["Stories.useCallback[uploadStoryMediaToSupabase]"], []);
+    const mapDraftToItems = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[mapDraftToItems]": (draft)=>{
+            const baseTime = Date.now();
+            return draft.map({
+                "Stories.useCallback[mapDraftToItems]": (item, index)=>({
+                        id: item.id,
+                        type: item.type,
+                        url: item.url,
+                        duration: item.duration,
+                        timestamp: new Date(baseTime + index).toISOString()
+                    })
+            }["Stories.useCallback[mapDraftToItems]"]);
+        }
+    }["Stories.useCallback[mapDraftToItems]"], []);
+    const buildPayloadItems = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[buildPayloadItems]": async (draft, userId, storyId)=>{
+            const mapped = mapDraftToItems(draft);
+            const uploaded = await Promise.all(mapped.map({
+                "Stories.useCallback[buildPayloadItems]": async (item)=>{
+                    const uploaded = await uploadStoryMediaToSupabase(item, userId, storyId);
+                    return {
+                        ...item,
+                        url: uploaded.url
+                    };
+                }
+            }["Stories.useCallback[buildPayloadItems]"]));
+            const hasInline = uploaded.some({
+                "Stories.useCallback[buildPayloadItems].hasInline": (item)=>typeof item.url === 'string' && (item.url.startsWith('data:') || !item.url.startsWith('http'))
+            }["Stories.useCallback[buildPayloadItems].hasInline"]);
+            if (hasInline) {
+                throw new Error('Media must be uploaded before posting the story.');
+            }
+            return uploaded;
+        }
+    }["Stories.useCallback[buildPayloadItems]"], [
+        mapDraftToItems,
+        uploadStoryMediaToSupabase
+    ]);
+    const ensurePendingItemsUploaded = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[ensurePendingItemsUploaded]": async (items, userId, storyId)=>{
+            const mapped = await Promise.all(items.map({
+                "Stories.useCallback[ensurePendingItemsUploaded]": async (item)=>{
+                    if (item.url.startsWith('http')) {
+                        return item;
+                    }
+                    const uploaded = await uploadStoryMediaToSupabase(item, userId, storyId);
+                    return {
+                        ...item,
+                        url: uploaded.url
+                    };
+                }
+            }["Stories.useCallback[ensurePendingItemsUploaded]"]));
+            const invalid = mapped.some({
+                "Stories.useCallback[ensurePendingItemsUploaded].invalid": (item)=>typeof item.url !== 'string' || !item.url.startsWith('http')
+            }["Stories.useCallback[ensurePendingItemsUploaded].invalid"]);
+            if (invalid) {
+                throw new Error('Media must be uploaded to storage before posting the story.');
+            }
+            return mapped;
+        }
+    }["Stories.useCallback[ensurePendingItemsUploaded]"], [
+        uploadStoryMediaToSupabase
+    ]);
+    const buildStoryFromPayload = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[buildStoryFromPayload]": (payload)=>{
+            const createdAt = new Date().toISOString();
+            const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+            const userSnapshot = payload.userSnapshot;
+            const fallbackAvatar = `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(payload.userId || 'story')}`;
+            return {
+                id: payload.id,
+                userId: payload.userId,
+                user: userSnapshot ?? {
+                    id: payload.userId,
+                    name: payload.userId,
+                    username: payload.userId,
+                    avatar: fallbackAvatar,
+                    ablyClientId: payload.userId
+                },
+                items: payload.items.map({
+                    "Stories.useCallback[buildStoryFromPayload]": (item)=>({
+                            id: item.id,
+                            type: item.type,
+                            url: item.url,
+                            duration: item.duration,
+                            timestamp: item.timestamp
+                        })
+                }["Stories.useCallback[buildStoryFromPayload]"]),
+                viewers: [],
+                visibility: payload.visibility,
+                createdAt,
+                expiresAt,
+                likes: [],
+                replies: []
+            };
+        }
+    }["Stories.useCallback[buildStoryFromPayload]"], []);
+    const sendSupabaseNotification = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[sendSupabaseNotification]": async (userId, content)=>{
+            try {
+                await fetch(`${API_BASE_URL}/notifications`, {
+                    method: 'POST',
+                    headers: JSON_HEADERS,
+                    body: JSON.stringify({
+                        userId,
+                        type: 'story',
+                        content,
+                        actorName: currentUser?.name || 'MoveSplash friend',
+                        actorAvatar: currentUser?.avatar
+                    })
+                });
+            } catch (notifyError) {
+                console.warn('Failed to send Supabase notification:', notifyError);
+            }
+        }
+    }["Stories.useCallback[sendSupabaseNotification]"], [
+        currentUser?.avatar,
+        currentUser?.name
+    ]);
+    const notifyFriendsAboutStory = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[notifyFriendsAboutStory]": async (message)=>{
+            if (!currentUser || !currentUser.friendIds?.length) {
+                return;
+            }
+            const friendRecords = currentUser.friendIds.map({
+                "Stories.useCallback[notifyFriendsAboutStory].friendRecords": (id)=>allUsers.get(id)
+            }["Stories.useCallback[notifyFriendsAboutStory].friendRecords"]).filter({
+                "Stories.useCallback[notifyFriendsAboutStory].friendRecords": (user)=>Boolean(user)
+            }["Stories.useCallback[notifyFriendsAboutStory].friendRecords"]);
+            const optedIn = friendRecords.filter({
+                "Stories.useCallback[notifyFriendsAboutStory].optedIn": (friend)=>friend.settings?.notifyStories ?? true
+            }["Stories.useCallback[notifyFriendsAboutStory].optedIn"]);
+            await Promise.allSettled(optedIn.map({
+                "Stories.useCallback[notifyFriendsAboutStory]": (friend)=>sendSupabaseNotification(friend.id, message)
+            }["Stories.useCallback[notifyFriendsAboutStory]"]));
+        }
+    }["Stories.useCallback[notifyFriendsAboutStory]"], [
+        allUsers,
+        currentUser,
+        sendSupabaseNotification
+    ]);
     const mergeStoryUpdate = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Stories.useCallback[mergeStoryUpdate]": (storyUpdate, options)=>{
             setStoriesData({
@@ -297,6 +732,101 @@ function Stories() {
             };
         }
     }["Stories.useCallback[buildUserSnapshot]"], []);
+    const lastPostErrorRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const postStoryWithRetry = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[postStoryWithRetry]": async (payload, maxAttempts = 5)=>{
+            lastPostErrorRef.current = null;
+            for(let attempt = 1; attempt <= maxAttempts; attempt += 1){
+                const controller = new AbortController();
+                const timeoutId = window.setTimeout({
+                    "Stories.useCallback[postStoryWithRetry].timeoutId": ()=>controller.abort()
+                }["Stories.useCallback[postStoryWithRetry].timeoutId"], POST_TIMEOUT_MS);
+                try {
+                    const response = await fetch(`${API_BASE_URL}/stories`, {
+                        method: 'POST',
+                        headers: JSON_HEADERS,
+                        body: JSON.stringify({
+                            ...payload,
+                            userSnapshot: payload.userSnapshot ?? buildUserSnapshot(currentUser)
+                        }),
+                        signal: controller.signal
+                    });
+                    const data = await response.json().catch({
+                        "Stories.useCallback[postStoryWithRetry]": ()=>({})
+                    }["Stories.useCallback[postStoryWithRetry]"]);
+                    if (response.ok) {
+                        return data?.story ?? buildStoryFromPayload(payload);
+                    }
+                    lastPostErrorRef.current = data?.error || `Story publish failed (attempt ${attempt})`;
+                    throw new Error(lastPostErrorRef.current);
+                } catch (postError) {
+                    const isAbort = postError instanceof DOMException && postError.name === 'AbortError';
+                    lastPostErrorRef.current = postError instanceof Error && postError.message ? postError.message : UNKNOWN_STORY_ERROR;
+                    if (attempt === maxAttempts) {
+                        return null;
+                    }
+                    await new Promise({
+                        "Stories.useCallback[postStoryWithRetry]": (resolve)=>setTimeout(resolve, isAbort ? 1200 * attempt : 600 * attempt)
+                    }["Stories.useCallback[postStoryWithRetry]"]);
+                } finally{
+                    window.clearTimeout(timeoutId);
+                }
+            }
+            return null;
+        }
+    }["Stories.useCallback[postStoryWithRetry]"], [
+        buildUserSnapshot,
+        currentUser
+    ]);
+    const flushPendingStories = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[flushPendingStories]": async ()=>{
+            const pending = readPendingStories();
+            if (!pending.length) return;
+            const remaining = [];
+            for (const payload of pending){
+                try {
+                    const storyId = payload.id || generateStoryId();
+                    const items = await ensurePendingItemsUploaded(payload.items, payload.userId, storyId);
+                    const invalidInline = items.some({
+                        "Stories.useCallback[flushPendingStories].invalidInline": (item)=>typeof item.url === 'string' && (item.url.startsWith('data:') || !item.url.startsWith('http'))
+                    }["Stories.useCallback[flushPendingStories].invalidInline"]);
+                    if (invalidInline) {
+                        throw new Error('Inline media detected; upload required');
+                    }
+                    const story = await postStoryWithRetry({
+                        ...payload,
+                        id: storyId,
+                        items
+                    }, 5);
+                    if (story) {
+                        mergeStoryUpdate(story, {
+                            prepend: true
+                        });
+                        storyCacheRef.current = [
+                            story,
+                            ...storyCacheRef.current
+                        ].slice(0, MAX_CACHED_STORIES);
+                        writeCachedStories(storyCacheRef.current);
+                    } else {
+                        remaining.push(payload);
+                    }
+                } catch  {
+                    remaining.push(payload);
+                }
+            }
+            writePendingStories(remaining);
+            const cleared = remaining.length === 0;
+            if (cleared) {
+                setCreationError(null);
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Queued stories posted.');
+            }
+            return cleared;
+        }
+    }["Stories.useCallback[flushPendingStories]"], [
+        ensurePendingItemsUploaded,
+        mergeStoryUpdate,
+        postStoryWithRetry
+    ]);
     const buildStorySnapshot = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Stories.useCallback[buildStorySnapshot]": (story)=>{
             return {
@@ -665,7 +1195,7 @@ function Stories() {
         stopVideoRecording
     ]);
     const startCamera = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
-        "Stories.useCallback[startCamera]": async ()=>{
+        "Stories.useCallback[startCamera]": async (facing = cameraFacingMode)=>{
             if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
                 setCameraError('Camera is not supported on this device.');
                 return;
@@ -676,7 +1206,7 @@ function Stories() {
                 try {
                     stream = await navigator.mediaDevices.getUserMedia({
                         video: {
-                            facingMode: 'user'
+                            facingMode: facing
                         },
                         audio: true
                     });
@@ -684,7 +1214,7 @@ function Stories() {
                     console.warn('Falling back to video-only capture for stories:', audioError);
                     stream = await navigator.mediaDevices.getUserMedia({
                         video: {
-                            facingMode: 'user'
+                            facingMode: facing
                         }
                     });
                 }
@@ -698,7 +1228,22 @@ function Stories() {
             }
         }
     }["Stories.useCallback[startCamera]"], [
-        stopCamera
+        stopCamera,
+        cameraFacingMode
+    ]);
+    const handleFlipCamera = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[handleFlipCamera]": ()=>{
+            setCameraFacingMode({
+                "Stories.useCallback[handleFlipCamera]": (prev)=>prev === 'user' ? 'environment' : 'user'
+            }["Stories.useCallback[handleFlipCamera]"]);
+            if (isCameraActive) {
+                void startCamera(cameraFacingMode === 'user' ? 'environment' : 'user');
+            }
+        }
+    }["Stories.useCallback[handleFlipCamera]"], [
+        cameraFacingMode,
+        isCameraActive,
+        startCamera
     ]);
     const capturePhoto = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Stories.useCallback[capturePhoto]": ()=>{
@@ -789,51 +1334,73 @@ function Stories() {
     }["Stories.useCallback[handleCreatorOpenChange]"], [
         resetCreatorState
     ]);
+    const queueStoryForLater = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Stories.useCallback[queueStoryForLater]": (payload)=>{
+            const pending = [
+                ...readPendingStories(),
+                payload
+            ];
+            writePendingStories(pending);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('We saved your story locally and will post it once you are back online.');
+        }
+    }["Stories.useCallback[queueStoryForLater]"], []);
     const handleCreateStory = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Stories.useCallback[handleCreateStory]": async ()=>{
             if (!currentUser) {
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].info("Sign in to share a story.");
                 return;
             }
+            if (isSubmittingStory) {
+                return;
+            }
             if (storyDraft.length === 0) {
                 setCreationError('Add at least one photo or video to your story.');
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].info('Add a photo or video before publishing.');
                 return;
             }
             setIsSubmittingStory(true);
             setCreationError(null);
             try {
-                const payloadItems = storyDraft.map({
-                    "Stories.useCallback[handleCreateStory].payloadItems": (item)=>({
-                            id: item.id,
-                            type: item.type,
-                            url: item.url,
-                            duration: item.duration,
-                            timestamp: new Date().toISOString()
-                        })
-                }["Stories.useCallback[handleCreateStory].payloadItems"]);
-                const response = await fetch(`${API_BASE_URL}/stories`, {
-                    method: 'POST',
-                    headers: JSON_HEADERS,
-                    body: JSON.stringify({
+                const storyId = generateStoryId();
+                const isOffline = typeof navigator !== 'undefined' && navigator.onLine === false;
+                const baseItems = mapDraftToItems(storyDraft);
+                const userSnapshot = buildUserSnapshot(currentUser);
+                if (isOffline) {
+                    queueStoryForLater({
+                        id: storyId,
                         userId: currentUser.id,
                         visibility: storyVisibility,
-                        items: payloadItems
-                    })
-                });
-                const payload = await response.json().catch({
-                    "Stories.useCallback[handleCreateStory]": ()=>({})
-                }["Stories.useCallback[handleCreateStory]"]);
-                if (!response.ok || !payload?.story) {
-                    const errorMessage = payload?.error ?? 'Failed to publish story.';
-                    throw new Error(errorMessage);
+                        userSnapshot,
+                        items: baseItems
+                    });
+                    handleCreatorOpenChange(false);
+                    return;
                 }
-                const createdStory = payload.story;
+                const uploadedItems = await buildPayloadItems(storyDraft, currentUser.id, storyId);
+                const payload = {
+                    id: storyId,
+                    userId: currentUser.id,
+                    visibility: storyVisibility,
+                    userSnapshot,
+                    items: uploadedItems
+                };
+                const createdStory = await postStoryWithRetry(payload, 5);
+                if (!createdStory) {
+                    throw new Error('Failed to publish story.');
+                }
                 mergeStoryUpdate(createdStory, {
                     prepend: true
                 });
+                storyCacheRef.current = [
+                    createdStory,
+                    ...storyCacheRef.current
+                ];
+                lastFetchedAtRef.current = Date.now();
+                writeCachedStories(storyCacheRef.current);
                 const newStoryId = createdStory.id;
                 handleCreatorOpenChange(false);
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Your story is live!');
+                void notifyFriendsAboutStory(`${currentUser.name || 'A friend'} posted a new story.`);
                 void fetchStories().catch({
                     "Stories.useCallback[handleCreateStory]": (error)=>{
                         console.error('Error refreshing stories:', error);
@@ -843,9 +1410,24 @@ function Stories() {
                 setCurrentItemIndex(0);
             } catch (creationErrorCaught) {
                 console.error('Error creating story:', creationErrorCaught);
-                const message = creationErrorCaught instanceof Error ? creationErrorCaught.message : 'Unable to publish story right now.';
-                setCreationError(message);
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('Unable to publish story right now.');
+                const message = lastPostErrorRef.current && typeof lastPostErrorRef.current === 'string' ? lastPostErrorRef.current : UNKNOWN_STORY_ERROR;
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(message);
+                queueStoryForLater({
+                    id: generateStoryId(),
+                    userId: currentUser.id,
+                    visibility: storyVisibility,
+                    userSnapshot: buildUserSnapshot(currentUser),
+                    items: storyDraft.map({
+                        "Stories.useCallback[handleCreateStory]": (item)=>({
+                                id: item.id,
+                                type: item.type,
+                                url: item.url,
+                                duration: item.duration,
+                                timestamp: new Date().toISOString()
+                            })
+                    }["Stories.useCallback[handleCreateStory]"])
+                });
+                setCreationError(null);
             } finally{
                 setIsSubmittingStory(false);
             }
@@ -856,10 +1438,20 @@ function Stories() {
         storyVisibility,
         fetchStories,
         handleCreatorOpenChange,
-        mergeStoryUpdate
+        mergeStoryUpdate,
+        isSubmittingStory,
+        notifyFriendsAboutStory,
+        postStoryWithRetry,
+        queueStoryForLater,
+        mapDraftToItems,
+        buildPayloadItems,
+        lastPostErrorRef
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Stories.useEffect": ()=>{
+            if (!hydratedCache) {
+                return;
+            }
             const controller = new AbortController();
             fetchStories(controller.signal);
             return ({
@@ -867,7 +1459,38 @@ function Stories() {
             })["Stories.useEffect"];
         }
     }["Stories.useEffect"], [
-        fetchStories
+        fetchStories,
+        hydratedCache
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Stories.useEffect": ()=>{
+            if (!hydratedCache) {
+                return;
+            }
+            void flushPendingStories();
+            const handleOnline = {
+                "Stories.useEffect.handleOnline": ()=>{
+                    void flushPendingStories();
+                }
+            }["Stories.useEffect.handleOnline"];
+            window.addEventListener('online', handleOnline);
+            return ({
+                "Stories.useEffect": ()=>window.removeEventListener('online', handleOnline)
+            })["Stories.useEffect"];
+        }
+    }["Stories.useEffect"], [
+        flushPendingStories,
+        hydratedCache
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Stories.useEffect": ()=>{
+            if (storiesData.length > 0) {
+                prefetchStoryMedia(storiesData);
+            }
+        }
+    }["Stories.useEffect"], [
+        storiesData,
+        prefetchStoryMedia
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Stories.useEffect": ()=>{
@@ -907,6 +1530,7 @@ function Stories() {
     ]);
     const storyFeed = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
         "Stories.useMemo[storyFeed]": ()=>{
+            const nowMs = Date.now();
             return storiesData.filter({
                 "Stories.useMemo[storyFeed]": (story)=>Boolean(story?.user) && Array.isArray(story.items) && story.items.length > 0
             }["Stories.useMemo[storyFeed]"]).map({
@@ -925,8 +1549,10 @@ function Stories() {
                         avatar: baseUser.avatar,
                         ablyClientId: baseUser.ablyClientId ?? baseUser.id
                     };
-                    const createdAt = story.createdAt && !Number.isNaN(Date.parse(story.createdAt)) ? new Date(story.createdAt).toISOString() : new Date().toISOString();
-                    const expiresAt = story.expiresAt && !Number.isNaN(Date.parse(story.expiresAt)) ? new Date(story.expiresAt).toISOString() : createdAt;
+                    const createdMs = story.createdAt && !Number.isNaN(Date.parse(story.createdAt)) ? Date.parse(story.createdAt) : Date.now();
+                    const createdAt = new Date(createdMs).toISOString();
+                    const expirationMs = !Number.isNaN(Date.parse(story.expiresAt ?? '')) ? Date.parse(story.expiresAt) : createdMs + 24 * 60 * 60 * 1000;
+                    const expiresAt = new Date(expirationMs).toISOString();
                     const likes = Array.from(new Set(Array.isArray(story.likes) ? story.likes.filter({
                         "Stories.useMemo[storyFeed].likes": (value)=>typeof value === 'string'
                     }["Stories.useMemo[storyFeed].likes"]) : []));
@@ -983,6 +1609,8 @@ function Stories() {
                         replies
                     };
                 }
+            }["Stories.useMemo[storyFeed]"]).filter({
+                "Stories.useMemo[storyFeed]": (story)=>Date.parse(story.expiresAt) > nowMs
             }["Stories.useMemo[storyFeed]"]).sort({
                 "Stories.useMemo[storyFeed]": (a, b)=>Date.parse(b.createdAt) - Date.parse(a.createdAt)
             }["Stories.useMemo[storyFeed]"]);
@@ -1484,6 +2112,9 @@ function Stories() {
                         mergeStoryUpdate(payload.story);
                         setReplyText('');
                         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Reply sent!');
+                        if (currentStory.userId !== currentUser.id) {
+                            void sendSupabaseNotification(currentStory.userId, `${currentUser.name || 'Someone'} replied to your story.`);
+                        }
                         void sendStoryReplyMessage(currentStory, trimmed);
                         return true;
                     }
@@ -1519,6 +2150,9 @@ function Stories() {
                     mergeStoryUpdate(storyStateToApiResponse(fallbackStory));
                     setReplyText('');
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Reply sent!');
+                    if (currentStory.userId !== currentUser.id) {
+                        void sendSupabaseNotification(currentStory.userId, `${currentUser.name || 'Someone'} replied to your story.`);
+                    }
                     void sendStoryReplyMessage(currentStory, trimmed);
                 } else {
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Reply captured!');
@@ -1535,7 +2169,8 @@ function Stories() {
         mergeStoryUpdate,
         replyText,
         sendStoryReplyMessage,
-        buildStorySnapshot
+        buildStorySnapshot,
+        sendSupabaseNotification
     ]);
     const showSkeleton = loading && storiesData.length === 0;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1549,7 +2184,7 @@ function Stories() {
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Stories.tsx",
-                        lineNumber: 1497,
+                        lineNumber: 2121,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1560,13 +2195,13 @@ function Stories() {
                         children: "Try again"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Stories.tsx",
-                        lineNumber: 1498,
+                        lineNumber: 2122,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Stories.tsx",
-                lineNumber: 1496,
+                lineNumber: 2120,
                 columnNumber: 9
             }, this),
             showSkeleton ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1580,25 +2215,25 @@ function Stories() {
                                 className: "w-20 h-20 rounded-full bg-white/10"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1513,
+                                lineNumber: 2137,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                                 className: "w-16 h-3 bg-white/10"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1514,
+                                lineNumber: 2138,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, index, true, {
                         fileName: "[project]/src/app/components/Stories.tsx",
-                        lineNumber: 1512,
+                        lineNumber: 2136,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Stories.tsx",
-                lineNumber: 1510,
+                lineNumber: 2134,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex gap-4 overflow-x-auto pb-4 hide-scrollbar",
@@ -1607,7 +2242,7 @@ function Stories() {
                     children: "No stories yet. Check back soon!"
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/Stories.tsx",
-                    lineNumber: 1521,
+                    lineNumber: 2145,
                     columnNumber: 13
                 }, this) : orderedStories.map((story)=>{
                     const isOwnStory = Boolean(currentUser && story.userId === currentUser.id);
@@ -1630,7 +2265,7 @@ function Stories() {
                                                 className: "absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 group-hover:blur-lg bg-white/25 transition-all duration-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1547,
+                                                lineNumber: 2171,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1642,31 +2277,31 @@ function Stories() {
                                                             src: story.user.avatar
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1550,
+                                                            lineNumber: 2174,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                             children: story.user.name[0]
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1551,
+                                                            lineNumber: 2175,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                    lineNumber: 1549,
+                                                    lineNumber: 2173,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1548,
+                                                lineNumber: 2172,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1544,
+                                        lineNumber: 2168,
                                         columnNumber: 21
                                     }, this),
                                     isPlaceholder && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1675,12 +2310,12 @@ function Stories() {
                                             className: "w-3.5 h-3.5 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1558,
+                                            lineNumber: 2182,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1557,
+                                        lineNumber: 2181,
                                         columnNumber: 23
                                     }, this),
                                     isOwnStory && !isPlaceholder && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1695,18 +2330,18 @@ function Stories() {
                                             className: "w-3.5 h-3.5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1571,
+                                            lineNumber: 2195,
                                             columnNumber: 25
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1562,
+                                        lineNumber: 2186,
                                         columnNumber: 23
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1543,
+                                lineNumber: 2167,
                                 columnNumber: 19
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1714,19 +2349,19 @@ function Stories() {
                                 children: isOwnStory ? 'Your Story' : story.user.name
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1575,
+                                lineNumber: 2199,
                                 columnNumber: 19
                             }, this)
                         ]
                     }, story.id, true, {
                         fileName: "[project]/src/app/components/Stories.tsx",
-                        lineNumber: 1536,
+                        lineNumber: 2160,
                         columnNumber: 17
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Stories.tsx",
-                lineNumber: 1519,
+                lineNumber: 2143,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -1751,14 +2386,14 @@ function Stories() {
                                             muted: isStoryVideoMuted
                                         }, currentItem.id, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1592,
+                                            lineNumber: 2216,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/60"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1602,
+                                            lineNumber: 2226,
                                             columnNumber: 21
                                         }, this)
                                     ]
@@ -1770,21 +2405,21 @@ function Stories() {
                                             className: "w-full h-full object-cover"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1606,
+                                            lineNumber: 2230,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/60"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1607,
+                                            lineNumber: 2231,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1589,
+                                lineNumber: 2213,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1810,23 +2445,23 @@ function Stories() {
                                                 } : undefined
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1634,
+                                                lineNumber: 2258,
                                                 columnNumber: 25
                                             }, this)
                                         }, index, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1633,
+                                            lineNumber: 2257,
                                             columnNumber: 23
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                    lineNumber: 1613,
+                                    lineNumber: 2237,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1612,
+                                lineNumber: 2236,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1841,18 +2476,18 @@ function Stories() {
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1654,
+                                            lineNumber: 2278,
                                             columnNumber: 42
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$volume$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Volume2$3e$__["Volume2"], {
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1654,
+                                            lineNumber: 2278,
                                             columnNumber: 76
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1648,
+                                        lineNumber: 2272,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1864,18 +2499,18 @@ function Stories() {
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1663,
+                                            lineNumber: 2287,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1657,
+                                        lineNumber: 2281,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1646,
+                                lineNumber: 2270,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1892,20 +2527,20 @@ function Stories() {
                                                         src: currentStory.user.avatar
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1671,
+                                                        lineNumber: 2295,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                         children: currentStory.user.name[0]
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1672,
+                                                        lineNumber: 2296,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1670,
+                                                lineNumber: 2294,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1915,7 +2550,7 @@ function Stories() {
                                                         children: currentStory.user.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1675,
+                                                        lineNumber: 2299,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1923,29 +2558,29 @@ function Stories() {
                                                         children: formatRelativeTime(currentItem.timestamp)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1676,
+                                                        lineNumber: 2300,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1674,
+                                                lineNumber: 2298,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1669,
+                                        lineNumber: 2293,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                    lineNumber: 1668,
+                                    lineNumber: 2292,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1667,
+                                lineNumber: 2291,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1954,7 +2589,7 @@ function Stories() {
                                 "aria-label": "Previous"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1682,
+                                lineNumber: 2306,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1963,7 +2598,7 @@ function Stories() {
                                 "aria-label": "Next"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1687,
+                                lineNumber: 2311,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1975,12 +2610,12 @@ function Stories() {
                                     className: "w-6 h-6"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                    lineNumber: 1699,
+                                    lineNumber: 2323,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1693,
+                                lineNumber: 2317,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1992,12 +2627,12 @@ function Stories() {
                                     className: "w-6 h-6"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                    lineNumber: 1707,
+                                    lineNumber: 2331,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1701,
+                                lineNumber: 2325,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2019,20 +2654,20 @@ function Stories() {
                                                                         src: reply.author?.avatar
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1718,
+                                                                        lineNumber: 2342,
                                                                         columnNumber: 31
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                         children: (reply.author?.name ?? reply.author?.username ?? '?')[0] ?? '?'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1719,
+                                                                        lineNumber: 2343,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1717,
+                                                                lineNumber: 2341,
                                                                 columnNumber: 29
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2046,20 +2681,20 @@ function Stories() {
                                                                                 children: reply.author?.name ?? reply.author?.username ?? 'MoveSplash user'
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                                lineNumber: 1725,
+                                                                                lineNumber: 2349,
                                                                                 columnNumber: 33
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: formatRelativeTime(reply.timestamp)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                                lineNumber: 1728,
+                                                                                lineNumber: 2352,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1724,
+                                                                        lineNumber: 2348,
                                                                         columnNumber: 31
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2067,29 +2702,29 @@ function Stories() {
                                                                         children: reply.content
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1730,
+                                                                        lineNumber: 2354,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1723,
+                                                                lineNumber: 2347,
                                                                 columnNumber: 29
                                                             }, this)
                                                         ]
                                                     }, reply.id, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1716,
+                                                        lineNumber: 2340,
                                                         columnNumber: 27
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1714,
+                                                lineNumber: 2338,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1713,
+                                            lineNumber: 2337,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2106,26 +2741,26 @@ function Stories() {
                                                             className: "h-4 w-4 animate-spin"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1751,
+                                                            lineNumber: 2375,
                                                             columnNumber: 25
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Heart$3e$__["Heart"], {
                                                             className: `h-4 w-4 ${currentStory.liked ? 'fill-current' : ''}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1753,
+                                                            lineNumber: 2377,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: currentStory.likeCount
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1755,
+                                                            lineNumber: 2379,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                    lineNumber: 1739,
+                                                    lineNumber: 2363,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -2142,7 +2777,7 @@ function Stories() {
                                                     className: "flex-1 min-w-[140px] bg-white/10 backdrop-blur-md border-white/20 text-white placeholder:text-white/50"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                    lineNumber: 1758,
+                                                    lineNumber: 2382,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2155,13 +2790,13 @@ function Stories() {
                                                             className: "h-4 w-4 animate-spin"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1777,
+                                                            lineNumber: 2401,
                                                             columnNumber: 39
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1777,
+                                                            lineNumber: 2401,
                                                             columnNumber: 86
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2169,46 +2804,46 @@ function Stories() {
                                                             children: "Send"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1778,
+                                                            lineNumber: 2402,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                    lineNumber: 1771,
+                                                    lineNumber: 2395,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                            lineNumber: 1738,
+                                            lineNumber: 2362,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                    lineNumber: 1711,
+                                    lineNumber: 2335,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1710,
+                                lineNumber: 2334,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/Stories.tsx",
-                        lineNumber: 1588,
+                        lineNumber: 2212,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/Stories.tsx",
-                    lineNumber: 1586,
+                    lineNumber: 2210,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Stories.tsx",
-                lineNumber: 1585,
+                lineNumber: 2209,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -2226,7 +2861,7 @@ function Stories() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1791,
+                                lineNumber: 2415,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2243,7 +2878,7 @@ function Stories() {
                                                         children: "Create a Story"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1801,
+                                                        lineNumber: 2425,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2251,13 +2886,13 @@ function Stories() {
                                                         children: "Add photos or short clips to share with your friends."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1802,
+                                                        lineNumber: 2426,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1800,
+                                                lineNumber: 2424,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2269,18 +2904,18 @@ function Stories() {
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                    lineNumber: 1812,
+                                                    lineNumber: 2436,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1806,
+                                                lineNumber: 2430,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1799,
+                                        lineNumber: 2423,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2298,7 +2933,7 @@ function Stories() {
                                                 onChange: handleFileInputChange
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1824,
+                                                lineNumber: 2448,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2310,12 +2945,12 @@ function Stories() {
                                                             className: "w-7 h-7"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                            lineNumber: 1834,
+                                                            lineNumber: 2458,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1833,
+                                                        lineNumber: 2457,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2326,7 +2961,7 @@ function Stories() {
                                                                 children: "Drag & drop to upload"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1837,
+                                                                lineNumber: 2461,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2338,13 +2973,13 @@ function Stories() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1838,
+                                                                lineNumber: 2462,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1836,
+                                                        lineNumber: 2460,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2354,7 +2989,7 @@ function Stories() {
                                                                 children: "Supported: JPG, PNG, MP4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1843,
+                                                                lineNumber: 2467,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2362,7 +2997,7 @@ function Stories() {
                                                                 children: "|"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1844,
+                                                                lineNumber: 2468,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2373,13 +3008,13 @@ function Stories() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1845,
+                                                                lineNumber: 2469,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1842,
+                                                        lineNumber: 2466,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2389,19 +3024,19 @@ function Stories() {
                                                         children: "Browse files"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1847,
+                                                        lineNumber: 2471,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1832,
+                                                lineNumber: 2456,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1816,
+                                        lineNumber: 2440,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2420,14 +3055,14 @@ function Stories() {
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1865,
+                                                                lineNumber: 2489,
                                                                 columnNumber: 21
                                                             }, this),
                                                             isCameraActive ? 'Camera Ready' : 'Use Camera'
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1859,
+                                                        lineNumber: 2483,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2441,20 +3076,20 @@ function Stories() {
                                                                 className: "h-4 w-4 animate-spin"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1876,
+                                                                lineNumber: 2500,
                                                                 columnNumber: 23
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$camera$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Camera$3e$__["Camera"], {
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1878,
+                                                                lineNumber: 2502,
                                                                 columnNumber: 23
                                                             }, this),
                                                             "Capture photo"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1868,
+                                                        lineNumber: 2492,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2474,20 +3109,41 @@ function Stories() {
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1899,
+                                                                lineNumber: 2523,
                                                                 columnNumber: 41
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__["Video"], {
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1899,
+                                                                lineNumber: 2523,
                                                                 columnNumber: 74
                                                             }, this),
                                                             isRecordingVideo ? 'Stop recording' : 'Record video'
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1882,
+                                                        lineNumber: 2506,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                                        type: "button",
+                                                        variant: "ghost",
+                                                        onClick: handleFlipCamera,
+                                                        disabled: isCapturingPhoto,
+                                                        className: "rounded-full px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 disabled:opacity-60",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$ccw$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCcw$3e$__["RefreshCcw"], {
+                                                                className: "h-4 w-4"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/components/Stories.tsx",
+                                                                lineNumber: 2533,
+                                                                columnNumber: 21
+                                                            }, this),
+                                                            cameraFacingMode === 'user' ? 'Rear camera' : 'Front camera'
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/app/components/Stories.tsx",
+                                                        lineNumber: 2526,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2499,13 +3155,13 @@ function Stories() {
                                                         children: "Stop camera"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1902,
+                                                        lineNumber: 2536,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1858,
+                                                lineNumber: 2482,
                                                 columnNumber: 17
                                             }, this),
                                             isRecordingVideo && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2518,7 +3174,7 @@ function Stories() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1913,
+                                                lineNumber: 2547,
                                                 columnNumber: 19
                                             }, this),
                                             cameraError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2526,7 +3182,7 @@ function Stories() {
                                                 children: cameraError
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1917,
+                                                lineNumber: 2551,
                                                 columnNumber: 33
                                             }, this),
                                             recordingError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2534,7 +3190,7 @@ function Stories() {
                                                 children: recordingError
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1918,
+                                                lineNumber: 2552,
                                                 columnNumber: 36
                                             }, this),
                                             isCameraActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2547,18 +3203,18 @@ function Stories() {
                                                     className: "h-48 w-full object-cover sm:h-64"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                    lineNumber: 1921,
+                                                    lineNumber: 2555,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1920,
+                                                lineNumber: 2554,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1857,
+                                        lineNumber: 2481,
                                         columnNumber: 15
                                     }, this),
                                     storyDraft.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2572,7 +3228,7 @@ function Stories() {
                                                         className: "h-48 w-full object-cover sm:h-56"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1940,
+                                                        lineNumber: 2574,
                                                         columnNumber: 25
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                                                         src: item.url,
@@ -2582,7 +3238,7 @@ function Stories() {
                                                         muted: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1946,
+                                                        lineNumber: 2580,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2593,7 +3249,7 @@ function Stories() {
                                                                 children: item.type
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1955,
+                                                                lineNumber: 2589,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2606,29 +3262,29 @@ function Stories() {
                                                                     className: "w-4 h-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                                    lineNumber: 1963,
+                                                                    lineNumber: 2597,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1956,
+                                                                lineNumber: 2590,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1954,
+                                                        lineNumber: 2588,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, item.id, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1935,
+                                                lineNumber: 2569,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1933,
+                                        lineNumber: 2567,
                                         columnNumber: 17
                                     }, this),
                                     creationError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2636,7 +3292,7 @@ function Stories() {
                                         children: creationError
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1971,
+                                        lineNumber: 2605,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2655,20 +3311,20 @@ function Stories() {
                                                                         src: currentUser.avatar
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1978,
+                                                                        lineNumber: 2612,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                         children: currentUser.name[0]
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1979,
+                                                                        lineNumber: 2613,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1977,
+                                                                lineNumber: 2611,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2678,7 +3334,7 @@ function Stories() {
                                                                         children: currentUser.name
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1982,
+                                                                        lineNumber: 2616,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2689,33 +3345,33 @@ function Stories() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1983,
+                                                                        lineNumber: 2617,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1981,
+                                                                lineNumber: 2615,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1976,
+                                                        lineNumber: 2610,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "h-px w-full bg-white/10 sm:hidden"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1987,
+                                                        lineNumber: 2621,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "hidden sm:block sm:h-14 sm:w-px bg-white/15"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1988,
+                                                        lineNumber: 2622,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2726,7 +3382,7 @@ function Stories() {
                                                                 children: "Visibility"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1990,
+                                                                lineNumber: 2624,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -2739,12 +3395,12 @@ function Stories() {
                                                                             placeholder: "Choose who can view"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                                            lineNumber: 1996,
+                                                                            lineNumber: 2630,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1995,
+                                                                        lineNumber: 2629,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2759,7 +3415,7 @@ function Stories() {
                                                                                             children: option.label
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                                                            lineNumber: 2002,
+                                                                                            lineNumber: 2636,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2767,41 +3423,41 @@ function Stories() {
                                                                                             children: option.description
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/app/components/Stories.tsx",
-                                                                                            lineNumber: 2003,
+                                                                                            lineNumber: 2637,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/components/Stories.tsx",
-                                                                                    lineNumber: 2001,
+                                                                                    lineNumber: 2635,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             }, option.value, false, {
                                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                                lineNumber: 2000,
+                                                                                lineNumber: 2634,
                                                                                 columnNumber: 27
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                                        lineNumber: 1998,
+                                                                        lineNumber: 2632,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 1991,
+                                                                lineNumber: 2625,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 1989,
+                                                        lineNumber: 2623,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 1974,
+                                                lineNumber: 2608,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2817,7 +3473,7 @@ function Stories() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 2013,
+                                                        lineNumber: 2647,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2832,7 +3488,7 @@ function Stories() {
                                                                 children: "Cancel"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 2017,
+                                                                lineNumber: 2651,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2843,47 +3499,47 @@ function Stories() {
                                                                 children: isSubmittingStory ? 'Posting...' : 'Share Story'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                                lineNumber: 2026,
+                                                                lineNumber: 2660,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                                        lineNumber: 2016,
+                                                        lineNumber: 2650,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                                lineNumber: 2012,
+                                                lineNumber: 2646,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Stories.tsx",
-                                        lineNumber: 1973,
+                                        lineNumber: 2607,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Stories.tsx",
-                                lineNumber: 1798,
+                                lineNumber: 2422,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/Stories.tsx",
-                        lineNumber: 1790,
+                        lineNumber: 2414,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/Stories.tsx",
-                    lineNumber: 1789,
+                    lineNumber: 2413,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Stories.tsx",
-                lineNumber: 1788,
+                lineNumber: 2412,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -2905,17 +3561,17 @@ function Stories() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/app/components/Stories.tsx",
-                lineNumber: 2042,
+                lineNumber: 2676,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/Stories.tsx",
-        lineNumber: 1494,
+        lineNumber: 2118,
         columnNumber: 5
     }, this);
 }
-_s(Stories, "PIFYiFEGPHXBvmIArvGQ5U3A5TM=", false, function() {
+_s(Stories, "h0dUIMKXaOZWdv8vyDuHaNf8708=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"]
     ];

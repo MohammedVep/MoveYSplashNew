@@ -6,13 +6,18 @@ __turbopack_context__.s([
     "VideoChat",
     ()=>VideoChat
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/avatar.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/card.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/input.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ably$2f$build$2f$ably$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/ably/build/ably.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/dropdown-menu.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/video.js [app-client] (ecmascript) <export default as Video>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2d$off$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__VideoOff$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/video-off.js [app-client] (ecmascript) <export default as VideoOff>");
@@ -34,6 +39,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supab
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
+;
 ;
 ;
 ;
@@ -169,7 +175,7 @@ const isCameraBusyError = (error)=>{
     const normalizedMessage = message.toLowerCase();
     return normalizedName === 'notreadableerror' || normalizedName === 'aborterror' || normalizedMessage.includes('already in use') || normalizedMessage.includes('busy') || normalizedMessage.includes('could not start video source');
 };
-const requestCameraStream = async ()=>{
+const requestCameraStream = async (facingMode = 'user')=>{
     if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
         throw new Error('Media devices are not supported in this environment');
     }
@@ -180,7 +186,7 @@ const requestCameraStream = async ()=>{
         try {
             const videoConstraints = profile.constraints === true ? profile.constraints : {
                 facingMode: {
-                    ideal: 'user'
+                    ideal: facingMode
                 },
                 ...profile.constraints
             };
@@ -234,6 +240,15 @@ const VIDEO_AUTH_HEADERS = {
 const VIDEO_GET_HEADERS = {
     Authorization: `Bearer ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["publicAnonKey"]}`
 };
+const ABLY_KEY = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_ABLY_KEY ?? 'TWe31g.j0F01A:-j8adkUcs-AeusvKPMgSFCJKlMb8zCh1pGbt5Zo3CxI';
+const ICE_SERVERS = [
+    {
+        urls: [
+            'stun:stun.l.google.com:19302',
+            'stun:stun1.l.google.com:19302'
+        ]
+    }
+];
 function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerName = 'The Squad 🔥', demoMode: initialDemoMode = false }) {
     _s();
     const [{ initialDemoState, initialSafeStart, autoSafeReason }] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
@@ -273,6 +288,9 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
     const [cameraError, setCameraError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [demoMode, setDemoMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialDemoState);
     const [screenShareDemoMode, setScreenShareDemoMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialDemoState);
+    const [isIOSDevice, setIsIOSDevice] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [screenShareSupported, setScreenShareSupported] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [screenShareSupportHint, setScreenShareSupportHint] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [videoQuality, setVideoQuality] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [screenShareQuality, setScreenShareQuality] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [availableScreens, setAvailableScreens] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
@@ -286,13 +304,16 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
     const [sharedCameraMode, setSharedCameraMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const cameraRetryTimeoutRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const [cameraRetryToken, setCameraRetryToken] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [cameraFacingMode, setCameraFacingMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('user');
     const cameraManualStopRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(false);
     const screenShareStreamRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const manualScreenShareStopRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(false);
     const screenShareVideoRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const selfScreenSharePreviewRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const { currentUser, allUsers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"])();
     const currentUserId = currentUser?.id ?? null;
     const [remoteParticipants, setRemoteParticipants] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const remoteParticipantsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
     const roomId = VIDEO_ROOM_ID;
     const presencePollRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const presenceHeartbeatRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -327,6 +348,23 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
         }
     }["VideoChat.useState"]);
     const chatListRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [signalingError, setSignalingError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const peerConnectionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map());
+    const remoteStreamsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map());
+    const [remoteStreams, setRemoteStreams] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(new Map());
+    const remoteScreenStreamsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map());
+    const [remoteScreenStreams, setRemoteScreenStreams] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(new Map());
+    const signalingClientRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const signalingChannelRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const pendingIceRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map());
+    const selfClientId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "VideoChat.useMemo[selfClientId]": ()=>currentUser?.ablyClientId ?? currentUser?.id ?? currentUserId ?? 'guest'
+    }["VideoChat.useMemo[selfClientId]"], [
+        currentUser?.ablyClientId,
+        currentUser?.id,
+        currentUserId
+    ]);
+    const readyForWebRTC = callStatus === 'connected' && callType === 'video' && !demoMode && Boolean(mediaStream);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "VideoChat.useEffect": ()=>{
             muteStateRef.current = isMuted;
@@ -348,6 +386,33 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
     }["VideoChat.useEffect"], [
         isScreenShareStreaming
     ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            remoteParticipantsRef.current = remoteParticipants;
+        }
+    }["VideoChat.useEffect"], [
+        remoteParticipants
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            if (typeof navigator === 'undefined') {
+                setScreenShareSupported(false);
+                return;
+            }
+            const userAgent = navigator.userAgent || navigator.vendor || '';
+            const isiOS = /iPad|iPhone|iPod/.test(userAgent) || navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+            const hasDisplayMedia = typeof navigator.mediaDevices?.getDisplayMedia === 'function';
+            setIsIOSDevice(isiOS);
+            setScreenShareSupported(hasDisplayMedia || isiOS);
+            if (!hasDisplayMedia) {
+                setScreenShareSupportHint(isiOS ? 'Screen sharing on iOS/iPadOS uses the Screen Broadcast prompt; use Safari and tap Start Broadcast.' : 'Update to a modern browser (Chrome/Edge/Safari 17+) to enable screen sharing.');
+            } else if (isiOS) {
+                setScreenShareSupportHint('iOS/iPadOS: choose Safari/MoveSplash in the Screen Broadcast sheet, then tap Start Broadcast.');
+            } else {
+                setScreenShareSupportHint(null);
+            }
+        }
+    }["VideoChat.useEffect"], []);
     const togglePanel = (panel)=>{
         setShowParticipantsPanel(panel === 'participants' ? (open)=>!open : false);
         setShowChatPanel(panel === 'chat' ? (open)=>!open : false);
@@ -365,6 +430,556 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
     }["VideoChat.useEffect"], [
         chatMessages,
         showChatPanel
+    ]);
+    const addRemoteStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[addRemoteStream]": (peerId, stream)=>{
+            remoteStreamsRef.current.set(peerId, stream);
+            setRemoteStreams({
+                "VideoChat.useCallback[addRemoteStream]": (prev)=>{
+                    const next = new Map(prev);
+                    next.set(peerId, stream);
+                    return next;
+                }
+            }["VideoChat.useCallback[addRemoteStream]"]);
+        }
+    }["VideoChat.useCallback[addRemoteStream]"], []);
+    const removeRemoteScreenStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[removeRemoteScreenStream]": (peerId, trackId)=>{
+            const existing = remoteScreenStreamsRef.current.get(peerId);
+            if (!existing) return;
+            const filtered = existing.getTracks().filter({
+                "VideoChat.useCallback[removeRemoteScreenStream].filtered": (t)=>trackId ? t.id !== trackId : true
+            }["VideoChat.useCallback[removeRemoteScreenStream].filtered"]);
+            if (filtered.length === 0) {
+                remoteScreenStreamsRef.current.delete(peerId);
+            } else {
+                remoteScreenStreamsRef.current.set(peerId, new MediaStream(filtered));
+            }
+            setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+        }
+    }["VideoChat.useCallback[removeRemoteScreenStream]"], []);
+    const addRemoteScreenStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[addRemoteScreenStream]": (peerId, track)=>{
+            const handleEnded = {
+                "VideoChat.useCallback[addRemoteScreenStream].handleEnded": ()=>removeRemoteScreenStream(peerId, track.id)
+            }["VideoChat.useCallback[addRemoteScreenStream].handleEnded"];
+            track.addEventListener('ended', handleEnded);
+            const existing = remoteScreenStreamsRef.current.get(peerId);
+            if (existing) {
+                const already = existing.getTracks().some({
+                    "VideoChat.useCallback[addRemoteScreenStream].already": (t)=>t.id === track.id
+                }["VideoChat.useCallback[addRemoteScreenStream].already"]);
+                if (!already) {
+                    existing.addTrack(track);
+                }
+                remoteScreenStreamsRef.current.set(peerId, existing);
+                setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+                return;
+            }
+            const stream = new MediaStream([
+                track
+            ]);
+            remoteScreenStreamsRef.current.set(peerId, stream);
+            setRemoteScreenStreams(new Map(remoteScreenStreamsRef.current));
+        }
+    }["VideoChat.useCallback[addRemoteScreenStream]"], [
+        removeRemoteScreenStream
+    ]);
+    const looksLikeScreenTrack = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[looksLikeScreenTrack]": (track)=>{
+            if (!track) return false;
+            const settings = track.getSettings?.() ?? {};
+            const label = (track.label || '').toLowerCase();
+            return settings.displaySurface !== undefined || label.includes('screen') || label.includes('window') || label.includes('display') || label.includes('monitor') || label.includes('share') || track.contentHint === 'detail';
+        }
+    }["VideoChat.useCallback[looksLikeScreenTrack]"], []);
+    const updateRemoteVideoFlag = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[updateRemoteVideoFlag]": (peerId)=>{
+            setRemoteParticipants({
+                "VideoChat.useCallback[updateRemoteVideoFlag]": (prev)=>{
+                    let changed = false;
+                    const next = prev.map({
+                        "VideoChat.useCallback[updateRemoteVideoFlag].next": (participant)=>{
+                            if (participant.userId !== peerId) {
+                                return participant;
+                            }
+                            const stream = remoteStreamsRef.current.get(peerId);
+                            const hasCamera = stream?.getTracks().some({
+                                "VideoChat.useCallback[updateRemoteVideoFlag].next": (track)=>track.kind === 'video' && track.readyState !== 'ended' && !looksLikeScreenTrack(track)
+                            }["VideoChat.useCallback[updateRemoteVideoFlag].next"]) ?? false;
+                            const nextVideoOff = !hasCamera;
+                            if (participant.isVideoOff !== nextVideoOff) {
+                                changed = true;
+                                return {
+                                    ...participant,
+                                    isVideoOff: nextVideoOff
+                                };
+                            }
+                            return participant;
+                        }
+                    }["VideoChat.useCallback[updateRemoteVideoFlag].next"]);
+                    return changed ? next : prev;
+                }
+            }["VideoChat.useCallback[updateRemoteVideoFlag]"]);
+        }
+    }["VideoChat.useCallback[updateRemoteVideoFlag]"], [
+        looksLikeScreenTrack
+    ]);
+    const removeTrackFromRemoteStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[removeTrackFromRemoteStream]": (peerId, trackId)=>{
+            const existing = remoteStreamsRef.current.get(peerId);
+            if (!existing) return;
+            const remaining = existing.getTracks().filter({
+                "VideoChat.useCallback[removeTrackFromRemoteStream].remaining": (t)=>t.id !== trackId
+            }["VideoChat.useCallback[removeTrackFromRemoteStream].remaining"]);
+            if (remaining.length === 0) {
+                remoteStreamsRef.current.delete(peerId);
+            } else {
+                remoteStreamsRef.current.set(peerId, new MediaStream(remaining));
+            }
+            setRemoteStreams(new Map(remoteStreamsRef.current));
+            updateRemoteVideoFlag(peerId);
+        }
+    }["VideoChat.useCallback[removeTrackFromRemoteStream]"], [
+        updateRemoteVideoFlag
+    ]);
+    const removeRemoteStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[removeRemoteStream]": (peerId)=>{
+            remoteStreamsRef.current.delete(peerId);
+            setRemoteStreams({
+                "VideoChat.useCallback[removeRemoteStream]": (prev)=>{
+                    if (!prev.has(peerId)) {
+                        return prev;
+                    }
+                    const next = new Map(prev);
+                    next.delete(peerId);
+                    return next;
+                }
+            }["VideoChat.useCallback[removeRemoteStream]"]);
+            remoteScreenStreamsRef.current.delete(peerId);
+            setRemoteScreenStreams({
+                "VideoChat.useCallback[removeRemoteStream]": (prev)=>{
+                    if (!prev.has(peerId)) {
+                        return prev;
+                    }
+                    const next = new Map(prev);
+                    next.delete(peerId);
+                    return next;
+                }
+            }["VideoChat.useCallback[removeRemoteStream]"]);
+            updateRemoteVideoFlag(peerId);
+        }
+    }["VideoChat.useCallback[removeRemoteStream]"], [
+        updateRemoteVideoFlag
+    ]);
+    const teardownPeer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[teardownPeer]": (peerId)=>{
+            const existing = peerConnectionsRef.current.get(peerId);
+            if (existing) {
+                try {
+                    existing.ontrack = null;
+                    existing.onicecandidate = null;
+                    existing.onconnectionstatechange = null;
+                    existing.oniceconnectionstatechange = null;
+                    existing.close();
+                } catch  {
+                // ignore close errors
+                }
+            }
+            peerConnectionsRef.current.delete(peerId);
+            pendingIceRef.current.delete(peerId);
+            removeRemoteStream(peerId);
+            removeRemoteScreenStream(peerId);
+        }
+    }["VideoChat.useCallback[teardownPeer]"], [
+        removeRemoteScreenStream,
+        removeRemoteStream
+    ]);
+    const teardownAllPeers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[teardownAllPeers]": ()=>{
+            peerConnectionsRef.current.forEach({
+                "VideoChat.useCallback[teardownAllPeers]": (_, id)=>teardownPeer(id)
+            }["VideoChat.useCallback[teardownAllPeers]"]);
+            peerConnectionsRef.current.clear();
+            pendingIceRef.current.clear();
+            remoteStreamsRef.current.clear();
+            setRemoteStreams(new Map());
+            remoteScreenStreamsRef.current.clear();
+            setRemoteScreenStreams(new Map());
+        }
+    }["VideoChat.useCallback[teardownAllPeers]"], [
+        teardownPeer
+    ]);
+    const addLocalTracks = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[addLocalTracks]": (peer)=>{
+            const streams = [];
+            if (mediaStream) {
+                streams.push(mediaStream);
+            }
+            if (screenShareStreamRef.current && isScreenShareStreaming) {
+                streams.push(screenShareStreamRef.current);
+            }
+            if (streams.length === 0) {
+                return;
+            }
+            peer.getSenders().forEach({
+                "VideoChat.useCallback[addLocalTracks]": (sender)=>{
+                    if (sender.track && sender.track.readyState === 'ended') {
+                        try {
+                            peer.removeTrack(sender);
+                        } catch  {
+                        // ignore remove errors
+                        }
+                    }
+                }
+            }["VideoChat.useCallback[addLocalTracks]"]);
+            const senders = peer.getSenders();
+            streams.forEach({
+                "VideoChat.useCallback[addLocalTracks]": (stream)=>{
+                    stream.getTracks().forEach({
+                        "VideoChat.useCallback[addLocalTracks]": (track)=>{
+                            const alreadySending = senders.some({
+                                "VideoChat.useCallback[addLocalTracks].alreadySending": (sender)=>sender.track?.id === track.id
+                            }["VideoChat.useCallback[addLocalTracks].alreadySending"]);
+                            if (!alreadySending) {
+                                peer.addTrack(track, stream);
+                            }
+                        }
+                    }["VideoChat.useCallback[addLocalTracks]"]);
+                }
+            }["VideoChat.useCallback[addLocalTracks]"]);
+        }
+    }["VideoChat.useCallback[addLocalTracks]"], [
+        isScreenShareStreaming,
+        mediaStream
+    ]);
+    const syncLocalTracksToPeers = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[syncLocalTracksToPeers]": ()=>{
+            peerConnectionsRef.current.forEach({
+                "VideoChat.useCallback[syncLocalTracksToPeers]": (peer)=>addLocalTracks(peer)
+            }["VideoChat.useCallback[syncLocalTracksToPeers]"]);
+        }
+    }["VideoChat.useCallback[syncLocalTracksToPeers]"], [
+        addLocalTracks
+    ]);
+    const flushPendingCandidates = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[flushPendingCandidates]": (peerId, peer)=>{
+            const pending = pendingIceRef.current.get(peerId);
+            if (!pending?.length) {
+                return;
+            }
+            pending.forEach({
+                "VideoChat.useCallback[flushPendingCandidates]": async (candidate)=>{
+                    try {
+                        await peer.addIceCandidate(candidate);
+                    } catch (error) {
+                        console.warn('Failed to apply queued ICE candidate', error);
+                    }
+                }
+            }["VideoChat.useCallback[flushPendingCandidates]"]);
+            pendingIceRef.current.delete(peerId);
+        }
+    }["VideoChat.useCallback[flushPendingCandidates]"], []);
+    const ensurePeerConnection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[ensurePeerConnection]": (peerId)=>{
+            if (!peerId || peerId === selfClientId || !mediaStream) {
+                return null;
+            }
+            const existing = peerConnectionsRef.current.get(peerId);
+            if (existing) {
+                return existing;
+            }
+            const peer = new RTCPeerConnection({
+                iceServers: ICE_SERVERS
+            });
+            peerConnectionsRef.current.set(peerId, peer);
+            addLocalTracks(peer);
+            peer.onicecandidate = ({
+                "VideoChat.useCallback[ensurePeerConnection]": (event)=>{
+                    if (event.candidate && signalingChannelRef.current) {
+                        const candidatePayload = event.candidate.toJSON ? event.candidate.toJSON() : event.candidate;
+                        signalingChannelRef.current.publish('signal', {
+                            type: 'ice',
+                            from: selfClientId,
+                            to: peerId,
+                            candidate: candidatePayload
+                        }).catch({
+                            "VideoChat.useCallback[ensurePeerConnection]": (error)=>console.warn('Failed to publish ICE candidate', error)
+                        }["VideoChat.useCallback[ensurePeerConnection]"]);
+                    }
+                }
+            })["VideoChat.useCallback[ensurePeerConnection]"];
+            peer.ontrack = ({
+                "VideoChat.useCallback[ensurePeerConnection]": (event)=>{
+                    const [streamFromEvent] = event.streams;
+                    let targetStream = streamFromEvent ?? remoteStreamsRef.current.get(peerId) ?? new MediaStream();
+                    if (event.track && !targetStream.getTracks().some({
+                        "VideoChat.useCallback[ensurePeerConnection]": (t)=>t.id === event.track.id
+                    }["VideoChat.useCallback[ensurePeerConnection]"])) {
+                        targetStream.addTrack(event.track);
+                    }
+                    addRemoteStream(peerId, targetStream);
+                    const looksLikeScreen = looksLikeScreenTrack(event.track);
+                    const presence = remoteParticipantsRef.current.find({
+                        "VideoChat.useCallback[ensurePeerConnection].presence": (p)=>p.userId === peerId
+                    }["VideoChat.useCallback[ensurePeerConnection].presence"]);
+                    const flaggedAsSharing = presence?.isScreenSharing;
+                    if ((looksLikeScreen || flaggedAsSharing) && event.track.kind === 'video') {
+                        addRemoteScreenStream(peerId, event.track);
+                    }
+                    if (event.track) {
+                        const handleEnded = {
+                            "VideoChat.useCallback[ensurePeerConnection].handleEnded": ()=>removeTrackFromRemoteStream(peerId, event.track.id)
+                        }["VideoChat.useCallback[ensurePeerConnection].handleEnded"];
+                        event.track.addEventListener('ended', handleEnded);
+                    }
+                    if (event.track.kind === 'video' && !looksLikeScreen) {
+                        updateRemoteVideoFlag(peerId);
+                    }
+                }
+            })["VideoChat.useCallback[ensurePeerConnection]"];
+            const cleanupIfBroken = {
+                "VideoChat.useCallback[ensurePeerConnection].cleanupIfBroken": ()=>{
+                    const state = peer.connectionState || peer.iceConnectionState;
+                    if (state === 'failed' || state === 'closed' || state === 'disconnected') {
+                        teardownPeer(peerId);
+                    }
+                }
+            }["VideoChat.useCallback[ensurePeerConnection].cleanupIfBroken"];
+            peer.onconnectionstatechange = cleanupIfBroken;
+            peer.oniceconnectionstatechange = cleanupIfBroken;
+            return peer;
+        }
+    }["VideoChat.useCallback[ensurePeerConnection]"], [
+        addLocalTracks,
+        addRemoteScreenStream,
+        addRemoteStream,
+        looksLikeScreenTrack,
+        mediaStream,
+        removeTrackFromRemoteStream,
+        selfClientId,
+        teardownPeer,
+        updateRemoteVideoFlag
+    ]);
+    const startOffer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[startOffer]": async (peerId)=>{
+            const peer = ensurePeerConnection(peerId);
+            if (!peer) {
+                return;
+            }
+            try {
+                const offer = await peer.createOffer();
+                await peer.setLocalDescription(offer);
+                await signalingChannelRef.current?.publish('signal', {
+                    type: 'offer',
+                    from: selfClientId,
+                    to: peerId,
+                    sdp: offer
+                });
+            } catch (error) {
+                console.warn('Failed to start offer', error);
+            }
+        }
+    }["VideoChat.useCallback[startOffer]"], [
+        ensurePeerConnection,
+        selfClientId
+    ]);
+    const handleSignalMessage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[handleSignalMessage]": async (message)=>{
+            const payload = message.data;
+            if (!payload || payload.from === selfClientId) {
+                return;
+            }
+            if (payload.to && payload.to !== selfClientId) {
+                return;
+            }
+            const peerId = payload.from;
+            const peer = ensurePeerConnection(peerId);
+            if (!peer) {
+                return;
+            }
+            try {
+                if (payload.type === 'offer' && payload.sdp) {
+                    await peer.setRemoteDescription(new RTCSessionDescription(payload.sdp));
+                    const answer = await peer.createAnswer();
+                    await peer.setLocalDescription(answer);
+                    await signalingChannelRef.current?.publish('signal', {
+                        type: 'answer',
+                        from: selfClientId,
+                        to: peerId,
+                        sdp: answer
+                    });
+                    flushPendingCandidates(peerId, peer);
+                } else if (payload.type === 'answer' && payload.sdp) {
+                    if (!peer.currentRemoteDescription) {
+                        await peer.setRemoteDescription(new RTCSessionDescription(payload.sdp));
+                    }
+                    flushPendingCandidates(peerId, peer);
+                } else if (payload.type === 'ice' && payload.candidate) {
+                    if (peer.remoteDescription) {
+                        await peer.addIceCandidate(payload.candidate);
+                    } else {
+                        const existing = pendingIceRef.current.get(peerId) ?? [];
+                        existing.push(payload.candidate);
+                        pendingIceRef.current.set(peerId, existing);
+                    }
+                }
+            } catch (error) {
+                console.warn('Error handling signaling payload', error);
+            }
+        }
+    }["VideoChat.useCallback[handleSignalMessage]"], [
+        ensurePeerConnection,
+        flushPendingCandidates,
+        selfClientId
+    ]);
+    const cleanupSignaling = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[cleanupSignaling]": ()=>{
+            const channel = signalingChannelRef.current;
+            if (channel) {
+                try {
+                    channel.presence.leave();
+                } catch  {
+                // ignore
+                }
+                try {
+                    channel.unsubscribe('signal', handleSignalMessage);
+                    channel.presence.unsubscribe();
+                    channel.detach();
+                } catch  {
+                // ignore detach errors
+                }
+                signalingChannelRef.current = null;
+            }
+            if (signalingClientRef.current) {
+                try {
+                    signalingClientRef.current.close();
+                } catch  {
+                // ignore
+                }
+                signalingClientRef.current = null;
+            }
+            teardownAllPeers();
+        }
+    }["VideoChat.useCallback[cleanupSignaling]"], [
+        handleSignalMessage,
+        teardownAllPeers
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            syncLocalTracksToPeers();
+        }
+    }["VideoChat.useEffect"], [
+        mediaStream,
+        syncLocalTracksToPeers
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            syncLocalTracksToPeers();
+        }
+    }["VideoChat.useEffect"], [
+        isScreenShareStreaming,
+        syncLocalTracksToPeers
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            if (signalingError) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(signalingError);
+            }
+        }
+    }["VideoChat.useEffect"], [
+        signalingError
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            const activeIds = new Set(remoteParticipants.map({
+                "VideoChat.useEffect": (participant)=>participant.userId
+            }["VideoChat.useEffect"]));
+            remoteStreamsRef.current.forEach({
+                "VideoChat.useEffect": (_, peerId)=>{
+                    if (!activeIds.has(peerId)) {
+                        teardownPeer(peerId);
+                    }
+                }
+            }["VideoChat.useEffect"]);
+        }
+    }["VideoChat.useEffect"], [
+        remoteParticipants,
+        teardownPeer
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            if (!readyForWebRTC || !selfClientId) {
+                cleanupSignaling();
+                return;
+            }
+            if (!ABLY_KEY) {
+                setSignalingError('Missing Ably configuration for video signaling.');
+                return;
+            }
+            setSignalingError(null);
+            const realtime = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ably$2f$build$2f$ably$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Realtime"]({
+                key: ABLY_KEY,
+                clientId: selfClientId
+            });
+            signalingClientRef.current = realtime;
+            const channelName = `video-webrtc-${roomId}`;
+            const channel = realtime.channels.get(channelName);
+            signalingChannelRef.current = channel;
+            const presenceHandler = {
+                "VideoChat.useEffect.presenceHandler": async (presence)=>{
+                    const peerId = presence.clientId || presence.data?.userId;
+                    if (!peerId || peerId === selfClientId) {
+                        return;
+                    }
+                    ensurePeerConnection(peerId);
+                    if (selfClientId < peerId) {
+                        await startOffer(peerId);
+                    }
+                }
+            }["VideoChat.useEffect.presenceHandler"];
+            const init = {
+                "VideoChat.useEffect.init": async ()=>{
+                    try {
+                        await channel.attach();
+                        await channel.presence.enter({
+                            userId: selfClientId
+                        });
+                        const members = await channel.presence.get();
+                        for (const member of members){
+                            await presenceHandler(member);
+                        }
+                    } catch (error) {
+                        console.warn('Failed to start signaling', error);
+                        setSignalingError('Unable to connect to signaling. Check your connection.');
+                    }
+                }
+            }["VideoChat.useEffect.init"];
+            channel.subscribe('signal', handleSignalMessage);
+            channel.presence.subscribe('enter', presenceHandler);
+            channel.presence.subscribe('leave', {
+                "VideoChat.useEffect": (presence)=>{
+                    const peerId = presence.clientId || presence.data?.userId;
+                    if (peerId) {
+                        teardownPeer(peerId);
+                    }
+                }
+            }["VideoChat.useEffect"]);
+            void init();
+            return ({
+                "VideoChat.useEffect": ()=>{
+                    cleanupSignaling();
+                }
+            })["VideoChat.useEffect"];
+        }
+    }["VideoChat.useEffect"], [
+        cleanupSignaling,
+        handleSignalMessage,
+        readyForWebRTC,
+        roomId,
+        selfClientId,
+        startOffer,
+        teardownPeer
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "VideoChat.useEffect": ()=>{
@@ -883,20 +1498,35 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
         isVideoOff,
         remoteParticipants
     ]);
+    const remoteScreenSharerId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "VideoChat.useMemo[remoteScreenSharerId]": ()=>{
+            const [streamSharerId] = Array.from(remoteScreenStreams.keys());
+            if (streamSharerId) {
+                return streamSharerId;
+            }
+            const announcedSharer = participants.find({
+                "VideoChat.useMemo[remoteScreenSharerId].announcedSharer": (participant)=>!participant.isSelf && participant.isScreenSharing
+            }["VideoChat.useMemo[remoteScreenSharerId].announcedSharer"]);
+            return announcedSharer?.userId ?? null;
+        }
+    }["VideoChat.useMemo[remoteScreenSharerId]"], [
+        participants,
+        remoteScreenStreams
+    ]);
     const activeScreenSharerId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
         "VideoChat.useMemo[activeScreenSharerId]": ()=>{
+            if (remoteScreenSharerId) {
+                return remoteScreenSharerId;
+            }
             if (effectiveScreenShareActive && currentUserId) {
                 return currentUserId;
             }
-            const remoteSharer = remoteParticipants.find({
-                "VideoChat.useMemo[activeScreenSharerId].remoteSharer": (presence)=>presence.isScreenSharing
-            }["VideoChat.useMemo[activeScreenSharerId].remoteSharer"]);
-            return remoteSharer?.userId ?? null;
+            return null;
         }
     }["VideoChat.useMemo[activeScreenSharerId]"], [
         currentUserId,
         effectiveScreenShareActive,
-        remoteParticipants
+        remoteScreenSharerId
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "VideoChat.useEffect": ()=>{
@@ -926,6 +1556,80 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
     }["VideoChat.useMemo[screenShareParticipant]"], [
         participants,
         activeScreenSharerId
+    ]);
+    const remoteScreenShareStream = screenShareParticipant?.isSelf ? null : screenShareParticipant ? remoteScreenStreams.get(screenShareParticipant.userId) ?? null : null;
+    const fallbackScreenShareStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "VideoChat.useMemo[fallbackScreenShareStream]": ()=>{
+            if (!screenShareParticipant || screenShareParticipant.isSelf) {
+                return null;
+            }
+            return remoteStreams.get(screenShareParticipant.userId) ?? null;
+        }
+    }["VideoChat.useMemo[fallbackScreenShareStream]"], [
+        remoteStreams,
+        screenShareParticipant
+    ]);
+    const resolvedRemoteScreenShareStream = remoteScreenShareStream ?? fallbackScreenShareStream;
+    const remoteSharerCameraStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "VideoChat.useMemo[remoteSharerCameraStream]": ()=>{
+            if (!screenShareParticipant || screenShareParticipant.isSelf) {
+                return null;
+            }
+            const combined = remoteStreams.get(screenShareParticipant.userId);
+            if (!combined) return null;
+            const videoTracks = combined.getTracks().filter({
+                "VideoChat.useMemo[remoteSharerCameraStream].videoTracks": (track)=>track.kind === 'video' && !looksLikeScreenTrack(track)
+            }["VideoChat.useMemo[remoteSharerCameraStream].videoTracks"]);
+            if (videoTracks.length === 0) {
+                return null;
+            }
+            return new MediaStream(videoTracks);
+        }
+    }["VideoChat.useMemo[remoteSharerCameraStream]"], [
+        looksLikeScreenTrack,
+        remoteStreams,
+        screenShareParticipant
+    ]);
+    const remoteSharerAudioStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "VideoChat.useMemo[remoteSharerAudioStream]": ()=>{
+            if (!screenShareParticipant || screenShareParticipant.isSelf) {
+                return null;
+            }
+            const combined = remoteStreams.get(screenShareParticipant.userId);
+            if (!combined) return null;
+            const audioTracks = combined.getAudioTracks();
+            if (audioTracks.length === 0) {
+                return null;
+            }
+            return new MediaStream(audioTracks);
+        }
+    }["VideoChat.useMemo[remoteSharerAudioStream]"], [
+        remoteStreams,
+        screenShareParticipant
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "VideoChat.useEffect": ()=>{
+            const node = selfScreenSharePreviewRef.current;
+            const stream = screenShareStreamRef.current;
+            const showingRemoteStage = Boolean(screenShareParticipant && !screenShareParticipant.isSelf);
+            if (!node) {
+                return;
+            }
+            if (showingRemoteStage && effectiveScreenShareActive && stream && isScreenShareStreaming) {
+                if (node.srcObject !== stream) {
+                    node.srcObject = stream;
+                }
+                node.play().catch({
+                    "VideoChat.useEffect": (error)=>console.error('Error playing local screen share preview while watching remote stage:', error)
+                }["VideoChat.useEffect"]);
+            } else if (node.srcObject) {
+                node.srcObject = null;
+            }
+        }
+    }["VideoChat.useEffect"], [
+        effectiveScreenShareActive,
+        isScreenShareStreaming,
+        screenShareParticipant
     ]);
     const gridParticipants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
         "VideoChat.useMemo[gridParticipants]": ()=>{
@@ -1089,7 +1793,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                     }
                     if (callStatus === 'connected' && !isVideoOff) {
                         try {
-                            const { stream, sharedCameraDetected } = await requestCameraStream();
+                            const { stream, sharedCameraDetected } = await requestCameraStream(cameraFacingMode);
                             if (!mounted) {
                                 stream.getTracks().forEach({
                                     "VideoChat.useEffect.initMediaDevices": (track)=>track.stop()
@@ -1187,7 +1891,8 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
         isVideoOff,
         demoMode,
         activateCameraConflictFallback,
-        cameraRetryToken
+        cameraRetryToken,
+        cameraFacingMode
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "VideoChat.useEffect": ()=>{
@@ -1354,6 +2059,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
             screenShareStreamRef.current.getTracks().forEach((track)=>track.stop());
             screenShareStreamRef.current = null;
         }
+        cleanupSignaling();
         setIsScreenShareStreaming(false);
         setIsScreenSharing(false);
         setScreenShareQuality(null);
@@ -1503,10 +2209,27 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
             }
             return;
         }
+        if (!screenShareSupported && !isIOSDevice) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(screenShareSupportHint ?? 'Screen sharing is not available on this device.');
+            return;
+        }
+        if (("TURBOPACK compile-time value", "object") !== 'undefined' && !window.isSecureContext && !isIOSDevice) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('Screen sharing requires HTTPS (or localhost). Open MoveYSplash over https to continue.');
+            return;
+        } else if (("TURBOPACK compile-time value", "object") !== 'undefined' && !window.isSecureContext && isIOSDevice) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].warning('Safari may block screen share on non-HTTPS pages. Please switch to https if this fails.');
+        }
+        const displayMedia = navigator.mediaDevices?.getDisplayMedia || navigator.getDisplayMedia;
+        if (typeof displayMedia !== 'function') {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('Safari blocked Screen Broadcast. In Settings > Safari > Advanced, enable Screen Sharing and allow Screen Recording, then retry.');
+            return;
+        }
         if (!isScreenSharing) {
             try {
                 const shareTarget = screenShareTarget;
-                if (shareTarget === 'all-monitors') {
+                if (isIOSDevice) {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].info('iOS will open the Screen Broadcast picker. Choose Safari/MoveYSplash then tap Start Broadcast.');
+                } else if (shareTarget === 'all-monitors') {
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].info('Select the "Entire screen" option to capture every monitor.');
                 } else if (selectedScreen) {
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].info(`When prompted, choose "${selectedScreen.label}" to share that monitor.`);
@@ -1514,7 +2237,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].info('Pick the monitor you want to share in the browser prompt.');
                 }
                 console.log('Requesting screen share with multi-monitor support enabled...');
-                const videoConstraints = {
+                const videoConstraints = isIOSDevice ? {
+                    width: {
+                        ideal: 1920
+                    },
+                    height: {
+                        ideal: 1080
+                    },
+                    frameRate: {
+                        ideal: 30
+                    },
+                    preferCurrentTab: true
+                } : {
                     displaySurface: 'monitor',
                     width: {
                         ideal: 7680
@@ -1530,25 +2264,27 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                     surfaceSwitching: 'include',
                     selfBrowserSurface: 'exclude'
                 };
-                if (shareTarget === 'all-monitors') {
-                    videoConstraints.logicalSurface = true;
-                    videoConstraints.monitorTypeSurfaces = [
-                        'monitor'
-                    ];
-                } else if (selectedScreen) {
-                    videoConstraints.monitorTypeSurfaces = [
-                        'monitor'
-                    ];
-                } else {
-                    videoConstraints.monitorTypeSurfaces = [
-                        'monitor',
-                        'window',
-                        'browser'
-                    ];
+                if (!isIOSDevice) {
+                    if (shareTarget === 'all-monitors') {
+                        videoConstraints.logicalSurface = true;
+                        videoConstraints.monitorTypeSurfaces = [
+                            'monitor'
+                        ];
+                    } else if (selectedScreen) {
+                        videoConstraints.monitorTypeSurfaces = [
+                            'monitor'
+                        ];
+                    } else {
+                        videoConstraints.monitorTypeSurfaces = [
+                            'monitor',
+                            'window',
+                            'browser'
+                        ];
+                    }
                 }
-                const screenStream = await navigator.mediaDevices.getDisplayMedia({
+                const screenStream = await displayMedia.call(navigator.mediaDevices || navigator, {
                     video: videoConstraints,
-                    audio: {
+                    audio: isIOSDevice ? false : {
                         echoCancellation: true,
                         noiseSuppression: true,
                         autoGainControl: true
@@ -1585,12 +2321,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                 } else {
                     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Screen sharing started');
                 }
-                setScreenShareSourceLabel(videoTrack.label || selectedScreen?.label || (shareTarget === 'all-monitors' ? 'All Monitors' : null));
+                setScreenShareSourceLabel(videoTrack.label || selectedScreen?.label || (shareTarget === 'all-monitors' ? 'All Monitors' : null) || (isIOSDevice ? 'iPhone/iPad Screen' : null));
                 if (screenShareStreamRef.current) {
                     screenShareStreamRef.current.getTracks().forEach((track)=>track.stop());
                 }
                 manualScreenShareStopRef.current = false;
                 screenShareStreamRef.current = screenStream;
+                syncLocalTracksToPeers();
                 setIsScreenShareStreaming(true);
                 setIsScreenSharing(true);
                 if (screenShareVideoRef.current) {
@@ -1600,6 +2337,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                 // Stop screen sharing when user stops it from browser UI
                 videoTrack.onended = ()=>{
                     screenShareStreamRef.current = null;
+                    syncLocalTracksToPeers();
                     if (manualScreenShareStopRef.current) {
                         manualScreenShareStopRef.current = false;
                         setIsScreenShareStreaming(false);
@@ -1625,7 +2363,15 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                 const { name, message } = extractErrorInfo(error);
                 const errorMessage = message.toLowerCase();
                 const errorName = name.toLowerCase();
+                if (errorMessage.includes('getdisplaymedia') && errorMessage.includes('not a function')) {
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error(screenShareSupportHint ?? 'Screen sharing is not supported on this browser.');
+                    return;
+                }
                 if (errorName === 'notallowederror' || errorName === 'notreadableerror' || errorMessage.includes('permission denied') || errorMessage.includes('user cancelled')) {
+                    if (isIOSDevice) {
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('iOS blocked the Screen Broadcast. Tap "Start Broadcast" and allow Screen Recording for Safari.');
+                        return;
+                    }
                     // Check if it&apos;s actually a conflict vs user cancellation
                     if (errorMessage.includes('already in use') || errorName === 'notreadableerror') {
                         console.log('Screen share conflict detected - another app may be sharing');
@@ -1693,13 +2439,29 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
             const next = !prev;
             if (next) {
                 enableDemoMode(true);
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Safe Start enabled - MoveSplash will stay in demo mode when you open it.');
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Safe Start enabled - MoveYSplash will stay in demo mode when you open it.');
             } else {
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Safe Start disabled - MoveSplash can auto-connect your camera again.');
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Safe Start disabled - MoveYSplash can auto-connect your camera again.');
             }
             return next;
         });
     };
+    const handleFlipCamera = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "VideoChat.useCallback[handleFlipCamera]": ()=>{
+            setCameraFacingMode({
+                "VideoChat.useCallback[handleFlipCamera]": (prev)=>prev === 'user' ? 'environment' : 'user'
+            }["VideoChat.useCallback[handleFlipCamera]"]);
+            if (callStatus === 'connected' && !isVideoOff && !demoMode) {
+                setCameraRetryToken({
+                    "VideoChat.useCallback[handleFlipCamera]": (token)=>token + 1
+                }["VideoChat.useCallback[handleFlipCamera]"]);
+            }
+        }
+    }["VideoChat.useCallback[handleFlipCamera]"], [
+        callStatus,
+        isVideoOff,
+        demoMode
+    ]);
     const handleSendChatMessage = ()=>{
         const text = chatDraft.trim();
         if (!text) {
@@ -1737,33 +2499,33 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Squad"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1740,
+                                            lineNumber: 2438,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                             children: "SQ"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1741,
+                                            lineNumber: 2439,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1739,
+                                    lineNumber: 2437,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 rounded-full border-4 border-green-400 animate-ping"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1743,
+                                    lineNumber: 2441,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1738,
+                            lineNumber: 2436,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1773,7 +2535,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: callerName
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1747,
+                                    lineNumber: 2445,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1784,13 +2546,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1748,
+                                    lineNumber: 2446,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1746,
+                            lineNumber: 2444,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1803,12 +2565,12 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 1758,
+                                        lineNumber: 2456,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1754,
+                                    lineNumber: 2452,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1818,34 +2580,34 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 1764,
+                                        lineNumber: 2462,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1760,
+                                    lineNumber: 2458,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1753,
+                            lineNumber: 2451,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 1737,
+                    lineNumber: 2435,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1736,
+                lineNumber: 2434,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/VideoChat.tsx",
-            lineNumber: 1735,
+            lineNumber: 2433,
             columnNumber: 7
         }, this);
     }
@@ -1868,20 +2630,20 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             src: "https://api.dicebear.com/7.x/avataaars/svg?seed=Squad"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1781,
+                                            lineNumber: 2479,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                             children: "SQ"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1782,
+                                            lineNumber: 2480,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1780,
+                                    lineNumber: 2478,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1891,13 +2653,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1784,
+                                    lineNumber: 2482,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1779,
+                            lineNumber: 2477,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1907,7 +2669,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Connecting..."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1788,
+                                    lineNumber: 2486,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1915,13 +2677,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Please wait"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1789,
+                                    lineNumber: 2487,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1787,
+                            lineNumber: 2485,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1931,28 +2693,28 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                 className: "w-6 h-6"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 1796,
+                                lineNumber: 2494,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1792,
+                            lineNumber: 2490,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 1778,
+                    lineNumber: 2476,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1777,
+                lineNumber: 2475,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/VideoChat.tsx",
-            lineNumber: 1776,
+            lineNumber: 2474,
             columnNumber: 7
         }, this);
     }
@@ -1965,7 +2727,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                 className: "hidden"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1807,
+                lineNumber: 2505,
                 columnNumber: 7
             }, this),
             autoDetectedConflict && (cameraConflictActive || screenShareDemoMode) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1983,12 +2745,12 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "⚡"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 1814,
+                                        lineNumber: 2512,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1813,
+                                    lineNumber: 2511,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1998,7 +2760,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             children: "Camera or Screen in use elsewhere"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1817,
+                                            lineNumber: 2515,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2006,19 +2768,19 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             children: "We switched to the simulated preview while Zoom, Meet, or Teams has your hardware. Resume the real feed once the other app releases it."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1818,
+                                            lineNumber: 2516,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1816,
+                                    lineNumber: 2514,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1812,
+                            lineNumber: 2510,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2030,7 +2792,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Resume real camera"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1825,
+                                    lineNumber: 2523,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2040,24 +2802,24 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Dismiss"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1832,
+                                    lineNumber: 2530,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1823,
+                            lineNumber: 2521,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 1811,
+                    lineNumber: 2509,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1810,
+                lineNumber: 2508,
                 columnNumber: 9
             }, this),
             demoMode && !autoDetectedConflict && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2075,12 +2837,12 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "🎬"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 1850,
+                                        lineNumber: 2548,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1849,
+                                    lineNumber: 2547,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2090,7 +2852,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             children: "Camera Demo Mode Active"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1853,
+                                            lineNumber: 2551,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2098,19 +2860,19 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             children: "Simulated camera - safe for presentations! Your real camera is not in use."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1854,
+                                            lineNumber: 2552,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1852,
+                                    lineNumber: 2550,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1848,
+                            lineNumber: 2546,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2120,18 +2882,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                             children: "Disable Camera Demo"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1859,
+                            lineNumber: 2557,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 1847,
+                    lineNumber: 2545,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1846,
+                lineNumber: 2544,
                 columnNumber: 9
             }, this),
             screenShareDemoMode && !autoDetectedConflict && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2149,12 +2911,12 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "🖥️"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 1876,
+                                        lineNumber: 2574,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1875,
+                                    lineNumber: 2573,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2164,7 +2926,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             children: "Screen Share Demo Mode Active"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1879,
+                                            lineNumber: 2577,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2172,19 +2934,19 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             children: "Simulated screen share - safe for presentations! Won't conflict with Zoom/Meet/Teams."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1880,
+                                            lineNumber: 2578,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1878,
+                                    lineNumber: 2576,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1874,
+                            lineNumber: 2572,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2194,18 +2956,92 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                             children: "Disable Screen Demo"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1885,
+                            lineNumber: 2583,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 1873,
+                    lineNumber: 2571,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1872,
+                lineNumber: 2570,
+                columnNumber: 9
+            }, this),
+            isIOSDevice && screenShareSupportHint && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
+                className: "backdrop-blur-xl bg-gradient-to-r from-sky-500/90 to-blue-600/90 border-blue-400 px-6 py-3",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex items-center justify-between gap-3",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-3",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-10 h-10 bg-white/20 rounded-full flex items-center justify-center",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-2xl",
+                                        children: "📱"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/components/VideoChat.tsx",
+                                        lineNumber: 2598,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/components/VideoChat.tsx",
+                                    lineNumber: 2597,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            className: "text-white font-medium",
+                                            children: "iPhone/iPad Screen Share"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/components/VideoChat.tsx",
+                                            lineNumber: 2601,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-white/80 text-sm",
+                                            children: screenShareSupportHint
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/components/VideoChat.tsx",
+                                            lineNumber: 2602,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/components/VideoChat.tsx",
+                                    lineNumber: 2600,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/components/VideoChat.tsx",
+                            lineNumber: 2596,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                            variant: "ghost",
+                            className: "text-white hover:bg-white/20",
+                            onClick: ()=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].info('Open Control Center → Screen Broadcast → choose Safari/MoveSplash → Start Broadcast.'),
+                            children: "How to"
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/components/VideoChat.tsx",
+                            lineNumber: 2607,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/app/components/VideoChat.tsx",
+                    lineNumber: 2595,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/app/components/VideoChat.tsx",
+                lineNumber: 2594,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2220,7 +3056,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     className: "w-2 h-2 bg-green-400 rounded-full animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1900,
+                                    lineNumber: 2622,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2232,7 +3068,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1901,
+                                    lineNumber: 2623,
                                     columnNumber: 13
                                 }, this),
                                 cameraConflictActive ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2240,14 +3076,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "📸 Cached camera preview"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1905,
+                                    lineNumber: 2627,
                                     columnNumber: 15
                                 }, this) : demoMode ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-xs text-purple-400",
                                     children: "🎬 Demo Mode"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1909,
+                                    lineNumber: 2631,
                                     columnNumber: 15
                                 }, this) : mediaStream && videoQuality ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-xs text-green-400",
@@ -2257,14 +3093,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1913,
+                                    lineNumber: 2635,
                                     columnNumber: 15
                                 }, this) : mediaStream ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-xs text-green-400",
                                     children: "📹 Camera Active"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1917,
+                                    lineNumber: 2639,
                                     columnNumber: 15
                                 }, this) : null,
                                 sharedCameraMode && !cameraConflictActive && !demoMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2272,7 +3108,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "🤝 Shared cam mode"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1922,
+                                    lineNumber: 2644,
                                     columnNumber: 15
                                 }, this),
                                 visibleScreenShareQuality && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2286,19 +3122,19 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             children: visibleScreenShareSource
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 1936,
+                                            lineNumber: 2658,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1927,
+                                    lineNumber: 2649,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1899,
+                            lineNumber: 2621,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2308,7 +3144,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1944,
+                                    lineNumber: 2666,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2318,7 +3154,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1945,
+                                    lineNumber: 2667,
                                     columnNumber: 13
                                 }, this),
                                 visibleScreenShareSource && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2330,24 +3166,24 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1947,
+                                    lineNumber: 2669,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1943,
+                            lineNumber: 2665,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 1898,
+                    lineNumber: 2620,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1897,
+                lineNumber: 2619,
                 columnNumber: 7
             }, this),
             screenShareParticipant && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2363,7 +3199,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "🎬"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1960,
+                                    lineNumber: 2682,
                                     columnNumber: 19
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2371,7 +3207,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Screen Share Demo Mode Active"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1961,
+                                    lineNumber: 2683,
                                     columnNumber: 19
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2379,18 +3215,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Your teammates see the simulated share while other apps use your screen."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1962,
+                                    lineNumber: 2684,
                                     columnNumber: 19
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1959,
+                            lineNumber: 2681,
                             columnNumber: 17
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 1958,
+                        lineNumber: 2680,
                         columnNumber: 15
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                         ref: screenShareVideoRef,
@@ -2400,9 +3236,81 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                         className: "absolute inset-0 w-full h-full object-contain bg-black"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 1968,
+                        lineNumber: 2690,
                         columnNumber: 15
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    }, this) : resolvedRemoteScreenShareStream ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                autoPlay: true,
+                                playsInline: true,
+                                muted: true,
+                                className: "absolute inset-0 w-full h-full object-contain bg-black",
+                                ref: (node)=>{
+                                    if (node && node.srcObject !== resolvedRemoteScreenShareStream) {
+                                        node.srcObject = resolvedRemoteScreenShareStream;
+                                        node.play().catch((error)=>console.error('Error playing remote screen share:', error));
+                                    }
+                                }
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2700,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("audio", {
+                                autoPlay: true,
+                                controls: false,
+                                ref: (node)=>{
+                                    if (node && node.srcObject !== resolvedRemoteScreenShareStream) {
+                                        node.srcObject = resolvedRemoteScreenShareStream;
+                                        node.play().catch((error)=>console.error('Error playing remote screen audio:', error));
+                                    }
+                                },
+                                className: "hidden"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2712,
+                                columnNumber: 15
+                            }, this),
+                            remoteSharerAudioStream && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("audio", {
+                                autoPlay: true,
+                                controls: false,
+                                ref: (node)=>{
+                                    if (node && node.srcObject !== remoteSharerAudioStream) {
+                                        node.srcObject = remoteSharerAudioStream;
+                                        node.play().catch((error)=>console.error('Error playing remote mic audio:', error));
+                                    }
+                                },
+                                className: "hidden"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2724,
+                                columnNumber: 17
+                            }, this),
+                            remoteSharerCameraStream && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute bottom-4 right-4 w-40 md:w-56 aspect-video rounded-lg overflow-hidden border border-white/30 shadow-lg shadow-black/40",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                    autoPlay: true,
+                                    playsInline: true,
+                                    muted: true,
+                                    className: "w-full h-full object-cover bg-black",
+                                    ref: (node)=>{
+                                        if (node && node.srcObject !== remoteSharerCameraStream) {
+                                            node.srcObject = remoteSharerCameraStream;
+                                            node.play().catch((error)=>console.error('Error playing remote camera PiP:', error));
+                                        }
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/components/VideoChat.tsx",
+                                    lineNumber: 2738,
+                                    columnNumber: 19
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2737,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900/80 to-purple-900/60",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "text-center space-y-3 text-white px-6",
@@ -2412,7 +3320,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "🖥️"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1979,
+                                    lineNumber: 2756,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2423,7 +3331,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1980,
+                                    lineNumber: 2757,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2431,18 +3339,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "We switched everyone to speaker view automatically."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 1983,
+                                    lineNumber: 2760,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 1978,
+                            lineNumber: 2755,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 1977,
+                        lineNumber: 2754,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2455,20 +3363,20 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "w-4 h-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 1991,
+                                        lineNumber: 2768,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: screenShareParticipant.isSelf ? 'You' : screenShareParticipant.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 1992,
+                                        lineNumber: 2769,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 1990,
+                                lineNumber: 2767,
                                 columnNumber: 13
                             }, this),
                             screenShareParticipant.isSelf && screenShareQuality && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2479,24 +3387,89 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 1995,
+                                lineNumber: 2772,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 1989,
+                        lineNumber: 2766,
                         columnNumber: 11
+                    }, this),
+                    effectiveScreenShareActive && !screenShareParticipant.isSelf && screenShareStreamRef.current && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-3 right-3 w-52 md:w-64 bg-black/70 border border-white/20 rounded-lg overflow-hidden shadow-lg shadow-black/50",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "px-3 py-2 text-[11px] text-white/80 flex items-center justify-between bg-white/10",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        children: "Your share preview"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/components/VideoChat.tsx",
+                                        lineNumber: 2790,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-white/60 text-[10px]",
+                                        children: "Live to everyone"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/components/VideoChat.tsx",
+                                        lineNumber: 2791,
+                                        columnNumber: 19
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2789,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-full aspect-video bg-black",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                    ref: selfScreenSharePreviewRef,
+                                    autoPlay: true,
+                                    playsInline: true,
+                                    muted: true,
+                                    className: "w-full h-full object-contain"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/components/VideoChat.tsx",
+                                    lineNumber: 2794,
+                                    columnNumber: 19
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2793,
+                                columnNumber: 17
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "px-3 py-2 text-[11px] text-white/70 bg-black/40",
+                                children: [
+                                    "Keeping ",
+                                    screenShareParticipant.name,
+                                    "'s screen on stage while you present."
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2802,
+                                columnNumber: 17
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/app/components/VideoChat.tsx",
+                        lineNumber: 2788,
+                        columnNumber: 15
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 1955,
+                lineNumber: 2677,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `flex-1 grid gap-4 ${gridParticipants.length >= 4 ? 'grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`,
-                children: gridParticipants.map((participant)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
+                children: gridParticipants.map((participant)=>{
+                    const remoteStream = remoteStreams.get(participant.userId);
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                         className: `relative overflow-hidden backdrop-blur-xl bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-2 transition-all min-h-[200px] ${participant.isSpeaking ? 'border-green-400 shadow-lg shadow-green-400/50' : 'border-white/20'}`,
                         children: [
                             participant.isSelf ? participant.isVideoOff ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2508,26 +3481,26 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             src: participant.avatar
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2031,
-                                            columnNumber: 21
+                                            lineNumber: 2832,
+                                            columnNumber: 23
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                             children: participant.name[0] ?? 'Y'
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2032,
-                                            columnNumber: 21
+                                            lineNumber: 2833,
+                                            columnNumber: 23
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2030,
-                                    columnNumber: 19
+                                    lineNumber: 2831,
+                                    columnNumber: 21
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2029,
-                                columnNumber: 17
+                                lineNumber: 2830,
+                                columnNumber: 19
                             }, this) : cameraConflictActive && cameraFallbackFrame ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative w-full h-full",
                                 children: [
@@ -2539,8 +3512,8 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2037,
-                                        columnNumber: 19
+                                        lineNumber: 2838,
+                                        columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 bg-black/40 backdrop-blur-sm flex flex-col items-center justify-center text-center px-6",
@@ -2550,28 +3523,28 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Camera temporarily in use by another app"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2045,
-                                                columnNumber: 21
+                                                lineNumber: 2846,
+                                                columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-white/80 text-sm",
                                                 children: "Keeping your last frame visible while Zoom/Meet/Teams is running. We'll switch back automatically."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2046,
-                                                columnNumber: 21
+                                                lineNumber: 2847,
+                                                columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2044,
-                                        columnNumber: 19
+                                        lineNumber: 2845,
+                                        columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2036,
-                                columnNumber: 17
+                                lineNumber: 2837,
+                                columnNumber: 19
                             }, this) : cameraConflictActive ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-full h-full flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-purple-600/40 to-pink-600/40 text-white",
                                 children: [
@@ -2580,30 +3553,30 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "📸"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2053,
-                                        columnNumber: 19
+                                        lineNumber: 2854,
+                                        columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "font-semibold",
                                         children: "Camera temporarily unavailable"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2054,
-                                        columnNumber: 19
+                                        lineNumber: 2855,
+                                        columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-white/80 text-sm mt-1",
                                         children: "We're retrying while another app is using your webcam."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2055,
-                                        columnNumber: 19
+                                        lineNumber: 2856,
+                                        columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2052,
-                                columnNumber: 17
+                                lineNumber: 2853,
+                                columnNumber: 19
                             }, this) : demoMode ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
@@ -2613,16 +3586,16 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "absolute inset-0 w-full h-full object-cover"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2061,
-                                        columnNumber: 19
+                                        lineNumber: 2862,
+                                        columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute top-2 left-2 bg-purple-500/80 text-white text-xs px-2 py-1 rounded",
                                         children: "🎬 DEMO"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2067,
-                                        columnNumber: 19
+                                        lineNumber: 2868,
+                                        columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true) : mediaStream ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -2635,8 +3608,8 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "absolute inset-0 w-full h-full object-cover scale-x-[-1]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2073,
-                                        columnNumber: 19
+                                        lineNumber: 2874,
+                                        columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute top-2 left-2 flex gap-2",
@@ -2648,29 +3621,29 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                         className: "w-2 h-2 bg-red-500 rounded-full animate-pulse"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2082,
-                                                        columnNumber: 23
+                                                        lineNumber: 2883,
+                                                        columnNumber: 25
                                                     }, this),
                                                     "LIVE"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2081,
-                                                columnNumber: 21
+                                                lineNumber: 2882,
+                                                columnNumber: 23
                                             }, this),
                                             videoQuality && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: `text-white text-xs px-2 py-1 rounded ${videoQuality === '4K UHD' ? 'bg-gradient-to-r from-purple-500 to-pink-500' : videoQuality === 'Full HD' ? 'bg-blue-500/80' : 'bg-green-500/80'}`,
                                                 children: videoQuality
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2086,
-                                                columnNumber: 23
+                                                lineNumber: 2887,
+                                                columnNumber: 25
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2080,
-                                        columnNumber: 19
+                                        lineNumber: 2881,
+                                        columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2682,34 +3655,48 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             className: "w-12 h-12 bg-white/10 rounded-full animate-pulse mx-auto"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2101,
-                                            columnNumber: 21
+                                            lineNumber: 2902,
+                                            columnNumber: 23
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-sm",
                                             children: "Starting camera..."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2102,
-                                            columnNumber: 21
+                                            lineNumber: 2903,
+                                            columnNumber: 23
                                         }, this),
                                         cameraError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-xs text-red-400",
                                             children: cameraError
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2104,
-                                            columnNumber: 23
+                                            lineNumber: 2905,
+                                            columnNumber: 25
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2100,
-                                    columnNumber: 19
+                                    lineNumber: 2901,
+                                    columnNumber: 21
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2099,
+                                lineNumber: 2900,
+                                columnNumber: 19
+                            }, this) : remoteStream && !participant.isVideoOff ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                autoPlay: true,
+                                playsInline: true,
+                                className: "absolute inset-0 w-full h-full object-cover",
+                                ref: (node)=>{
+                                    if (node && node.srcObject !== remoteStream) {
+                                        node.srcObject = remoteStream;
+                                        node.play().catch((error)=>console.error('Error playing remote video:', error));
+                                    }
+                                }
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 2911,
                                 columnNumber: 17
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900/40 to-purple-900/40 text-center px-4",
@@ -2721,51 +3708,51 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 src: participant.avatar
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2112,
-                                                columnNumber: 19
+                                                lineNumber: 2925,
+                                                columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                 children: participant.name[0] ?? '?'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2113,
-                                                columnNumber: 19
+                                                lineNumber: 2926,
+                                                columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2111,
-                                        columnNumber: 17
+                                        lineNumber: 2924,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-white text-sm font-semibold",
                                         children: participant.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2115,
-                                        columnNumber: 17
+                                        lineNumber: 2928,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-white/60 text-xs mt-1",
                                         children: participant.isVideoOff ? 'Camera off' : 'Streaming'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2116,
-                                        columnNumber: 17
+                                        lineNumber: 2929,
+                                        columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2110,
-                                columnNumber: 15
+                                lineNumber: 2923,
+                                columnNumber: 17
                             }, this),
                             participant.isSelf && isSoloParticipant && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-3 left-3 bg-black/60 text-white/80 text-xs px-3 py-1 rounded-full",
                                 children: "You're the first in the room"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2122,
-                                columnNumber: 15
+                                lineNumber: 2935,
+                                columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3",
@@ -2780,8 +3767,8 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                     children: participant.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                    lineNumber: 2131,
-                                                    columnNumber: 19
+                                                    lineNumber: 2944,
+                                                    columnNumber: 21
                                                 }, this),
                                                 participant.isSpeaking && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "flex gap-0.5",
@@ -2790,34 +3777,34 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                             className: "w-1 h-3 bg-green-400 rounded-full animate-pulse"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                            lineNumber: 2134,
-                                                            columnNumber: 23
+                                                            lineNumber: 2947,
+                                                            columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "w-1 h-4 bg-green-400 rounded-full animate-pulse animation-delay-150"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                            lineNumber: 2135,
-                                                            columnNumber: 23
+                                                            lineNumber: 2948,
+                                                            columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "w-1 h-3 bg-green-400 rounded-full animate-pulse animation-delay-300"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                            lineNumber: 2136,
-                                                            columnNumber: 23
+                                                            lineNumber: 2949,
+                                                            columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                    lineNumber: 2133,
-                                                    columnNumber: 21
+                                                    lineNumber: 2946,
+                                                    columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2130,
-                                            columnNumber: 17
+                                            lineNumber: 2943,
+                                            columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex items-center gap-1",
@@ -2828,13 +3815,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                         className: "w-3 h-3 text-white"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2143,
-                                                        columnNumber: 23
+                                                        lineNumber: 2956,
+                                                        columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                    lineNumber: 2142,
-                                                    columnNumber: 21
+                                                    lineNumber: 2955,
+                                                    columnNumber: 23
                                                 }, this),
                                                 participant.isVideoOff && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "w-6 h-6 bg-red-500 rounded-full flex items-center justify-center",
@@ -2842,30 +3829,30 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                         className: "w-3 h-3 text-white"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2148,
-                                                        columnNumber: 23
+                                                        lineNumber: 2961,
+                                                        columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                    lineNumber: 2147,
-                                                    columnNumber: 21
+                                                    lineNumber: 2960,
+                                                    columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2140,
-                                            columnNumber: 17
+                                            lineNumber: 2953,
+                                            columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2129,
-                                    columnNumber: 15
+                                    lineNumber: 2942,
+                                    columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2128,
-                                columnNumber: 13
+                                lineNumber: 2941,
+                                columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                 size: "sm",
@@ -2875,26 +3862,27 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2161,
-                                    columnNumber: 15
+                                    lineNumber: 2974,
+                                    columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2156,
-                                columnNumber: 13
+                                lineNumber: 2969,
+                                columnNumber: 15
                             }, this)
                         ]
                     }, participant.userId, true, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2018,
-                        columnNumber: 11
-                    }, this))
+                        lineNumber: 2819,
+                        columnNumber: 13
+                    }, this);
+                })
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2012,
+                lineNumber: 2811,
                 columnNumber: 7
             }, this),
-            screenShareDemoMode && isScreenSharing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            screenShareDemoMode && isScreenSharing && (!screenShareParticipant || screenShareParticipant.isSelf) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "relative w-full max-w-6xl aspect-video",
@@ -2906,7 +3894,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                             className: "w-full h-full object-contain rounded-lg border-2 border-green-400 shadow-2xl"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2171,
+                            lineNumber: 2985,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2917,7 +3905,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "🖥️ Demo Screen Share Active"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2178,
+                                    lineNumber: 2992,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2926,24 +3914,24 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Stop Sharing"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2181,
+                                    lineNumber: 2995,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2177,
+                            lineNumber: 2991,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 2170,
+                    lineNumber: 2984,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2169,
+                lineNumber: 2983,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2961,7 +3949,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: callerName
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2198,
+                                        lineNumber: 3012,
                                         columnNumber: 15
                                     }, this),
                                     " • ",
@@ -2970,12 +3958,12 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2197,
+                                lineNumber: 3011,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2196,
+                            lineNumber: 3010,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2988,18 +3976,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2212,
+                                        lineNumber: 3026,
                                         columnNumber: 26
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mic$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mic$3e$__["Mic"], {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2212,
+                                        lineNumber: 3026,
                                         columnNumber: 59
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2204,
+                                    lineNumber: 3018,
                                     columnNumber: 13
                                 }, this),
                                 callType === 'video' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3009,39 +3997,40 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2224,
+                                        lineNumber: 3038,
                                         columnNumber: 31
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$video$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Video$3e$__["Video"], {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2224,
+                                        lineNumber: 3038,
                                         columnNumber: 66
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2216,
+                                    lineNumber: 3030,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                     onClick: handleToggleScreenShare,
                                     className: `rounded-full w-12 h-12 ${effectiveScreenShareActive ? 'bg-green-500 hover:bg-green-600' : 'bg-white/10 hover:bg-white/20'} text-white border-0`,
+                                    title: screenShareSupportHint ?? 'Start or stop screen share',
                                     children: effectiveScreenShareActive ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$monitor$2d$off$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MonitorOff$3e$__["MonitorOff"], {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2236,
+                                        lineNumber: 3051,
                                         columnNumber: 45
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$monitor$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Monitor$3e$__["Monitor"], {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2236,
+                                        lineNumber: 3051,
                                         columnNumber: 82
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2228,
+                                    lineNumber: 3042,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3051,18 +4040,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "w-5 h-5 rotate-135"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2243,
+                                        lineNumber: 3058,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2239,
+                                    lineNumber: 3054,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2203,
+                            lineNumber: 3017,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3077,7 +4066,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "🔄 Resume Cam"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2250,
+                                    lineNumber: 3065,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3092,7 +4081,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2260,
+                                    lineNumber: 3075,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3100,14 +4089,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     size: "sm",
                                     onClick: handleToggleSafeStart,
                                     className: `${cameraSafeStart ? 'text-amber-300 hover:text-amber-200 bg-amber-500/20 hover:bg-amber-500/30' : 'text-white/70 hover:text-white hover:bg-white/10'}`,
-                                    title: "Always start MoveSplash in presentation-safe demo mode so other meeting apps keep your webcam",
+                                    title: "Always start MoveYSplash in presentation-safe demo mode so other meeting apps keep your webcam",
                                     children: [
                                         "🛡️ ",
                                         cameraSafeStart ? 'Safe Start ON' : 'Safe Start'
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2273,
+                                    lineNumber: 3088,
                                     columnNumber: 13
                                 }, this),
                                 multipleScreensDetected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenu"], {
@@ -3124,19 +4113,19 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                         className: "w-5 h-5 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2296,
+                                                        lineNumber: 3111,
                                                         columnNumber: 21
                                                     }, this),
                                                     monitorSelectionLabel
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2290,
+                                                lineNumber: 3105,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2289,
+                                            lineNumber: 3104,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -3150,7 +4139,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                                 children: screen.label
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                lineNumber: 2307,
+                                                                lineNumber: 3122,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3158,13 +4147,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                                 children: screen.size
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                lineNumber: 2308,
+                                                                lineNumber: 3123,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, screen.id, true, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2302,
+                                                        lineNumber: 3117,
                                                         columnNumber: 21
                                                     }, this)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -3175,7 +4164,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                             children: "All Monitors"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                            lineNumber: 2315,
+                                                            lineNumber: 3130,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3183,25 +4172,25 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                             children: "Entire workspace"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                            lineNumber: 2316,
+                                                            lineNumber: 3131,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                    lineNumber: 2311,
+                                                    lineNumber: 3126,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2300,
+                                            lineNumber: 3115,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2288,
+                                    lineNumber: 3103,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3216,7 +4205,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2322,
+                                    lineNumber: 3137,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3229,14 +4218,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             className: "w-5 h-5 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2346,
+                                            lineNumber: 3161,
                                             columnNumber: 15
                                         }, this),
                                         viewMode === 'grid' ? 'Grid' : 'Speaker'
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2336,
+                                    lineNumber: 3151,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3249,14 +4238,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             className: "w-5 h-5 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2360,
+                                            lineNumber: 3175,
                                             columnNumber: 15
                                         }, this),
                                         "Participants"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2350,
+                                    lineNumber: 3165,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3269,14 +4258,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                             className: "w-5 h-5 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                                            lineNumber: 2374,
+                                            lineNumber: 3189,
                                             columnNumber: 15
                                         }, this),
                                         "Chat"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2364,
+                                    lineNumber: 3179,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3288,29 +4277,29 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2388,
+                                        lineNumber: 3203,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2378,
+                                    lineNumber: 3193,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2248,
+                            lineNumber: 3063,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 2194,
+                    lineNumber: 3008,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2193,
+                lineNumber: 3007,
                 columnNumber: 7
             }, this),
             showParticipantsPanel && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -3326,7 +4315,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "In the room"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2399,
+                                        lineNumber: 3214,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3338,13 +4327,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2400,
+                                        lineNumber: 3215,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2398,
+                                lineNumber: 3213,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3356,18 +4345,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2410,
+                                    lineNumber: 3225,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2404,
+                                lineNumber: 3219,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2397,
+                        lineNumber: 3212,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3385,20 +4374,20 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                         src: participant.avatar
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2421,
+                                                        lineNumber: 3236,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                         children: participant.name[0] ?? '?'
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2422,
+                                                        lineNumber: 3237,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2420,
+                                                lineNumber: 3235,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3413,7 +4402,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2425,
+                                                        lineNumber: 3240,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3426,14 +4415,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                                         className: "w-3 h-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                        lineNumber: 2431,
+                                                                        lineNumber: 3246,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     " Muted"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                lineNumber: 2430,
+                                                                lineNumber: 3245,
                                                                 columnNumber: 25
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 className: "flex items-center gap-1",
@@ -3442,14 +4431,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                                         className: "w-3 h-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                        lineNumber: 2435,
+                                                                        lineNumber: 3250,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     " Live"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                lineNumber: 2434,
+                                                                lineNumber: 3249,
                                                                 columnNumber: 25
                                                             }, this),
                                                             participant.isVideoOff && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3459,14 +4448,14 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                                         className: "w-3 h-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                        lineNumber: 2440,
+                                                                        lineNumber: 3255,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     " Cam off"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                lineNumber: 2439,
+                                                                lineNumber: 3254,
                                                                 columnNumber: 25
                                                             }, this),
                                                             participant.isScreenSharing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3476,32 +4465,32 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                                         className: "w-3 h-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                        lineNumber: 2445,
+                                                                        lineNumber: 3260,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     " Sharing"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                                lineNumber: 2444,
+                                                                lineNumber: 3259,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                        lineNumber: 2428,
+                                                        lineNumber: 3243,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2424,
+                                                lineNumber: 3239,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2419,
+                                        lineNumber: 3234,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3516,24 +4505,24 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2451,
+                                        lineNumber: 3266,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, participant.userId, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2415,
+                                lineNumber: 3230,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2413,
+                        lineNumber: 3228,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2396,
+                lineNumber: 3211,
                 columnNumber: 9
             }, this),
             showChatPanel && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -3549,7 +4538,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "Meeting chat"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2469,
+                                        lineNumber: 3284,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3557,13 +4546,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "Share quick notes & links"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2470,
+                                        lineNumber: 3285,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2468,
+                                lineNumber: 3283,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3575,18 +4564,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2478,
+                                    lineNumber: 3293,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2472,
+                                lineNumber: 3287,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2467,
+                        lineNumber: 3282,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3603,7 +4592,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: message.author
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2490,
+                                                lineNumber: 3305,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3613,13 +4602,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2491,
+                                                lineNumber: 3306,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2489,
+                                        lineNumber: 3304,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3627,18 +4616,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: message.text
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2498,
+                                        lineNumber: 3313,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, message.id, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2483,
+                                lineNumber: 3298,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2481,
+                        lineNumber: 3296,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3659,7 +4648,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     className: "bg-white/5 border-white/10 text-white placeholder:text-white/50"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2504,
+                                    lineNumber: 3319,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3668,24 +4657,24 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     children: "Send"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2516,
+                                    lineNumber: 3331,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2503,
+                            lineNumber: 3318,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2502,
+                        lineNumber: 3317,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2466,
+                lineNumber: 3281,
                 columnNumber: 9
             }, this),
             showSettingsPanel && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -3701,7 +4690,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "Quick settings"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2532,
+                                        lineNumber: 3347,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3709,13 +4698,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "Tune your call"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2533,
+                                        lineNumber: 3348,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2531,
+                                lineNumber: 3346,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3727,18 +4716,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                                    lineNumber: 2541,
+                                    lineNumber: 3356,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2535,
+                                lineNumber: 3350,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2530,
+                        lineNumber: 3345,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3754,7 +4743,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Camera Demo Mode"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2547,
+                                                lineNumber: 3362,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3762,13 +4751,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Use a safe simulated camera"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2548,
+                                                lineNumber: 3363,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2546,
+                                        lineNumber: 3361,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3779,13 +4768,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: demoMode ? 'On' : 'Off'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2550,
+                                        lineNumber: 3365,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2545,
+                                lineNumber: 3360,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3798,7 +4787,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Screen Share Demo"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2566,
+                                                lineNumber: 3381,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3806,13 +4795,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Share a safe placeholder feed"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2567,
+                                                lineNumber: 3382,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2565,
+                                        lineNumber: 3380,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3823,13 +4812,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: screenShareDemoMode ? 'On' : 'Off'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2569,
+                                        lineNumber: 3384,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2564,
+                                lineNumber: 3379,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3842,7 +4831,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Safe Start"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2585,
+                                                lineNumber: 3400,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3850,13 +4839,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Stay in demo when opening the app"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2586,
+                                                lineNumber: 3401,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2584,
+                                        lineNumber: 3399,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3867,13 +4856,57 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: cameraSafeStart ? 'On' : 'Off'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2588,
+                                        lineNumber: 3403,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2583,
+                                lineNumber: 3398,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center justify-between",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm font-semibold",
+                                                children: "Camera lens"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                                lineNumber: 3419,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-white/60",
+                                                children: "Front / rear for phones & tablets"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                                lineNumber: 3420,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/components/VideoChat.tsx",
+                                        lineNumber: 3418,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                        size: "sm",
+                                        variant: "ghost",
+                                        onClick: handleFlipCamera,
+                                        className: "text-white/80 hover:text-white hover:bg-white/10",
+                                        children: cameraFacingMode === 'user' ? 'Rear cam' : 'Front cam'
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/components/VideoChat.tsx",
+                                        lineNumber: 3422,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/components/VideoChat.tsx",
+                                lineNumber: 3417,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3886,7 +4919,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Layout"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2604,
+                                                lineNumber: 3434,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3894,13 +4927,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Switch between grid and speaker"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2605,
+                                                lineNumber: 3435,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2603,
+                                        lineNumber: 3433,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3914,7 +4947,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Grid"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2608,
+                                                lineNumber: 3438,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3925,19 +4958,19 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Speaker"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2620,
+                                                lineNumber: 3450,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2607,
+                                        lineNumber: 3437,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2602,
+                                lineNumber: 3432,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3950,7 +4983,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Camera Health"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2637,
+                                                lineNumber: 3467,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3958,13 +4991,13 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                                 children: "Retry the real camera feed"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                                lineNumber: 2638,
+                                                lineNumber: 3468,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2636,
+                                        lineNumber: 3466,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3975,25 +5008,25 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                                         children: "Resume cam"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                                        lineNumber: 2640,
+                                        lineNumber: 3470,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                                lineNumber: 2635,
+                                lineNumber: 3465,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/VideoChat.tsx",
-                        lineNumber: 2544,
+                        lineNumber: 3359,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2529,
+                lineNumber: 3344,
                 columnNumber: 9
             }, this),
             effectiveScreenShareActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -4005,7 +5038,7 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                             className: "w-4 h-4"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2657,
+                            lineNumber: 3487,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -4013,18 +5046,18 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
                             children: "You are sharing your screen"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/VideoChat.tsx",
-                            lineNumber: 2658,
+                            lineNumber: 3488,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/VideoChat.tsx",
-                    lineNumber: 2656,
+                    lineNumber: 3486,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2655,
+                lineNumber: 3485,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -4041,17 +5074,17 @@ function VideoChat({ callType = 'video', onEndCall, isIncoming = false, callerNa
       `
             }, void 0, false, {
                 fileName: "[project]/src/app/components/VideoChat.tsx",
-                lineNumber: 2663,
+                lineNumber: 3493,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/VideoChat.tsx",
-        lineNumber: 1806,
+        lineNumber: 2504,
         columnNumber: 5
     }, this);
 }
-_s(VideoChat, "tbHEr98siBvPSD5URXyceasw2DI=", false, function() {
+_s(VideoChat, "M89cJQiVnpb1RHC33Vs1FnnqxmU=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"]
     ];

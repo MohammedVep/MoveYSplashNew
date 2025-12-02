@@ -14,7 +14,10 @@ const publicAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFz
 "[project]/src/app/utils/userContext.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ __turbopack_context__.s([
     "UserProvider",
     ()=>UserProvider,
     "defaultSettings",
@@ -122,6 +125,61 @@ const normalizeServerUser = (user)=>{
         settings: mergeWithDefaultSettings()
     };
 };
+const coerceUserData = (user)=>{
+    if (!user) {
+        return null;
+    }
+    const joinedAt = user.joinedAt instanceof Date ? user.joinedAt : user.joinedAt ? new Date(user.joinedAt) : new Date();
+    return {
+        id: user.id ?? user.ablyClientId ?? 'user',
+        ablyClientId: user.ablyClientId ?? user.id ?? 'user',
+        name: user.name ?? user.username ?? 'User',
+        username: user.username ?? user.id ?? 'user',
+        email: user.email ?? '',
+        avatar: user.avatar ?? '',
+        bio: user.bio ?? '',
+        location: user.location ?? '',
+        website: user.website ?? '',
+        joinedAt,
+        friendIds: Array.isArray(user.friendIds) ? user.friendIds : [],
+        blockedIds: Array.isArray(user.blockedIds) ? user.blockedIds : [],
+        savedPostIds: Array.isArray(user.savedPostIds) ? user.savedPostIds : [],
+        posts: Array.isArray(user.posts) ? user.posts : [],
+        achievements: Array.isArray(user.achievements) ? user.achievements : [],
+        settings: mergeWithDefaultSettings(user.settings)
+    };
+};
+const normalizeUserMap = (input)=>{
+    const map = new Map();
+    if (!input) {
+        return map;
+    }
+    if (input instanceof Map) {
+        input.forEach((user, key)=>{
+            const normalized = coerceUserData(user);
+            if (normalized) {
+                map.set(key ?? normalized.id, normalized);
+                map.set(normalized.id, normalized);
+                if (normalized.ablyClientId && normalized.ablyClientId !== normalized.id) {
+                    map.set(normalized.ablyClientId, normalized);
+                }
+            }
+        });
+        return map;
+    }
+    if (Array.isArray(input)) {
+        input.forEach((user)=>{
+            const normalized = coerceUserData(user);
+            if (normalized) {
+                map.set(normalized.id, normalized);
+                if (normalized.ablyClientId && normalized.ablyClientId !== normalized.id) {
+                    map.set(normalized.ablyClientId, normalized);
+                }
+            }
+        });
+    }
+    return map;
+};
 const mergeServerUser = (server, fallback)=>{
     const normalized = normalizeServerUser(server);
     return {
@@ -156,14 +214,24 @@ const normalizeComment = (value, fallbackPostOwnerId)=>{
         createdAt
     };
 };
-function UserProvider({ children }) {
-    const [currentUser, setCurrentUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [allUsers, setAllUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(new Map());
+function UserProvider({ children, initialUser = null, initialAllUsers }) {
+    const normalizedInitialUser = coerceUserData(initialUser);
+    const initialUsersMap = normalizeUserMap(initialAllUsers);
+    if (normalizedInitialUser) {
+        initialUsersMap.set(normalizedInitialUser.id, normalizedInitialUser);
+        if (normalizedInitialUser.ablyClientId && normalizedInitialUser.ablyClientId !== normalizedInitialUser.id) {
+            initialUsersMap.set(normalizedInitialUser.ablyClientId, normalizedInitialUser);
+        }
+    }
+    const [currentUser, setCurrentUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(normalizedInitialUser);
+    const [allUsers, setAllUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initialUsersMap);
     const [profileUserId, setProfileUserId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [profileUser, setProfileUser] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const { setTheme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useTheme"])();
     // Load user directory from Supabase so all profile data reflects persisted state
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
         const fetchUsers = async ()=>{
             try {
                 const response = await fetch(`${API_BASE_URL}/users`, {
@@ -175,7 +243,11 @@ function UserProvider({ children }) {
                     console.error('Failed to load users from Supabase');
                     return;
                 }
-                const { users: serverUsers } = await response.json();
+                const payload = await response.json().catch(()=>({}));
+                const serverUsers = Array.isArray(payload?.users) ? payload.users : [];
+                if (serverUsers.length === 0) {
+                    return;
+                }
                 setAllUsers((prev)=>{
                     const updated = new Map(prev);
                     serverUsers.forEach((serverUser)=>{
@@ -198,8 +270,11 @@ function UserProvider({ children }) {
                 console.error('Error loading users from Supabase:', error);
             }
         };
-        fetchUsers();
-    }, []);
+        void fetchUsers();
+    }, [
+        initialAllUsers,
+        initialUser
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const preference = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$settings$2d$theme$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["normalizeThemePreference"])(currentUser?.settings?.theme ?? defaultSettings.theme);
         const applyTheme = ()=>{
@@ -240,35 +315,37 @@ function UserProvider({ children }) {
     ]);
     // Calculate achievements based on merit
     const calculateAchievements = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((user)=>{
+        const safeJoinedAt = user.joinedAt instanceof Date ? user.joinedAt : new Date(user.joinedAt ?? new Date());
+        const safePosts = Array.isArray(user.posts) ? user.posts : [];
         const achievements = [];
         const now = new Date();
-        const accountAge = now.getTime() - user.joinedAt.getTime();
+        const accountAge = now.getTime() - safeJoinedAt.getTime();
         const daysOld = accountAge / (1000 * 60 * 60 * 24);
         // Early Adopter - joined within first 3 months
-        const firstUsers = Array.from(allUsers.values()).sort((a, b)=>a.joinedAt.getTime() - b.joinedAt.getTime()).slice(0, 100);
+        const firstUsers = Array.from(allUsers.values()).sort((a, b)=>(a.joinedAt instanceof Date ? a.joinedAt : new Date(a.joinedAt ?? new Date())).getTime() - (b.joinedAt instanceof Date ? b.joinedAt : new Date(b.joinedAt ?? new Date())).getTime()).slice(0, 100);
         if (firstUsers.some((u)=>u.id === user.id)) {
             achievements.push({
                 id: 'early-adopter',
                 name: 'Early Adopter',
                 description: 'One of the first 100 users on MoveSplash',
-                earnedAt: user.joinedAt,
+                earnedAt: safeJoinedAt,
                 icon: 'Award',
                 color: 'from-purple-500 to-pink-500'
             });
         }
         // Top Contributor - 50+ posts
-        if (user.posts.length >= 50) {
+        if (safePosts.length >= 50) {
             achievements.push({
                 id: 'top-contributor',
                 name: 'Top Contributor',
                 description: 'Created over 50 posts',
-                earnedAt: user.posts[49]?.timestamp || now,
+                earnedAt: safePosts[49]?.timestamp || now,
                 icon: 'TrendingUp',
                 color: 'from-orange-500 to-yellow-500'
             });
         }
         // Story Master - 30+ posts with media
-        const postsWithMedia = user.posts.filter((p)=>p.media && p.media.length > 0);
+        const postsWithMedia = safePosts.filter((p)=>p.media && p.media.length > 0);
         if (postsWithMedia.length >= 30) {
             achievements.push({
                 id: 'story-master',
@@ -291,7 +368,7 @@ function UserProvider({ children }) {
             });
         }
         // Rising Star - 1000+ total likes
-        const totalLikes = user.posts.reduce((sum, post)=>sum + post.likes, 0);
+        const totalLikes = safePosts.reduce((sum, post)=>sum + post.likes, 0);
         if (totalLikes >= 1000) {
             achievements.push({
                 id: 'rising-star',
@@ -303,7 +380,7 @@ function UserProvider({ children }) {
             });
         }
         // Conversation Starter - 500+ total comments
-        const totalComments = user.posts.reduce((sum, post)=>sum + post.comments, 0);
+        const totalComments = safePosts.reduce((sum, post)=>sum + post.comments, 0);
         if (totalComments >= 500) {
             achievements.push({
                 id: 'conversation-starter',
@@ -315,12 +392,12 @@ function UserProvider({ children }) {
             });
         }
         // Viral Creator - any post with 500+ likes
-        if (user.posts.some((p)=>p.likes >= 500)) {
+        if (safePosts.some((p)=>p.likes >= 500)) {
             achievements.push({
                 id: 'viral-creator',
                 name: 'Viral Creator',
                 description: 'Created a post with 500+ likes',
-                earnedAt: user.posts.find((p)=>p.likes >= 500)?.timestamp || now,
+                earnedAt: safePosts.find((p)=>p.likes >= 500)?.timestamp || now,
                 icon: 'Zap',
                 color: 'from-pink-500 to-purple-500'
             });
@@ -540,47 +617,132 @@ function UserProvider({ children }) {
         }
     };
     const addPost = async (post)=>{
-        if (currentUser) {
-            const newPost = {
-                ...post,
-                id: `${currentUser.id}-post-${Date.now()}`,
-                userId: currentUser.id,
-                timestamp: new Date(),
-                likes: 0,
-                comments: 0,
-                shares: 0,
-                likedBy: []
-            };
-            const updatedUser = {
-                ...currentUser,
-                posts: [
-                    newPost,
-                    ...currentUser.posts
-                ]
-            };
-            setCurrentUser(updatedUser);
-            setAllUsers((prev)=>{
-                const newMap = new Map(prev);
-                newMap.set(updatedUser.id, updatedUser);
-                return newMap;
-            });
-            // Sync to Supabase
-            try {
-                await fetch(`${API_BASE_URL}/posts`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["publicAnonKey"]}`
-                    },
-                    body: JSON.stringify({
-                        userId: currentUser.id,
-                        text: post.text,
-                        media: post.media
-                    })
-                });
-            } catch (error) {
-                console.error('Error syncing post:', error);
+        if (!currentUser) {
+            return;
+        }
+        const ownerId = currentUser.id;
+        const placeholderId = `${ownerId}-post-${Date.now()}`;
+        const placeholderPost = {
+            ...post,
+            id: placeholderId,
+            userId: ownerId,
+            timestamp: new Date(),
+            likes: 0,
+            comments: 0,
+            shares: 0,
+            likedBy: []
+        };
+        const normalizeCreatedPost = (value)=>{
+            if (typeof value !== 'object' || value === null) {
+                return null;
             }
+            const record = value;
+            const idValue = record['id'];
+            const userIdValue = record['userId'] ?? record['ownerId'] ?? ownerId;
+            if (typeof idValue !== 'string' || typeof userIdValue !== 'string') {
+                return null;
+            }
+            const textValue = record['text'];
+            const contentValue = record['content'];
+            const text = typeof textValue === 'string' ? textValue : typeof contentValue === 'string' ? contentValue : post.text ?? '';
+            const mediaRaw = Array.isArray(record['media']) ? record['media'] : [];
+            const media = mediaRaw.map((item)=>{
+                if (typeof item !== 'object' || item === null) {
+                    return null;
+                }
+                const mediaRecord = item;
+                const url = typeof mediaRecord['url'] === 'string' ? mediaRecord['url'] : '';
+                if (!url) {
+                    return null;
+                }
+                const type = mediaRecord['type'] === 'video' ? 'video' : 'image';
+                return {
+                    type,
+                    url
+                };
+            }).filter((entry)=>Boolean(entry)) || [];
+            const timestampRaw = record['timestamp'];
+            const timestamp = typeof timestampRaw === 'string' && timestampRaw ? new Date(timestampRaw) : new Date();
+            const likesValue = record['likes'];
+            const commentsValue = record['comments'];
+            const sharesValue = record['shares'];
+            const likedByRaw = record['likedBy'];
+            return {
+                id: idValue,
+                userId: userIdValue,
+                text,
+                media,
+                likes: typeof likesValue === 'number' && Number.isFinite(likesValue) ? likesValue : 0,
+                comments: typeof commentsValue === 'number' && Number.isFinite(commentsValue) ? commentsValue : 0,
+                shares: typeof sharesValue === 'number' && Number.isFinite(sharesValue) ? sharesValue : 0,
+                timestamp,
+                likedBy: Array.isArray(likedByRaw) ? likedByRaw.filter((value)=>typeof value === 'string') : []
+            };
+        };
+        const upsertPost = (idToReplace, nextPost)=>{
+            setCurrentUser((prev)=>{
+                if (!prev || prev.id !== ownerId) {
+                    return prev;
+                }
+                const remaining = prev.posts.filter((p)=>p.id !== idToReplace);
+                const posts = nextPost ? [
+                    nextPost,
+                    ...remaining
+                ] : remaining;
+                return {
+                    ...prev,
+                    posts
+                };
+            });
+            setAllUsers((prev)=>{
+                const next = new Map(prev);
+                const user = next.get(ownerId);
+                if (!user) {
+                    return prev;
+                }
+                const remaining = user.posts.filter((p)=>p.id !== idToReplace);
+                const posts = nextPost ? [
+                    nextPost,
+                    ...remaining
+                ] : remaining;
+                const updatedUser = {
+                    ...user,
+                    posts
+                };
+                next.set(updatedUser.id, updatedUser);
+                if (updatedUser.ablyClientId && updatedUser.ablyClientId !== updatedUser.id) {
+                    next.set(updatedUser.ablyClientId, updatedUser);
+                }
+                return next;
+            });
+        };
+        upsertPost(placeholderId, placeholderPost);
+        try {
+            const response = await fetch(`${API_BASE_URL}/posts`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["publicAnonKey"]}`
+                },
+                body: JSON.stringify({
+                    userId: ownerId,
+                    text: post.text,
+                    media: post.media
+                })
+            });
+            const payload = await response.json().catch(()=>null);
+            const rawPost = payload?.post;
+            if (!response.ok || !rawPost) {
+                throw new Error(payload?.error ?? `status ${response.status}`);
+            }
+            const createdPost = normalizeCreatedPost(rawPost);
+            if (!createdPost) {
+                throw new Error('Invalid post payload');
+            }
+            upsertPost(placeholderId, createdPost);
+        } catch (error) {
+            console.error('Error syncing post:', error);
+            upsertPost(placeholderId, null);
         }
     };
     const deletePost = async (postId)=>{
@@ -606,6 +768,53 @@ function UserProvider({ children }) {
             } catch (error) {
                 console.error('Error deleting post:', error);
             }
+        }
+    };
+    const updatePost = async (postId, text)=>{
+        if (!currentUser) {
+            return;
+        }
+        const trimmed = text.trim();
+        setAllUsers((prev)=>{
+            const next = new Map(prev);
+            next.forEach((user, id)=>{
+                const postIndex = user.posts.findIndex((p)=>p.id === postId);
+                if (postIndex !== -1) {
+                    const updatedPosts = [
+                        ...user.posts
+                    ];
+                    updatedPosts[postIndex] = {
+                        ...updatedPosts[postIndex],
+                        text: trimmed
+                    };
+                    const updatedUser = {
+                        ...user,
+                        posts: updatedPosts
+                    };
+                    next.set(id, updatedUser);
+                    if (currentUser && id === currentUser.id) {
+                        setCurrentUser(updatedUser);
+                    }
+                    if (profileUserId && (id === profileUserId || user.ablyClientId === profileUserId)) {
+                        setProfileUser(updatedUser);
+                    }
+                }
+            });
+            return next;
+        });
+        try {
+            await fetch(`${API_BASE_URL}/posts/${currentUser.id}/${postId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["publicAnonKey"]}`
+                },
+                body: JSON.stringify({
+                    text: trimmed
+                })
+            });
+        } catch (error) {
+            console.error('Error updating post:', error);
         }
     };
     const likePost = async (postId, userId)=>{
@@ -1503,6 +1712,7 @@ function UserProvider({ children }) {
             toggleSavePost,
             fetchComments,
             addComment,
+            updatePost,
             addFriend,
             removeFriend,
             blockUser,
@@ -1519,7 +1729,7 @@ function UserProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/app/utils/userContext.tsx",
-        lineNumber: 1811,
+        lineNumber: 2051,
         columnNumber: 5
     }, this);
 }
@@ -1527,7 +1737,10 @@ function UserProvider({ children }) {
 "[project]/src/app/utils/shareUtils.ts [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ __turbopack_context__.s([
     "buildPostShareUrl",
     ()=>buildPostShareUrl,
     "buildShareMessage",
@@ -1707,7 +1920,10 @@ __turbopack_context__.s([
     ()=>App
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next-themes/dist/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$LandingPage$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/LandingPage.tsx [app-ssr] (ecmascript)");
@@ -1977,7 +2193,7 @@ function AppShell() {
     const handleSignup = async (name, email, password, birthdate)=>{
         const success = await signup(name, email, password, birthdate);
         if (success) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success(`Welcome to MoveSplash, ${name}! 🚀`);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success(`Welcome to MoveYSplash, ${name}! 🚀`);
             setSelectedProfileId(null);
             setAppState('app');
             setCurrentView('feed');
@@ -2065,14 +2281,14 @@ function AppShell() {
                     onBack: ()=>setAppState('landing')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 362,
+                    lineNumber: 365,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 363,
+                    lineNumber: 366,
                     columnNumber: 9
                 }, this)
             ]
@@ -2085,14 +2301,14 @@ function AppShell() {
                     onBack: ()=>setAppState('landing')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 371,
+                    lineNumber: 374,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 372,
+                    lineNumber: 375,
                     columnNumber: 9
                 }, this)
             ]
@@ -2105,14 +2321,14 @@ function AppShell() {
                     onBack: ()=>setAppState('landing')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 380,
+                    lineNumber: 383,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 381,
+                    lineNumber: 384,
                     columnNumber: 9
                 }, this)
             ]
@@ -2125,14 +2341,14 @@ function AppShell() {
                     onBack: ()=>setAppState('landing')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 389,
+                    lineNumber: 392,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 390,
+                    lineNumber: 393,
                     columnNumber: 9
                 }, this)
             ]
@@ -2145,14 +2361,14 @@ function AppShell() {
                     onBack: ()=>setAppState('landing')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 398,
+                    lineNumber: 401,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 399,
+                    lineNumber: 402,
                     columnNumber: 9
                 }, this)
             ]
@@ -2167,14 +2383,14 @@ function AppShell() {
                     onGetStarted: ()=>setAppState('signup')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 407,
+                    lineNumber: 410,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 412,
+                    lineNumber: 415,
                     columnNumber: 9
                 }, this)
             ]
@@ -2194,14 +2410,14 @@ function AppShell() {
                     onViewCookies: ()=>setAppState('cookies')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 420,
+                    lineNumber: 423,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 430,
+                    lineNumber: 433,
                     columnNumber: 9
                 }, this)
             ]
@@ -2216,14 +2432,14 @@ function AppShell() {
                     onSignup: ()=>setAppState('signup')
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 438,
+                    lineNumber: 441,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 443,
+                    lineNumber: 446,
                     columnNumber: 9
                 }, this)
             ]
@@ -2238,14 +2454,14 @@ function AppShell() {
                     onLogin: handleOpenLoginFlow
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 451,
+                    lineNumber: 454,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                     position: "top-center"
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 456,
+                    lineNumber: 459,
                     columnNumber: 9
                 }, this)
             ]
@@ -2261,12 +2477,12 @@ function AppShell() {
                         className: className
                     }, index, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 467,
+                        lineNumber: 470,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 465,
+                lineNumber: 468,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Navigation"], {
@@ -2276,31 +2492,31 @@ function AppShell() {
                 onOpenSettings: handleOpenSettings
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 472,
+                lineNumber: 475,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                className: "relative z-10 p-6",
+                className: "relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6",
                 children: [
                     currentView === 'feed' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "space-y-6",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Stories$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Stories"], {}, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 483,
+                                lineNumber: 486,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$MainFeed$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MainFeed"], {
                                 onShareToMessages: handleShareToMessages
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 484,
+                                lineNumber: 487,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 482,
+                        lineNumber: 485,
                         columnNumber: 11
                     }, this),
                     currentView === 'messages' && !activeCall && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ChatInterface$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ChatInterface"], {
@@ -2311,7 +2527,7 @@ function AppShell() {
                         onFocusUserConsumed: ()=>setPendingMessageTarget(null)
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 488,
+                        lineNumber: 491,
                         columnNumber: 11
                     }, this),
                     (currentView === 'video' || activeCall) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$VideoChat$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["VideoChat"], {
@@ -2319,7 +2535,7 @@ function AppShell() {
                         onEndCall: handleEndCall
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 497,
+                        lineNumber: 500,
                         columnNumber: 11
                     }, this),
                     currentView === 'friends' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$FriendsList$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FriendsList"], {
@@ -2327,12 +2543,12 @@ function AppShell() {
                         onOpenMessage: handleOpenMessagesForUser
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 503,
+                        lineNumber: 506,
                         columnNumber: 11
                     }, this),
                     currentView === 'stories' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Stories$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Stories"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 508,
+                        lineNumber: 511,
                         columnNumber: 39
                     }, this),
                     currentView === 'settings' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Settings$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Settings"], {
@@ -2343,28 +2559,28 @@ function AppShell() {
                         onOpenTermsOfService: handleOpenTermsInApp
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 510,
+                        lineNumber: 513,
                         columnNumber: 11
                     }, this),
                     currentView === 'help' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$HelpCenter$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HelpCenter"], {
                         onBack: ()=>setCurrentView('settings')
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 519,
+                        lineNumber: 522,
                         columnNumber: 11
                     }, this),
                     currentView === 'privacy' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$PrivacyPolicy$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PrivacyPolicy"], {
                         onBack: ()=>setCurrentView('settings')
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 522,
+                        lineNumber: 525,
                         columnNumber: 11
                     }, this),
                     currentView === 'terms' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$TermsOfUse$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TermsOfUse"], {
                         onBack: ()=>setCurrentView('settings')
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 525,
+                        lineNumber: 528,
                         columnNumber: 11
                     }, this),
                     currentView === 'profile' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$Profile$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Profile"], {
@@ -2374,20 +2590,20 @@ function AppShell() {
                         onBackToFriends: handleProfileBack
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 528,
+                        lineNumber: 531,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 480,
+                lineNumber: 483,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$sonner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Toaster"], {
                 position: "top-center"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 537,
+                lineNumber: 540,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -2410,13 +2626,13 @@ function AppShell() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 539,
+                lineNumber: 542,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 463,
+        lineNumber: 466,
         columnNumber: 5
     }, this);
 }
@@ -2424,12 +2640,12 @@ function App() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["UserProvider"], {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AppShell, {}, void 0, false, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 563,
+            lineNumber: 566,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 562,
+        lineNumber: 565,
         columnNumber: 5
     }, this);
 }

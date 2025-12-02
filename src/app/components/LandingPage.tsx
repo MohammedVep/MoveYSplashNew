@@ -188,7 +188,7 @@ export function LandingPage({
 
       {/* Feature Highlight Section */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        <div className="grid md:grid-cols-2 gap-10 sm:gap-12 items-center">
+        <div className="grid md:grid-cols-1 gap-10 sm:gap-12 items-center">
           <div>
             <h2 className="text-4xl text-white mb-6">
               Group chat energy without the chaos.

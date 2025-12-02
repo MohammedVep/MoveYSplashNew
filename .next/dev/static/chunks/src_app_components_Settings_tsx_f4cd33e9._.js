@@ -2,7 +2,10 @@
 "[project]/src/app/components/Settings.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ __turbopack_context__.s([
     "Settings",
     ()=>Settings
 ]);
@@ -84,6 +87,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                 ...__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultSettings"]
             })
     }["Settings.useState"]);
+    const [isSavingSettings, setIsSavingSettings] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [themePreference, setThemePreference] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$settings$2d$theme$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["normalizeThemePreference"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultSettings"].theme));
     const [isSavingAccount, setIsSavingAccount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [browserNotificationPermission, setBrowserNotificationPermission] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('default');
@@ -247,6 +251,29 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
     }["Settings.useCallback[handleSoundVolumeChange]"], [
         updateSettings
     ]);
+    const handleSavePreferences = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "Settings.useCallback[handleSavePreferences]": async ()=>{
+            setIsSavingSettings(true);
+            try {
+                const normalizedTheme = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$settings$2d$theme$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["normalizeThemePreference"])(settingsState.theme);
+                await updateSettings({
+                    ...settingsState,
+                    theme: normalizedTheme
+                });
+                setTheme((0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$settings$2d$theme$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["resolveThemePreference"])(normalizedTheme));
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].success('Settings saved!');
+            } catch (error) {
+                console.error('Error saving settings', error);
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error('Unable to save settings');
+            } finally{
+                setIsSavingSettings(false);
+            }
+        }
+    }["Settings.useCallback[handleSavePreferences]"], [
+        settingsState,
+        updateSettings,
+        setTheme
+    ]);
     const handlePasswordInputChange = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "Settings.useCallback[handlePasswordInputChange]": (field)=>({
                 "Settings.useCallback[handlePasswordInputChange]": (event)=>{
@@ -381,7 +408,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                         children: "Settings unavailable"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Settings.tsx",
-                        lineNumber: 382,
+                        lineNumber: 401,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -389,18 +416,18 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                         children: "Please sign in to manage your MoveSplash preferences."
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/Settings.tsx",
-                        lineNumber: 383,
+                        lineNumber: 402,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/Settings.tsx",
-                lineNumber: 381,
+                lineNumber: 400,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/Settings.tsx",
-            lineNumber: 380,
+            lineNumber: 399,
             columnNumber: 7
         }, this);
     }
@@ -422,12 +449,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                         className: "w-5 h-5 text-white"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                        lineNumber: 399,
+                                        lineNumber: 418,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                    lineNumber: 398,
+                                    lineNumber: 417,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -437,7 +464,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                             children: "Settings"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 402,
+                                            lineNumber: 421,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -445,19 +472,19 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                             children: "Manage your account and preferences"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 403,
+                                            lineNumber: 422,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                    lineNumber: 401,
+                                    lineNumber: 420,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/Settings.tsx",
-                            lineNumber: 397,
+                            lineNumber: 416,
                             columnNumber: 11
                         }, this),
                         onClose && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -469,18 +496,18 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                lineNumber: 413,
+                                lineNumber: 432,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Settings.tsx",
-                            lineNumber: 407,
+                            lineNumber: 426,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/Settings.tsx",
-                    lineNumber: 396,
+                    lineNumber: 415,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -500,14 +527,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                 className: "w-4 h-4 mr-2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                lineNumber: 422,
+                                                lineNumber: 441,
                                                 columnNumber: 17
                                             }, this),
                                             "Account"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                        lineNumber: 421,
+                                        lineNumber: 440,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -518,14 +545,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                 className: "w-4 h-4 mr-2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                lineNumber: 426,
+                                                lineNumber: 445,
                                                 columnNumber: 17
                                             }, this),
                                             "Privacy"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                        lineNumber: 425,
+                                        lineNumber: 444,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -536,14 +563,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                 className: "w-4 h-4 mr-2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                lineNumber: 430,
+                                                lineNumber: 449,
                                                 columnNumber: 17
                                             }, this),
                                             "Notifications"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                        lineNumber: 429,
+                                        lineNumber: 448,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -554,14 +581,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                 className: "w-4 h-4 mr-2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                lineNumber: 434,
+                                                lineNumber: 453,
                                                 columnNumber: 17
                                             }, this),
                                             "Appearance"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                        lineNumber: 433,
+                                        lineNumber: 452,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -572,25 +599,25 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                 className: "w-4 h-4 mr-2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                lineNumber: 438,
+                                                lineNumber: 457,
                                                 columnNumber: 17
                                             }, this),
                                             "About"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                        lineNumber: 437,
+                                        lineNumber: 456,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                lineNumber: 420,
+                                lineNumber: 439,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/Settings.tsx",
-                            lineNumber: 419,
+                            lineNumber: 438,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -608,7 +635,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Profile Picture"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 447,
+                                                    lineNumber: 466,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -621,20 +648,20 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     src: currentUser.avatar
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 450,
+                                                                    lineNumber: 469,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                     children: currentUser.name?.slice(0, 2).toUpperCase() || 'MS'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 451,
+                                                                    lineNumber: 470,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 449,
+                                                            lineNumber: 468,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -647,14 +674,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             className: "w-4 h-4 mr-2"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 457,
+                                                                            lineNumber: 476,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         "Change Photo"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 456,
+                                                                    lineNumber: 475,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -662,32 +689,32 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "JPG, PNG or GIF. Max size 5MB"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 460,
+                                                                    lineNumber: 479,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 455,
+                                                            lineNumber: 474,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 448,
+                                                    lineNumber: 467,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 446,
+                                            lineNumber: 465,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 465,
+                                            lineNumber: 484,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -698,7 +725,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Personal Information"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 468,
+                                                    lineNumber: 487,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -710,7 +737,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Full Name"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 471,
+                                                            lineNumber: 490,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -720,13 +747,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             className: "bg-white/5 border-white/20 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 474,
+                                                            lineNumber: 493,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 470,
+                                                    lineNumber: 489,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -738,7 +765,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Email"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 483,
+                                                            lineNumber: 502,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -748,7 +775,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 487,
+                                                                    lineNumber: 506,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -759,19 +786,19 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "pl-10 bg-white/5 border-white/20 text-white"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 488,
+                                                                    lineNumber: 507,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 486,
+                                                            lineNumber: 505,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 482,
+                                                    lineNumber: 501,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -783,7 +810,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Phone Number"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 499,
+                                                            lineNumber: 518,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -793,7 +820,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 503,
+                                                                    lineNumber: 522,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -803,19 +830,19 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "pl-10 bg-white/5 border-white/20 text-white"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 504,
+                                                                    lineNumber: 523,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 502,
+                                                            lineNumber: 521,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 498,
+                                                    lineNumber: 517,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -827,7 +854,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Location"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 514,
+                                                            lineNumber: 533,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -837,7 +864,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 518,
+                                                                    lineNumber: 537,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -847,19 +874,19 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "pl-10 bg-white/5 border-white/20 text-white"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 519,
+                                                                    lineNumber: 538,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 517,
+                                                            lineNumber: 536,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 513,
+                                                    lineNumber: 532,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -871,7 +898,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Bio"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 529,
+                                                            lineNumber: 548,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -881,26 +908,26 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             className: "bg-white/5 border-white/20 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 532,
+                                                            lineNumber: 551,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 528,
+                                                    lineNumber: 547,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 467,
+                                            lineNumber: 486,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 541,
+                                            lineNumber: 560,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -911,7 +938,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Password"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 544,
+                                                    lineNumber: 563,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -928,19 +955,19 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                         className: "w-4 h-4 mr-2"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 548,
+                                                                        lineNumber: 567,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "Change Password"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                lineNumber: 547,
+                                                                lineNumber: 566,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 546,
+                                                            lineNumber: 565,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -952,20 +979,20 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Change password"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 554,
+                                                                            lineNumber: 573,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                                                                             children: "Enter your current password and choose a new one. Pick something unique to keep your account secure."
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 555,
+                                                                            lineNumber: 574,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 553,
+                                                                    lineNumber: 572,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -981,7 +1008,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     children: "Current password"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 561,
+                                                                                    lineNumber: 580,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -994,13 +1021,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     required: true
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 564,
+                                                                                    lineNumber: 583,
                                                                                     columnNumber: 25
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 560,
+                                                                            lineNumber: 579,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1012,7 +1039,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     children: "New password"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 575,
+                                                                                    lineNumber: 594,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1026,13 +1053,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     minLength: 8
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 578,
+                                                                                    lineNumber: 597,
                                                                                     columnNumber: 25
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 574,
+                                                                            lineNumber: 593,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1044,7 +1071,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     children: "Confirm new password"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 590,
+                                                                                    lineNumber: 609,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1058,7 +1085,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     minLength: 8
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 593,
+                                                                                    lineNumber: 612,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1066,13 +1093,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     children: "Passwords must be at least 8 characters long."
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 603,
+                                                                                    lineNumber: 622,
                                                                                     columnNumber: 25
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 589,
+                                                                            lineNumber: 608,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -1086,12 +1113,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                         children: "Cancel"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                        lineNumber: 609,
+                                                                                        lineNumber: 628,
                                                                                         columnNumber: 27
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 608,
+                                                                                    lineNumber: 627,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1101,37 +1128,37 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                     children: isChangingPassword ? 'Updating...' : 'Update Password'
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                    lineNumber: 613,
+                                                                                    lineNumber: 632,
                                                                                     columnNumber: 25
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 607,
+                                                                            lineNumber: 626,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 559,
+                                                                    lineNumber: 578,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 552,
+                                                            lineNumber: 571,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 545,
+                                                    lineNumber: 564,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 543,
+                                            lineNumber: 562,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1145,25 +1172,25 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                         className: "w-4 h-4 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                        lineNumber: 632,
+                                                        lineNumber: 651,
                                                         columnNumber: 19
                                                     }, this),
                                                     isSavingAccount ? 'Saving...' : 'Save Changes'
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                lineNumber: 627,
+                                                lineNumber: 646,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 626,
+                                            lineNumber: 645,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                    lineNumber: 445,
+                                    lineNumber: 464,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -1178,7 +1205,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Profile Visibility"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 640,
+                                                    lineNumber: 659,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1189,7 +1216,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Who can see your profile?"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 643,
+                                                            lineNumber: 662,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1200,12 +1227,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "bg-white/5 border-white/20 text-white",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {}, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 649,
+                                                                        lineNumber: 668,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 648,
+                                                                    lineNumber: 667,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1216,7 +1243,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Everyone"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 652,
+                                                                            lineNumber: 671,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1224,7 +1251,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Friends Only"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 653,
+                                                                            lineNumber: 672,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1232,25 +1259,25 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Only Me"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 654,
+                                                                            lineNumber: 673,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 651,
+                                                                    lineNumber: 670,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 644,
+                                                            lineNumber: 663,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 642,
+                                                    lineNumber: 661,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1261,7 +1288,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Who can message you?"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 660,
+                                                            lineNumber: 679,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1272,12 +1299,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "bg-white/5 border-white/20 text-white",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {}, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 666,
+                                                                        lineNumber: 685,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 665,
+                                                                    lineNumber: 684,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1288,7 +1315,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Everyone"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 669,
+                                                                            lineNumber: 688,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1296,7 +1323,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Friends Only"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 670,
+                                                                            lineNumber: 689,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1304,25 +1331,25 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Nobody"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 671,
+                                                                            lineNumber: 690,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 668,
+                                                                    lineNumber: 687,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 661,
+                                                            lineNumber: 680,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 659,
+                                                    lineNumber: 678,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1333,7 +1360,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Who can call you?"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 677,
+                                                            lineNumber: 696,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -1344,12 +1371,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "bg-white/5 border-white/20 text-white",
                                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {}, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 683,
+                                                                        lineNumber: 702,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 682,
+                                                                    lineNumber: 701,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -1360,7 +1387,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Everyone"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 686,
+                                                                            lineNumber: 705,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1368,7 +1395,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Friends Only"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 687,
+                                                                            lineNumber: 706,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -1376,38 +1403,38 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             children: "Nobody"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 688,
+                                                                            lineNumber: 707,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 685,
+                                                                    lineNumber: 704,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 678,
+                                                            lineNumber: 697,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 676,
+                                                    lineNumber: 695,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 639,
+                                            lineNumber: 658,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 694,
+                                            lineNumber: 713,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1418,7 +1445,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Activity Status"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 697,
+                                                    lineNumber: 716,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1432,7 +1459,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Show online status"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 701,
+                                                                    lineNumber: 720,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1440,13 +1467,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Let friends see when you're online"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 702,
+                                                                    lineNumber: 721,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 700,
+                                                            lineNumber: 719,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -1454,13 +1481,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('showOnlineStatus', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 704,
+                                                            lineNumber: 723,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 699,
+                                                    lineNumber: 718,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1474,7 +1501,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Read receipts"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 712,
+                                                                    lineNumber: 731,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1482,13 +1509,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Show when you've read messages"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 713,
+                                                                    lineNumber: 732,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 711,
+                                                            lineNumber: 730,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -1496,26 +1523,26 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('showReadReceipts', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 715,
+                                                            lineNumber: 734,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 710,
+                                                    lineNumber: 729,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 696,
+                                            lineNumber: 715,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 722,
+                                            lineNumber: 741,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1526,7 +1553,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Tagging & Mentions"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 725,
+                                                    lineNumber: 744,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1540,7 +1567,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Allow tagging"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 729,
+                                                                    lineNumber: 748,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1548,13 +1575,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Let friends tag you in posts and photos"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 730,
+                                                                    lineNumber: 749,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 728,
+                                                            lineNumber: 747,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -1562,25 +1589,25 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('allowTagging', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 732,
+                                                            lineNumber: 751,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 727,
+                                                    lineNumber: 746,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 724,
+                                            lineNumber: 743,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                    lineNumber: 638,
+                                    lineNumber: 657,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -1600,12 +1627,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     className: "w-5 h-5 text-white"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 746,
+                                                                    lineNumber: 765,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                lineNumber: 745,
+                                                                lineNumber: 764,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1619,7 +1646,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                 children: "Browser Notifications"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                lineNumber: 750,
+                                                                                lineNumber: 769,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             browserNotificationPermission === 'granted' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1629,14 +1656,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                         className: "w-3 h-3 mr-1"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                        lineNumber: 753,
+                                                                                        lineNumber: 772,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     "Enabled"
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                lineNumber: 752,
+                                                                                lineNumber: 771,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             browserNotificationPermission === 'denied' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1646,14 +1673,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                         className: "w-3 h-3 mr-1"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                        lineNumber: 759,
+                                                                                        lineNumber: 778,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     "Blocked"
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                lineNumber: 758,
+                                                                                lineNumber: 777,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             browserNotificationPermission === 'default' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1663,20 +1690,20 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                         className: "w-3 h-3 mr-1"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                        lineNumber: 765,
+                                                                                        lineNumber: 784,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     "Not Set"
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                lineNumber: 764,
+                                                                                lineNumber: 783,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 749,
+                                                                        lineNumber: 768,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1684,7 +1711,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                         children: browserNotificationPermission === 'granted' ? 'You will receive browser notifications for new messages, calls, and updates.' : browserNotificationPermission === 'denied' ? 'Browser notifications are blocked. Please enable them in your browser settings.' : 'Enable browser notifications to stay updated even when MoveSplash is not open.'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 770,
+                                                                        lineNumber: 789,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     browserNotificationPermission !== 'granted' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1696,38 +1723,38 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                                 className: "w-4 h-4 mr-2"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                                lineNumber: 783,
+                                                                                lineNumber: 802,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             isRequestingPermission ? 'Requesting...' : 'Enable Browser Notifications'
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 778,
+                                                                        lineNumber: 797,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                lineNumber: 748,
+                                                                lineNumber: 767,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                        lineNumber: 744,
+                                                        lineNumber: 763,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 743,
+                                                    lineNumber: 762,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                                     className: "bg-white/10"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 790,
+                                                    lineNumber: 809,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
@@ -1740,7 +1767,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Notification Channels"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 795,
+                                                    lineNumber: 814,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1754,7 +1781,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Push Notifications"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 799,
+                                                                    lineNumber: 818,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1762,13 +1789,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Receive notifications on your device"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 800,
+                                                                    lineNumber: 819,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 798,
+                                                            lineNumber: 817,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -1777,13 +1804,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: handlePushNotificationsToggle
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 802,
+                                                            lineNumber: 821,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 797,
+                                                    lineNumber: 816,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1797,7 +1824,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Email Notifications"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 811,
+                                                                    lineNumber: 830,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1805,13 +1832,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Receive updates via email"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 812,
+                                                                    lineNumber: 831,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 810,
+                                                            lineNumber: 829,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -1819,13 +1846,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('emailNotifications', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 814,
+                                                            lineNumber: 833,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 809,
+                                                    lineNumber: 828,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1839,7 +1866,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "SMS Notifications"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 822,
+                                                                    lineNumber: 841,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1847,13 +1874,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Receive text message alerts"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 823,
+                                                                    lineNumber: 842,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 821,
+                                                            lineNumber: 840,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -1861,26 +1888,26 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('smsNotifications', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 825,
+                                                            lineNumber: 844,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 820,
+                                                    lineNumber: 839,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 794,
+                                            lineNumber: 813,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 832,
+                                            lineNumber: 851,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1891,7 +1918,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Activity Alerts"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 835,
+                                                    lineNumber: 854,
                                                     columnNumber: 17
                                                 }, this),
                                                 [
@@ -1931,7 +1958,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                         children: title
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 846,
+                                                                        lineNumber: 865,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1939,13 +1966,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                         children: description
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 847,
+                                                                        lineNumber: 866,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                lineNumber: 845,
+                                                                lineNumber: 864,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -1953,26 +1980,26 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                 onCheckedChange: (value)=>void handleSettingChange(key, value)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/Settings.tsx",
-                                                                lineNumber: 849,
+                                                                lineNumber: 868,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, key, true, {
                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                        lineNumber: 844,
+                                                        lineNumber: 863,
                                                         columnNumber: 19
                                                     }, this))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 834,
+                                            lineNumber: 853,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 857,
+                                            lineNumber: 876,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1983,7 +2010,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Sound & Alerts"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 860,
+                                                    lineNumber: 879,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1997,7 +2024,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Notification Sounds"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 864,
+                                                                    lineNumber: 883,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2005,13 +2032,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Play sounds for new notifications"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 865,
+                                                                    lineNumber: 884,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 863,
+                                                            lineNumber: 882,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -2019,13 +2046,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('soundEnabled', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 867,
+                                                            lineNumber: 886,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 862,
+                                                    lineNumber: 881,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2041,20 +2068,20 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                             className: "w-4 h-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 876,
+                                                                            lineNumber: 895,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                             children: "Volume"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 877,
+                                                                            lineNumber: 896,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 875,
+                                                                    lineNumber: 894,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2065,13 +2092,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 879,
+                                                                    lineNumber: 898,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 874,
+                                                            lineNumber: 893,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$slider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Slider"], {
@@ -2081,25 +2108,25 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onValueChange: handleSoundVolumeChange
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 883,
+                                                            lineNumber: 902,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 873,
+                                                    lineNumber: 892,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 859,
+                                            lineNumber: 878,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                    lineNumber: 740,
+                                    lineNumber: 759,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2114,7 +2141,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Theme"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 890,
+                                                    lineNumber: 909,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2125,66 +2152,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Color Theme"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 893,
+                                                            lineNumber: 912,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
                                                             value: themePreference,
                                                             onValueChange: handleThemeSelect,
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
-                                                                    className: "bg-white/5 border-white/20 text-white",
-                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {}, void 0, false, {
-                                                                        fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 896,
-                                                                        columnNumber: 23
-                                                                    }, this)
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 895,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
-                                                                    className: "bg-gradient-to-br from-purple-900 to-pink-900 border-white/20",
-                                                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$settings$2d$theme$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["THEME_OPTIONS"].map((option)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
-                                                                            value: option.value,
-                                                                            children: option.label
-                                                                        }, option.value, false, {
-                                                                            fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 900,
-                                                                            columnNumber: 25
-                                                                        }, this))
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 898,
-                                                                    columnNumber: 21
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 894,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 892,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "space-y-2",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                            className: "text-white/70",
-                                                            children: "Font Size"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 909,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
-                                                            value: settings.fontSize,
-                                                            onValueChange: (value)=>void handleSettingChange('fontSize', value),
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
                                                                     className: "bg-white/5 border-white/20 text-white",
@@ -2200,33 +2173,15 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
                                                                     className: "bg-gradient-to-br from-purple-900 to-pink-900 border-white/20",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
-                                                                            value: "small",
-                                                                            children: "Small"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 918,
-                                                                            columnNumber: 23
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
-                                                                            value: "medium",
-                                                                            children: "Medium"
-                                                                        }, void 0, false, {
+                                                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$settings$2d$theme$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["THEME_OPTIONS"].map((option)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                                            value: option.value,
+                                                                            children: option.label
+                                                                        }, option.value, false, {
                                                                             fileName: "[project]/src/app/components/Settings.tsx",
                                                                             lineNumber: 919,
-                                                                            columnNumber: 23
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
-                                                                            value: "large",
-                                                                            children: "Large"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/src/app/components/Settings.tsx",
-                                                                            lineNumber: 920,
-                                                                            columnNumber: 23
-                                                                        }, this)
-                                                                    ]
-                                                                }, void 0, true, {
+                                                                            columnNumber: 25
+                                                                        }, this))
+                                                                }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
                                                                     lineNumber: 917,
                                                                     columnNumber: 21
@@ -2234,13 +2189,85 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 910,
+                                                            lineNumber: 913,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 908,
+                                                    lineNumber: 911,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "space-y-2",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                            className: "text-white/70",
+                                                            children: "Font Size"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/components/Settings.tsx",
+                                                            lineNumber: 928,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
+                                                            value: settings.fontSize,
+                                                            onValueChange: (value)=>void handleSettingChange('fontSize', value),
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
+                                                                    className: "bg-white/5 border-white/20 text-white",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectValue"], {}, void 0, false, {
+                                                                        fileName: "[project]/src/app/components/Settings.tsx",
+                                                                        lineNumber: 934,
+                                                                        columnNumber: 23
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/Settings.tsx",
+                                                                    lineNumber: 933,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
+                                                                    className: "bg-gradient-to-br from-purple-900 to-pink-900 border-white/20",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                                            value: "small",
+                                                                            children: "Small"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/app/components/Settings.tsx",
+                                                                            lineNumber: 937,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                                            value: "medium",
+                                                                            children: "Medium"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/app/components/Settings.tsx",
+                                                                            lineNumber: 938,
+                                                                            columnNumber: 23
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                                            value: "large",
+                                                                            children: "Large"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/app/components/Settings.tsx",
+                                                                            lineNumber: 939,
+                                                                            columnNumber: 23
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/src/app/components/Settings.tsx",
+                                                                    lineNumber: 936,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/components/Settings.tsx",
+                                                            lineNumber: 929,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/components/Settings.tsx",
+                                                    lineNumber: 927,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2251,7 +2278,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "Language"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 926,
+                                                            lineNumber: 945,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -2265,12 +2292,12 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                         placeholder: "English"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 929,
+                                                                        lineNumber: 948,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 928,
+                                                                    lineNumber: 947,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2280,18 +2307,18 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                         children: "English"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/Settings.tsx",
-                                                                        lineNumber: 932,
+                                                                        lineNumber: 951,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 931,
+                                                                    lineNumber: 950,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 927,
+                                                            lineNumber: 946,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2299,26 +2326,26 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             children: "English is the only available language right now."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 935,
+                                                            lineNumber: 954,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 925,
+                                                    lineNumber: 944,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 889,
+                                            lineNumber: 908,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 939,
+                                            lineNumber: 958,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2329,7 +2356,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Accessibility"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 942,
+                                                    lineNumber: 961,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2343,7 +2370,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Auto-play videos"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 946,
+                                                                    lineNumber: 965,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2351,13 +2378,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Videos play automatically in feed"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 947,
+                                                                    lineNumber: 966,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 945,
+                                                            lineNumber: 964,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -2366,13 +2393,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('autoPlayVideos', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 949,
+                                                            lineNumber: 968,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 944,
+                                                    lineNumber: 963,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2386,7 +2413,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Reduce animations"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 958,
+                                                                    lineNumber: 977,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2394,13 +2421,13 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                                     children: "Minimize motion effects"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                                    lineNumber: 959,
+                                                                    lineNumber: 978,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 957,
+                                                            lineNumber: 976,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -2409,25 +2436,25 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             onCheckedChange: (value)=>void handleSettingChange('reduceAnimations', value)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 961,
+                                                            lineNumber: 980,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 956,
+                                                    lineNumber: 975,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 941,
+                                            lineNumber: 960,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                    lineNumber: 888,
+                                    lineNumber: 907,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2442,7 +2469,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "MoveSplash"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 972,
+                                                    lineNumber: 991,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2450,7 +2477,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Version 1.0.0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 973,
+                                                    lineNumber: 992,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2458,20 +2485,20 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "A Gen Z-focused social media platform with glassmorphism design, real-time messaging, video chat, and disappearing stories."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 974,
+                                                    lineNumber: 993,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 971,
+                                            lineNumber: 990,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 980,
+                                            lineNumber: 999,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2487,14 +2514,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 989,
+                                                            lineNumber: 1008,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Help Center"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 983,
+                                                    lineNumber: 1002,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2507,14 +2534,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 999,
+                                                            lineNumber: 1018,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Privacy Policy"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 993,
+                                                    lineNumber: 1012,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2527,27 +2554,27 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 1009,
+                                                            lineNumber: 1028,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Terms of Service"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 1003,
+                                                    lineNumber: 1022,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 982,
+                                            lineNumber: 1001,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                             className: "bg-white/10"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 1014,
+                                            lineNumber: 1033,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2558,7 +2585,7 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                     children: "Danger Zone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 1017,
+                                                    lineNumber: 1036,
                                                     columnNumber: 17
                                                 }, this),
                                                 onLogout && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2570,14 +2597,14 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 1025,
+                                                            lineNumber: 1044,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Log Out"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 1020,
+                                                    lineNumber: 1039,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2589,53 +2616,70 @@ function Settings({ onClose, onLogout, initialTab, onOpenHelpCenter, onOpenPriva
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                                            lineNumber: 1035,
+                                                            lineNumber: 1054,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Delete Account"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                                    lineNumber: 1030,
+                                                    lineNumber: 1049,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/Settings.tsx",
-                                            lineNumber: 1016,
+                                            lineNumber: 1035,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/Settings.tsx",
-                                    lineNumber: 970,
+                                    lineNumber: 989,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/Settings.tsx",
-                            lineNumber: 444,
+                            lineNumber: 463,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "sticky bottom-0 left-0 right-0 bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-xl border-t border-white/10 p-3 flex justify-end",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                onClick: ()=>void handleSavePreferences(),
+                                disabled: isSavingSettings,
+                                className: "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0",
+                                children: isSavingSettings ? 'Saving...' : 'Save settings'
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/components/Settings.tsx",
+                                lineNumber: 1061,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/components/Settings.tsx",
+                            lineNumber: 1060,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/Settings.tsx",
-                    lineNumber: 418,
+                    lineNumber: 437,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/components/Settings.tsx",
-            lineNumber: 395,
+            lineNumber: 414,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/Settings.tsx",
-        lineNumber: 394,
+        lineNumber: 413,
         columnNumber: 5
     }, this);
 }
-_s(Settings, "U1+CvJlrlcsRrTgBqbnxO5/jbjE=", false, function() {
+_s(Settings, "UOf0Ysd5aEYt2SSCTZPDEDGiUp4=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$themes$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"]

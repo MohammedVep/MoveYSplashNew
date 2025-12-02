@@ -7,7 +7,10 @@ __turbopack_context__.s([
     ()=>FeaturePages
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/button.tsx [app-ssr] (ecmascript)");
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-ssr] (ecmascript) <export default as ArrowLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$square$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageSquare$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/message-square.js [app-ssr] (ecmascript) <export default as MessageSquare>");
@@ -47,7 +50,7 @@ function FeaturePages({ feature, onBack, onGetStarted }) {
                     onGetStarted: onGetStarted
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                    lineNumber: 42,
+                    lineNumber: 45,
                     columnNumber: 16
                 }, this);
             case 'video-calls':
@@ -56,7 +59,7 @@ function FeaturePages({ feature, onBack, onGetStarted }) {
                     onGetStarted: onGetStarted
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                    lineNumber: 44,
+                    lineNumber: 47,
                     columnNumber: 16
                 }, this);
             case 'screen-share':
@@ -65,7 +68,7 @@ function FeaturePages({ feature, onBack, onGetStarted }) {
                     onGetStarted: onGetStarted
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                    lineNumber: 46,
+                    lineNumber: 49,
                     columnNumber: 16
                 }, this);
             case 'stories':
@@ -74,7 +77,7 @@ function FeaturePages({ feature, onBack, onGetStarted }) {
                     onGetStarted: onGetStarted
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                    lineNumber: 48,
+                    lineNumber: 51,
                     columnNumber: 16
                 }, this);
             case 'friends':
@@ -83,7 +86,7 @@ function FeaturePages({ feature, onBack, onGetStarted }) {
                     onGetStarted: onGetStarted
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                    lineNumber: 50,
+                    lineNumber: 53,
                     columnNumber: 16
                 }, this);
             case 'gen-z':
@@ -92,7 +95,7 @@ function FeaturePages({ feature, onBack, onGetStarted }) {
                     onGetStarted: onGetStarted
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                    lineNumber: 52,
+                    lineNumber: 55,
                     columnNumber: 16
                 }, this);
             default:
@@ -108,7 +111,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedBackground, {}, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 65,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -123,14 +126,14 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                 className: "w-4 h-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 73,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this),
                             "Back"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 68,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -142,12 +145,12 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                     className: "w-12 h-12 text-white"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 79,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -155,7 +158,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                 children: "Group Chats"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 82,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -163,13 +166,13 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                 children: "Bring your whole squad together with group chats that support up to 20 people. Share moments, coordinate plans, and stay connected - all in one place."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 83,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 78,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -184,12 +187,12 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                             className: "w-6 h-6 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 96,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 95,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -197,7 +200,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         children: "Up to 20 People"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -205,13 +208,13 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         children: "Create massive group chats for your friend groups, teams, or family. Everyone stays in the loop."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 96,
+                                        lineNumber: 99,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 91,
+                                lineNumber: 94,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -223,12 +226,12 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                             className: "w-6 h-6 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 106,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 105,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -236,7 +239,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         children: "Rich Media Sharing"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 108,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -244,13 +247,13 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         children: "Share photos, videos, voice messages, files, and links. Everything your group needs to communicate."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 109,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 101,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -262,12 +265,12 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                             className: "w-6 h-6 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 116,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 115,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -275,7 +278,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         children: "Star Messages"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 118,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -283,19 +286,19 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         children: "Mark important messages with a star so your group can find them easily later."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 119,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 111,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 90,
+                        lineNumber: 93,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -308,7 +311,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                     children: "Powerful Group Features"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 128,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -322,14 +325,14 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 129,
+                                                        lineNumber: 132,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "Text Messages",
                                                     description: "Send unlimited text messages with emoji support and formatting"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 128,
+                                                    lineNumber: 131,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureItem, {
@@ -337,14 +340,14 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 134,
+                                                        lineNumber: 137,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "Photo & Video Sharing",
                                                     description: "Share photos and videos instantly with the whole group"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 136,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureItem, {
@@ -352,14 +355,14 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 139,
+                                                        lineNumber: 142,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "Voice Messages",
                                                     description: "Record and send voice messages when typing isn't enough"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 138,
+                                                    lineNumber: 141,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureItem, {
@@ -367,20 +370,20 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 147,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "File Sharing",
                                                     description: "Share documents, PDFs, and files up to 100MB"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 143,
+                                                    lineNumber: 146,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 127,
+                                            lineNumber: 130,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -391,14 +394,14 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 151,
+                                                        lineNumber: 154,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "Message Reactions",
                                                     description: "React to messages with emojis - ❤️ 😂 😮 and more"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 150,
+                                                    lineNumber: 153,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureItem, {
@@ -406,14 +409,14 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 156,
+                                                        lineNumber: 159,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "Starred Messages",
                                                     description: "Save important messages by starring them for quick access"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 155,
+                                                    lineNumber: 158,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureItem, {
@@ -421,14 +424,14 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 161,
+                                                        lineNumber: 164,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "Group Admin Controls",
                                                     description: "Admins can add/remove members and manage group settings"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 160,
+                                                    lineNumber: 163,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FeatureItem, {
@@ -436,37 +439,37 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 169,
                                                         columnNumber: 25
                                                     }, void 0),
                                                     title: "Custom Notifications",
                                                     description: "Set notification preferences per group - mute or customize alerts"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 168,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 149,
+                                            lineNumber: 152,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 126,
+                                    lineNumber: 129,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                            lineNumber: 124,
+                            lineNumber: 127,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 123,
+                        lineNumber: 126,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -477,7 +480,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                 children: "Perfect For Every Squad"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 177,
+                                lineNumber: 180,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -489,7 +492,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Keep the crew connected"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 179,
+                                        lineNumber: 182,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -498,7 +501,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Coordinate homework & projects"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 183,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -507,7 +510,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Stay close with loved ones"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 184,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -516,7 +519,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Collaborate on projects"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 185,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -525,7 +528,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Plan game sessions"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 186,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -534,7 +537,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Organize parties & meetups"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 187,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -543,7 +546,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Coordinate practices & games"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 185,
+                                        lineNumber: 188,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -552,19 +555,19 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                         description: "Share ideas & feedback"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 186,
+                                        lineNumber: 189,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 178,
+                                lineNumber: 181,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 176,
+                        lineNumber: 179,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -575,7 +578,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                 children: "Ready to Connect Your Squad?"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 192,
+                                lineNumber: 195,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -583,7 +586,7 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                 children: "Create your first group chat in seconds and bring everyone together."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 193,
+                                lineNumber: 196,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -592,25 +595,25 @@ function GroupChatsFeature({ onBack, onGetStarted }) {
                                 children: "Start Group Chat"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 196,
+                                lineNumber: 199,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 191,
+                        lineNumber: 194,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 67,
+                lineNumber: 70,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 64,
+        lineNumber: 67,
         columnNumber: 5
     }, this);
 }
@@ -621,7 +624,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedBackground, {}, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 212,
+                lineNumber: 215,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,14 +639,14 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 className: "w-4 h-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 220,
+                                lineNumber: 223,
                                 columnNumber: 11
                             }, this),
                             "Back"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 215,
+                        lineNumber: 218,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -655,12 +658,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                     className: "w-12 h-12 text-white"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 227,
+                                    lineNumber: 230,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 226,
+                                lineNumber: 229,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -668,7 +671,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 children: "Video Calls"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 229,
+                                lineNumber: 232,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -676,13 +679,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 children: "Stunning 4K UHD video calls with up to 20 participants. See your friends' faces in incredible detail, share your screen, and feel like you're in the same room - no matter where you are."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 230,
+                                lineNumber: 233,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 225,
+                        lineNumber: 228,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -694,7 +697,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 color: "from-blue-500 to-cyan-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 238,
+                                lineNumber: 241,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
@@ -703,7 +706,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 color: "from-purple-500 to-pink-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 239,
+                                lineNumber: 242,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
@@ -712,7 +715,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 color: "from-green-500 to-emerald-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 240,
+                                lineNumber: 243,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
@@ -721,13 +724,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 color: "from-yellow-500 to-orange-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 241,
+                                lineNumber: 244,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 237,
+                        lineNumber: 240,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -742,12 +745,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                             className: "w-7 h-7 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 248,
+                                            lineNumber: 251,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 247,
+                                        lineNumber: 250,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -755,7 +758,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                         children: "4K UHD Video & Audio"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 250,
+                                        lineNumber: 253,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -763,7 +766,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                         children: "Stunning 4K UHD (3840x2160) video quality with intelligent adaptive streaming. Automatically detects your webcam capabilities and internet speed for the best possible quality - from 4K UHD down to HD as needed."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 254,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -773,47 +776,47 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "✓ Up to 4K UHD (3840x2160) @ 30fps"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 257,
+                                                lineNumber: 260,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Auto-fallback to Full HD (1920x1080) or HD (1280x720)"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 258,
+                                                lineNumber: 261,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Echo cancellation & noise reduction"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 259,
+                                                lineNumber: 262,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Automatic quality optimization"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 260,
+                                                lineNumber: 263,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Low-latency audio streaming"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 261,
+                                                lineNumber: 264,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 256,
+                                        lineNumber: 259,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 246,
+                                lineNumber: 249,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -825,12 +828,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                             className: "w-7 h-7 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 267,
+                                            lineNumber: 270,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 266,
+                                        lineNumber: 269,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -838,7 +841,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                         children: "Group Video Calls"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 269,
+                                        lineNumber: 272,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -846,7 +849,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                         children: "Host video calls with up to 20 people simultaneously. Perfect for friend groups, family gatherings, study sessions, or remote team meetings."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 270,
+                                        lineNumber: 273,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -856,40 +859,40 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "✓ Up to 20 simultaneous participants"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 275,
+                                                lineNumber: 278,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Grid or speaker view layouts"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 276,
+                                                lineNumber: 279,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ See who's talking with active speaker indicator"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 277,
+                                                lineNumber: 280,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Join from mobile or desktop"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 278,
+                                                lineNumber: 281,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 274,
+                                        lineNumber: 277,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 265,
+                                lineNumber: 268,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -901,12 +904,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                             className: "w-7 h-7 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 284,
+                                            lineNumber: 287,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 283,
+                                        lineNumber: 286,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -914,15 +917,15 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                         children: "Screen Sharing"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 286,
+                                        lineNumber: 289,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-white/70 mb-4",
-                                        children: "Share your entire screen, specific window, or browser tab. Perfect for presentations, watching videos together, or helping friends troubleshoot."
+                                        children: "Share your entire screen, specific window, or browser tab. Perfect for presentations, watching videos together, or helping friends troubleshoot. Starting a share requires desktop Chrome/Edge; other browsers can view."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 287,
+                                        lineNumber: 290,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -932,40 +935,47 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "✓ Share full screen or specific windows"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 292,
+                                                lineNumber: 295,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Audio sharing included"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 293,
+                                                lineNumber: 296,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ HD quality screen streaming"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 294,
+                                                lineNumber: 297,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                children: "✓ Screen share start available on desktop Chrome/Edge (view-only elsewhere)"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/FeaturePages.tsx",
+                                                lineNumber: 298,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Easy one-click sharing"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 295,
+                                                lineNumber: 299,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 291,
+                                        lineNumber: 294,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 282,
+                                lineNumber: 285,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -977,12 +987,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                             className: "w-7 h-7 text-white"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 301,
+                                            lineNumber: 305,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 300,
+                                        lineNumber: 304,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -990,7 +1000,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                         children: "Demo Mode"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 303,
+                                        lineNumber: 307,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -998,7 +1008,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                         children: "Presenting on another call? Enable Demo Mode to simulate your camera without accessing it, preventing conflicts with other video apps."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 308,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1008,46 +1018,46 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "✓ Safe for presentations"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 309,
+                                                lineNumber: 313,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ No camera conflicts"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 310,
+                                                lineNumber: 314,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Animated demo feed"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 311,
+                                                lineNumber: 315,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Toggle anytime during calls"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 312,
+                                                lineNumber: 316,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 308,
+                                        lineNumber: 312,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 299,
+                                lineNumber: 303,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 245,
+                        lineNumber: 248,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1055,10 +1065,10 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-white text-3xl mb-6",
-                                children: "How MoveSplash Compares"
+                                children: "How MoveYSplash Compares"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 319,
+                                lineNumber: 323,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1075,7 +1085,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                         children: "Platform"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 324,
+                                                        lineNumber: 328,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1083,7 +1093,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                         children: "Video Quality"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 325,
+                                                        lineNumber: 329,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1091,7 +1101,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                         children: "Screen Share"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 326,
+                                                        lineNumber: 330,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1099,7 +1109,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                         children: "Participants"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 327,
+                                                        lineNumber: 331,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -1107,18 +1117,18 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                         children: "Price"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 328,
+                                                        lineNumber: 332,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 323,
+                                                lineNumber: 327,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 322,
+                                            lineNumber: 326,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1129,10 +1139,10 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                             className: "py-3 px-4 text-white",
-                                                            children: "✨ MoveSplash"
+                                                            children: "✨ MoveYSplash"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 333,
+                                                            lineNumber: 337,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1140,7 +1150,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "4K UHD"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 334,
+                                                            lineNumber: 338,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1148,7 +1158,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "8K UHD"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 335,
+                                                            lineNumber: 339,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1156,7 +1166,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "20"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 336,
+                                                            lineNumber: 340,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1164,13 +1174,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "FREE"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 337,
+                                                            lineNumber: 341,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 332,
+                                                    lineNumber: 336,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -1181,7 +1191,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "Zoom"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 340,
+                                                            lineNumber: 344,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1189,7 +1199,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "1080p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 341,
+                                                            lineNumber: 345,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1197,7 +1207,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "1080p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 342,
+                                                            lineNumber: 346,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1205,7 +1215,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "100 (paid)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 343,
+                                                            lineNumber: 347,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1213,13 +1223,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "$14.99/mo"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 344,
+                                                            lineNumber: 348,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 339,
+                                                    lineNumber: 343,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -1230,7 +1240,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "Google Meet"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 347,
+                                                            lineNumber: 351,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1238,7 +1248,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "1080p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 348,
+                                                            lineNumber: 352,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1246,7 +1256,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "1080p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 349,
+                                                            lineNumber: 353,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1254,7 +1264,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "100 (paid)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 350,
+                                                            lineNumber: 354,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1262,13 +1272,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "$6-18/mo"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 351,
+                                                            lineNumber: 355,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 346,
+                                                    lineNumber: 350,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -1279,7 +1289,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "Discord"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 354,
+                                                            lineNumber: 358,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1287,7 +1297,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "1080p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 355,
+                                                            lineNumber: 359,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1295,7 +1305,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "4K (Nitro)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 356,
+                                                            lineNumber: 360,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1303,7 +1313,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "25"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 357,
+                                                            lineNumber: 361,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1311,13 +1321,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "$9.99/mo"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 358,
+                                                            lineNumber: 362,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 353,
+                                                    lineNumber: 357,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -1328,7 +1338,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "Messenger"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 361,
+                                                            lineNumber: 365,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1336,7 +1346,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "720p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 362,
+                                                            lineNumber: 366,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1344,7 +1354,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "720p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 363,
+                                                            lineNumber: 367,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1352,7 +1362,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "8"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 364,
+                                                            lineNumber: 368,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1360,13 +1370,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "Free"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 365,
+                                                            lineNumber: 369,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 360,
+                                                    lineNumber: 364,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -1376,7 +1386,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "Snapchat"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 368,
+                                                            lineNumber: 372,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1384,7 +1394,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "720p"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 369,
+                                                            lineNumber: 373,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1392,7 +1402,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "N/A"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 370,
+                                                            lineNumber: 374,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1400,7 +1410,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "15"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 371,
+                                                            lineNumber: 375,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1408,44 +1418,44 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                             children: "Free"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                            lineNumber: 372,
+                                                            lineNumber: 376,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 367,
+                                                    lineNumber: 371,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                            lineNumber: 331,
+                                            lineNumber: 335,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 321,
+                                    lineNumber: 325,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 320,
+                                lineNumber: 324,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-white/60 text-sm mt-4 text-center",
-                                children: "MoveSplash offers the highest video and screen sharing quality of any social platform - completely free! 🚀"
+                                children: "MoveYSplash offers the highest video and screen sharing quality of any social platform - completely free! 🚀"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 377,
+                                lineNumber: 381,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 318,
+                        lineNumber: 322,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1456,7 +1466,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 children: "Intuitive Call Controls"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 384,
+                                lineNumber: 388,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1471,12 +1481,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                     className: "w-8 h-8 text-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 388,
+                                                    lineNumber: 392,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 387,
+                                                lineNumber: 391,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1484,7 +1494,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "Mute/Unmute"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 390,
+                                                lineNumber: 394,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1492,13 +1502,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "Quick toggle for your microphone"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 391,
+                                                lineNumber: 395,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 386,
+                                        lineNumber: 390,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1510,12 +1520,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                     className: "w-8 h-8 text-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 395,
+                                                    lineNumber: 399,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 394,
+                                                lineNumber: 398,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1523,7 +1533,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "Camera On/Off"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 397,
+                                                lineNumber: 401,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1531,13 +1541,13 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "Toggle your video feed"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 398,
+                                                lineNumber: 402,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 393,
+                                        lineNumber: 397,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1549,12 +1559,12 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                     className: "w-8 h-8 text-white"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                    lineNumber: 402,
+                                                    lineNumber: 406,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 401,
+                                                lineNumber: 405,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1562,7 +1572,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "8K Screen Share"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 404,
+                                                lineNumber: 408,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1570,25 +1580,25 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                                 children: "Share in up to 8K UHD quality"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 405,
+                                                lineNumber: 409,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 400,
+                                        lineNumber: 404,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 385,
+                                lineNumber: 389,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 383,
+                        lineNumber: 387,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1599,7 +1609,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 children: "Start Your First Video Call"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 412,
+                                lineNumber: 416,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1607,7 +1617,7 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 children: "Connect face-to-face with friends, family, or colleagues in stunning 4K UHD quality."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 413,
+                                lineNumber: 417,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1616,25 +1626,25 @@ function VideoCallsFeature({ onBack, onGetStarted }) {
                                 children: "Make a Call"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 416,
+                                lineNumber: 420,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 411,
+                        lineNumber: 415,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 214,
+                lineNumber: 217,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 211,
+        lineNumber: 214,
         columnNumber: 5
     }, this);
 }
@@ -1645,7 +1655,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedBackground, {}, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 432,
+                lineNumber: 436,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1660,14 +1670,14 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 className: "w-4 h-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 440,
+                                lineNumber: 444,
                                 columnNumber: 11
                             }, this),
                             "Back"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 435,
+                        lineNumber: 439,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1679,34 +1689,59 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                     className: "w-12 h-12 text-white"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 446,
+                                    lineNumber: 450,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 445,
+                                lineNumber: 449,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                 className: "text-white text-6xl mb-4",
-                                children: "8K Screen Sharing"
+                                children: "8K Screen Sharing - Desktop (Chrome)"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 448,
+                                lineNumber: 452,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-col sm:flex-row items-center justify-center gap-3 mb-4",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-semibold tracking-wide",
+                                        children: "Desktop + Chrome / Edge"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/components/FeaturePages.tsx",
+                                        lineNumber: 454,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-white/60 text-sm",
+                                        children: "Requires screen recording access in Chrome or Edge on desktop. Safari and iOS/iPadOS are view-only."
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/components/FeaturePages.tsx",
+                                        lineNumber: 457,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/app/components/FeaturePages.tsx",
+                                lineNumber: 453,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-white/70 text-xl max-w-2xl mx-auto",
-                                children: "Share your screen in stunning 8K UHD quality (7680x4320) during video calls. Perfect for ultra-high-res presentations, design work, tutorials, or remote collaboration with uncompromising clarity."
+                                children: "Share your screen in stunning 8K UHD quality (7680x4320) during video calls. Perfect for ultra-high-res presentations, design work, tutorials, or remote collaboration with uncompromising clarity. Works on desktop browsers with full capture support (Chrome/Edge); not compatible with iPad or iPhone."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 449,
+                                lineNumber: 461,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 444,
+                        lineNumber: 448,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1718,7 +1753,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 color: "from-green-500 to-emerald-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 458,
+                                lineNumber: 470,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
@@ -1727,7 +1762,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 color: "from-blue-500 to-cyan-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 459,
+                                lineNumber: 471,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
@@ -1736,7 +1771,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 color: "from-purple-500 to-pink-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 460,
+                                lineNumber: 472,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
@@ -1745,13 +1780,13 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 color: "from-yellow-500 to-orange-500"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 461,
+                                lineNumber: 473,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 457,
+                        lineNumber: 469,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1762,18 +1797,18 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-white text-2xl mb-4",
-                                        children: "🖥️ 8K UHD Full Screen Sharing"
+                                        children: "🖥️ 8K UHD Full Screen Sharing - Desktop Only"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 466,
+                                        lineNumber: 478,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-white/70 mb-4",
-                                        children: "Share your entire screen at up to 8K UHD resolution (7680x4320). Perfect for ultra-high-resolution displays, professional presentations, design reviews, and content creation workflows where every pixel matters."
+                                        children: "Share your entire screen at up to 8K UHD resolution (7680x4320). Perfect for ultra-high-resolution displays, professional presentations, design reviews, and content creation workflows where every pixel matters. Not compatible with iPhone or iPad due to limitations on web"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 467,
+                                        lineNumber: 479,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1783,54 +1818,54 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "✓ Up to 8K UHD (7680x4320) quality"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 473,
+                                                lineNumber: 485,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Auto-detects display resolution"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 474,
+                                                lineNumber: 486,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Falls back to 5K/4K/QHD/Full HD/HD as needed"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 475,
+                                                lineNumber: 487,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Smooth 30fps frame rate"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 476,
+                                                lineNumber: 488,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Audio sharing included"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 477,
+                                                lineNumber: 489,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                children: "✓ Works on mobile & desktop"
+                                                children: "✓ Optimized for desktop Chrome/Edge with screen recording enabled"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 478,
+                                                lineNumber: 490,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 472,
+                                        lineNumber: 484,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 465,
+                                lineNumber: 477,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1841,7 +1876,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         children: "🪟 Selective Window Sharing"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 483,
+                                        lineNumber: 495,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1849,7 +1884,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         children: "Share just a specific window or application in full quality. Keep your notifications, messages, and other windows completely private while sharing."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 484,
+                                        lineNumber: 496,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1859,60 +1894,67 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "✓ Privacy-focused sharing"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 489,
+                                                lineNumber: 501,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Choose specific apps or browser tabs"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 490,
+                                                lineNumber: 502,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Hide sensitive information"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 491,
+                                                lineNumber: 503,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Easy app switching during share"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 492,
+                                                lineNumber: 504,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Full quality for selected window"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 493,
+                                                lineNumber: 505,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                 children: "✓ Share audio from specific tabs"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 494,
+                                                lineNumber: 506,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                children: "✓ Desktop Chrome/Edge only for capture prompts"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/FeaturePages.tsx",
+                                                lineNumber: 507,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 488,
+                                        lineNumber: 500,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 482,
+                                lineNumber: 494,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 464,
+                        lineNumber: 476,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -1923,15 +1965,15 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 children: "Intelligent Quality Adaptation"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 501,
+                                lineNumber: 514,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-white/70 mb-6",
-                                children: "MoveSplash automatically detects your display resolution and internet connection to deliver the best possible screen sharing quality:"
+                                children: "MoveYSplash automatically detects your display resolution and internet connection to deliver the best possible screen sharing quality:"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 502,
+                                lineNumber: 515,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1945,7 +1987,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "🌟 8K UHD"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 508,
+                                                lineNumber: 521,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1953,7 +1995,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "7680 x 4320 pixels"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 509,
+                                                lineNumber: 522,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1961,13 +2003,13 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "For ultra-high-res displays and professional work"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 510,
+                                                lineNumber: 523,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 507,
+                                        lineNumber: 520,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1978,7 +2020,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "✨ 5K UHD"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 513,
+                                                lineNumber: 526,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1986,7 +2028,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "5120 x 2880 pixels"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 514,
+                                                lineNumber: 527,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1994,13 +2036,13 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "For iMac 5K and similar displays"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 515,
+                                                lineNumber: 528,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 512,
+                                        lineNumber: 525,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2011,7 +2053,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "💎 4K UHD"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 518,
+                                                lineNumber: 531,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2019,7 +2061,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "3840 x 2160 pixels"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 519,
+                                                lineNumber: 532,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2027,13 +2069,13 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "Standard 4K displays and monitors"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 520,
+                                                lineNumber: 533,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 517,
+                                        lineNumber: 530,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2044,7 +2086,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "📺 QHD"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 523,
+                                                lineNumber: 536,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2052,7 +2094,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "2560 x 1440 pixels"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 524,
+                                                lineNumber: 537,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2060,13 +2102,13 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "2K/1440p displays"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 525,
+                                                lineNumber: 538,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 522,
+                                        lineNumber: 535,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2077,7 +2119,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "🖥️ Full HD"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 528,
+                                                lineNumber: 541,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2085,7 +2127,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "1920 x 1080 pixels"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 529,
+                                                lineNumber: 542,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2093,13 +2135,13 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "Standard 1080p displays"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 530,
+                                                lineNumber: 543,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 527,
+                                        lineNumber: 540,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2110,7 +2152,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "📱 HD"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 533,
+                                                lineNumber: 546,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2118,33 +2160,33 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                                 children: "1280 x 720 pixels"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 534,
+                                                lineNumber: 547,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-white/60 text-xs",
-                                                children: "Mobile devices and lower-res screens"
+                                                children: "lower-res screens"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 535,
+                                                lineNumber: 548,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 532,
+                                        lineNumber: 545,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 506,
+                                lineNumber: 519,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 500,
+                        lineNumber: 513,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2155,7 +2197,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 children: "Perfect For"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 542,
+                                lineNumber: 555,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2167,7 +2209,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Show high-res mockups & prototypes"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 544,
+                                        lineNumber: 557,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -2176,7 +2218,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Share 8K footage & timelines"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 545,
+                                        lineNumber: 558,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -2185,7 +2227,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Share detailed dashboards"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 546,
+                                        lineNumber: 559,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -2194,7 +2236,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Present architectural designs"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 547,
+                                        lineNumber: 560,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -2203,7 +2245,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Review high-res photos"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 548,
+                                        lineNumber: 561,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -2212,7 +2254,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Share IDE with clarity"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 549,
+                                        lineNumber: 562,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -2221,7 +2263,7 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Clear presentations & tutorials"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 550,
+                                        lineNumber: 563,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(UseCase, {
@@ -2230,19 +2272,19 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                         description: "Stream gameplay in detail"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 551,
+                                        lineNumber: 564,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 543,
+                                lineNumber: 556,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 541,
+                        lineNumber: 554,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2253,42 +2295,42 @@ function ScreenShareFeature({ onBack, onGetStarted }) {
                                 children: "Experience 8K Screen Sharing"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 556,
+                                lineNumber: 569,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-white/80 text-lg mb-6",
-                                children: "The most advanced screen sharing technology available on any social platform."
+                                children: "The most advanced screen sharing technology available on any social platform. Desktop Chrome/Edge recommended."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 557,
+                                lineNumber: 570,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                 onClick: ()=>onGetStarted?.(),
                                 className: "bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 text-lg px-8 py-6",
-                                children: "Start Sharing in 8K"
+                                children: "Start Sharing in 8K - Desktop + Chrome"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 560,
+                                lineNumber: 573,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 555,
+                        lineNumber: 568,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 434,
+                lineNumber: 438,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 431,
+        lineNumber: 435,
         columnNumber: 5
     }, this);
 }
@@ -2299,7 +2341,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedBackground, {}, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 576,
+                lineNumber: 589,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2314,14 +2356,14 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                 className: "w-4 h-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 580,
+                                lineNumber: 593,
                                 columnNumber: 11
                             }, this),
                             "Back"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 579,
+                        lineNumber: 592,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2333,12 +2375,12 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                     className: "w-12 h-12 text-white"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 586,
+                                    lineNumber: 599,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 585,
+                                lineNumber: 598,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -2346,7 +2388,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                 children: "Stories & Snaps"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 588,
+                                lineNumber: 601,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2354,13 +2396,13 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                 children: "Share your moments with disappearing Stories that vanish after 24 hours. Snapchat-style ephemeral content that's perfect for sharing your day without the permanence."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 589,
+                                lineNumber: 602,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 584,
+                        lineNumber: 597,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2373,7 +2415,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-yellow-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 597,
+                                        lineNumber: 610,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2381,7 +2423,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         children: "24-Hour Stories"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 598,
+                                        lineNumber: 611,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2389,13 +2431,13 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         children: "Stories disappear after 24 hours. Share freely without worrying about permanent posts."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 599,
+                                        lineNumber: 612,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 596,
+                                lineNumber: 609,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2405,7 +2447,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-blue-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 605,
+                                        lineNumber: 618,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2413,7 +2455,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         children: "See Who Viewed"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 606,
+                                        lineNumber: 619,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2421,13 +2463,13 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         children: "Track who's viewing your stories and when they watched them."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 607,
+                                        lineNumber: 620,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 604,
+                                lineNumber: 617,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2437,7 +2479,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-pink-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 613,
+                                        lineNumber: 626,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2445,7 +2487,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         children: "React & Reply"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 614,
+                                        lineNumber: 627,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2453,19 +2495,19 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                         children: "Friends can react with emojis or send quick replies to your stories."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 615,
+                                        lineNumber: 628,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 612,
+                                lineNumber: 625,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 595,
+                        lineNumber: 608,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2476,7 +2518,7 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                 children: "Start Sharing Your Story"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 622,
+                                lineNumber: 635,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2485,25 +2527,25 @@ function StoriesFeature({ onBack, onGetStarted }) {
                                 children: "Post Your First Story"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 623,
+                                lineNumber: 636,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 621,
+                        lineNumber: 634,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 578,
+                lineNumber: 591,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 575,
+        lineNumber: 588,
         columnNumber: 5
     }, this);
 }
@@ -2514,7 +2556,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedBackground, {}, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 639,
+                lineNumber: 652,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2529,14 +2571,14 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                 className: "w-4 h-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 643,
+                                lineNumber: 656,
                                 columnNumber: 11
                             }, this),
                             "Back"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 642,
+                        lineNumber: 655,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2548,12 +2590,12 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                     className: "w-12 h-12 text-white"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 649,
+                                    lineNumber: 662,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 648,
+                                lineNumber: 661,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -2561,7 +2603,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                 children: "Friends Network"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 651,
+                                lineNumber: 664,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2569,13 +2611,13 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                 children: "Build your social circle. Connect with friends, discover new people, and manage your network with powerful friend management tools."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 652,
+                                lineNumber: 665,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 647,
+                        lineNumber: 660,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2588,7 +2630,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-green-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 660,
+                                        lineNumber: 673,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2596,7 +2638,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Easy Friend Requests"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 661,
+                                        lineNumber: 674,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2604,13 +2646,13 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Search for friends by name or username. Send friend requests and build your network easily."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 662,
+                                        lineNumber: 675,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 659,
+                                lineNumber: 672,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2620,7 +2662,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-blue-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 668,
+                                        lineNumber: 681,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2628,7 +2670,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Friend Suggestions"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 669,
+                                        lineNumber: 682,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2636,13 +2678,13 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Discover mutual friends and get personalized friend recommendations."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 670,
+                                        lineNumber: 683,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 667,
+                                lineNumber: 680,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2652,7 +2694,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-purple-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 676,
+                                        lineNumber: 689,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2660,7 +2702,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Privacy Controls"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 677,
+                                        lineNumber: 690,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2668,13 +2710,13 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Control who can send you requests, see your posts, and view your profile."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 678,
+                                        lineNumber: 691,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 675,
+                                lineNumber: 688,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2684,7 +2726,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-pink-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 684,
+                                        lineNumber: 697,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2692,7 +2734,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Friend Lists"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 685,
+                                        lineNumber: 698,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2700,19 +2742,19 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                         children: "Organize friends into custom lists: Close Friends, Family, Work, etc."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 686,
+                                        lineNumber: 699,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 683,
+                                lineNumber: 696,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 658,
+                        lineNumber: 671,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2723,7 +2765,7 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                 children: "Grow Your Network"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 693,
+                                lineNumber: 706,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2732,25 +2774,25 @@ function FriendsFeature({ onBack, onGetStarted }) {
                                 children: "Find Friends"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 694,
+                                lineNumber: 707,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 692,
+                        lineNumber: 705,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 641,
+                lineNumber: 654,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 638,
+        lineNumber: 651,
         columnNumber: 5
     }, this);
 }
@@ -2761,7 +2803,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AnimatedBackground, {}, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 710,
+                lineNumber: 723,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2776,14 +2818,14 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                 className: "w-4 h-4 mr-2"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 714,
+                                lineNumber: 727,
                                 columnNumber: 11
                             }, this),
                             "Back"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 713,
+                        lineNumber: 726,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2795,12 +2837,12 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                     className: "w-12 h-12 text-white"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                    lineNumber: 720,
+                                    lineNumber: 733,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 719,
+                                lineNumber: 732,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -2808,7 +2850,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                 children: "Gen Z Vibes ✨"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 722,
+                                lineNumber: 735,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2816,13 +2858,13 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                 children: "Built by Gen Z, for Gen Z. We speak your language with a design that's aesthetic AF, features that matter, and vibes that just hit different."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 723,
+                                lineNumber: 736,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 718,
+                        lineNumber: 731,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2835,7 +2877,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-pink-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 731,
+                                        lineNumber: 744,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2843,7 +2885,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         children: "Glassmorphism Design"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 732,
+                                        lineNumber: 745,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2851,13 +2893,13 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         children: "That smooth, frosted glass aesthetic everyone's obsessed with. Liquid gradients, blur effects, and vibes."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 733,
+                                        lineNumber: 746,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 730,
+                                lineNumber: 743,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2867,7 +2909,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-yellow-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 739,
+                                        lineNumber: 752,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2875,7 +2917,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         children: "Emoji Everything"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 740,
+                                        lineNumber: 753,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2883,13 +2925,13 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         children: "Full emoji support everywhere. React, express, and communicate in the language of the internet."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 741,
+                                        lineNumber: 754,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 738,
+                                lineNumber: 751,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2899,7 +2941,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         className: "w-12 h-12 text-purple-400 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 747,
+                                        lineNumber: 760,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2907,7 +2949,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         children: "Always Evolving"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 748,
+                                        lineNumber: 761,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2915,19 +2957,19 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                         children: "We're constantly adding new features based on what YOU want. Your feedback shapes the app."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 749,
+                                        lineNumber: 762,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 746,
+                                lineNumber: 759,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 729,
+                        lineNumber: 742,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -2935,10 +2977,10 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-white text-3xl mb-6",
-                                children: "Why Gen Z Loves MoveSplash"
+                                children: "Why Gen Z Loves MoveYSplash"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 756,
+                                lineNumber: 769,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2951,7 +2993,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                 className: "w-6 h-6 text-orange-400 flex-shrink-0 mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 759,
+                                                lineNumber: 772,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2961,7 +3003,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "No Toxic Algorithms"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 761,
+                                                        lineNumber: 774,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2969,19 +3011,19 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "See what your friends share, not what a faceless ranking system decides you care about."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 762,
+                                                        lineNumber: 775,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 760,
+                                                lineNumber: 773,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 758,
+                                        lineNumber: 771,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2991,7 +3033,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                 className: "w-6 h-6 text-green-400 flex-shrink-0 mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 766,
+                                                lineNumber: 779,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3001,7 +3043,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Privacy First"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 768,
+                                                        lineNumber: 781,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3009,19 +3051,19 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Your data is yours. We don't sell it, period."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 769,
+                                                        lineNumber: 782,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 767,
+                                                lineNumber: 780,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 765,
+                                        lineNumber: 778,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3031,7 +3073,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                 className: "w-6 h-6 text-yellow-400 flex-shrink-0 mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 773,
+                                                lineNumber: 786,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3041,7 +3083,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Lightning Fast"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 775,
+                                                        lineNumber: 788,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3049,19 +3091,19 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "No lag, no loading, just instant vibes"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 776,
+                                                        lineNumber: 789,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 774,
+                                                lineNumber: 787,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 772,
+                                        lineNumber: 785,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3071,7 +3113,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                 className: "w-6 h-6 text-pink-400 flex-shrink-0 mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 780,
+                                                lineNumber: 793,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3081,7 +3123,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Mental Health Friendly"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 782,
+                                                        lineNumber: 795,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3089,19 +3131,19 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "No follower counts, no public likes, less stress"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 783,
+                                                        lineNumber: 796,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 781,
+                                                lineNumber: 794,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 779,
+                                        lineNumber: 792,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3111,7 +3153,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                 className: "w-6 h-6 text-purple-400 flex-shrink-0 mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 787,
+                                                lineNumber: 800,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3121,7 +3163,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Aesthetic AF"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 789,
+                                                        lineNumber: 802,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3129,19 +3171,19 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Every screen is screenshot-worthy"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 790,
+                                                        lineNumber: 803,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 788,
+                                                lineNumber: 801,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 786,
+                                        lineNumber: 799,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3151,7 +3193,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                 className: "w-6 h-6 text-blue-400 flex-shrink-0 mt-1"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 794,
+                                                lineNumber: 807,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3161,7 +3203,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Made for Sharing"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 796,
+                                                        lineNumber: 809,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3169,31 +3211,31 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                                         children: "Stories, snaps, memes - share it all your way"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                        lineNumber: 797,
+                                                        lineNumber: 810,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                                lineNumber: 795,
+                                                lineNumber: 808,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                        lineNumber: 793,
+                                        lineNumber: 806,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 757,
+                                lineNumber: 770,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 755,
+                        lineNumber: 768,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -3204,7 +3246,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                 children: "Join the MoveSplash Generation"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 804,
+                                lineNumber: 817,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3212,7 +3254,7 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                 children: "Where your vibe matters more than your follower count 💯"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 805,
+                                lineNumber: 818,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3221,25 +3263,25 @@ function GenZVibesFeature({ onBack, onGetStarted }) {
                                 children: "Get Started - It's Free"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                                lineNumber: 808,
+                                lineNumber: 821,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 803,
+                        lineNumber: 816,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 712,
+                lineNumber: 725,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 709,
+        lineNumber: 722,
         columnNumber: 5
     }, this);
 }
@@ -3252,27 +3294,27 @@ function AnimatedBackground() {
                 className: "absolute top-0 -left-4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 824,
+                lineNumber: 837,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 -right-4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 825,
+                lineNumber: 838,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -bottom-8 left-20 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 826,
+                lineNumber: 839,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 823,
+        lineNumber: 836,
         columnNumber: 5
     }, this);
 }
@@ -3285,7 +3327,7 @@ function FeatureItem({ icon, title, description }) {
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 834,
+                lineNumber: 847,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3295,7 +3337,7 @@ function FeatureItem({ icon, title, description }) {
                         children: title
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 838,
+                        lineNumber: 851,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3303,19 +3345,19 @@ function FeatureItem({ icon, title, description }) {
                         children: description
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/FeaturePages.tsx",
-                        lineNumber: 839,
+                        lineNumber: 852,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 837,
+                lineNumber: 850,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 833,
+        lineNumber: 846,
         columnNumber: 5
     }, this);
 }
@@ -3328,7 +3370,7 @@ function UseCase({ icon, title, description }) {
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 848,
+                lineNumber: 861,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -3336,7 +3378,7 @@ function UseCase({ icon, title, description }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 849,
+                lineNumber: 862,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3344,13 +3386,13 @@ function UseCase({ icon, title, description }) {
                 children: description
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 850,
+                lineNumber: 863,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 847,
+        lineNumber: 860,
         columnNumber: 5
     }, this);
 }
@@ -3363,7 +3405,7 @@ function StatCard({ number, label, color }) {
                 children: number
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 858,
+                lineNumber: 871,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3371,13 +3413,13 @@ function StatCard({ number, label, color }) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/app/components/FeaturePages.tsx",
-                lineNumber: 861,
+                lineNumber: 874,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 857,
+        lineNumber: 870,
         columnNumber: 5
     }, this);
 }
@@ -3394,12 +3436,12 @@ function Bell({ className }) {
             d: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
         }, void 0, false, {
             fileName: "[project]/src/app/components/FeaturePages.tsx",
-            lineNumber: 869,
+            lineNumber: 882,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/FeaturePages.tsx",
-        lineNumber: 868,
+        lineNumber: 881,
         columnNumber: 5
     }, this);
 }

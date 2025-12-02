@@ -1,1 +1,9 @@
-[00:00:01.081] Server  LOG      ✓ Ready in 822ms
+[00:00:00.834] Server  LOG      ✓ Ready in 629ms
+[00:00:07.110] Browser WARN    Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
+[00:00:07.110] Browser WARN    Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key.
+[00:00:07.220] Browser DEBUG   tss.ts TSS: hosted page injected
+[00:00:07.220] Browser DEBUG   tss.ts MBTSS: Nonce:  2xwowktuyt6xjl4sm4fmpj24vswlluhptm9i8d4fola
+[00:00:23.837] Server  LOG      ✓ Compiled in 50ms
+[00:00:27.317] Server  LOG      ✓ Compiled in 45ms
+[00:01:06.069] Server  LOG      ✓ Compiled in 44ms
+[00:01:15.554] Server  LOG      ✓ Compiled in 75ms

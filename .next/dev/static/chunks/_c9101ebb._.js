@@ -2,7 +2,10 @@
 "[project]/src/app/components/ui/theme-provider.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.s([
+/* Mohammed Vepari
+   ID: 5145543
+   Sunday November 30th 2025
+  */ __turbopack_context__.s([
     "ThemeProvider",
     ()=>ThemeProvider
 ]);
@@ -17,7 +20,7 @@ function ThemeProvider({ children, ...props }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/app/components/ui/theme-provider.tsx",
-        lineNumber: 8,
+        lineNumber: 14,
         columnNumber: 10
     }, this);
 }

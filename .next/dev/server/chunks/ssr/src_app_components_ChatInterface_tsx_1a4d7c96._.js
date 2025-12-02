@@ -13,11 +13,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ably$2f$build$2f$ably$2d$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/ably/build/ably-node.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$ably$2f$chat$2f$dist$2f$chat$2f$ably$2d$chat$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@ably/chat/dist/chat/ably-chat.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/module/index.js [app-ssr] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/avatar.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/input.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/popover.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-ssr] (ecmascript) <export default as ArrowLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/send.js [app-ssr] (ecmascript) <export default as Send>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Image$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/image.js [app-ssr] (ecmascript) <export default as Image>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smile$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Smile$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/smile.js [app-ssr] (ecmascript) <export default as Smile>");
@@ -34,6 +36,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/download.js [app-ssr] (ecmascript) <export default as Download>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/play.js [app-ssr] (ecmascript) <export default as Play>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$pause$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Pause$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/pause.js [app-ssr] (ecmascript) <export default as Pause>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/check.js [app-ssr] (ecmascript) <export default as Check>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/ui/scroll-area.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/sonner/dist/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$figma$2f$ImageWithFallback$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/figma/ImageWithFallback.tsx [app-ssr] (ecmascript)");
@@ -59,7 +63,17 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supab
 ;
 ;
 ;
-const ABLY_KEY = ("TURBOPACK compile-time value", "TWe31g.j0F01A:-j8adkUcs-AeusvKPMgSFCJKlMb8zCh1pGbt5Zo3CxI") ?? 'TWe31g.j0F01A:-j8adkUcs-AeusvKPMgSFCJKlMb8zCh1pGbt5Zo3CxI';
+;
+const createSafeChatClient = (realtime)=>{
+    try {
+        return new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$ably$2f$chat$2f$dist$2f$chat$2f$ably$2d$chat$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ChatClient"](realtime);
+    } catch (error) {
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+        throw error;
+    }
+};
+const ABLY_KEY = process.env.NEXT_PUBLIC_ABLY_KEY ?? 'TWe31g.j0F01A:-j8adkUcs-AeusvKPMgSFCJKlMb8zCh1pGbt5Zo3CxI';
 const DEFAULT_ROOM_ID = 'getting-started';
 const VOICE_UPLOAD_ENDPOINT = '/api/voice';
 const SUPABASE_FUNCTION_BASE = `https://${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["projectId"]}.supabase.co/functions/v1/make-server-a14c7986`;
@@ -67,6 +81,65 @@ const AUTH_HEADER = `Bearer ${__TURBOPACK__imported__module__$5b$project$5d2f$sr
 const JSON_AUTH_HEADERS = {
     'Content-Type': 'application/json',
     Authorization: AUTH_HEADER
+};
+const SUPABASE_URL = `https://${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["projectId"]}.supabase.co`;
+const CHAT_BUCKET = 'stories';
+const supabaseClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(SUPABASE_URL, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$supabase$2f$info$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["publicAnonKey"], {
+    auth: {
+        autoRefreshToken: false,
+        persistSession: false
+    },
+    global: {
+        headers: {
+            Authorization: AUTH_HEADER
+        }
+    }
+});
+const textForMetadata = (metadata, fallback = '')=>{
+    if (metadata.image) return '[image]';
+    if (metadata.file && typeof metadata.file.name === 'string') {
+        return metadata.file.name || '[file]';
+    }
+    if (metadata.voice) return '[voice]';
+    return fallback || '...';
+};
+const messageSignature = (message)=>{
+    if (message.clientMessageId && message.clientMessageId.trim().length > 0) {
+        return `cid:${message.clientMessageId}`;
+    }
+    return [
+        'sig',
+        message.senderId ?? '',
+        message.content ?? '',
+        message.image ?? '',
+        message.file?.url ?? '',
+        message.voice?.url ?? ''
+    ].join('|');
+};
+const dedupeMessages = (messagesToDedupe)=>{
+    const seen = new Set();
+    const result = [];
+    for (const msg of messagesToDedupe){
+        const sig = messageSignature(msg);
+        if (seen.has(sig)) continue;
+        const currentTs = new Date(msg.timestamp).getTime();
+        // Check for near-duplicates by content/media within 30s regardless of differing IDs
+        const isNearDupe = result.some((existing)=>{
+            const sameContent = (existing.content ?? '') === (msg.content ?? '') && (existing.image ?? '') === (msg.image ?? '') && (existing.file?.url ?? '') === (msg.file?.url ?? '') && (existing.voice?.url ?? '') === (msg.voice?.url ?? '');
+            if (!sameContent) return false;
+            const timeDiff = Math.abs(new Date(existing.timestamp).getTime() - currentTs);
+            return timeDiff < 30000; // 30s window for potential duplicates
+        });
+        if (isNearDupe) continue;
+        seen.add(sig);
+        result.push(msg);
+    }
+    return result;
+};
+const createClientMessageId = ()=>`msg-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+const sanitizeFilename = (name, fallback)=>{
+    const cleaned = name.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^-+|-+$/g, '') || fallback;
+    return cleaned;
 };
 const avatarForId = (id)=>`https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(id || 'user')}`;
 const dataUrlToBlob = (dataUrl)=>{
@@ -87,7 +160,7 @@ const dataUrlToBlob = (dataUrl)=>{
         type: mimeType
     });
 };
-function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUserId = null, onFocusUserConsumed }) {
+function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUserId = null, onFocusUserConsumed, forceTestMode = false }) {
     const { currentUser, allUsers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$utils$2f$userContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useUser"])();
     const fallbackClientIdRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])('');
     if (!fallbackClientIdRef.current) {
@@ -96,6 +169,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
     const fallbackClientId = fallbackClientIdRef.current;
     const ablyClientId = currentUser?.ablyClientId ?? fallbackClientId;
     const appUserId = currentUser?.id ?? ablyClientId;
+    const isTest = forceTestMode || ("TURBOPACK compile-time value", "development") === 'test';
     const ablyClientRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const chatClientRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const activeRoomRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -229,6 +303,9 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
     const [showNewChatDialog, setShowNewChatDialog] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [newChatName, setNewChatName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [newChatMembers, setNewChatMembers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
+    const [selectedFriendIds, setSelectedFriendIds] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [friendSearchQuery, setFriendSearchQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
+    const [friendPickerOpen, setFriendPickerOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isGroupChat, setIsGroupChat] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const fileInputRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const documentInputRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -247,12 +324,64 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
     }, [
         chats
     ]);
-    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    const registeredFriends = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        const options = [];
+        const unique = new Set();
+        allUsers.forEach((user)=>{
+            // Hide current user from picker
+            if (currentUser && user.id === currentUser.id) {
+                return;
+            }
+            const canonicalId = user.id;
+            if (unique.has(canonicalId)) {
+                return;
+            }
+            unique.add(canonicalId);
+            options.push({
+                id: canonicalId,
+                clientId: user.ablyClientId ?? canonicalId,
+                name: user.name,
+                username: user.username.startsWith('@') ? user.username : `@${user.username}`,
+                avatar: user.avatar ?? avatarForId(user.ablyClientId ?? canonicalId)
+            });
+        });
+        return options.sort((a, b)=>a.name.localeCompare(b.name));
+    }, [
+        allUsers,
+        currentUser
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        setSelectedFriendIds((prev)=>prev.filter((id)=>registeredFriends.some((friend)=>friend.id === id)));
+    }, [
+        registeredFriends
+    ]);
+    const filteredRegisteredFriends = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>registeredFriends.filter((friend)=>{
+            const query = friendSearchQuery.trim().toLowerCase();
+            if (!query) {
+                return true;
+            }
+            return friend.name.toLowerCase().includes(query) || friend.username.toLowerCase().includes(query);
+        }), [
+        registeredFriends,
+        friendSearchQuery
+    ]);
+    const selectedFriendDetails = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>selectedFriendIds.map((id)=>registeredFriends.find((friend)=>friend.id === id)).filter((friend)=>Boolean(friend)), [
+        registeredFriends,
+        selectedFriendIds
+    ]);
+    const toggleFriendSelection = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((userId)=>{
+        setSelectedFriendIds((prev)=>prev.includes(userId) ? prev.filter((id)=>id !== userId) : [
+                ...prev,
+                userId
+            ]);
+    }, []);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(!isTest);
     const [sending, setSending] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [ablyError, setAblyError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    const [chatReady, setChatReady] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [connectionStatus, setConnectionStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('connecting');
-    const [roomStatus, setRoomStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('idle');
+    const [chatReady, setChatReady] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(isTest ? true : false);
+    const [connectionStatus, setConnectionStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(isTest ? 'connected' : 'connecting');
+    const [roomStatus, setRoomStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(isTest ? 'attached' : 'idle');
+    const [mobileShowList, setMobileShowList] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const ensureDirectChat = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])(async (targetUserId)=>{
         const friend = allUsers.get(targetUserId) ?? null;
         const targetClientId = friend?.ablyClientId ?? targetUserId;
@@ -264,7 +393,18 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
             ablyClientId,
             targetClientId
         ].filter(Boolean)));
-        const existing = chatsRef.current.find((chat)=>!chat.isGroup && memberIds.every((member)=>chat.members.includes(member)));
+        const sortedMemberIds = [
+            ...memberIds
+        ].sort();
+        const existing = chatsRef.current.find((chat)=>{
+            if (chat.isGroup || chat.members.length !== sortedMemberIds.length) {
+                return false;
+            }
+            const sortedChatMembers = [
+                ...chat.members
+            ].sort();
+            return JSON.stringify(sortedChatMembers) === JSON.stringify(sortedMemberIds);
+        });
         if (existing) {
             return existing.identity;
         }
@@ -519,6 +659,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
     ]);
     const mapAblyMessage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((source, roomId)=>{
         const metadata = source.metadata ?? {};
+        const clientMessageIdValue = metadata['_clientMessageId'];
         const imageValue = metadata['image'];
         const image = typeof imageValue === 'string' ? imageValue : undefined;
         const rawFile = metadata['file'];
@@ -553,6 +694,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
             isSnapStyle: Boolean(metadata['isSnapStyle']),
             expiresIn: expiresIn && Number.isFinite(expiresIn) ? expiresIn : undefined,
             isStarred: Boolean(metadata['isStarred']),
+            clientMessageId: typeof clientMessageIdValue === 'string' && clientMessageIdValue.trim().length > 0 ? clientMessageIdValue : undefined,
             senderName: (typeof senderNameMeta === 'string' && senderNameMeta.trim().length > 0 ? senderNameMeta : directoryMatch?.name ?? directoryMatch?.username ?? source.clientId) ?? source.clientId,
             senderAvatar: (typeof senderAvatarMeta === 'string' && senderAvatarMeta.trim().length > 0 ? senderAvatarMeta : directoryMatch?.avatar) ?? undefined
         };
@@ -624,6 +766,27 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
             return;
         }
         const mapped = mapAblyMessage(event.message, roomId);
+        setMessages((prev)=>{
+            const next = [
+                ...prev,
+                mapped
+            ];
+            next.sort((a, b)=>new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+            // remove obvious local duplicates on arrival
+            const nowTs = new Date(mapped.timestamp).getTime();
+            const filtered = next.filter((msg)=>{
+                if (msg === mapped) return true;
+                const sameClient = mapped.clientMessageId && msg.clientMessageId && msg.clientMessageId === mapped.clientMessageId;
+                const sameContentAndMedia = msg.senderId === mapped.senderId && msg.content === mapped.content && (msg.image ?? '') === (mapped.image ?? '') && (msg.file?.url ?? '') === (mapped.file?.url ?? '') && (msg.voice?.url ?? '') === (mapped.voice?.url ?? '');
+                const closeInTime = Math.abs(new Date(msg.timestamp).getTime() - nowTs) < 15000;
+                if (sameClient) return false;
+                if (sameContentAndMedia && closeInTime && (msg.localOnly || mapped.localOnly)) {
+                    return false;
+                }
+                return true;
+            });
+            return dedupeMessages(filtered);
+        });
         if (mapped.isSnapStyle && mapped.expiresIn) {
             const existingTimeout = snapTimeoutsRef.current.get(mapped.id);
             if (existingTimeout) {
@@ -644,15 +807,6 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
             }, mapped.expiresIn * 1000);
             snapTimeoutsRef.current.set(mapped.id, timeout);
         }
-        setMessages((prev)=>{
-            const others = prev.filter((message)=>message.id !== mapped.id);
-            const next = [
-                ...others,
-                mapped
-            ];
-            next.sort((a, b)=>new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
-            return next;
-        });
         const summary = summarizeMessage(mapped);
         const lastMessageText = summary ? (mapped.senderName ? `${mapped.senderName}: ` : '') + summary : mapped.senderName ?? '';
         setChats((prevChats)=>prevChats.map((chat)=>chat.identity === roomId ? {
@@ -668,8 +822,27 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
         removePersistedMessage
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
-        ;
+        if (isTest) {
+            const realtime = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ably$2f$build$2f$ably$2d$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Realtime"]({
+                key: 'test',
+                clientId: ablyClientId
+            });
+            ablyClientRef.current = realtime;
+            const client = createSafeChatClient(realtime);
+            chatClientRef.current = client;
+            client.rooms.get(defaultChat.identity).then((room)=>{
+                activeRoomRef.current = room;
+            }).catch(()=>{});
+            setChatReady(true);
+            setLoading(false);
+            setConnectionStatus('connected');
+            setRoomStatus('attached');
+            return;
+        }
+        if (!ABLY_KEY) {
+            setAblyError('Missing Ably configuration');
+            return;
+        }
         setChatReady(false);
         setAblyError(null);
         const realtime = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ably$2f$build$2f$ably$2d$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Realtime"]({
@@ -677,7 +850,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
             clientId: ablyClientId
         });
         ablyClientRef.current = realtime;
-        const client = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$ably$2f$chat$2f$dist$2f$chat$2f$ably$2d$chat$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ChatClient"](realtime);
+        const client = createSafeChatClient(realtime);
         chatClientRef.current = client;
         setChatReady(true);
         const { off } = client.connection.onStatusChange((change)=>{
@@ -787,7 +960,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                         newHistoryMessages.push(message);
                     }
                 });
-                const combinedMessages = Array.from(storedById.values()).sort((a, b)=>new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+                const combinedMessages = dedupeMessages(Array.from(storedById.values()).sort((a, b)=>new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()));
                 persistedMessageIdsRef.current = new Set(storedById.keys());
                 if (!cancelled) {
                     setMessages(combinedMessages);
@@ -965,9 +1138,12 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
     ]);
     // Auto-scroll to bottom when new messages arrive
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        messagesEndRef.current?.scrollIntoView({
-            behavior: 'smooth'
-        });
+        const node = messagesEndRef.current;
+        if (node && typeof node.scrollIntoView === 'function') {
+            node.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     }, [
         messages
     ]);
@@ -1083,6 +1259,13 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
         playingVoice
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if ("TURBOPACK compile-time truthy", 1) return;
+        //TURBOPACK unreachable
+        ;
+    }, [
+        selectedChat
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         Object.entries(audioPlayers.current).forEach(([id, entry])=>{
             const { audio } = entry;
             if (id !== playingVoice) {
@@ -1131,18 +1314,54 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
         if (!newMessage.trim() || !selectedChat || sending) {
             return;
         }
-        const room = activeRoomRef.current;
+        let room = activeRoomRef.current;
+        if (!room && isTest && chatClientRef.current) {
+            try {
+                room = await chatClientRef.current.rooms.get(selectedChat);
+                activeRoomRef.current = room;
+            } catch  {
+                room = null;
+            }
+        }
         if (!room) {
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Chat is still connecting. Please try again.');
             return;
         }
         setSending(true);
         try {
-            const metadata = buildMetadata();
+            const textContent = newMessage.trim();
+            const clientMessageId = createClientMessageId();
+            const metadata = buildMetadata({
+                _clientMessageId: clientMessageId
+            });
             await room.messages.send({
-                text: newMessage,
+                text: textContent || '...',
                 metadata
             });
+            const senderProfile = getSenderProfile();
+            const optimisticMessage = {
+                id: clientMessageId,
+                chatId: selectedChat,
+                senderId: senderProfile.id,
+                senderName: senderProfile.name,
+                senderAvatar: senderProfile.avatar,
+                content: textContent,
+                timestamp: new Date().toISOString(),
+                isSnapStyle: isSnapMode,
+                expiresIn: isSnapMode ? snapTimer : undefined,
+                localOnly: true,
+                clientMessageId
+            };
+            setMessages((prev)=>dedupeMessages([
+                    ...prev,
+                    optimisticMessage
+                ]));
+            setChats((prevChats)=>prevChats.map((chat)=>chat.identity === selectedChat ? {
+                        ...chat,
+                        lastMessage: optimisticMessage.content,
+                        lastMessageTime: optimisticMessage.timestamp
+                    } : chat));
+            // Avoid persisting the local-only optimistic message; it will be replaced by the real event.
             setNewMessage('');
             if (isSnapMode) {
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success(`Snap sent! Disappears in ${snapTimer}s ⏱️`);
@@ -1171,45 +1390,60 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
             return;
         }
         setSending(true);
-        const reader = new FileReader();
-        reader.onload = async (e)=>{
-            try {
-                const metadata = buildMetadata({
-                    image: e.target?.result
-                });
-                await room.messages.send({
-                    text: '',
-                    metadata
-                });
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Photo sent! 📸');
-            } catch (error) {
-                console.error('Error sending image via Ably:', error);
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Failed to send image');
-            } finally{
-                setSending(false);
-                if (fileInputRef.current) {
-                    fileInputRef.current.value = '';
-                }
+        try {
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
+            const extension = file.name.split('.').pop() ?? 'jpg';
+            const safeName = file.name.toLowerCase().replace(/[^a-z0-9._-]+/g, '-').replace(/^-+|-+$/g, '') || `image-${Date.now()}.${extension}`;
+            const key = `messages/${ablyClientId}/${selectedChat}/${Date.now()}-${safeName}`;
+            const upload = await supabaseClient.storage.from(CHAT_BUCKET).upload(key, file, {
+                cacheControl: '3600',
+                upsert: false
+            });
+            if (upload.error) {
+                console.error('Error uploading chat image:', upload.error);
+                throw upload.error;
             }
-        };
-        reader.onerror = ()=>{
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Failed to read image file');
+            const { data: publicUrlData } = supabaseClient.storage.from(CHAT_BUCKET).getPublicUrl(key);
+            const publicUrl = publicUrlData?.publicUrl;
+            if (!publicUrl) {
+                throw new Error('Could not generate public URL for uploaded image');
+            }
+            const metadata = buildMetadata({
+                image: publicUrl
+            });
+            const text = textForMetadata(metadata, '[image]');
+            await room.messages.send({
+                text,
+                metadata
+            });
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Photo sent! 📸');
+        } catch (error) {
+            console.error('Error sending image via Ably:', error);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Failed to send image');
+        } finally{
             setSending(false);
-        };
-        reader.readAsDataURL(file);
+            if (fileInputRef.current) {
+                fileInputRef.current.value = '';
+            }
+        }
     };
     const handleCreateChat = async ()=>{
-        const trimmedName = newChatName.trim();
-        if (!trimmedName) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Please enter a chat name');
+        const pickedMemberIds = selectedFriendDetails.map((friend)=>friend.clientId);
+        const manualMembers = newChatMembers.split(',').map((member)=>member.trim()).filter((member)=>member.length > 0);
+        const allMembers = Array.from(new Set([
+            ablyClientId,
+            ...pickedMemberIds,
+            ...manualMembers
+        ].filter(Boolean)));
+        if (allMembers.length <= 1) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Pick at least one registered friend or add another member ID.');
             return;
         }
+        const trimmedName = newChatName.trim();
+        const fallbackName = selectedFriendDetails.length === 1 ? selectedFriendDetails[0].name : selectedFriendDetails.length > 1 ? `${selectedFriendDetails[0].name.split(' ')[0]} + ${selectedFriendDetails.length - 1} more` : 'New Chat';
+        const chatNameToUse = trimmedName || fallbackName;
         try {
-            const memberIds = newChatMembers.split(',').map((member)=>member.trim()).filter((member)=>member.length > 0);
-            const allMembers = Array.from(new Set([
-                ablyClientId,
-                ...memberIds
-            ].filter(Boolean)));
             const createdBy = appUserId ?? ablyClientId;
             let persistedChat = null;
             let isDuplicate = false;
@@ -1222,7 +1456,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                             ...JSON_AUTH_HEADERS
                         },
                         body: JSON.stringify({
-                            name: trimmedName,
+                            name: chatNameToUse,
                             members: allMembers,
                             isGroup: isGroupChat || allMembers.length > 2,
                             createdBy
@@ -1244,13 +1478,14 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                 }
             }
             if (!persistedChat) {
-                const slugBase = trimmedName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+                const slugBase = chatNameToUse.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
                 const fallbackId = `${slugBase || 'chat'}-${Date.now().toString(36)}`;
                 const roomId = chats.some((chat)=>chat.identity === fallbackId) ? `${fallbackId}-${Math.random().toString(36).slice(2, 8)}` : fallbackId;
+                const primaryAvatar = selectedFriendDetails[0]?.avatar ?? (pickedMemberIds[0] ? avatarForId(pickedMemberIds[0]) : avatarForId(roomId));
                 persistedChat = {
                     identity: roomId,
-                    chatName: trimmedName,
-                    avatar: avatarForId(roomId),
+                    chatName: chatNameToUse,
+                    avatar: primaryAvatar,
                     lastMessage: '',
                     lastMessageTime: '',
                     members: allMembers,
@@ -1273,6 +1508,9 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
             setShowNewChatDialog(false);
             setNewChatName('');
             setNewChatMembers('');
+            setSelectedFriendIds([]);
+            setFriendSearchQuery('');
+            setFriendPickerOpen(false);
             setIsGroupChat(false);
             if (isDuplicate) {
                 __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Chat already exists. Opening it now!');
@@ -1302,46 +1540,57 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
     const handleDocumentUpload = async (event)=>{
         if (!selectedChat || sending) return;
         const file = event.target.files?.[0];
-        const room = activeRoomRef.current;
         if (!file) {
             return;
         }
-        if (!room) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Chat is still connecting. Please try again.');
-            return;
-        }
         setSending(true);
-        const reader = new FileReader();
-        reader.onload = async (e)=>{
-            try {
-                const metadata = buildMetadata({
-                    file: {
-                        name: file.name,
-                        url: e.target?.result,
-                        type: file.type,
-                        size: file.size
-                    }
-                });
-                await room.messages.send({
-                    text: '',
-                    metadata
-                });
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('File sent! 📎');
-            } catch (error) {
-                console.error('Error sending file via Ably:', error);
-                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Failed to send file');
-            } finally{
-                setSending(false);
-                if (documentInputRef.current) {
-                    documentInputRef.current.value = '';
-                }
+        try {
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
+            const room = activeRoomRef.current;
+            if (!room) {
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Chat is still connecting. Please try again.');
+                return;
             }
-        };
-        reader.onerror = ()=>{
-            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Failed to read file');
+            const extension = file.name.split('.').pop() ?? 'bin';
+            const safeName = sanitizeFilename(file.name, `file-${Date.now()}.${extension}`);
+            const key = `messages/${ablyClientId}/${selectedChat}/${Date.now()}-${safeName}`;
+            const upload = await supabaseClient.storage.from(CHAT_BUCKET).upload(key, file, {
+                cacheControl: '3600',
+                upsert: false,
+                contentType: file.type || 'application/octet-stream'
+            });
+            if (upload.error) {
+                console.error('Error uploading chat file:', upload.error);
+                throw upload.error;
+            }
+            const { data: publicUrlData } = supabaseClient.storage.from(CHAT_BUCKET).getPublicUrl(key);
+            const publicUrl = publicUrlData?.publicUrl;
+            if (!publicUrl) {
+                throw new Error('Could not generate public URL for uploaded file');
+            }
+            const metadata = buildMetadata({
+                file: {
+                    name: file.name,
+                    url: publicUrl,
+                    type: file.type,
+                    size: file.size
+                }
+            });
+            await room.messages.send({
+                text: textForMetadata(metadata, file.name || '[file]'),
+                metadata
+            });
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('File sent! 📎');
+        } catch (error) {
+            console.error('Error sending file via Ably:', error);
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].error('Failed to send file');
+        } finally{
             setSending(false);
-        };
-        reader.readAsDataURL(file);
+            if (documentInputRef.current) {
+                documentInputRef.current.value = '';
+            }
+        }
     };
     const handleVoiceSend = async (audioData, duration, mimeType)=>{
         if (!selectedChat || sending) return;
@@ -1370,7 +1619,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                 voice: voiceMetadata
             });
             await room.messages.send({
-                text: '',
+                text: textForMetadata(metadata, '[voice]'),
                 metadata
             });
             __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["toast"].success('Voice message sent! 🎤');
@@ -1460,20 +1709,20 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                 children: "Loading messages... 💬"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                lineNumber: 1644,
+                lineNumber: 2046,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/ChatInterface.tsx",
-            lineNumber: 1643,
+            lineNumber: 2045,
             columnNumber: 7
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "h-[calc(100vh-80px)] min-h-0 flex gap-6 max-w-7xl mx-auto",
+        className: "h-[calc(100vh-80px)] min-h-0 flex flex-col lg:flex-row gap-4 lg:gap-6 max-w-7xl mx-auto px-4 py-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
-                className: "w-96 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden",
+                className: `w-full lg:w-96 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden ${mobileShowList ? 'flex' : 'hidden'} lg:flex`,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "p-4 border-b border-white/10",
@@ -1486,52 +1735,390 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                         children: "Messages"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1656,
+                                        lineNumber: 2062,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                         size: "sm",
                                         onClick: ()=>setShowNewChatDialog(!showNewChatDialog),
                                         className: "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white border-0",
+                                        "aria-label": "Plus new chat",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                                             className: "w-4 h-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1662,
+                                            lineNumber: 2069,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1657,
+                                        lineNumber: 2063,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 1655,
+                                lineNumber: 2061,
                                 columnNumber: 11
                             }, this),
                             showNewChatDialog && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mb-4 p-4 bg-white/10 rounded-lg space-y-3",
+                                className: "mb-4 p-4 bg-white/10 rounded-lg space-y-4",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                                        placeholder: "Chat name...",
-                                        value: newChatName,
-                                        onChange: (e)=>setNewChatName(e.target.value),
-                                        className: "bg-white/5 border-white/20 text-white placeholder:text-white/50"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                                placeholder: "Chat name (optional)...",
+                                                value: newChatName,
+                                                onChange: (e)=>setNewChatName(e.target.value),
+                                                className: "bg-white/5 border-white/20 text-white placeholder:text-white/50"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2077,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-white/60",
+                                                children: "Leave blank and we will use your registered friend selections to name the chat."
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2083,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1669,
+                                        lineNumber: 2076,
                                         columnNumber: 15
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                                        placeholder: "Member IDs (comma separated)...",
-                                        value: newChatMembers,
-                                        onChange: (e)=>setNewChatMembers(e.target.value),
-                                        className: "bg-white/5 border-white/20 text-white placeholder:text-white/50"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center justify-between",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-white/70",
+                                                        children: "Pick friends registered on MoveY Splash"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                        lineNumber: 2090,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs text-white/50",
+                                                        children: [
+                                                            registeredFriends.length,
+                                                            " available"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                        lineNumber: 2091,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2089,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Popover"], {
+                                                open: friendPickerOpen,
+                                                onOpenChange: setFriendPickerOpen,
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverTrigger"], {
+                                                        asChild: true,
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                            variant: "outline",
+                                                            className: "w-full bg-white/5 border-white/20 text-white justify-between",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-sm",
+                                                                    children: selectedFriendIds.length > 0 ? `Selected ${selectedFriendIds.length} friend${selectedFriendIds.length > 1 ? 's' : ''}` : 'Search registered friends'
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                    lineNumber: 2101,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                                                    className: "w-4 h-4 opacity-70"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                    lineNumber: 2106,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                            lineNumber: 2097,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                        lineNumber: 2096,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverContent"], {
+                                                        className: "w-full max-w-sm p-0 backdrop-blur-xl bg-white/10 border-white/20",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "p-3 space-y-3",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "relative",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"], {
+                                                                            className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                            lineNumber: 2112,
+                                                                            columnNumber: 25
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                                                            autoFocus: true,
+                                                                            value: friendSearchQuery,
+                                                                            onChange: (e)=>setFriendSearchQuery(e.target.value),
+                                                                            placeholder: "Search registered friends...",
+                                                                            className: "pl-9 bg-white/5 border-white/20 text-white placeholder:text-white/50"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                            lineNumber: 2113,
+                                                                            columnNumber: 25
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                    lineNumber: 2111,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ScrollArea"], {
+                                                                    className: "max-h-64",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "space-y-2 pr-1",
+                                                                        children: filteredRegisteredFriends.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "text-white/60 text-sm px-2 py-3",
+                                                                            children: "No registered friends found."
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                            lineNumber: 2124,
+                                                                            columnNumber: 29
+                                                                        }, this) : filteredRegisteredFriends.map((friend)=>{
+                                                                            const isSelected = selectedFriendIds.includes(friend.id);
+                                                                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                onClick: ()=>toggleFriendSelection(friend.id),
+                                                                                className: `w-full flex items-center justify-between p-2 rounded-lg transition-colors ${isSelected ? 'bg-white/15' : 'hover:bg-white/10'}`,
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                        className: "flex items-center gap-3",
+                                                                                        children: [
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
+                                                                                                className: "w-10 h-10 border-2 border-white/10",
+                                                                                                children: [
+                                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarImage"], {
+                                                                                                        src: friend.avatar
+                                                                                                    }, void 0, false, {
+                                                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                                        lineNumber: 2140,
+                                                                                                        columnNumber: 39
+                                                                                                    }, this),
+                                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                                                                                        children: friend.name[0]
+                                                                                                    }, void 0, false, {
+                                                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                                        lineNumber: 2141,
+                                                                                                        columnNumber: 39
+                                                                                                    }, this)
+                                                                                                ]
+                                                                                            }, void 0, true, {
+                                                                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                                lineNumber: 2139,
+                                                                                                columnNumber: 37
+                                                                                            }, this),
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                className: "text-left",
+                                                                                                children: [
+                                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                        className: "text-white",
+                                                                                                        children: friend.name
+                                                                                                    }, void 0, false, {
+                                                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                                        lineNumber: 2144,
+                                                                                                        columnNumber: 39
+                                                                                                    }, this),
+                                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                        className: "text-white/60 text-xs",
+                                                                                                        children: friend.username
+                                                                                                    }, void 0, false, {
+                                                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                                        lineNumber: 2145,
+                                                                                                        columnNumber: 39
+                                                                                                    }, this)
+                                                                                                ]
+                                                                                            }, void 0, true, {
+                                                                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                                lineNumber: 2143,
+                                                                                                columnNumber: 37
+                                                                                            }, this)
+                                                                                        ]
+                                                                                    }, void 0, true, {
+                                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                        lineNumber: 2138,
+                                                                                        columnNumber: 35
+                                                                                    }, this),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                        className: `w-8 h-8 rounded-full flex items-center justify-center ${isSelected ? 'bg-green-400 text-black' : 'border border-white/30 text-white/70'}`,
+                                                                                        children: isSelected ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
+                                                                                            className: "w-4 h-4"
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                            lineNumber: 2155,
+                                                                                            columnNumber: 51
+                                                                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
+                                                                                            className: "w-4 h-4"
+                                                                                        }, void 0, false, {
+                                                                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                            lineNumber: 2155,
+                                                                                            columnNumber: 83
+                                                                                        }, this)
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                        lineNumber: 2148,
+                                                                                        columnNumber: 35
+                                                                                    }, this)
+                                                                                ]
+                                                                            }, friend.id, true, {
+                                                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                                lineNumber: 2131,
+                                                                                columnNumber: 33
+                                                                            }, this);
+                                                                        })
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                        lineNumber: 2122,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                    lineNumber: 2121,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                            lineNumber: 2110,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                        lineNumber: 2109,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2095,
+                                                columnNumber: 17
+                                            }, this),
+                                            selectedFriendDetails.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex flex-wrap gap-2",
+                                                children: selectedFriendDetails.map((friend)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
+                                                                className: "w-6 h-6",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarImage"], {
+                                                                        src: friend.avatar
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                        lineNumber: 2175,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                                                        children: friend.name[0]
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                        lineNumber: 2176,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                lineNumber: 2174,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-white text-sm",
+                                                                children: friend.name
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                lineNumber: 2178,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                onClick: ()=>toggleFriendSelection(friend.id),
+                                                                className: "text-white/60 hover:text-white",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                                                                    className: "w-3 h-3"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                    lineNumber: 2183,
+                                                                    columnNumber: 27
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                                lineNumber: 2179,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, friend.id, true, {
+                                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                        lineNumber: 2170,
+                                                        columnNumber: 23
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2168,
+                                                columnNumber: 19
+                                            }, this),
+                                            registeredFriends.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-white/60",
+                                                children: "No friends have registered yet. Add friends from the Friends tab first."
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2191,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1675,
+                                        lineNumber: 2088,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                                placeholder: "Add by user ID (optional)...",
+                                                value: newChatMembers,
+                                                onChange: (e)=>setNewChatMembers(e.target.value),
+                                                className: "bg-white/5 border-white/20 text-white placeholder:text-white/50"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2198,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-white/60",
+                                                children: "Use this if you need to invite someone who is registered but not in your friends list yet."
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2204,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                        lineNumber: 2197,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1544,30 +2131,36 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                 children: "Create"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1682,
+                                                lineNumber: 2210,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                 size: "sm",
                                                 variant: "ghost",
-                                                onClick: ()=>setShowNewChatDialog(false),
+                                                onClick: ()=>{
+                                                    setShowNewChatDialog(false);
+                                                    setSelectedFriendIds([]);
+                                                    setFriendSearchQuery('');
+                                                    setNewChatName('');
+                                                    setNewChatMembers('');
+                                                },
                                                 className: "text-white/70 hover:text-white hover:bg-white/10",
                                                 children: "Cancel"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1689,
+                                                lineNumber: 2217,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1681,
+                                        lineNumber: 2209,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 1668,
+                                lineNumber: 2075,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1577,7 +2170,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                         className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1702,
+                                        lineNumber: 2236,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -1587,19 +2180,19 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                         className: "pl-10 bg-white/5 border-white/20 text-white placeholder:text-white/50"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1703,
+                                        lineNumber: 2237,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 1701,
+                                lineNumber: 2235,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                        lineNumber: 1654,
+                        lineNumber: 2060,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -1612,7 +2205,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                     children: "No chats yet"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                    lineNumber: 1716,
+                                    lineNumber: 2250,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1620,18 +2213,22 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                     children: "Click + to start a new conversation"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                    lineNumber: 1717,
+                                    lineNumber: 2251,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                            lineNumber: 1715,
+                            lineNumber: 2249,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "p-2",
                             children: filteredChats.map((chat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    onClick: ()=>setSelectedChat(chat.identity),
+                                    onClick: ()=>{
+                                        setSelectedChat(chat.identity);
+                                        if (("TURBOPACK compile-time value", "undefined") !== 'undefined' && window.innerWidth < 1024) //TURBOPACK unreachable
+                                        ;
+                                    },
                                     className: `w-full p-3 rounded-xl mb-2 transition-all ${selectedChat === chat.identity ? 'bg-gradient-to-r from-pink-500/30 to-purple-500/30 backdrop-blur-xl' : 'hover:bg-white/10'}`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center gap-3",
@@ -1643,20 +2240,20 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                         src: chat.avatar
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 1733,
+                                                        lineNumber: 2272,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                         children: chat.chatName[0]
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 1734,
+                                                        lineNumber: 2273,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1732,
+                                                lineNumber: 2271,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1670,7 +2267,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                 children: chat.chatName
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 1738,
+                                                                lineNumber: 2277,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1681,13 +2278,13 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                 }) : '--:--'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 1739,
+                                                                lineNumber: 2278,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 1737,
+                                                        lineNumber: 2276,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1695,44 +2292,44 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                         children: chat.lastMessage || 'No messages yet'
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 1748,
+                                                        lineNumber: 2287,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1736,
+                                                lineNumber: 2275,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1731,
+                                        lineNumber: 2270,
                                         columnNumber: 19
                                     }, this)
                                 }, chat.identity, false, {
                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                    lineNumber: 1722,
+                                    lineNumber: 2256,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                            lineNumber: 1720,
+                            lineNumber: 2254,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                        lineNumber: 1713,
+                        lineNumber: 2247,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                lineNumber: 1652,
+                lineNumber: 2054,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
-                className: "flex-1 min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden",
+                className: `flex-1 w-full min-h-0 backdrop-blur-xl bg-white/10 border-white/20 flex flex-col overflow-hidden ${mobileShowList ? 'hidden' : 'flex'} lg:flex`,
                 children: !selectedChat || !currentChat ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex-1 flex items-center justify-center",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1743,7 +2340,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                 children: "Select a chat to start messaging"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 1765,
+                                lineNumber: 2308,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1751,18 +2348,18 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                 children: "Choose a conversation or create a new one"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 1766,
+                                lineNumber: 2309,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                        lineNumber: 1764,
+                        lineNumber: 2307,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                    lineNumber: 1763,
+                    lineNumber: 2306,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                     children: [
@@ -1772,6 +2369,24 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex items-center gap-3",
                                     children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                            size: "sm",
+                                            variant: "ghost",
+                                            onClick: ()=>setMobileShowList(true),
+                                            className: "lg:hidden text-white/80 hover:text-white hover:bg-white/10",
+                                            "aria-label": "Back to chats",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
+                                                className: "w-5 h-5"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                                lineNumber: 2324,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/components/ChatInterface.tsx",
+                                            lineNumber: 2317,
+                                            columnNumber: 17
+                                        }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
                                             className: "w-10 h-10 border-2 border-white/20",
                                             children: [
@@ -1779,20 +2394,20 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                     src: currentChat.avatar
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 1775,
+                                                    lineNumber: 2327,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                     children: currentChat.chatName[0]
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 1776,
+                                                    lineNumber: 2328,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1774,
+                                            lineNumber: 2326,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1802,7 +2417,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                     children: currentChat.chatName
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 1779,
+                                                    lineNumber: 2331,
                                                     columnNumber: 19
                                                 }, this),
                                                 currentChat.isGroup && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1813,7 +2428,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 1781,
+                                                    lineNumber: 2333,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1821,19 +2436,19 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                     children: connectionSummary
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 1783,
+                                                    lineNumber: 2335,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1778,
+                                            lineNumber: 2330,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                    lineNumber: 1773,
+                                    lineNumber: 2316,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1848,12 +2463,12 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1800,
+                                                lineNumber: 2352,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1794,
+                                            lineNumber: 2346,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1865,12 +2480,12 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1808,
+                                                lineNumber: 2360,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1802,
+                                            lineNumber: 2354,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1881,28 +2496,28 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1815,
+                                                lineNumber: 2367,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1810,
+                                            lineNumber: 2362,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                    lineNumber: 1793,
+                                    lineNumber: 2345,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                            lineNumber: 1772,
+                            lineNumber: 2315,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ScrollArea"], {
-                            className: "flex-1 h-full overflow-y-auto p-6",
+                            className: "flex-1 h-full overflow-y-auto p-4 sm:p-6",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-4",
                                 children: [
@@ -1912,12 +2527,12 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                             children: "No messages yet. Start the conversation! 💬"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1825,
+                                            lineNumber: 2377,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1824,
+                                        lineNumber: 2376,
                                         columnNumber: 19
                                     }, this) : messages.map((message)=>{
                                         const isMe = message.senderId === ablyClientId;
@@ -1932,20 +2547,20 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                             src: message.senderAvatar ?? avatarForId(message.senderId)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1838,
+                                                            lineNumber: 2390,
                                                             columnNumber: 29
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                             children: (message.senderName ?? message.senderId ?? 'U')[0] ?? 'U'
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1839,
+                                                            lineNumber: 2391,
                                                             columnNumber: 29
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 1837,
+                                                    lineNumber: 2389,
                                                     columnNumber: 27
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1956,7 +2571,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                             children: message.senderName
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1846,
+                                                            lineNumber: 2398,
                                                             columnNumber: 29
                                                         }, this),
                                                         message.image && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1968,7 +2583,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                     className: "w-full max-w-md rounded-xl"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 1855,
+                                                                    lineNumber: 2407,
                                                                     columnNumber: 31
                                                                 }, this),
                                                                 message.isSnapStyle && message.expiresIn && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1978,7 +2593,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                             className: "w-3 h-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 1862,
+                                                                            lineNumber: 2414,
                                                                             columnNumber: 35
                                                                         }, this),
                                                                         message.expiresIn,
@@ -1986,13 +2601,13 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 1861,
+                                                                    lineNumber: 2413,
                                                                     columnNumber: 33
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1850,
+                                                            lineNumber: 2402,
                                                             columnNumber: 29
                                                         }, this),
                                                         message.file && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2006,12 +2621,12 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                             className: "w-5 h-5"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 1878,
+                                                                            lineNumber: 2430,
                                                                             columnNumber: 35
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                        lineNumber: 1877,
+                                                                        lineNumber: 2429,
                                                                         columnNumber: 33
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2022,7 +2637,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                                 children: message.file.name
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                lineNumber: 1881,
+                                                                                lineNumber: 2433,
                                                                                 columnNumber: 35
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2033,13 +2648,13 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                lineNumber: 1882,
+                                                                                lineNumber: 2434,
                                                                                 columnNumber: 35
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                        lineNumber: 1880,
+                                                                        lineNumber: 2432,
                                                                         columnNumber: 33
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2050,23 +2665,23 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                             className: "w-4 h-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 1891,
+                                                                            lineNumber: 2443,
                                                                             columnNumber: 35
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                        lineNumber: 1886,
+                                                                        lineNumber: 2438,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 1876,
+                                                                lineNumber: 2428,
                                                                 columnNumber: 31
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1871,
+                                                            lineNumber: 2423,
                                                             columnNumber: 29
                                                         }, this),
                                                         message.voice && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2081,18 +2696,18 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                             className: "w-5 h-5"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 1910,
+                                                                            lineNumber: 2462,
                                                                             columnNumber: 37
                                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
                                                                             className: "w-5 h-5 ml-0.5"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 1912,
+                                                                            lineNumber: 2464,
                                                                             columnNumber: 37
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                        lineNumber: 1905,
+                                                                        lineNumber: 2457,
                                                                         columnNumber: 33
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2110,12 +2725,12 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                                         }
                                                                                     }, i, false, {
                                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                        lineNumber: 1918,
+                                                                                        lineNumber: 2470,
                                                                                         columnNumber: 39
                                                                                     }, this))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                lineNumber: 1916,
+                                                                                lineNumber: 2468,
                                                                                 columnNumber: 35
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2127,24 +2742,24 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                lineNumber: 1930,
+                                                                                lineNumber: 2482,
                                                                                 columnNumber: 35
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                        lineNumber: 1915,
+                                                                        lineNumber: 2467,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 1904,
+                                                                lineNumber: 2456,
                                                                 columnNumber: 31
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1899,
+                                                            lineNumber: 2451,
                                                             columnNumber: 29
                                                         }, this),
                                                         message.content && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2155,7 +2770,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                     children: message.content
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 1947,
+                                                                    lineNumber: 2499,
                                                                     columnNumber: 31
                                                                 }, this),
                                                                 message.isSnapStyle && message.expiresIn && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2165,7 +2780,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                             className: "w-3 h-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 1950,
+                                                                            lineNumber: 2502,
                                                                             columnNumber: 35
                                                                         }, this),
                                                                         message.expiresIn,
@@ -2173,13 +2788,13 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 1949,
+                                                                    lineNumber: 2501,
                                                                     columnNumber: 33
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1940,
+                                                            lineNumber: 2492,
                                                             columnNumber: 29
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2193,7 +2808,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                     })
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 1959,
+                                                                    lineNumber: 2511,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2203,30 +2818,30 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                         className: `w-4 h-4 ${isStarred ? 'fill-yellow-400 text-yellow-400' : 'text-white/40 hover:text-white/60'}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                        lineNumber: 1971,
+                                                                        lineNumber: 2523,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 1965,
+                                                                    lineNumber: 2517,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 1958,
+                                                            lineNumber: 2510,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 1844,
+                                                    lineNumber: 2396,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, message.id, true, {
                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                            lineNumber: 1832,
+                                            lineNumber: 2384,
                                             columnNumber: 23
                                         }, this);
                                     }),
@@ -2234,22 +2849,22 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                         ref: messagesEndRef
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1985,
+                                        lineNumber: 2537,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 1822,
+                                lineNumber: 2374,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                            lineNumber: 1821,
+                            lineNumber: 2373,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "px-6 py-2 border-t border-white/10",
+                            className: "px-4 sm:px-6 py-2 border-t border-white/10",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center justify-between",
                                 children: [
@@ -2264,7 +2879,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2001,
+                                                        lineNumber: 2553,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2272,20 +2887,20 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                         children: "Snap Mode"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2002,
+                                                        lineNumber: 2554,
                                                         columnNumber: 21
                                                     }, this),
                                                     isSnapMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$timer$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Timer$3e$__["Timer"], {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2003,
+                                                        lineNumber: 2555,
                                                         columnNumber: 36
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 1993,
+                                                lineNumber: 2545,
                                                 columnNumber: 19
                                             }, this),
                                             isSnapMode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2296,7 +2911,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                         children: "Timer:"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2008,
+                                                        lineNumber: 2560,
                                                         columnNumber: 23
                                                     }, this),
                                                     [
@@ -2313,19 +2928,19 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                             ]
                                                         }, seconds, true, {
                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                            lineNumber: 2010,
+                                                            lineNumber: 2562,
                                                             columnNumber: 25
                                                         }, this))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 2007,
+                                                lineNumber: 2559,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 1992,
+                                        lineNumber: 2544,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2336,23 +2951,23 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                 children: emoji
                                             }, index, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 2029,
+                                                lineNumber: 2581,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 2027,
+                                        lineNumber: 2579,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 1991,
+                                lineNumber: 2543,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                            lineNumber: 1990,
+                            lineNumber: 2542,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2368,7 +2983,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                         className: "hidden"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 2044,
+                                        lineNumber: 2596,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2379,11 +2994,11 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                         className: "hidden"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 2051,
+                                        lineNumber: 2603,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-3 mb-3",
+                                        className: "flex items-center gap-2 sm:gap-3 mb-3 flex-col sm:flex-row",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
                                                 ref: messageInputRef,
@@ -2392,39 +3007,40 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                 onChange: (e)=>setNewMessage(e.target.value),
                                                 onKeyPress: (e)=>e.key === 'Enter' && handleSendMessage(),
                                                 disabled: sending,
-                                                className: `flex-1 bg-white/5 border-white/20 text-white placeholder:text-white/50 h-12 text-base ${isSnapMode ? 'border-yellow-400 border-2' : ''}`
+                                                className: `w-full sm:flex-1 bg-white/5 border-white/20 text-white placeholder:text-white/50 h-12 text-base ${isSnapMode ? 'border-yellow-400 border-2' : ''}`
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 2061,
+                                                lineNumber: 2613,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                 onClick: handleSendMessage,
                                                 disabled: sending || !newMessage.trim(),
                                                 className: `h-12 px-6 ${isSnapMode ? 'bg-yellow-400 hover:bg-yellow-500 text-black' : 'bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white'} border-0`,
+                                                "aria-label": "Send message",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
                                                     className: "w-5 h-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                    lineNumber: 2082,
+                                                    lineNumber: 2635,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 2073,
+                                                lineNumber: 2625,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 2060,
+                                        lineNumber: 2612,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center justify-between",
+                                        className: "flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-2",
+                                                className: "flex items-center gap-2 flex-wrap",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                         size: "sm",
@@ -2437,7 +3053,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                 className: "w-5 h-5 mr-1"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 2096,
+                                                                lineNumber: 2649,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2445,13 +3061,13 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                 children: "Photo"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 2097,
+                                                                lineNumber: 2650,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2089,
+                                                        lineNumber: 2642,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2465,7 +3081,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                 className: "w-5 h-5 mr-1"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 2107,
+                                                                lineNumber: 2660,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2473,13 +3089,13 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                 children: "File"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 2108,
+                                                                lineNumber: 2661,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2100,
+                                                        lineNumber: 2653,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Popover"], {
@@ -2497,7 +3113,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                             className: "w-5 h-5 mr-1"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 2118,
+                                                                            lineNumber: 2671,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2505,18 +3121,18 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                             children: "Emoji"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                            lineNumber: 2119,
+                                                                            lineNumber: 2672,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 2113,
+                                                                    lineNumber: 2666,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 2112,
+                                                                lineNumber: 2665,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopoverContent"], {
@@ -2533,7 +3149,7 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                                         children: category
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                        lineNumber: 2127,
+                                                                                        lineNumber: 2680,
                                                                                         columnNumber: 33
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2547,89 +3163,89 @@ function ChatInterface({ onStartCall, shareDraft, onShareDraftConsumed, focusUse
                                                                                                 children: emoji
                                                                                             }, index, false, {
                                                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                                lineNumber: 2130,
+                                                                                                lineNumber: 2683,
                                                                                                 columnNumber: 37
                                                                                             }, this))
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                        lineNumber: 2128,
+                                                                                        lineNumber: 2681,
                                                                                         columnNumber: 33
                                                                                     }, this)
                                                                                 ]
                                                                             }, category, true, {
                                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                                lineNumber: 2126,
+                                                                                lineNumber: 2679,
                                                                                 columnNumber: 31
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                        lineNumber: 2124,
+                                                                        lineNumber: 2677,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                    lineNumber: 2123,
+                                                                    lineNumber: 2676,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                                lineNumber: 2122,
+                                                                lineNumber: 2675,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2111,
+                                                        lineNumber: 2664,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$VoiceRecorder$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["VoiceRecorder"], {
                                                         onSendVoice: handleVoiceSend
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                        lineNumber: 2149,
+                                                        lineNumber: 2702,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 2088,
+                                                lineNumber: 2641,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$MessageInspiration$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MessageInspiration"], {
                                                 onInsertMessage: (msg)=>setNewMessage(msg)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                                lineNumber: 2152,
+                                                lineNumber: 2705,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                        lineNumber: 2087,
+                                        lineNumber: 2640,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                                lineNumber: 2043,
+                                lineNumber: 2595,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/ChatInterface.tsx",
-                            lineNumber: 2042,
+                            lineNumber: 2594,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/ChatInterface.tsx",
-                lineNumber: 1761,
+                lineNumber: 2300,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/ChatInterface.tsx",
-        lineNumber: 1650,
+        lineNumber: 2052,
         columnNumber: 5
     }, this);
 }
