@@ -269,24 +269,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
             </p>
           </Card>
 
-          {/* Contact */}
-          <Card className="backdrop-blur-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-purple-400/30 p-8">
-            <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-white text-2xl">Questions About Privacy?</h3>
-              <p className="text-white/70">
-                Ping <span className="text-white">privacy@movesplash.com</span> and someone from the privacy crew will reply within a few days.
-              </p>
-              <p className="text-white/70 text-sm">
-                MoveSplash, Inc.<br />
-                123 Social Street<br />
-                San Francisco, CA 94103<br />
-                United States
-              </p>
-            </div>
-          </Card>
+          
         </div>
       </div>
     </div>
