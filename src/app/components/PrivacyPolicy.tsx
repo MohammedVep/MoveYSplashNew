@@ -38,7 +38,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </div>
           <h1 className="text-white text-5xl mb-4">Privacy Policy</h1>
           <p className="text-white/70">
-            Last Updated: October 17, 2025
+            Last Updated: June 21, 2026
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                   <li>The name and email you typed in when creating your account.</li>
                   <li>Any profile photo, pronouns, or bio you choose to share.</li>
                   <li>Optional recovery info like a phone number so we can help if you get locked out.</li>
-                  <li>Birthday details so we can confirm you meet the minimum age.</li>
+                  <li>Birthdate so we can confirm you meet the minimum age and apply local safety rules when required.</li>
                 </ul>
               </div>
               <div>
@@ -245,8 +245,8 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           <Card className="backdrop-blur-xl bg-white/10 border-white/20 p-6">
             <h2 className="text-white text-2xl mb-3">Children&apos;s Privacy</h2>
             <p className="text-white/70">
-              This community is for ages 13+. If we discover someone younger snuck in, we scrub their data and
-              close the account. Parents or guardians can reach us at{' '}
+              This community is for ages 16+. If we discover someone younger signed up, we close the account and
+              delete personal data we no longer need to keep. Parents or guardians can reach us at{' '}
               <span className="text-white">privacy@movesplash.com</span> for help.
             </p>
           </Card>

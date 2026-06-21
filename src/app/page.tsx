@@ -9,6 +9,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { LandingPage } from './components/LandingPage';
 import { LoginPage } from './components/LoginPage';
 import { SignupPage } from './components/SignupPage';
+import { AgeVerificationGate } from './components/AgeVerificationGate';
 import { Navigation } from './components/Navigation';
 import { MainFeed } from './components/MainFeed';
 import { ChatInterface } from './components/ChatInterface';
@@ -29,6 +30,7 @@ import { UserProvider, useUser } from './utils/userContext';
 import type { AppState, AppView, CallType, FeatureType } from './types/app';
 import { cn } from './components/ui/utils';
 import type { ShareToMessagesPayload } from './utils/shareUtils';
+import { validateMinimumAccountAge } from '@/lib/ageRestriction';
 
 const LOGIN_BASE = '/login';
 const DEFAULT_VIEW: AppView = 'feed';
@@ -147,7 +149,7 @@ function pathForState(state: AppState, feature: FeatureType | null, view: AppVie
 }
 
 function AppShell() {
-  const { login, signup, logout, currentUser, loadProfileUser } = useUser();
+  const { login, signup, logout, currentUser, loadProfileUser, updateUser } = useUser();
   const router = useRouter();
   const pathname = usePathname() || '/';
   const derivedFromPath = deriveStateFromPath(pathname);
@@ -277,6 +279,15 @@ function AppShell() {
     setPendingMessageTarget(null);
     setIsProfileLoading(false);
     setAppState('landing');
+  };
+
+  const handleVerifyAge = async (birthdate: string) => {
+    const validation = validateMinimumAccountAge(birthdate);
+    if (!validation.allowed) {
+      return false;
+    }
+
+    return updateUser({ birthdate: validation.normalizedBirthdate });
   };
 
   const handleNavigate = (view: AppView) => {
@@ -459,6 +470,25 @@ function AppShell() {
         <Toaster position="top-center" />
       </>
     );
+  }
+
+  if (appState === 'app' && currentUser) {
+    const ageValidation = currentUser.birthdate
+      ? validateMinimumAccountAge(currentUser.birthdate)
+      : null;
+
+    if (!currentUser.birthdate || ageValidation?.allowed === false) {
+      return (
+        <>
+          <AgeVerificationGate
+            storedBirthdate={currentUser.birthdate}
+            onVerify={handleVerifyAge}
+            onLogout={handleLogout}
+          />
+          <Toaster position="top-center" />
+        </>
+      );
+    }
   }
 
   // Main App View

@@ -7,6 +7,11 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
+import {
+  getLatestEligibleBirthdate,
+  MINIMUM_ACCOUNT_AGE,
+  validateMinimumAccountAge,
+} from "@/lib/ageRestriction";
 
 type SignupPageProps = {
   onSignup?: (
@@ -28,6 +33,7 @@ export function SignupPage({ onSignup, onBack, onLogin }: SignupPageProps) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+  const latestEligibleBirthdate = getLatestEligibleBirthdate();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -44,16 +50,22 @@ export function SignupPage({ onSignup, onBack, onLogin }: SignupPageProps) {
       return;
     }
 
+    const ageValidation = validateMinimumAccountAge(birthdate);
+    if (!ageValidation.allowed) {
+      setError(ageValidation.error);
+      return;
+    }
+
     setBusy(true);
     try {
       if (onSignup) {
-        await onSignup(name, email, password, birthdate);
+        await onSignup(name, email, password, ageValidation.normalizedBirthdate);
       } else {
         const { data, error: supabaseError } = await supabase.auth.signUp({
           email,
           password,
           options: {
-            data: { name, birthdate },
+            data: { name, birthdate: ageValidation.normalizedBirthdate },
             emailRedirectTo: `${window.location.origin}/`,
           },
         });
@@ -87,7 +99,7 @@ export function SignupPage({ onSignup, onBack, onLogin }: SignupPageProps) {
       <div className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900/70 p-8 shadow-xl">
         <h1 className="text-2xl font-semibold mb-2">Create your account</h1>
         <p className="text-sm text-slate-400 mb-6">
-          We&apos;ll send a confirmation link before you can log in.
+          MoveYSplash accounts are available to people {MINIMUM_ACCOUNT_AGE} and older.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -107,10 +119,14 @@ export function SignupPage({ onSignup, onBack, onLogin }: SignupPageProps) {
             <input
               type="date"
               autoComplete="bday"
+              max={latestEligibleBirthdate}
               className="w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm outline-none focus:border-indigo-500"
               value={birthdate}
               onChange={(e) => setBirthdate(e.target.value)}
             />
+            <span className="mt-1 block text-xs text-slate-500">
+              We use this to confirm you meet the minimum age.
+            </span>
           </label>
 
           <label className="block text-sm">

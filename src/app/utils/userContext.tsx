@@ -8,6 +8,7 @@ import { createContext, useContext, useState, ReactNode, useEffect, useCallback 
 import { useTheme } from 'next-themes';
 import { projectId, publicAnonKey } from './supabase/info';
 import { normalizeThemePreference, resolveThemePreference } from '../components/settings-theme';
+import { validateMinimumAccountAge } from '@/lib/ageRestriction';
 
 const API_BASE_URL = `https://${projectId}.supabase.co/functions/v1/make-server-a14c7986`;
 
@@ -81,6 +82,7 @@ export interface UserData {
   name: string;
   username: string;
   email: string;
+  birthdate?: string;
   avatar: string;
   ablyClientId: string;
   bio: string;
@@ -223,6 +225,7 @@ interface ServerUser {
   name: string;
   username: string;
   email: string;
+  birthdate?: string;
   avatar: string;
   bio?: string;
   location?: string;
@@ -242,6 +245,7 @@ const normalizeServerUser = (user: ServerUser): UserData => {
     name: user.name,
     username: user.username,
     email: user.email,
+    birthdate: typeof user.birthdate === 'string' ? user.birthdate : undefined,
     avatar: user.avatar,
     bio: user.bio ?? '',
     location: user.location ?? '',
@@ -275,6 +279,7 @@ const coerceUserData = (user?: Partial<UserData> | null): UserData | null => {
     name: user.name ?? user.username ?? 'User',
     username: user.username ?? user.id ?? 'user',
     email: user.email ?? '',
+    birthdate: typeof user.birthdate === 'string' ? user.birthdate : undefined,
     avatar: user.avatar ?? '',
     bio: user.bio ?? '',
     location: user.location ?? '',
@@ -675,6 +680,7 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
           name: updated.name,
           username: updated.username,
           email: updated.email,
+          birthdate: updated.birthdate,
           avatar: updated.avatar,
           bio: updated.bio,
           location: updated.location,
@@ -708,6 +714,7 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
         name: normalized.name,
         username: normalized.username,
         email: normalized.email,
+        birthdate: normalized.birthdate,
         avatar: normalized.avatar,
         bio: normalized.bio,
         location: normalized.location,
@@ -1996,6 +2003,12 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
   };
 
   const signup = async (name: string, email: string, password: string, birthdate: string): Promise<boolean> => {
+    const ageValidation = validateMinimumAccountAge(birthdate);
+    if (!ageValidation.allowed) {
+      console.error('Registration failed:', ageValidation.error);
+      return false;
+    }
+
     try {
       const response = await fetch(`${API_BASE_URL}/auth/register`, {
         method: 'POST',
@@ -2003,7 +2016,12 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${publicAnonKey}`
         },
-        body: JSON.stringify({ name, email, password, birthdate })
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          birthdate: ageValidation.normalizedBirthdate
+        })
       });
 
       const payload = await response.json().catch(() => null);

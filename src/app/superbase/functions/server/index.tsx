@@ -7,6 +7,7 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import type { ContentfulStatusCode } from "hono/utils/http-status";
 import * as kv from "./kv_store.ts";
+import { validateMinimumAccountAge } from "../../../../lib/ageRestriction.ts";
 const app = new Hono();
 
 type JsonRecord = Record<string, unknown>;
@@ -1617,11 +1618,21 @@ app.put("/make-server-a14c7986/users/:userId", async (c) => {
     const userId = c.req.param("userId");
     const rawBody = await c.req.json();
     const body = isRecord(rawBody) ? rawBody : {};
+    const sanitizedBody: JsonRecord = { ...body };
+
+    if (body["birthdate"] !== undefined) {
+      const birthdate = typeof body["birthdate"] === "string" ? body["birthdate"] : "";
+      const ageValidation = validateMinimumAccountAge(birthdate);
+      if (!ageValidation.allowed) {
+        return c.json({ error: ageValidation.error }, 400);
+      }
+      sanitizedBody["birthdate"] = ageValidation.normalizedBirthdate;
+    }
     
     // Get existing user data or create new
     const existingUserData = await kv.get<JsonRecord>(`user:${userId}`);
     const existingUser = isRecord(existingUserData) ? existingUserData : {};
-    const ablyClientIdFromBody = body["ablyClientId"];
+    const ablyClientIdFromBody = sanitizedBody["ablyClientId"];
     const resolvedAblyClientId =
       typeof ablyClientIdFromBody === "string" && ablyClientIdFromBody.trim().length > 0
         ? ablyClientIdFromBody
@@ -1630,7 +1641,7 @@ app.put("/make-server-a14c7986/users/:userId", async (c) => {
     // Merge with new data
     const userData: JsonRecord = {
       ...existingUser,
-      ...body,
+      ...sanitizedBody,
       id: userId,
       ablyClientId: resolvedAblyClientId,
       updatedAt: new Date().toISOString()
@@ -3076,6 +3087,14 @@ app.post("/make-server-a14c7986/auth/login", async (c) => {
     if (getStringProp(user, "password") !== normalizedPassword) {
       return c.json({ error: "Invalid email or password" }, 401);
     }
+
+    const savedBirthdate = getStringProp(user, "birthdate");
+    if (savedBirthdate) {
+      const ageValidation = validateMinimumAccountAge(savedBirthdate);
+      if (!ageValidation.allowed) {
+        return c.json({ error: ageValidation.error }, 403);
+      }
+    }
     
     // Remove password from response
     const userWithoutPassword: JsonRecord = { ...user };
@@ -3142,13 +3161,19 @@ app.post("/make-server-a14c7986/auth/change-password", async (c) => {
 app.post("/make-server-a14c7986/auth/register", async (c) => {
   try {
     const body = await c.req.json();
-    const { name, email, password } = body as Record<string, unknown>;
+    const { name, email, password, birthdate } = body as Record<string, unknown>;
     const normalizedName = typeof name === "string" ? name : "";
     const normalizedEmail = typeof email === "string" ? email : "";
     const normalizedPassword = typeof password === "string" ? password : "";
+    const normalizedBirthdate = typeof birthdate === "string" ? birthdate : "";
     
-    if (!normalizedName || !normalizedEmail || !normalizedPassword) {
-      return c.json({ error: "Name, email and password required" }, 400);
+    if (!normalizedName || !normalizedEmail || !normalizedPassword || !normalizedBirthdate) {
+      return c.json({ error: "Name, email, password and birthdate required" }, 400);
+    }
+
+    const ageValidation = validateMinimumAccountAge(normalizedBirthdate);
+    if (!ageValidation.allowed) {
+      return c.json({ error: ageValidation.error }, 403);
     }
     
     // Check if email already exists
@@ -3169,6 +3194,7 @@ app.post("/make-server-a14c7986/auth/register", async (c) => {
       name: normalizedName,
       username: `@${normalizedName.toLowerCase().replace(/\s+/g, '')}`,
       email: normalizedEmail,
+      birthdate: ageValidation.normalizedBirthdate,
       password: normalizedPassword, // In production, this should be hashed
       avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${normalizedName}`,
       bio: '',

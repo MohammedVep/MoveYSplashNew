@@ -38,7 +38,7 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
           </div>
           <h1 className="text-white text-5xl mb-4">Terms of Use</h1>
           <p className="text-white/70">
-            Last Updated: November 30, 2025
+            Last Updated: June 21, 2026
           </p>
         </div>
 
@@ -80,12 +80,13 @@ export function TermsOfUse({ onBack }: TermsOfUseProps) {
           <Card className="backdrop-blur-xl bg-white/10 border-white/20 p-6">
             <h2 className="text-white text-2xl mb-3">2. Eligibility</h2>
             <div className="text-white/70 space-y-2">
-              <p>MoveSplash is meant for people who can legally be responsible for what they post.</p>
+              <p>MoveYSplash is meant for people who can legally be responsible for what they post.</p>
               <ul className="list-disc list-inside space-y-1 pl-4">
-                <li>You must be 13 or older in the United States (check your local rules elsewhere).</li>
+                <li>You must be 16 or older to create or keep a MoveYSplash account.</li>
+                <li>Local rules may require more age assurance, parental consent, or a higher minimum age where you live.</li>
                 <li>You can&apos;t join if you&apos;re barred from online services where you live.</li>
                 <li>Previous bans stick. If we removed you once, don&apos;t sneak back in.</li>
-                <li>Sign-up info should be real and current—no burner names or fake birthdays.</li>
+                <li>Sign-up info should be real and current, including your birthdate.</li>
               </ul>
               <p className="mt-3">
                 If you&apos;re under 18, loop in a parent or guardian so everyone understands the deal.
