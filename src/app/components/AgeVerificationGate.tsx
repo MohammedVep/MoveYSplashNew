@@ -96,7 +96,7 @@ export function AgeVerificationGate({
           MoveYSplash accounts are available to people {MINIMUM_ACCOUNT_AGE} and older.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} noValidate className="space-y-4">
           <label className="block text-sm">
             <span className="mb-1 block text-slate-200">Birthdate</span>
             <input

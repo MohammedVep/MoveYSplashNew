@@ -2008,6 +2008,7 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
       console.error('Registration failed:', ageValidation.error);
       return false;
     }
+    const normalizedBirthdate = ageValidation.normalizedBirthdate;
 
     try {
       const response = await fetch(`${API_BASE_URL}/auth/register`, {
@@ -2020,7 +2021,7 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
           name,
           email,
           password,
-          birthdate: ageValidation.normalizedBirthdate
+          birthdate: normalizedBirthdate
         })
       });
 
@@ -2032,11 +2033,53 @@ export function UserProvider({ children, initialUser = null, initialAllUsers }: 
         return false;
       }
 
-      const userData = payload.user as ServerUser;
+      let userData: ServerUser = {
+        ...(payload.user as ServerUser),
+        birthdate: (payload.user as ServerUser).birthdate ?? normalizedBirthdate
+      };
       const settingsFromResponse = payload.settings as Partial<UserSettings> | undefined;
 
+      if ((payload.user as ServerUser).birthdate !== normalizedBirthdate) {
+        try {
+          const syncResponse = await fetch(`${API_BASE_URL}/users/${userData.id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${publicAnonKey}`
+            },
+            body: JSON.stringify({ birthdate: normalizedBirthdate })
+          });
+
+          if (syncResponse.ok) {
+            const syncPayload = await syncResponse.json().catch(() => null);
+            if (syncPayload?.user) {
+              userData = {
+                ...(syncPayload.user as ServerUser),
+                birthdate: (syncPayload.user as ServerUser).birthdate ?? normalizedBirthdate
+              };
+            }
+          } else {
+            const syncPayload = await syncResponse.json().catch(() => null);
+            console.warn('Birthdate sync failed:', syncPayload?.error ?? `status ${syncResponse.status}`);
+          }
+        } catch (error) {
+          console.warn('Birthdate sync failed:', error);
+        }
+      }
+
       const loaded = await loadUserData(userData.id);
-      if (!loaded) {
+      if (loaded) {
+        setCurrentUser(prev =>
+          prev && prev.id === userData.id
+            ? { ...prev, birthdate: prev.birthdate ?? normalizedBirthdate }
+            : prev
+        );
+        setProfileUser(prev =>
+          prev && prev.id === userData.id
+            ? { ...prev, birthdate: prev.birthdate ?? normalizedBirthdate }
+            : prev
+        );
+      } else {
         const fallbackUser = {
           ...normalizeServerUser(userData),
           settings: mergeWithDefaultSettings(settingsFromResponse)
